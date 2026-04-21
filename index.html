@@ -253,10 +253,11 @@
 
     /* stagger each agent */
     .p-agent:nth-child(1) { animation-delay: 0.1s; }
-    .p-agent:nth-child(2) { animation-delay: 0.25s; }
-    .p-agent:nth-child(3) { animation-delay: 0.4s; }
-    .p-agent:nth-child(4) { animation-delay: 0.55s; }
-    .p-agent:nth-child(5) { animation-delay: 0.7s; }
+    .p-agent:nth-child(2) { animation-delay: 0.22s; }
+    .p-agent:nth-child(3) { animation-delay: 0.34s; }
+    .p-agent:nth-child(4) { animation-delay: 0.46s; }
+    .p-agent:nth-child(5) { animation-delay: 0.58s; }
+    .p-agent:nth-child(6) { animation-delay: 0.70s; }
 
     @keyframes slideIn {
       to { opacity: 1; transform: translateX(0); }
@@ -291,6 +292,7 @@
     .p-agent:nth-child(3) .p-dot { animation-delay: 1s; }
     .p-agent:nth-child(4) .p-dot { animation-delay: 1.5s; }
     .p-agent:nth-child(5) .p-dot { animation-delay: 2s; }
+    .p-agent:nth-child(6) .p-dot { animation-delay: 2.5s; }
 
     .p-body { flex: 1; }
 
@@ -439,8 +441,17 @@
       <div class="p-agent">
         <div class="p-dot"></div>
         <div class="p-body">
+          <div class="p-name">Justin <span class="p-role">Editor Agent</span></div>
+          <div class="p-desc">Edits, formats, and publishes to the blog.</div>
+        </div>
+        <span class="p-badge ai">AI</span>
+      </div>
+
+      <div class="p-agent">
+        <div class="p-dot"></div>
+        <div class="p-body">
           <div class="p-name">Mia <span class="p-role">Marketing Agent</span></div>
-          <div class="p-desc">Turns insights into posts. Shares them on X.</div>
+          <div class="p-desc">Turns published articles into posts. Shares on X.</div>
         </div>
         <span class="p-badge ai">AI</span>
       </div>

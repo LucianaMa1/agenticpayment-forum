@@ -1,16 +1,82 @@
 [
   {
-    "tweet_text": "Protocols move money. They can't prove the intent, authority, or outcome-binding behind the movement. That gap is where the next billion-dollar infrastructure company gets...",
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "Visa Is Betting on Protocol Neutrality. Mastercard Is Betting on Stablecoin Plumbing. Only One Bet Survives.",
+    "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
+    "timestamp": "2026-04-21T05:03:48.000Z"
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "Visa wants to be protocol-neutral infrastructure. Mastercard wants to own the stablecoin rails. One of these is a defensive play. The other is an offensive bet. In five years, only one framing survives. #AgenticPayments #Visa #Mastercard",
+    "tweet_url": "",
+    "article_title": "Visa Is Betting on Protocol Neutrality. Mastercard Is Betting on Stablecoin Plumbing. Only One Bet Survives.",
+    "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
+    "timestamp": "2026-04-21T05:05:20.000Z"
+  },
+  {
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "Europe Is the Agentic Payments Lab — and the Card Networks Are Running Competing Experiments",
+    "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
+    "timestamp": "2026-04-21T06:23:13.000Z"
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "Visa enrolled 20+ European banks into Agentic Ready. Mastercard ran a live AI agent payment with Santander days later. Same market, opposite theories. One is building network effects. The other is building a proof point. #AgenticPayments #EuropeFintech",
+    "tweet_url": "",
+    "article_title": "Europe Is the Agentic Payments Lab — and the Card Networks Are Running Competing Experiments",
+    "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
+    "timestamp": "2026-04-21T06:25:10.000Z"
+  },
+  {
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "Ten Protocols, Zero Interop: The Trust Layer Land Grab Is a Distraction From the Real Problem",
+    "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
+    "timestamp": "2026-04-21T06:35:40.000Z"
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "Ten live agentic commerce protocols. Zero cross-protocol interoperability. Everyone is building trust layers. Nobody is building bridges between them. The real problem isn't which protocol wins — it's that they all refuse to talk to each other. #AgenticPayments #Interop",
+    "tweet_url": "",
+    "article_title": "Ten Protocols, Zero Interop: The Trust Layer Land Grab Is a Distraction From the Real Problem",
+    "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
+    "timestamp": "2026-04-21T06:37:05.000Z"
+  },
+  {
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "The Protocol Wars Are Over. The Trust Layer War Just Started.",
+    "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started",
+    "timestamp": "2026-04-21T06:50:08.000Z"
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "Protocols move money. They can't prove the intent, authority, or outcome-binding behind the movement. That gap is where the next billion-dollar infrastructure company gets built. #AgenticPayments #TrustLayer",
     "tweet_url": "https://x.com/AgenticPayForum/status/2046481632019054615",
     "article_title": "The Protocol Wars Are Over. The Trust Layer War Just Started.",
     "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started",
-    "timestamp": "2026-04-21T06:50:17.613707+00:00"
+    "timestamp": "2026-04-21T06:50:17.613707Z"
   },
   {
-    "tweet_text": "The agent payments stack is being built for the agent. The liability architecture is still built for the human checkout era. Merchants hold that...",
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "Everyone Is Building Rails for Agents. Nobody Is Building the Safety Net for Merchants.",
+    "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
+    "timestamp": "2026-04-21T06:51:54.000Z"
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "The agent payments stack is being built for the agent. The liability architecture is still built for the human checkout era. Merchants hold that gap with their own balance sheet — and most of them don't know it yet. #AgenticPayments #MerchantRisk",
     "tweet_url": "https://x.com/AgenticPayForum/status/2046482047661912174",
     "article_title": "Everyone Is Building Rails for Agents. Nobody Is Building the Safety Net for Merchants.",
     "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
-    "timestamp": "2026-04-21T06:51:56.717081+00:00"
+    "timestamp": "2026-04-21T06:51:56.717081Z"
   }
 ]
