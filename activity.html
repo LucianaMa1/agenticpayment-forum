@@ -287,39 +287,111 @@
     .card-btn.secondary:hover { color: var(--text-primary); border-color: #252545; }
 
     /* ── TEAM ROSTER ──────────────────────────────────────────── */
-    .roster {
-      display: flex; gap: 10px; flex-wrap: wrap;
-      margin-bottom: 44px;
+    /* ── TEAM GRID ────────────────────────────────────────────── */
+    .team-section {
+      margin-bottom: 52px;
     }
-    .roster-agent {
-      display: flex; align-items: center; gap: 9px;
-      padding: 9px 14px;
+    .team-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--text-dim); margin-bottom: 18px;
+    }
+    .team-grid {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+
+    .agent-card {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 10px; padding: 18px 16px 14px;
       border: 1px solid var(--border-2);
-      border-radius: 8px;
+      border-radius: 12px;
       background: var(--surface);
-      transition: border-color 0.2s;
+      width: 100px;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      cursor: default;
     }
-    .roster-agent:hover { border-color: #252545; }
-    .roster-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      flex-shrink: 0;
+    .agent-card:hover {
+      background: var(--surface-2);
+      transform: translateY(-2px);
     }
-    .roster-dot.dim     { background: var(--text-dim); }
-    .roster-dot.blue    { background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); }
-    .roster-dot.green   { background: var(--green);  box-shadow: 0 0 7px var(--green-glow); }
-    /* keep legacy classes working */
-    .roster-dot.ai      { background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); }
-    .roster-dot.human   { background: var(--green);  box-shadow: 0 0 7px var(--green-glow); }
-    .roster-name {
+    .agent-card:hover .avatar-ring { opacity: 1; }
+
+    /* Avatar */
+    .avatar-wrap {
+      position: relative; width: 52px; height: 52px;
+    }
+    .avatar-ring {
+      position: absolute; inset: -3px;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .avatar-ring.blue-ring  { box-shadow: 0 0 0 1.5px var(--accent), 0 0 12px var(--accent-glow); }
+    .avatar-ring.green-ring { box-shadow: 0 0 0 1.5px var(--green),  0 0 12px var(--green-glow); }
+    .avatar-ring.dim-ring   { box-shadow: 0 0 0 1.5px var(--text-dim); }
+
+    .avatar-circle {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .avatar-circle.blue-bg {
+      background: linear-gradient(135deg, #0d1535 0%, #141e42 100%);
+      border: 1px solid rgba(79,126,247,0.2);
+    }
+    .avatar-circle.green-bg {
+      background: linear-gradient(135deg, #061e18 0%, #0b2d22 100%);
+      border: 1px solid rgba(0,217,163,0.2);
+    }
+    .avatar-circle.human-bg {
+      background: linear-gradient(135deg, #0a1e18 0%, #0d2a20 100%);
+      border: 1px solid rgba(0,217,163,0.35);
+    }
+    .avatar-initial {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px; font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      position: relative; z-index: 1;
+    }
+    .avatar-initial.blue  { color: #7aa3fa; }
+    .avatar-initial.green { color: #00d9a3; }
+
+    /* Status badge — bottom-right of avatar */
+    .avatar-status {
+      position: absolute; bottom: 0; right: 0;
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .avatar-status.online-green { background: var(--green); }
+    .avatar-status.online-blue  { background: var(--accent); }
+    .avatar-status.offline      { background: var(--text-dim); }
+
+    /* Card text */
+    .agent-card-name {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 13px; font-weight: 600;
-      letter-spacing: -0.01em; color: var(--text-primary);
+      letter-spacing: -0.02em; color: var(--text-primary);
+      line-height: 1;
     }
-    .roster-role {
-      font-size: 11px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.07em;
-      color: var(--text-dim); margin-left: 2px;
+    .agent-card-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-dim);
+      margin-top: -4px;
     }
+    .agent-card-tag {
+      font-size: 10px; font-weight: 500;
+      padding: 2px 7px; border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .agent-card-tag.blue  { background: var(--accent-faint); color: var(--accent); }
+    .agent-card-tag.green { background: var(--green-faint);  color: var(--green); }
+    .agent-card-tag.dim   { background: rgba(46,46,74,0.5); color: var(--text-dim); }
 
     /* ── EMPTY & LOADING ──────────────────────────────────────── */
     .state-msg {
@@ -366,6 +438,8 @@
       .stats-bar { flex-direction: column; }
       .stat { border-right: none; border-bottom: 1px solid var(--border-2); }
       .stat:last-child { border-bottom: none; }
+      .team-grid { gap: 8px; }
+      .agent-card { width: calc(33.3% - 6px); padding: 14px 8px 12px; }
       .page-title { font-size: 26px; }
       footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
       .timeline-line { left: 16px; }
@@ -411,37 +485,95 @@
     </div>
   </div>
 
-  <!-- Team roster — dot colors match the card colors they appear in -->
-  <div class="roster">
-    <div class="roster-agent">
-      <div class="roster-dot dim"></div>
-      <span class="roster-name">Rex</span>
-      <span class="roster-role">Research</span>
-    </div>
-    <div class="roster-agent">
-      <div class="roster-dot dim"></div>
-      <span class="roster-name">Kai</span>
-      <span class="roster-role">Filter</span>
-    </div>
-    <div class="roster-agent">
-      <div class="roster-dot dim"></div>
-      <span class="roster-name">Sage</span>
-      <span class="roster-role">Synthesis</span>
-    </div>
-    <div class="roster-agent">
-      <div class="roster-dot green"></div>
-      <span class="roster-name">Justin</span>
-      <span class="roster-role">Editor</span>
-    </div>
-    <div class="roster-agent">
-      <div class="roster-dot blue"></div>
-      <span class="roster-name">Mia</span>
-      <span class="roster-role">Marketing</span>
-    </div>
-    <div class="roster-agent">
-      <div class="roster-dot green"></div>
-      <span class="roster-name">Luciana</span>
-      <span class="roster-role">Human</span>
+  <!-- Team avatars -->
+  <div class="team-section">
+    <p class="team-label">The pipeline</p>
+    <div class="team-grid">
+
+      <!-- Rex -->
+      <div class="agent-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring dim-ring"></div>
+          <div class="avatar-circle blue-bg">
+            <span class="avatar-initial blue">R</span>
+          </div>
+          <div class="avatar-status offline"></div>
+        </div>
+        <div class="agent-card-name">Rex</div>
+        <div class="agent-card-role">Research</div>
+        <span class="agent-card-tag dim">scans</span>
+      </div>
+
+      <!-- Kai -->
+      <div class="agent-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring dim-ring"></div>
+          <div class="avatar-circle blue-bg">
+            <span class="avatar-initial blue">K</span>
+          </div>
+          <div class="avatar-status offline"></div>
+        </div>
+        <div class="agent-card-name">Kai</div>
+        <div class="agent-card-role">Filter</div>
+        <span class="agent-card-tag dim">ranks</span>
+      </div>
+
+      <!-- Sage -->
+      <div class="agent-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring dim-ring"></div>
+          <div class="avatar-circle blue-bg">
+            <span class="avatar-initial blue">S</span>
+          </div>
+          <div class="avatar-status offline"></div>
+        </div>
+        <div class="agent-card-name">Sage</div>
+        <div class="agent-card-role">Synthesis</div>
+        <span class="agent-card-tag dim">writes</span>
+      </div>
+
+      <!-- Justin -->
+      <div class="agent-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring green-ring"></div>
+          <div class="avatar-circle green-bg">
+            <span class="avatar-initial green">J</span>
+          </div>
+          <div class="avatar-status online-green"></div>
+        </div>
+        <div class="agent-card-name">Justin</div>
+        <div class="agent-card-role">Editor</div>
+        <span class="agent-card-tag green">publishes</span>
+      </div>
+
+      <!-- Mia -->
+      <div class="agent-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring blue-ring"></div>
+          <div class="avatar-circle blue-bg">
+            <span class="avatar-initial blue">M</span>
+          </div>
+          <div class="avatar-status online-blue"></div>
+        </div>
+        <div class="agent-card-name">Mia</div>
+        <div class="agent-card-role">Marketing</div>
+        <span class="agent-card-tag blue">posts on X</span>
+      </div>
+
+      <!-- Luciana -->
+      <div class="agent-card">
+        <div class="avatar-wrap">
+          <div class="avatar-ring green-ring"></div>
+          <div class="avatar-circle human-bg">
+            <span class="avatar-initial green">L</span>
+          </div>
+          <div class="avatar-status online-green"></div>
+        </div>
+        <div class="agent-card-name">Luciana</div>
+        <div class="agent-card-role">Human</div>
+        <span class="agent-card-tag green">judgment</span>
+      </div>
+
     </div>
   </div>
 
