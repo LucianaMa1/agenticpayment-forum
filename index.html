@@ -38,13 +38,12 @@
     /* ── NAV ─────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 20px 48px;
+      padding: 20px 56px;
       display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--border);
       background: rgba(7,7,14,0.88);
       backdrop-filter: blur(16px);
     }
-
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 600; font-size: 15px;
@@ -52,7 +51,6 @@
       letter-spacing: -0.01em;
     }
     .nav-logo em { color: var(--accent); font-style: normal; }
-
     .nav-cta {
       font-size: 13px; font-weight: 500;
       color: var(--text-mid); text-decoration: none;
@@ -62,25 +60,29 @@
     }
     .nav-cta:hover { color: var(--text-primary); border-color: var(--text-dim); }
 
-    /* ── HERO ────────────────────────────────────────── */
-    .hero {
+    /* ── HERO WRAPPER (two columns) ──────────────────── */
+    .hero-wrap {
       min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding-top: 64px; /* nav height */
+    }
+
+    /* ── LEFT COLUMN ─────────────────────────────────── */
+    .hero-left {
       display: flex; flex-direction: column; justify-content: center;
-      padding: 140px 48px 100px;
-      max-width: 860px; margin: 0 auto;
+      padding: 80px 56px 80px 56px;
       position: relative;
     }
-
-    /* subtle glow top-right */
-    .hero::after {
+    .hero-left::after {
       content: '';
-      position: fixed; top: -100px; right: -150px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(79,126,247,0.055) 0%, transparent 65%);
+      position: fixed; top: -80px; left: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(79,126,247,0.05) 0%, transparent 65%);
       pointer-events: none; z-index: 0;
     }
-
-    .hero > * { position: relative; z-index: 1; }
+    .hero-left > * { position: relative; z-index: 1; }
 
     .hero-eyebrow {
       display: flex; align-items: center; gap: 10px;
@@ -92,34 +94,35 @@
       content: ''; display: block;
       width: 28px; height: 1px; background: var(--accent);
     }
-
     .hero-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(38px, 5.5vw, 68px);
+      font-size: clamp(34px, 3.6vw, 58px);
       font-weight: 700; line-height: 1.07;
       letter-spacing: -0.035em;
-      color: var(--text-primary);
-      margin-bottom: 32px;
+      color: var(--text-primary); margin-bottom: 28px;
     }
     .hero-title .hl { color: var(--accent); }
-
     .hero-desc {
-      font-size: 18px; line-height: 1.7;
+      font-size: 17px; line-height: 1.7;
       color: var(--text-mid);
-      max-width: 540px; margin-bottom: 14px;
+      max-width: 440px; margin-bottom: 14px;
     }
-
     .hero-byline {
       font-size: 13px; color: var(--text-dim);
-      margin-bottom: 52px;
+      margin-bottom: 48px;
     }
-    .hero-byline strong { color: var(--text-mid); font-weight: 500; }
-
+    .byline-link {
+      color: var(--text-mid); font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--text-dim);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .byline-link:hover { color: var(--accent); border-color: var(--accent); }
     .hero-btn {
       display: inline-flex; align-items: center; gap: 10px;
-      padding: 15px 30px;
+      padding: 14px 28px;
       background: var(--accent); color: #fff;
-      font-size: 15px; font-weight: 500;
+      font-size: 14px; font-weight: 500;
       text-decoration: none; border-radius: 7px;
       transition: all 0.2s; letter-spacing: -0.01em;
       align-self: flex-start;
@@ -128,106 +131,161 @@
     .hero-btn:hover { background: #6a92ff; }
     .hero-btn:hover span { transform: translateX(3px); }
 
-    /* ── DIVIDER ─────────────────────────────────────── */
-    .divider { border: none; border-top: 1px solid var(--border); }
-
-    /* ── SYSTEM SECTION ──────────────────────────────── */
-    .system {
-      padding: 100px 48px 112px;
-      max-width: 860px; margin: 0 auto;
+    /* ── RIGHT COLUMN (pipeline panel) ───────────────── */
+    .hero-right {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 56px 80px 40px;
+      border-left: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
     }
 
-    .section-eyebrow {
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-dim); margin-bottom: 48px;
+    /* subtle right glow */
+    .hero-right::before {
+      content: '';
+      position: absolute; top: 10%; right: -60px;
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, rgba(0,217,163,0.04) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .system-heading {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 30px; font-weight: 600;
-      letter-spacing: -0.025em;
-      color: var(--text-primary); margin-bottom: 14px;
+    .pipeline-label {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 28px;
     }
 
-    .system-sub {
-      font-size: 16px; color: var(--text-mid);
-      max-width: 500px; line-height: 1.65;
-      margin-bottom: 56px;
+    /* ── AGENT PIPELINE ──────────────────────────────── */
+    .pipeline {
+      position: relative;
     }
 
-    /* agent stack */
-    .stack {
-      border: 1px solid var(--border);
-      border-radius: 10px; overflow: hidden;
+    /* vertical connector line — runs through center of dot column */
+    .pipeline::before {
+      content: '';
+      position: absolute;
+      left: 4px; top: 14px;
+      width: 1px;
+      height: calc(100% - 28px);
+      background: linear-gradient(
+        to bottom,
+        var(--accent) 0%,
+        var(--accent) 70%,
+        var(--green) 100%
+      );
+      opacity: 0.3;
     }
 
-    .agent {
-      display: grid;
-      grid-template-columns: 28px 10px 1fr auto;
-      align-items: start; gap: 16px;
-      padding: 24px 28px;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.18s;
-    }
-    .agent:last-child { border-bottom: none; }
-    .agent:hover { background: var(--surface); }
-
-    .agent-num {
-      font-size: 11px; color: var(--text-dim);
-      font-family: 'Space Grotesk', monospace;
-      padding-top: 4px; text-align: right;
-    }
-
-    .agent-pip {
-      width: 9px; height: 9px; border-radius: 50%;
-      margin-top: 5px; flex-shrink: 0;
+    /* flow dot — controlled by JS */
+    #flow-dot {
+      position: absolute;
+      left: 1px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 10px rgba(79,126,247,0.5);
+      box-shadow: 0 0 12px rgba(79,126,247,0.95);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2;
+      transition:
+        top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
     }
-    .agent-pip.human {
+
+    .p-agent {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 14px;
+      align-items: start;
+      padding: 12px 0;
+      opacity: 0;
+      transform: translateX(16px);
+      animation: slideIn 0.5s forwards;
+      position: relative; z-index: 1;
+    }
+
+    /* stagger each agent */
+    .p-agent:nth-child(1) { animation-delay: 0.1s; }
+    .p-agent:nth-child(2) { animation-delay: 0.25s; }
+    .p-agent:nth-child(3) { animation-delay: 0.4s; }
+    .p-agent:nth-child(4) { animation-delay: 0.55s; }
+    .p-agent:nth-child(5) { animation-delay: 0.7s; }
+
+    @keyframes slideIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .p-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      margin-top: 4px;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(79,126,247,0.6);
+      animation: pulse 2.5s ease-in-out infinite;
+      justify-self: start;
+    }
+    .p-dot.human {
       background: var(--green);
-      box-shadow: 0 0 10px rgba(0,217,163,0.5);
+      box-shadow: 0 0 8px rgba(0,217,163,0.6);
+      animation: pulseGreen 2.5s ease-in-out infinite;
     }
 
-    .agent-body {}
-    .agent-name {
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 6px rgba(79,126,247,0.5); }
+      50%       { box-shadow: 0 0 14px rgba(79,126,247,0.9); }
+    }
+    @keyframes pulseGreen {
+      0%, 100% { box-shadow: 0 0 6px rgba(0,217,163,0.5); }
+      50%       { box-shadow: 0 0 14px rgba(0,217,163,0.9); }
+    }
+
+    /* stagger the pulse so agents look "active" in sequence */
+    .p-agent:nth-child(1) .p-dot { animation-delay: 0s; }
+    .p-agent:nth-child(2) .p-dot { animation-delay: 0.5s; }
+    .p-agent:nth-child(3) .p-dot { animation-delay: 1s; }
+    .p-agent:nth-child(4) .p-dot { animation-delay: 1.5s; }
+    .p-agent:nth-child(5) .p-dot { animation-delay: 2s; }
+
+    .p-body { flex: 1; }
+
+    .p-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 15px; font-weight: 600;
+      font-size: 13px; font-weight: 600;
       letter-spacing: -0.01em;
-      color: var(--text-primary); margin-bottom: 5px;
+      color: var(--text-primary); margin-bottom: 2px;
     }
-    .agent-name.human { color: var(--green); }
+    .p-name.human { color: var(--green); }
 
-    .agent-desc {
-      font-size: 14px; color: var(--text-mid); line-height: 1.55;
+    .p-desc {
+      font-size: 12px; color: var(--text-mid); line-height: 1.5;
     }
 
-    .badge {
-      font-size: 11px; font-weight: 500;
-      padding: 4px 11px; border-radius: 20px;
+    .p-badge {
+      font-size: 10px; font-weight: 500;
+      padding: 3px 9px; border-radius: 20px;
       letter-spacing: 0.04em; white-space: nowrap;
-      margin-top: 3px;
+      margin-top: 4px; flex-shrink: 0;
     }
-    .badge.ai {
+    .p-badge.ai {
       background: var(--accent-faint); color: var(--accent);
       border: 1px solid rgba(79,126,247,0.18);
     }
-    .badge.human {
+    .p-badge.human {
       background: var(--green-faint); color: var(--green);
       border: 1px solid rgba(0,217,163,0.18);
     }
 
+    /* ── DIVIDER ─────────────────────────────────────── */
+    .divider { border: none; border-top: 1px solid var(--border); }
+
     /* ── FOOTER ──────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 32px 48px;
-      max-width: 860px; margin: 0 auto;
+      padding: 28px 56px;
       display: flex; justify-content: space-between; align-items: center;
     }
-
     .footer-copy { font-size: 13px; color: var(--text-dim); }
-
     .footer-links { display: flex; gap: 24px; }
     .footer-links a {
       font-size: 13px; color: var(--text-mid);
@@ -236,13 +294,21 @@
     .footer-links a:hover { color: var(--text-primary); }
 
     /* ── RESPONSIVE ──────────────────────────────────── */
-    @media (max-width: 640px) {
-      nav { padding: 16px 20px; }
-      .hero { padding: 110px 20px 72px; }
-      .system { padding: 72px 20px 80px; }
-      footer { padding: 28px 20px; flex-direction: column; gap: 16px; text-align: center; }
-      .agent { padding: 18px 16px; gap: 12px; }
-      .hero-title { font-size: 38px; }
+    @media (max-width: 900px) {
+      .hero-wrap { grid-template-columns: 1fr; }
+      .hero-right {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding: 56px 32px;
+      }
+      .hero-left { padding: 72px 32px 56px; }
+      nav { padding: 16px 24px; }
+      footer { padding: 24px 32px; }
+    }
+    @media (max-width: 480px) {
+      .hero-left { padding: 64px 20px 48px; }
+      .hero-right { padding: 48px 20px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px 20px; }
     }
   </style>
 </head>
@@ -254,95 +320,89 @@
   <a href="https://blogs.agenticpayment.forum" class="nav-cta">Read the briefing →</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">agenticpayment.forum</p>
+<!-- HERO: two-column -->
+<div class="hero-wrap">
 
-  <h1 class="hero-title">
-    Notes on the future<br>
-    of payments in the<br>
-    <span class="hl">agent era.</span>
-  </h1>
+  <!-- LEFT -->
+  <div class="hero-left">
+    <p class="hero-eyebrow">agenticpayment.forum</p>
 
-  <p class="hero-desc">
-    Daily briefings on agentic payments — who's building the rails,
-    who's fighting for the decision loop, and what most people are getting wrong.
-  </p>
+    <h1 class="hero-title">
+      Notes on the future<br>
+      of payments in the<br>
+      <span class="hl">agent era.</span>
+    </h1>
 
-  <p class="hero-byline">By <strong>Luciana Ma</strong> &nbsp;·&nbsp; Payments &amp; AI infrastructure</p>
+    <p class="hero-desc">
+      Daily briefings on agentic payments — who's building the rails,
+      who's fighting for the decision loop, and what most people are getting wrong.
+    </p>
 
-  <a href="https://blogs.agenticpayment.forum" class="hero-btn">
-    Read today's briefing <span>→</span>
-  </a>
-</section>
+    <p class="hero-byline">
+      By <a href="https://www.linkedin.com/in/maluciana/" target="_blank" class="byline-link">Luciana Ma</a>
+      &nbsp;·&nbsp; Payments &amp; AI infrastructure
+    </p>
 
-<hr class="divider">
-
-<!-- SYSTEM -->
-<section class="system">
-  <p class="section-eyebrow">How this works</p>
-  <h2 class="system-heading">Five layers. One point of view.</h2>
-  <p class="system-sub">
-    Every briefing is produced by a multi-agent pipeline — built to find signal,
-    cut noise, and surface the arguments worth making.
-  </p>
-
-  <div class="stack">
-
-    <div class="agent">
-      <span class="agent-num">01</span>
-      <div class="agent-pip"></div>
-      <div class="agent-body">
-        <div class="agent-name">Signal Agent</div>
-        <div class="agent-desc">Scans news sources, arXiv papers, Reddit threads, and product launches across the agentic payments landscape.</div>
-      </div>
-      <span class="badge ai">AI</span>
-    </div>
-
-    <div class="agent">
-      <span class="agent-num">02</span>
-      <div class="agent-pip"></div>
-      <div class="agent-body">
-        <div class="agent-name">Filter Agent</div>
-        <div class="agent-desc">Ranks what actually matters — removing duplicates, filtering noise, and surfacing developments with structural significance.</div>
-      </div>
-      <span class="badge ai">AI</span>
-    </div>
-
-    <div class="agent">
-      <span class="agent-num">03</span>
-      <div class="agent-pip"></div>
-      <div class="agent-body">
-        <div class="agent-name">Synthesis Agent</div>
-        <div class="agent-desc">Structures the day's landscape into clear frames — identifying tensions, shifts, and the "why now" underneath the headlines.</div>
-      </div>
-      <span class="badge ai">AI</span>
-    </div>
-
-    <div class="agent">
-      <span class="agent-num">04</span>
-      <div class="agent-pip"></div>
-      <div class="agent-body">
-        <div class="agent-name">Distribution Agent</div>
-        <div class="agent-desc">Turns insights into posts and shares them on X — one signal, multiple surfaces.</div>
-      </div>
-      <span class="badge ai">AI</span>
-    </div>
-
-    <div class="agent">
-      <span class="agent-num">05</span>
-      <div class="agent-pip human"></div>
-      <div class="agent-body">
-        <div class="agent-name human">Luciana</div>
-        <div class="agent-desc">Forms the point of view. The agents find the signal — the judgment is mine.</div>
-      </div>
-      <span class="badge human">Human</span>
-    </div>
-
+    <a href="https://blogs.agenticpayment.forum" class="hero-btn">
+      Read today's briefing <span>→</span>
+    </a>
   </div>
-</section>
 
-<hr class="divider">
+  <!-- RIGHT: animated pipeline -->
+  <div class="hero-right">
+    <p class="pipeline-label">this forum is built by Luciana and her agent team</p>
+
+    <div class="pipeline">
+
+      <div class="p-agent">
+        <div class="p-dot"></div>
+        <div class="p-body">
+          <div class="p-name">Signal Agent</div>
+          <div class="p-desc">Scans news, arXiv papers, Reddit, and product launches.</div>
+        </div>
+        <span class="p-badge ai">AI</span>
+      </div>
+
+      <div class="p-agent">
+        <div class="p-dot"></div>
+        <div class="p-body">
+          <div class="p-name">Filter Agent</div>
+          <div class="p-desc">Ranks what actually matters. Cuts the noise.</div>
+        </div>
+        <span class="p-badge ai">AI</span>
+      </div>
+
+      <div class="p-agent">
+        <div class="p-dot"></div>
+        <div class="p-body">
+          <div class="p-name">Synthesis Agent</div>
+          <div class="p-desc">Structures the landscape into clear frames and tensions.</div>
+        </div>
+        <span class="p-badge ai">AI</span>
+      </div>
+
+      <div class="p-agent">
+        <div class="p-dot"></div>
+        <div class="p-body">
+          <div class="p-name">Distribution Agent</div>
+          <div class="p-desc">Turns insights into posts. Shares them on X.</div>
+        </div>
+        <span class="p-badge ai">AI</span>
+      </div>
+
+      <div class="p-agent">
+        <div class="p-dot human"></div>
+        <div class="p-body">
+          <div class="p-name human">Luciana</div>
+          <div class="p-desc">Forms the point of view. The judgment is mine.</div>
+        </div>
+        <span class="p-badge human">Human</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -353,5 +413,97 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  const PAUSE  = 650;  // ms to sit at each node
+  const TRAVEL = 480;  // ms for the transition between nodes (matches CSS)
+  const RESET  = 600;  // ms invisible before restarting
+
+  window.addEventListener('load', function () {
+    const pipeline  = document.querySelector('.pipeline');
+    const agentDots = document.querySelectorAll('.p-dot');
+
+    // inject the flow dot into the pipeline
+    const dot = document.createElement('div');
+    dot.id = 'flow-dot';
+    pipeline.appendChild(dot);
+
+    function positions() {
+      const pr = pipeline.getBoundingClientRect();
+      return Array.from(agentDots).map(function (d) {
+        var r = d.getBoundingClientRect();
+        // top of flow dot = center of agent dot − half of flow dot height (3.5px)
+        return Math.round(r.top - pr.top + r.height / 2 - 3.5);
+      });
+    }
+
+    function setBlue() {
+      dot.style.background  = 'var(--accent)';
+      dot.style.boxShadow   = '0 0 12px rgba(79,126,247,0.95)';
+    }
+    function setGreen() {
+      dot.style.background  = 'var(--green)';
+      dot.style.boxShadow   = '0 0 12px rgba(0,217,163,0.95)';
+    }
+
+    function run() {
+      var pos   = positions();
+      var total = pos.length;
+      var step  = 0;
+
+      // place silently at start
+      dot.style.transition = 'none';
+      dot.style.top        = pos[0] + 'px';
+      dot.style.opacity    = '0';
+      setBlue();
+
+      // small delay so browser paints the silent position first
+      setTimeout(function tick() {
+        // restore transitions
+        dot.style.transition = [
+          'top 0.5s cubic-bezier(0.4,0,0.2,1)',
+          'opacity 0.3s ease',
+          'background 0.4s ease',
+          'box-shadow 0.4s ease'
+        ].join(', ');
+
+        // show dot at current step
+        dot.style.top     = pos[step] + 'px';
+        dot.style.opacity = '1';
+
+        // turn green on the last node (Luciana)
+        if (step === total - 1) setGreen();
+        else setBlue();
+
+        step++;
+
+        if (step < total) {
+          // after pause, travel to next node
+          setTimeout(tick, PAUSE + TRAVEL);
+        } else {
+          // all nodes visited — pause, fade out, restart
+          setTimeout(function () {
+            dot.style.opacity = '0';
+            setTimeout(function () {
+              step = 0;
+              dot.style.transition = 'none';
+              dot.style.top        = pos[0] + 'px';
+              setBlue();
+              // double rAF to ensure paint before re-enabling transitions
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                  setTimeout(tick, 80);
+                });
+              });
+            }, RESET);
+          }, PAUSE);
+        }
+      }, 120);
+    }
+
+    run();
+  });
+})();
+</script>
 </body>
 </html>
