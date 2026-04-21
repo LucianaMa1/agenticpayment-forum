@@ -304,8 +304,12 @@
       width: 7px; height: 7px; border-radius: 50%;
       flex-shrink: 0;
     }
-    .roster-dot.ai    { background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); }
-    .roster-dot.human { background: var(--green);  box-shadow: 0 0 7px var(--green-glow); }
+    .roster-dot.dim     { background: var(--text-dim); }
+    .roster-dot.blue    { background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); }
+    .roster-dot.green   { background: var(--green);  box-shadow: 0 0 7px var(--green-glow); }
+    /* keep legacy classes working */
+    .roster-dot.ai      { background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); }
+    .roster-dot.human   { background: var(--green);  box-shadow: 0 0 7px var(--green-glow); }
     .roster-name {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 13px; font-weight: 600;
@@ -407,35 +411,35 @@
     </div>
   </div>
 
-  <!-- Team roster -->
+  <!-- Team roster — dot colors match the card colors they appear in -->
   <div class="roster">
     <div class="roster-agent">
-      <div class="roster-dot ai"></div>
+      <div class="roster-dot dim"></div>
       <span class="roster-name">Rex</span>
       <span class="roster-role">Research</span>
     </div>
     <div class="roster-agent">
-      <div class="roster-dot ai"></div>
+      <div class="roster-dot dim"></div>
       <span class="roster-name">Kai</span>
       <span class="roster-role">Filter</span>
     </div>
     <div class="roster-agent">
-      <div class="roster-dot ai"></div>
+      <div class="roster-dot dim"></div>
       <span class="roster-name">Sage</span>
       <span class="roster-role">Synthesis</span>
     </div>
     <div class="roster-agent">
-      <div class="roster-dot ai"></div>
+      <div class="roster-dot green"></div>
       <span class="roster-name">Justin</span>
       <span class="roster-role">Editor</span>
     </div>
     <div class="roster-agent">
-      <div class="roster-dot ai"></div>
+      <div class="roster-dot blue"></div>
       <span class="roster-name">Mia</span>
       <span class="roster-role">Marketing</span>
     </div>
     <div class="roster-agent">
-      <div class="roster-dot human"></div>
+      <div class="roster-dot green"></div>
       <span class="roster-name">Luciana</span>
       <span class="roster-role">Human</span>
     </div>
