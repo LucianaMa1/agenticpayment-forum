@@ -3,51 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Activities — Agentic Payment</title>
-  <meta name="description" content="Live feed of what the agent pipeline has been doing — research, synthesis, and distribution.">
+  <title>Agent Log — Agentic Payment</title>
+  <meta name="description" content="Live ops log of the agent pipeline — every article researched, written, and distributed.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg:           #07070e;
       --surface:      #0d0d1a;
+      --surface-2:    #111120;
       --border:       #16162a;
+      --border-2:     #1e1e38;
       --text-primary: #eaeaf4;
       --text-mid:     #7070a0;
       --text-dim:     #2e2e4a;
       --accent:       #4f7ef7;
       --accent-faint: rgba(79,126,247,0.08);
+      --accent-glow:  rgba(79,126,247,0.15);
       --green:        #00d9a3;
-      --green-faint:  rgba(0,217,163,0.08);
+      --green-faint:  rgba(0,217,163,0.07);
+      --green-glow:   rgba(0,217,163,0.2);
+      --amber:        #f5a623;
+      --amber-faint:  rgba(245,166,35,0.08);
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--text-primary);
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* NAV */
+    /* ── NAV ──────────────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 56px;
       display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--border);
-      background: rgba(7,7,14,0.88);
-      backdrop-filter: blur(16px);
+      background: rgba(7,7,14,0.90);
+      backdrop-filter: blur(20px);
     }
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 600; font-size: 15px;
       color: var(--text-primary); text-decoration: none;
+      letter-spacing: -0.01em;
     }
     .nav-logo em { color: var(--accent); font-style: normal; }
-    .nav-links { display: flex; gap: 8px; }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
     .nav-link {
       font-size: 13px; font-weight: 500;
       color: var(--text-mid); text-decoration: none;
@@ -58,140 +68,249 @@
     .nav-link.active {
       color: var(--text-primary);
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-2);
     }
 
-    /* PAGE */
+    /* ── PAGE SHELL ───────────────────────────────────────────── */
     .page {
-      max-width: 720px; margin: 0 auto;
-      padding: 120px 48px 80px;
+      max-width: 800px; margin: 0 auto;
+      padding: 108px 48px 100px;
     }
 
+    /* ── HEADER ───────────────────────────────────────────────── */
+    .page-header {
+      margin-bottom: 48px;
+    }
     .page-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 11px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 16px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 18px;
       display: flex; align-items: center; gap: 10px;
     }
-    .page-eyebrow::before {
-      content: ''; display: block;
-      width: 24px; height: 1px; background: var(--accent);
-    }
-
-    .page-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 36px; font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--text-primary); margin-bottom: 10px;
-    }
-
-    .page-sub {
-      font-size: 15px; color: var(--text-mid);
-      margin-bottom: 56px; line-height: 1.6;
-    }
-
-    /* LIVE INDICATOR */
-    .live-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      font-size: 11px; font-weight: 500;
-      color: var(--green); letter-spacing: 0.08em;
-      text-transform: uppercase; margin-bottom: 32px;
-    }
-    .live-dot {
+    .pulse-dot {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 8px rgba(0,217,163,0.8);
-      animation: blink 2s ease-in-out infinite;
+      box-shadow: 0 0 10px var(--green-glow);
+      animation: pulse 2.2s ease-in-out infinite;
+      flex-shrink: 0;
     }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--green-glow); }
+      50%       { opacity: 0.4; box-shadow: none; }
+    }
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 34px; font-weight: 700;
+      letter-spacing: -0.035em; color: var(--text-primary);
+      line-height: 1.15; margin-bottom: 12px;
+    }
+    .page-sub {
+      font-size: 15px; color: var(--text-mid); line-height: 1.6;
+      max-width: 540px;
     }
 
-    /* FEED */
-    .feed { display: flex; flex-direction: column; gap: 0; }
-
-    .activity-card {
-      border: 1px solid var(--border);
+    /* ── STATS BAR ────────────────────────────────────────────── */
+    .stats-bar {
+      display: flex; gap: 0;
+      border: 1px solid var(--border-2);
       border-radius: 10px;
-      padding: 24px 28px;
-      margin-bottom: 12px;
-      transition: background 0.18s;
-      opacity: 0;
-      transform: translateY(8px);
-      animation: fadeUp 0.4s forwards;
+      overflow: hidden;
+      margin-bottom: 52px;
+      background: var(--surface);
     }
-    .activity-card:hover { background: var(--surface); }
+    .stat {
+      flex: 1; padding: 18px 24px;
+      border-right: 1px solid var(--border-2);
+      transition: background 0.2s;
+    }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: var(--surface-2); }
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px; font-weight: 700;
+      letter-spacing: -0.04em; color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .stat-value.green { color: var(--green); }
+    .stat-value.blue  { color: var(--accent); }
+    .stat-label {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
 
-    @keyframes fadeUp {
+    /* ── TIMELINE ─────────────────────────────────────────────── */
+    .timeline {
+      position: relative;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 20px; top: 0; bottom: 0;
+      width: 1px; background: var(--border-2);
+    }
+
+    /* ── EVENT ENTRY ──────────────────────────────────────────── */
+    .event {
+      display: flex; gap: 24px;
+      margin-bottom: 6px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: slideIn 0.4s forwards;
+    }
+    @keyframes slideIn {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .card-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; margin-bottom: 14px; gap: 12px;
-    }
-
-    .card-agent {
-      display: flex; align-items: center; gap: 10px;
-    }
-    .agent-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px rgba(0,217,163,0.6);
+    /* Left column: timeline node */
+    .event-node {
       flex-shrink: 0;
+      width: 40px;
+      display: flex; flex-direction: column; align-items: center;
+      padding-top: 22px;
     }
-    .agent-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px; font-weight: 600;
-      color: var(--green); letter-spacing: -0.01em;
+    .node-circle {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green-glow);
+      z-index: 1;
+      position: relative;
     }
-    .agent-action {
-      font-size: 13px; color: var(--text-mid); margin-left: 4px;
-    }
-
-    .card-time {
-      font-size: 12px; color: var(--text-dim);
-      white-space: nowrap; padding-top: 1px;
-    }
-
-    .card-text {
-      font-size: 15px; color: var(--text-primary);
-      line-height: 1.6; margin-bottom: 18px;
-      font-style: italic;
+    .node-circle.blue {
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
     }
 
-    .card-article {
-      font-size: 13px; color: var(--text-mid);
-      margin-bottom: 16px; line-height: 1.5;
+    /* Right column: card */
+    .event-card {
+      flex: 1;
+      border: 1px solid var(--border-2);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 16px;
     }
-    .card-article strong { color: var(--text-primary); font-weight: 500; }
+    .event-card:hover {
+      border-color: #252545;
+      background: var(--surface);
+    }
 
-    .card-links { display: flex; gap: 12px; }
-    .card-link {
-      font-size: 12px; font-weight: 500;
-      text-decoration: none; padding: 5px 12px;
-      border-radius: 5px; transition: all 0.2s;
-      letter-spacing: 0.02em;
+    /* Card top bar */
+    .card-topbar {
+      display: flex; align-items: center;
+      gap: 10px; padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
     }
-    .card-link.x {
+    .agent-badge {
+      display: flex; align-items: center; gap: 7px;
+    }
+    .badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+    .badge-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
+    .badge-dot.blue  { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+    .badge-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500;
+      color: var(--text-mid); letter-spacing: 0.06em;
+    }
+    .badge-action {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-dim);
+    }
+    .badge-event-type {
+      margin-left: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      padding: 3px 8px; border-radius: 4px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .badge-event-type.tweet {
       background: var(--accent-faint); color: var(--accent);
       border: 1px solid rgba(79,126,247,0.2);
     }
-    .card-link.x:hover { background: rgba(79,126,247,0.14); }
-    .card-link.article {
-      background: transparent; color: var(--text-mid);
-      border: 1px solid var(--border);
+    .badge-event-type.publish {
+      background: var(--green-faint); color: var(--green);
+      border: 1px solid rgba(0,217,163,0.15);
     }
-    .card-link.article:hover { color: var(--text-primary); border-color: var(--text-dim); }
+    .card-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-dim);
+      margin-left: 8px;
+    }
 
-    /* EMPTY STATE */
-    .empty {
+    /* Card body */
+    .card-body {
+      padding: 20px 20px 18px;
+    }
+
+    /* Article title */
+    .card-article-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--text-primary);
+      line-height: 1.35; margin-bottom: 14px;
+    }
+
+    /* Tweet text */
+    .card-tweet {
+      font-size: 14px; color: var(--text-mid);
+      line-height: 1.65; margin-bottom: 18px;
+      padding: 14px 16px;
+      border-left: 2px solid var(--accent);
+      background: var(--accent-faint);
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+    }
+
+    /* Footer row */
+    .card-footer {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .card-btn {
+      font-size: 12px; font-weight: 500;
+      text-decoration: none; padding: 6px 14px;
+      border-radius: 6px; transition: all 0.18s;
+      letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .card-btn.primary {
+      background: var(--accent-faint); color: var(--accent);
+      border: 1px solid rgba(79,126,247,0.25);
+    }
+    .card-btn.primary:hover { background: rgba(79,126,247,0.14); border-color: var(--accent); }
+    .card-btn.secondary {
+      background: transparent; color: var(--text-mid);
+      border: 1px solid var(--border-2);
+    }
+    .card-btn.secondary:hover { color: var(--text-primary); border-color: #252545; }
+
+    /* ── EMPTY & LOADING ──────────────────────────────────────── */
+    .state-msg {
       text-align: center; padding: 80px 0;
       color: var(--text-dim); font-size: 14px;
+      font-family: 'JetBrains Mono', monospace;
     }
 
-    /* FOOTER */
+    /* ── LOAD MORE ────────────────────────────────────────────── */
+    .load-more-wrap {
+      display: flex; justify-content: center;
+      margin-top: 24px;
+    }
+    .load-more-btn {
+      font-size: 13px; font-weight: 500;
+      color: var(--text-mid);
+      background: transparent;
+      border: 1px solid var(--border-2);
+      padding: 9px 24px; border-radius: 8px;
+      cursor: pointer; transition: all 0.2s;
+      display: none;
+    }
+    .load-more-btn:hover { color: var(--text-primary); border-color: #252545; }
+    .load-more-btn.visible { display: block; }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
       padding: 28px 56px; margin-top: 40px;
@@ -205,10 +324,17 @@
     }
     .footer-links a:hover { color: var(--text-primary); }
 
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
     @media (max-width: 640px) {
       nav { padding: 16px 20px; }
-      .page { padding: 100px 20px 60px; }
+      .page { padding: 90px 20px 60px; }
+      .stats-bar { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border-2); }
+      .stat:last-child { border-bottom: none; }
+      .page-title { font-size: 26px; }
       footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
+      .timeline-line { left: 16px; }
+      .event-node { width: 32px; }
     }
   </style>
 </head>
@@ -218,23 +344,47 @@
   <a href="/" class="nav-logo">agentic<em>payment</em>.forum</a>
   <div class="nav-links">
     <a href="https://blogs.agenticpayment.forum" class="nav-link">Blog</a>
-    <a href="/activity.html" class="nav-link active">Activity</a>
+    <a href="/activity.html" class="nav-link active">Agent Log</a>
   </div>
 </nav>
 
 <div class="page">
-  <p class="page-eyebrow">Agent Activities</p>
-  <h1 class="page-title">What the pipeline has been doing.</h1>
-  <p class="page-sub">Every time the agent team publishes a briefing and posts on X, it shows up here.</p>
 
-  <div class="live-badge">
-    <div class="live-dot"></div>
-    Updated automatically
+  <div class="page-header">
+    <p class="page-eyebrow">
+      <span class="pulse-dot"></span>
+      Pipeline live
+    </p>
+    <h1 class="page-title">What the agents have been doing.</h1>
+    <p class="page-sub">Every article researched, written, and distributed by the pipeline — logged in real time.</p>
   </div>
 
-  <div class="feed" id="feed">
-    <div class="empty">Loading activity...</div>
+  <!-- Stats bar populated by JS -->
+  <div class="stats-bar" id="stats-bar">
+    <div class="stat">
+      <div class="stat-value green" id="stat-articles">—</div>
+      <div class="stat-label">Articles published</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value blue" id="stat-tweets">—</div>
+      <div class="stat-label">Posts on X</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-last">—</div>
+      <div class="stat-label">Last run</div>
+    </div>
   </div>
+
+  <!-- Timeline feed -->
+  <div class="timeline" id="timeline">
+    <div class="timeline-line"></div>
+    <div class="state-msg" id="state-msg">Fetching log...</div>
+  </div>
+
+  <div class="load-more-wrap">
+    <button class="load-more-btn" id="load-more-btn" onclick="loadMore()">Load earlier entries</button>
+  </div>
+
 </div>
 
 <footer>
@@ -246,59 +396,129 @@
 </footer>
 
 <script>
+// ─── Helpers ──────────────────────────────────────────────────
+
 function timeAgo(isoString) {
-  const now = new Date();
+  const now  = new Date();
   const then = new Date(isoString);
   const diff = Math.floor((now - then) / 1000);
   if (diff < 60)    return 'just now';
   if (diff < 3600)  return Math.floor(diff / 60) + 'm ago';
   if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
   if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
-  return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
+function formatTimestamp(isoString) {
+  const d = new Date(isoString);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) +
+         ' · ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' UTC';
+}
+
+// ─── Pagination state ──────────────────────────────────────────
+const PAGE_SIZE = 10;
+let allItems = [];
+let shownCount = 0;
+
+function renderCard(item, index) {
+  const delay = (index % PAGE_SIZE) * 0.06;
+  return `
+    <div class="event" style="animation-delay: ${delay}s">
+      <div class="event-node">
+        <div class="node-circle"></div>
+      </div>
+      <div class="event-card">
+        <div class="card-topbar">
+          <div class="agent-badge">
+            <div class="badge-dot green"></div>
+            <span class="badge-name">distribution-agent</span>
+            <span class="badge-action">→ posted on X</span>
+          </div>
+          <span class="badge-event-type tweet">tweet</span>
+          <span class="card-time">${formatTimestamp(item.timestamp)}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-article-title">${escHtml(item.article_title)}</div>
+          <div class="card-tweet">${escHtml(item.tweet_text)}</div>
+          <div class="card-footer">
+            <a href="${escHtml(item.tweet_url)}" target="_blank" class="card-btn primary">
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M17.316 3H14.34l-3.84 4.41L6.64 3H1l7.614 10.67L1.308 21h2.978l4.164-4.79L12.968 21H19l-7.931-11.11L17.316 3zm-1.37 16.07h-1.65l-8.8-12.35h1.764l8.686 12.35z"/></svg>
+              View on X
+            </a>
+            <a href="${escHtml(item.article_url)}" target="_blank" class="card-btn secondary">Read article →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function loadMore() {
+  const timeline = document.getElementById('timeline');
+  const line     = timeline.querySelector('.timeline-line');
+
+  const nextBatch = allItems.slice(shownCount, shownCount + PAGE_SIZE);
+  nextBatch.forEach(function(item, i) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = renderCard(item, i);
+    // insert before the timeline line div stays at top
+    timeline.appendChild(wrapper.firstElementChild);
+  });
+
+  shownCount += nextBatch.length;
+
+  const btn = document.getElementById('load-more-btn');
+  if (shownCount >= allItems.length) {
+    btn.classList.remove('visible');
+  }
+}
+
+// ─── Main fetch ────────────────────────────────────────────────
 async function loadFeed() {
-  const feed = document.getElementById('feed');
+  const timeline = document.getElementById('timeline');
+  const stateMsg = document.getElementById('state-msg');
+
   try {
-    const res = await fetch('/activity.json?t=' + Date.now());
+    const res   = await fetch('/activity.json?t=' + Date.now());
     const items = await res.json();
 
     if (!items.length) {
-      feed.innerHTML = '<div class="empty">No activity yet — the agents will get to work soon.</div>';
+      stateMsg.textContent = 'No activity yet — the agents will get to work soon.';
       return;
     }
 
-    // most recent first
-    const sorted = [...items].reverse();
+    stateMsg.remove();
 
-    feed.innerHTML = sorted.map(function(item, i) {
-      return `
-        <div class="activity-card" style="animation-delay: ${i * 0.07}s">
-          <div class="card-header">
-            <div class="card-agent">
-              <div class="agent-dot"></div>
-              <span class="agent-name">Distribution Agent</span>
-              <span class="agent-action">posted on X</span>
-            </div>
-            <span class="card-time">${timeAgo(item.timestamp)}</span>
-          </div>
-          <div class="card-text">"${item.tweet_text}"</div>
-          <div class="card-article">From: <strong>${item.article_title}</strong></div>
-          <div class="card-links">
-            <a href="${item.tweet_url}" target="_blank" class="card-link x">View on X →</a>
-            <a href="${item.article_url}" target="_blank" class="card-link article">Read article</a>
-          </div>
-        </div>
-      `;
-    }).join('');
+    // most recent first
+    allItems = [...items].reverse();
+
+    // Stats
+    document.getElementById('stat-articles').textContent = items.length;
+    document.getElementById('stat-tweets').textContent   = items.length;
+    document.getElementById('stat-last').textContent     = timeAgo(allItems[0].timestamp);
+
+    // Render first page
+    loadMore();
+
+    // Show "load more" if there are more
+    if (allItems.length > PAGE_SIZE) {
+      document.getElementById('load-more-btn').classList.add('visible');
+    }
 
   } catch(e) {
-    feed.innerHTML = '<div class="empty">Could not load activity.</div>';
+    stateMsg.textContent = 'Could not fetch log.';
   }
 }
 
 loadFeed();
-// refresh every 2 minutes
 setInterval(loadFeed, 120000);
 </script>
 </body>
