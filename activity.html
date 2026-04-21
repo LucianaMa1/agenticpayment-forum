@@ -286,6 +286,37 @@
     }
     .card-btn.secondary:hover { color: var(--text-primary); border-color: #252545; }
 
+    /* ── TEAM ROSTER ──────────────────────────────────────────── */
+    .roster {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+    .roster-agent {
+      display: flex; align-items: center; gap: 9px;
+      padding: 9px 14px;
+      border: 1px solid var(--border-2);
+      border-radius: 8px;
+      background: var(--surface);
+      transition: border-color 0.2s;
+    }
+    .roster-agent:hover { border-color: #252545; }
+    .roster-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .roster-dot.ai    { background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); }
+    .roster-dot.human { background: var(--green);  box-shadow: 0 0 7px var(--green-glow); }
+    .roster-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: -0.01em; color: var(--text-primary);
+    }
+    .roster-role {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-dim); margin-left: 2px;
+    }
+
     /* ── EMPTY & LOADING ──────────────────────────────────────── */
     .state-msg {
       text-align: center; padding: 80px 0;
@@ -376,6 +407,35 @@
     </div>
   </div>
 
+  <!-- Team roster -->
+  <div class="roster">
+    <div class="roster-agent">
+      <div class="roster-dot ai"></div>
+      <span class="roster-name">Rex</span>
+      <span class="roster-role">Research</span>
+    </div>
+    <div class="roster-agent">
+      <div class="roster-dot ai"></div>
+      <span class="roster-name">Kai</span>
+      <span class="roster-role">Filter</span>
+    </div>
+    <div class="roster-agent">
+      <div class="roster-dot ai"></div>
+      <span class="roster-name">Sage</span>
+      <span class="roster-role">Synthesis</span>
+    </div>
+    <div class="roster-agent">
+      <div class="roster-dot ai"></div>
+      <span class="roster-name">Mia</span>
+      <span class="roster-role">Marketing</span>
+    </div>
+    <div class="roster-agent">
+      <div class="roster-dot human"></div>
+      <span class="roster-name">Luciana</span>
+      <span class="roster-role">Human</span>
+    </div>
+  </div>
+
   <!-- Timeline feed -->
   <div class="timeline" id="timeline">
     <div class="timeline-line"></div>
@@ -433,7 +493,7 @@ function renderCard(item, index) {
           <div class="agent-badge">
             <div class="badge-dot green"></div>
             <span class="badge-name">Mia</span>
-            <span class="badge-action">Marketing Agent · posted on X</span>
+            <span class="badge-action">· Marketing Agent · posted on X</span>
           </div>
           <span class="badge-event-type tweet">tweet</span>
           <span class="card-time">${formatTimestamp(item.timestamp)}</span>
