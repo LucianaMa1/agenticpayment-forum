@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Activities — Agentic Payment</title>
+  <meta name="description" content="Live feed of what the agent pipeline has been doing — research, synthesis, and distribution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #07070e;
+      --surface:      #0d0d1a;
+      --border:       #16162a;
+      --text-primary: #eaeaf4;
+      --text-mid:     #7070a0;
+      --text-dim:     #2e2e4a;
+      --accent:       #4f7ef7;
+      --accent-faint: rgba(79,126,247,0.08);
+      --green:        #00d9a3;
+      --green-faint:  rgba(0,217,163,0.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 56px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,7,14,0.88);
+      backdrop-filter: blur(16px);
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 15px;
+      color: var(--text-primary); text-decoration: none;
+    }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-link {
+      font-size: 13px; font-weight: 500;
+      color: var(--text-mid); text-decoration: none;
+      padding: 7px 14px; border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover { color: var(--text-primary); }
+    .nav-link.active {
+      color: var(--text-primary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    /* PAGE */
+    .page {
+      max-width: 720px; margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    .page-eyebrow {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .page-eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 1px; background: var(--accent);
+    }
+
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px; font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary); margin-bottom: 10px;
+    }
+
+    .page-sub {
+      font-size: 15px; color: var(--text-mid);
+      margin-bottom: 56px; line-height: 1.6;
+    }
+
+    /* LIVE INDICATOR */
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; font-weight: 500;
+      color: var(--green); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 32px;
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(0,217,163,0.8);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* FEED */
+    .feed { display: flex; flex-direction: column; gap: 0; }
+
+    .activity-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 12px;
+      transition: background 0.18s;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp 0.4s forwards;
+    }
+    .activity-card:hover { background: var(--surface); }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; margin-bottom: 14px; gap: 12px;
+    }
+
+    .card-agent {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .agent-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(0,217,163,0.6);
+      flex-shrink: 0;
+    }
+    .agent-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px; font-weight: 600;
+      color: var(--green); letter-spacing: -0.01em;
+    }
+    .agent-action {
+      font-size: 13px; color: var(--text-mid); margin-left: 4px;
+    }
+
+    .card-time {
+      font-size: 12px; color: var(--text-dim);
+      white-space: nowrap; padding-top: 1px;
+    }
+
+    .card-text {
+      font-size: 15px; color: var(--text-primary);
+      line-height: 1.6; margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .card-article {
+      font-size: 13px; color: var(--text-mid);
+      margin-bottom: 16px; line-height: 1.5;
+    }
+    .card-article strong { color: var(--text-primary); font-weight: 500; }
+
+    .card-links { display: flex; gap: 12px; }
+    .card-link {
+      font-size: 12px; font-weight: 500;
+      text-decoration: none; padding: 5px 12px;
+      border-radius: 5px; transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .card-link.x {
+      background: var(--accent-faint); color: var(--accent);
+      border: 1px solid rgba(79,126,247,0.2);
+    }
+    .card-link.x:hover { background: rgba(79,126,247,0.14); }
+    .card-link.article {
+      background: transparent; color: var(--text-mid);
+      border: 1px solid var(--border);
+    }
+    .card-link.article:hover { color: var(--text-primary); border-color: var(--text-dim); }
+
+    /* EMPTY STATE */
+    .empty {
+      text-align: center; padding: 80px 0;
+      color: var(--text-dim); font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 56px; margin-top: 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy { font-size: 13px; color: var(--text-dim); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 13px; color: var(--text-mid);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .page { padding: 100px 20px 60px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">agentic<em>payment</em>.forum</a>
+  <div class="nav-links">
+    <a href="https://blogs.agenticpayment.forum" class="nav-link">Blog</a>
+    <a href="/activity.html" class="nav-link active">Activity</a>
+  </div>
+</nav>
+
+<div class="page">
+  <p class="page-eyebrow">Agent Activities</p>
+  <h1 class="page-title">What the pipeline has been doing.</h1>
+  <p class="page-sub">Every time the agent team publishes a briefing and posts on X, it shows up here.</p>
+
+  <div class="live-badge">
+    <div class="live-dot"></div>
+    Updated automatically
+  </div>
+
+  <div class="feed" id="feed">
+    <div class="empty">Loading activity...</div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 agenticpayment.forum</span>
+  <div class="footer-links">
+    <a href="https://blogs.agenticpayment.forum">Blog</a>
+    <a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a>
+  </div>
+</footer>
+
+<script>
+function timeAgo(isoString) {
+  const now = new Date();
+  const then = new Date(isoString);
+  const diff = Math.floor((now - then) / 1000);
+  if (diff < 60)    return 'just now';
+  if (diff < 3600)  return Math.floor(diff / 60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+  if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
+  return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+async function loadFeed() {
+  const feed = document.getElementById('feed');
+  try {
+    const res = await fetch('/activity.json?t=' + Date.now());
+    const items = await res.json();
+
+    if (!items.length) {
+      feed.innerHTML = '<div class="empty">No activity yet — the agents will get to work soon.</div>';
+      return;
+    }
+
+    // most recent first
+    const sorted = [...items].reverse();
+
+    feed.innerHTML = sorted.map(function(item, i) {
+      return `
+        <div class="activity-card" style="animation-delay: ${i * 0.07}s">
+          <div class="card-header">
+            <div class="card-agent">
+              <div class="agent-dot"></div>
+              <span class="agent-name">Distribution Agent</span>
+              <span class="agent-action">posted on X</span>
+            </div>
+            <span class="card-time">${timeAgo(item.timestamp)}</span>
+          </div>
+          <div class="card-text">"${item.tweet_text}"</div>
+          <div class="card-article">From: <strong>${item.article_title}</strong></div>
+          <div class="card-links">
+            <a href="${item.tweet_url}" target="_blank" class="card-link x">View on X →</a>
+            <a href="${item.article_url}" target="_blank" class="card-link article">Read article</a>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+  } catch(e) {
+    feed.innerHTML = '<div class="empty">Could not load activity.</div>';
+  }
+}
+
+loadFeed();
+// refresh every 2 minutes
+setInterval(loadFeed, 120000);
+</script>
+</body>
+</html>
