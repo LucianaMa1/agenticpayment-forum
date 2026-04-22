@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Log — Agentic Payment</title>
-  <meta name="description" content="Live ops log of the agent pipeline — every article researched, written, and distributed.">
+  <title>Our Team — Agentic Payment</title>
+  <meta name="description" content="Meet the agents running agenticpayment.forum — every article researched, written, and distributed by the pipeline.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,19 +26,14 @@
       --green:        #00d9a3;
       --green-faint:  rgba(0,217,163,0.07);
       --green-glow:   rgba(0,217,163,0.2);
-      --amber:        #f5a623;
-      --amber-faint:  rgba(245,166,35,0.08);
-      --amber-glow:   rgba(245,166,35,0.2);
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text-primary);
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 15px; line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -73,10 +68,7 @@
     }
 
     /* ── PAGE SHELL ───────────────────────────────────────────── */
-    .page {
-      max-width: 800px; margin: 0 auto;
-      padding: 108px 48px 100px;
-    }
+    .page { max-width: 800px; margin: 0 auto; padding: 108px 48px 100px; }
 
     /* ── HEADER ───────────────────────────────────────────────── */
     .page-header { margin-bottom: 48px; }
@@ -89,22 +81,11 @@
     }
     .pulse-dot {
       width: 7px; height: 7px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 10px var(--green-glow);
-      animation: pulse 2.2s ease-in-out infinite;
-      flex-shrink: 0;
+      background: var(--green); box-shadow: 0 0 10px var(--green-glow);
+      animation: pulse 2.2s ease-in-out infinite; flex-shrink: 0;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--green-glow); }
-      50%       { opacity: 0.4; box-shadow: none; }
-    }
-    .pulse-dot.amber {
-      background: var(--amber);
-      box-shadow: 0 0 10px var(--amber-glow);
-      animation: pulseAmber 2.2s ease-in-out infinite;
-    }
-    @keyframes pulseAmber {
-      0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--amber-glow); }
       50%       { opacity: 0.4; box-shadow: none; }
     }
     .page-title {
@@ -113,54 +94,13 @@
       letter-spacing: -0.035em; color: var(--text-primary);
       line-height: 1.15; margin-bottom: 12px;
     }
-    .page-sub {
-      font-size: 15px; color: var(--text-mid); line-height: 1.6;
-      max-width: 540px;
-    }
-
-    /* ── SECTION DIVIDER ──────────────────────────────────────── */
-    .section-block { margin-bottom: 80px; }
-    .section-header {
-      display: flex; align-items: center; gap: 16px;
-      margin-bottom: 28px;
-    }
-    .section-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.14em;
-      padding: 4px 10px; border-radius: 5px;
-    }
-    .section-tag.pipeline {
-      background: var(--green-faint);
-      color: var(--green);
-      border: 1px solid rgba(0,217,163,0.2);
-    }
-    .section-tag.x402 {
-      background: var(--amber-faint);
-      color: var(--amber);
-      border: 1px solid rgba(245,166,35,0.2);
-    }
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 20px; font-weight: 600;
-      letter-spacing: -0.03em; color: var(--text-primary);
-    }
-    .section-desc {
-      font-size: 13px; color: var(--text-dim);
-      margin-left: auto;
-    }
-    .section-rule {
-      border: none; border-top: 1px solid var(--border-2);
-      margin-bottom: 32px;
-    }
+    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 540px; }
 
     /* ── STATS BAR ────────────────────────────────────────────── */
     .stats-bar {
       display: flex; gap: 0;
-      border: 1px solid var(--border-2);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 40px;
+      border: 1px solid var(--border-2); border-radius: 10px;
+      overflow: hidden; margin-bottom: 40px;
       background: var(--surface);
     }
     .stat {
@@ -178,225 +118,13 @@
     }
     .stat-value.green { color: var(--green); }
     .stat-value.blue  { color: var(--accent); }
-    .stat-value.amber { color: var(--amber); }
     .stat-label {
       font-size: 11px; font-weight: 500;
       text-transform: uppercase; letter-spacing: 0.1em;
       color: var(--text-dim);
     }
 
-    /* x402 mini stats */
-    .x402-stats-bar {
-      display: flex; gap: 0;
-      border: 1px solid rgba(245,166,35,0.15);
-      border-radius: 10px; overflow: hidden;
-      margin-bottom: 40px;
-      background: rgba(245,166,35,0.03);
-    }
-    .x402-stats-bar .stat {
-      border-right: 1px solid rgba(245,166,35,0.1);
-    }
-    .x402-stats-bar .stat:last-child { border-right: none; }
-    .x402-stats-bar .stat:hover { background: rgba(245,166,35,0.05); }
-
-    /* ── TIMELINE ─────────────────────────────────────────────── */
-    .timeline { position: relative; }
-    .timeline-line {
-      position: absolute;
-      left: 20px; top: 0; bottom: 0;
-      width: 1px; background: var(--border-2);
-    }
-    .timeline-line.amber-line { background: rgba(245,166,35,0.15); }
-
-    /* ── EVENT ENTRY ──────────────────────────────────────────── */
-    .event {
-      display: flex; gap: 24px;
-      margin-bottom: 6px;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: slideIn 0.4s forwards;
-    }
-    @keyframes slideIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .event-node {
-      flex-shrink: 0; width: 40px;
-      display: flex; flex-direction: column; align-items: center;
-      padding-top: 22px;
-    }
-    .node-circle {
-      width: 9px; height: 9px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 10px var(--green-glow);
-      z-index: 1; position: relative;
-    }
-    .node-circle.blue  { background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
-    .node-circle.amber { background: var(--amber);  box-shadow: 0 0 10px var(--amber-glow); }
-    .node-circle.dim   { background: var(--text-dim); box-shadow: none; }
-
-    .event-card {
-      flex: 1;
-      border: 1px solid var(--border-2);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.2s, background 0.2s;
-      margin-bottom: 16px;
-    }
-    .event-card:hover { border-color: #252545; background: var(--surface); }
-    .event-card.x402-card:hover { border-color: rgba(245,166,35,0.3); background: rgba(245,166,35,0.03); }
-
-    .card-topbar {
-      display: flex; align-items: center;
-      gap: 10px; padding: 12px 20px;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    .event-card.x402-card .card-topbar {
-      background: rgba(245,166,35,0.04);
-      border-bottom-color: rgba(245,166,35,0.1);
-    }
-
-    .agent-badge { display: flex; align-items: center; gap: 7px; }
-    .badge-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-    }
-    .badge-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
-    .badge-dot.blue  { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
-    .badge-dot.amber { background: var(--amber);  box-shadow: 0 0 6px var(--amber-glow); }
-    .badge-dot.dim   { background: var(--text-dim); }
-
-    .badge-name {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; font-weight: 500;
-      color: var(--text-mid); letter-spacing: 0.06em;
-    }
-    .badge-action {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim);
-    }
-    .badge-event-type {
-      margin-left: auto;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; font-weight: 500;
-      padding: 3px 8px; border-radius: 4px;
-      letter-spacing: 0.08em; text-transform: uppercase;
-    }
-    .badge-event-type.tweet   { background: var(--accent-faint); color: var(--accent); border: 1px solid rgba(79,126,247,0.2); }
-    .badge-event-type.publish { background: var(--green-faint);  color: var(--green);  border: 1px solid rgba(0,217,163,0.15); }
-    .badge-event-type.api     { background: rgba(46,46,74,0.5);  color: var(--text-mid); border: 1px solid var(--border-2); }
-    .badge-event-type.x402    { background: var(--amber-faint);  color: var(--amber);  border: 1px solid rgba(245,166,35,0.2); }
-
-    .card-time {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim);
-      margin-left: 8px;
-    }
-
-    /* Card body */
-    .card-body { padding: 20px 20px 18px; }
-
-    /* Article title */
-    .card-article-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 16px; font-weight: 600;
-      letter-spacing: -0.02em; color: var(--text-primary);
-      line-height: 1.35; margin-bottom: 14px;
-    }
-
-    /* Tweet text */
-    .card-tweet {
-      font-size: 14px; color: var(--text-mid);
-      line-height: 1.65; margin-bottom: 18px;
-      padding: 14px 16px;
-      border-left: 2px solid var(--accent);
-      background: var(--accent-faint);
-      border-radius: 0 6px 6px 0;
-      font-style: italic;
-    }
-
-    /* api_call card extras */
-    .card-cost {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 20px; font-weight: 500;
-      letter-spacing: -0.03em; color: var(--text-primary);
-      margin-bottom: 6px;
-    }
-    .card-cost-meta {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim);
-      margin-bottom: 14px;
-    }
-    .card-token-bar {
-      display: flex; gap: 8px; margin-bottom: 16px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-    }
-    .token-pill {
-      padding: 3px 10px; border-radius: 4px;
-      background: var(--surface-2); border: 1px solid var(--border-2);
-    }
-    .token-pill.in  { color: var(--accent); }
-    .token-pill.out { color: var(--green); }
-
-    /* x402 card extras */
-    .card-x402-amount {
-      font-family: 'Space Grotesk', monospace;
-      font-size: 22px; font-weight: 700;
-      letter-spacing: -0.04em; color: var(--amber);
-      margin-bottom: 4px;
-    }
-    .card-x402-sub {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim);
-      margin-bottom: 14px;
-    }
-    .card-commentary {
-      font-size: 14px; color: var(--text-primary);
-      line-height: 1.65; margin-bottom: 16px;
-      padding: 12px 14px;
-      background: var(--amber-faint);
-      border-left: 2px solid var(--amber);
-      border-radius: 0 6px 6px 0;
-    }
-
-    /* Footer row */
-    .card-footer { display: flex; align-items: center; gap: 10px; }
-    .card-btn {
-      font-size: 12px; font-weight: 500;
-      text-decoration: none; padding: 6px 14px;
-      border-radius: 6px; transition: all 0.18s;
-      letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 6px;
-    }
-    .card-btn.primary  { background: var(--accent-faint); color: var(--accent); border: 1px solid rgba(79,126,247,0.25); }
-    .card-btn.primary:hover  { background: rgba(79,126,247,0.14); border-color: var(--accent); }
-    .card-btn.secondary { background: transparent; color: var(--text-mid); border: 1px solid var(--border-2); }
-    .card-btn.secondary:hover { color: var(--text-primary); border-color: #252545; }
-    .card-btn.amber { background: var(--amber-faint); color: var(--amber); border: 1px solid rgba(245,166,35,0.25); }
-    .card-btn.amber:hover { background: rgba(245,166,35,0.14); border-color: var(--amber); }
-
-    /* ── TEAM ROSTER ──────────────────────────────────────────── */
-    .team-section { margin-bottom: 52px; }
-    .team-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.14em;
-      color: var(--text-dim); margin-bottom: 18px;
-    }
-    .team-grid { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .agent-card {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 10px; padding: 18px 16px 14px;
-      border: 1px solid var(--border-2);
-      border-radius: 12px;
-      background: var(--surface);
-      width: 100px;
-      transition: border-color 0.2s, background 0.2s, transform 0.2s;
-      cursor: default;
-    }
-    .agent-card:hover { background: var(--surface-2); transform: translateY(-2px); }
-    .agent-card:hover .avatar-ring { opacity: 1; }
+    /* avatar shared styles (used by member rows) */
 
     .avatar-wrap { position: relative; width: 52px; height: 52px; }
     .avatar-ring {
@@ -429,58 +157,151 @@
       position: absolute; bottom: 0; right: 0;
       width: 14px; height: 14px; border-radius: 50%;
       border: 2px solid var(--surface);
-      display: flex; align-items: center; justify-content: center;
       z-index: 2;
     }
     .avatar-status.online-green { background: var(--green); }
     .avatar-status.online-blue  { background: var(--accent); }
     .avatar-status.offline      { background: var(--text-dim); }
 
-    .agent-card-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px; font-weight: 600;
-      letter-spacing: -0.02em; color: var(--text-primary); line-height: 1;
-    }
-    .agent-card-role {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--text-dim); margin-top: -4px;
-    }
-    .agent-card-tag {
-      font-size: 10px; font-weight: 500;
-      padding: 2px 7px; border-radius: 4px; letter-spacing: 0.04em;
-    }
-    .agent-card-tag.blue  { background: var(--accent-faint); color: var(--accent); }
-    .agent-card-tag.green { background: var(--green-faint);  color: var(--green); }
-    .agent-card-tag.dim   { background: rgba(46,46,74,0.5);  color: var(--text-dim); }
 
-    /* ── EMPTY / LOADING / EMPTY-X402 ────────────────────────── */
+    /* ── SECTION HEADER ───────────────────────────────────────── */
+    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      padding: 4px 10px; border-radius: 5px;
+      background: var(--green-faint); color: var(--green);
+      border: 1px solid rgba(0,217,163,0.2);
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px; font-weight: 600;
+      letter-spacing: -0.03em; color: var(--text-primary);
+    }
+    .section-desc { font-size: 13px; color: var(--text-dim); margin-left: auto; }
+    .section-rule { border: none; border-top: 1px solid var(--border-2); margin-bottom: 32px; }
+
+    /* ── TIMELINE ─────────────────────────────────────────────── */
+    .timeline { position: relative; }
+    .timeline-line {
+      position: absolute; left: 20px; top: 0; bottom: 0;
+      width: 1px; background: var(--border-2);
+    }
+
+    /* ── EVENT ────────────────────────────────────────────────── */
+    .event {
+      display: flex; gap: 24px; margin-bottom: 6px;
+      opacity: 0; transform: translateY(10px);
+      animation: slideIn 0.4s forwards;
+    }
+    @keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
+
+    .event-node {
+      flex-shrink: 0; width: 40px;
+      display: flex; flex-direction: column; align-items: center;
+      padding-top: 22px;
+    }
+    .node-circle {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 10px var(--green-glow);
+      z-index: 1; position: relative;
+    }
+    .node-circle.blue { background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
+    .node-circle.dim  { background: var(--text-dim); box-shadow: none; }
+
+    .event-card {
+      flex: 1; border: 1px solid var(--border-2); border-radius: 12px;
+      overflow: hidden; transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 16px;
+    }
+    .event-card:hover { border-color: #252545; background: var(--surface); }
+
+    .card-topbar {
+      display: flex; align-items: center; gap: 10px; padding: 12px 20px;
+      border-bottom: 1px solid var(--border); background: var(--surface);
+    }
+    .agent-badge { display: flex; align-items: center; gap: 7px; }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .badge-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
+    .badge-dot.blue  { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+    .badge-dot.dim   { background: var(--text-dim); }
+    .badge-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500; color: var(--text-mid); letter-spacing: 0.06em;
+    }
+    .badge-action { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); }
+    .badge-event-type {
+      margin-left: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      padding: 3px 8px; border-radius: 4px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .badge-event-type.tweet   { background: var(--accent-faint); color: var(--accent); border: 1px solid rgba(79,126,247,0.2); }
+    .badge-event-type.publish { background: var(--green-faint);  color: var(--green);  border: 1px solid rgba(0,217,163,0.15); }
+    .badge-event-type.api     { background: rgba(46,46,74,0.5);  color: var(--text-mid); border: 1px solid var(--border-2); }
+
+    .card-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-dim); margin-left: 8px;
+    }
+    .card-body { padding: 20px 20px 18px; }
+    .card-article-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--text-primary);
+      line-height: 1.35; margin-bottom: 14px;
+    }
+    .card-tweet {
+      font-size: 14px; color: var(--text-mid);
+      line-height: 1.65; margin-bottom: 18px;
+      padding: 14px 16px;
+      border-left: 2px solid var(--accent); background: var(--accent-faint);
+      border-radius: 0 6px 6px 0; font-style: italic;
+    }
+    .card-cost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px; font-weight: 500;
+      letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 6px;
+    }
+    .card-cost-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-dim); margin-bottom: 14px;
+    }
+    .card-token-bar {
+      display: flex; gap: 8px; margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    }
+    .token-pill {
+      padding: 3px 10px; border-radius: 4px;
+      background: var(--surface-2); border: 1px solid var(--border-2);
+    }
+    .token-pill.in  { color: var(--accent); }
+    .token-pill.out { color: var(--green); }
+    .card-footer { display: flex; align-items: center; gap: 10px; }
+    .card-btn {
+      font-size: 12px; font-weight: 500; text-decoration: none;
+      padding: 6px 14px; border-radius: 6px; transition: all 0.18s;
+      letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .card-btn.primary  { background: var(--accent-faint); color: var(--accent); border: 1px solid rgba(79,126,247,0.25); }
+    .card-btn.primary:hover  { background: rgba(79,126,247,0.14); border-color: var(--accent); }
+    .card-btn.secondary { background: transparent; color: var(--text-mid); border: 1px solid var(--border-2); }
+    .card-btn.secondary:hover { color: var(--text-primary); border-color: #252545; }
+
+    /* ── EMPTY / LOADING ──────────────────────────────────────── */
     .state-msg {
       text-align: center; padding: 80px 0;
       color: var(--text-dim); font-size: 14px;
       font-family: 'JetBrains Mono', monospace;
     }
-    .x402-empty {
-      border: 1px dashed rgba(245,166,35,0.2);
-      border-radius: 12px; padding: 48px;
-      text-align: center;
-    }
-    .x402-empty-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px; color: var(--amber);
-      margin-bottom: 8px; opacity: 0.7;
-    }
-    .x402-empty-sub {
-      font-size: 13px; color: var(--text-dim);
-    }
 
     /* ── LOAD MORE ────────────────────────────────────────────── */
     .load-more-wrap { display: flex; justify-content: center; margin-top: 24px; }
     .load-more-btn {
-      font-size: 13px; font-weight: 500;
-      color: var(--text-mid); background: transparent;
-      border: 1px solid var(--border-2);
+      font-size: 13px; font-weight: 500; color: var(--text-mid);
+      background: transparent; border: 1px solid var(--border-2);
       padding: 9px 24px; border-radius: 8px;
       cursor: pointer; transition: all 0.2s; display: none;
     }
@@ -489,8 +310,7 @@
 
     /* ── FOOTER ───────────────────────────────────────────────── */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 56px; margin-top: 40px;
+      border-top: 1px solid var(--border); padding: 28px 56px; margin-top: 40px;
       display: flex; justify-content: space-between; align-items: center;
     }
     .footer-copy { font-size: 13px; color: var(--text-dim); }
@@ -498,19 +318,75 @@
     .footer-links a { font-size: 13px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--text-primary); }
 
-    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    /* ── MEMBER ROWS ──────────────────────────────────────── */
+    .team-section { margin-bottom: 52px; }
+    .team-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--text-dim); margin-bottom: 24px;
+    }
+
+    .member-row {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 18px;
+      align-items: start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .member-row:last-child { border-bottom: none; }
+
+    .member-avatar {
+      position: relative; width: 52px; height: 52px;
+      flex-shrink: 0;
+    }
+    /* reuse existing avatar-ring / avatar-circle / avatar-initial / avatar-status */
+
+    .member-body { flex: 1; }
+    .member-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--text-primary);
+      margin-bottom: 6px; line-height: 1.2;
+    }
+    .member-name-human { color: var(--green); }
+    .member-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-dim); margin-left: 8px;
+      vertical-align: middle;
+    }
+    .member-desc {
+      font-size: 13px; color: var(--text-mid);
+      line-height: 1.6; max-width: 520px;
+    }
+
+    .member-badge {
+      font-size: 10px; font-weight: 500;
+      padding: 3px 10px; border-radius: 20px;
+      letter-spacing: 0.05em; white-space: nowrap;
+      margin-top: 4px; align-self: start;
+    }
+    .member-badge.dim   { background: rgba(46,46,74,0.5);  color: var(--text-dim);  border: 1px solid var(--border-2); }
+    .member-badge.blue  { background: var(--accent-faint); color: var(--accent);    border: 1px solid rgba(79,126,247,0.18); }
+    .member-badge.green { background: var(--green-faint);  color: var(--green);     border: 1px solid rgba(0,217,163,0.18); }
+    .member-badge.human-badge { background: var(--green-faint); color: var(--green); border: 1px solid rgba(0,217,163,0.25); }
+
     @media (max-width: 640px) {
       nav { padding: 16px 20px; }
       .page { padding: 90px 20px 60px; }
-      .stats-bar, .x402-stats-bar { flex-direction: column; }
+      .stats-bar { flex-direction: column; }
       .stat { border-right: none; border-bottom: 1px solid var(--border-2); }
       .stat:last-child { border-bottom: none; }
-      .team-grid { gap: 8px; }
-      .agent-card { width: calc(33.3% - 6px); padding: 14px 8px 12px; }
       .page-title { font-size: 26px; }
       footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
       .timeline-line { left: 16px; }
       .event-node { width: 32px; }
+      .member-row { grid-template-columns: 44px 1fr; }
+      .member-badge { display: none; }
     }
   </style>
 </head>
@@ -522,7 +398,8 @@
     <a href="/" class="nav-link">Home</a>
     <a href="https://blogs.agenticpayment.forum" class="nav-link">Newsletter</a>
     <a href="/forum.html" class="nav-link">Forum</a>
-    <a href="/activity.html" class="nav-link active">Agent Log</a>
+    <a href="/activity.html" class="nav-link active">Our Team</a>
+    <a href="/agent-economy.html" class="nav-link">Agent Economy</a>
   </div>
 </nav>
 
@@ -531,173 +408,137 @@
   <div class="page-header">
     <p class="page-eyebrow">
       <span class="pulse-dot"></span>
-      Live ops
+      Pipeline live
     </p>
-    <h1 class="page-title">What the agents have been doing.</h1>
-    <p class="page-sub">Pipeline activity and live on-chain x402 micropayments — two feeds, one page.</p>
+    <h1 class="page-title">Our Team.</h1>
+    <p class="page-sub">Six agents, one pipeline. Every article researched, written, and distributed — logged in real time.</p>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SECTION 1 — PIPELINE
-  ═══════════════════════════════════════════════════════════════ -->
-  <div class="section-block" id="section-pipeline">
-
-    <div class="section-header">
-      <span class="section-tag pipeline">Pipeline</span>
-      <span class="section-title">Agent activity</span>
-      <span class="section-desc" id="pipeline-last-time"></span>
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value green" id="stat-articles">—</div>
+      <div class="stat-label">Articles published</div>
     </div>
-    <hr class="section-rule">
-
-    <!-- Pipeline stats -->
-    <div class="stats-bar">
-      <div class="stat">
-        <div class="stat-value green" id="stat-articles">—</div>
-        <div class="stat-label">Articles published</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value blue" id="stat-tweets">—</div>
-        <div class="stat-label">Posts on X</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-cost">—</div>
-        <div class="stat-label">Total API spend</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-last">—</div>
-        <div class="stat-label">Last run</div>
-      </div>
+    <div class="stat">
+      <div class="stat-value blue" id="stat-tweets">—</div>
+      <div class="stat-label">Posts on X</div>
     </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-cost">—</div>
+      <div class="stat-label">Total API spend</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-last">—</div>
+      <div class="stat-label">Last run</div>
+    </div>
+  </div>
 
-    <!-- Team avatars -->
-    <div class="team-section">
-      <p class="team-label">The pipeline</p>
-      <div class="team-grid">
+  <!-- Team roster -->
+  <div class="team-section">
+    <p class="team-label">The pipeline — 5 agents + 1 human</p>
 
-        <div class="agent-card">
-          <div class="avatar-wrap">
-            <div class="avatar-ring dim-ring"></div>
-            <div class="avatar-circle blue-bg"><span class="avatar-initial blue">R</span></div>
-            <div class="avatar-status offline"></div>
-          </div>
-          <div class="agent-card-name">Rex</div>
-          <div class="agent-card-role">Research</div>
-          <span class="agent-card-tag dim">scans</span>
-        </div>
-
-        <div class="agent-card">
-          <div class="avatar-wrap">
-            <div class="avatar-ring dim-ring"></div>
-            <div class="avatar-circle blue-bg"><span class="avatar-initial blue">K</span></div>
-            <div class="avatar-status offline"></div>
-          </div>
-          <div class="agent-card-name">Kai</div>
-          <div class="agent-card-role">Filter</div>
-          <span class="agent-card-tag dim">ranks</span>
-        </div>
-
-        <div class="agent-card">
-          <div class="avatar-wrap">
-            <div class="avatar-ring dim-ring"></div>
-            <div class="avatar-circle blue-bg"><span class="avatar-initial blue">S</span></div>
-            <div class="avatar-status offline"></div>
-          </div>
-          <div class="agent-card-name">Sage</div>
-          <div class="agent-card-role">Synthesis</div>
-          <span class="agent-card-tag dim">writes</span>
-        </div>
-
-        <div class="agent-card">
-          <div class="avatar-wrap">
-            <div class="avatar-ring green-ring"></div>
-            <div class="avatar-circle green-bg"><span class="avatar-initial green">J</span></div>
-            <div class="avatar-status online-green"></div>
-          </div>
-          <div class="agent-card-name">Justin</div>
-          <div class="agent-card-role">Editor</div>
-          <span class="agent-card-tag green">publishes</span>
-        </div>
-
-        <div class="agent-card">
-          <div class="avatar-wrap">
-            <div class="avatar-ring blue-ring"></div>
-            <div class="avatar-circle blue-bg"><span class="avatar-initial blue">M</span></div>
-            <div class="avatar-status online-blue"></div>
-          </div>
-          <div class="agent-card-name">Mia</div>
-          <div class="agent-card-role">Marketing</div>
-          <span class="agent-card-tag blue">posts on X</span>
-        </div>
-
-        <div class="agent-card">
-          <div class="avatar-wrap">
-            <div class="avatar-ring green-ring"></div>
-            <div class="avatar-circle human-bg"><span class="avatar-initial green">L</span></div>
-            <div class="avatar-status online-green"></div>
-          </div>
-          <div class="agent-card-name">Luciana</div>
-          <div class="agent-card-role">Human</div>
-          <span class="agent-card-tag green">judgment</span>
-        </div>
-
+    <!-- Rex -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring dim-ring"></div>
+        <div class="avatar-circle blue-bg"><span class="avatar-initial blue">R</span></div>
+        <div class="avatar-status offline"></div>
       </div>
+      <div class="member-body">
+        <div class="member-name">Rex <span class="member-role">Research Agent</span></div>
+        <div class="member-desc">Scans news, arXiv papers, Reddit, and product launches. First in the pipeline — finds the signal before anyone else.</div>
+      </div>
+      <span class="member-badge dim">AI</span>
     </div>
 
-    <!-- Pipeline timeline -->
-    <div class="timeline" id="pipeline-timeline">
-      <div class="timeline-line"></div>
-      <div class="state-msg" id="pipeline-state-msg">Fetching pipeline log...</div>
+    <!-- Kai -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring dim-ring"></div>
+        <div class="avatar-circle blue-bg"><span class="avatar-initial blue">K</span></div>
+        <div class="avatar-status offline"></div>
+      </div>
+      <div class="member-body">
+        <div class="member-name">Kai <span class="member-role">Filter Agent</span></div>
+        <div class="member-desc">Ranks what actually matters. Cuts the noise. Scores relevance against the agentic payments thesis before anything gets written.</div>
+      </div>
+      <span class="member-badge dim">AI</span>
     </div>
 
-    <div class="load-more-wrap">
-      <button class="load-more-btn" id="pipeline-load-more" onclick="pipelineLoadMore()">Load earlier entries</button>
+    <!-- Sage -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring dim-ring"></div>
+        <div class="avatar-circle blue-bg"><span class="avatar-initial blue">S</span></div>
+        <div class="avatar-status offline"></div>
+      </div>
+      <div class="member-body">
+        <div class="member-name">Sage <span class="member-role">Synthesis Agent</span></div>
+        <div class="member-desc">Structures the landscape into clear frames and tensions. Turns filtered research into a full draft — argument first, evidence second.</div>
+      </div>
+      <span class="member-badge dim">AI</span>
+    </div>
+
+    <!-- Justin -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring green-ring"></div>
+        <div class="avatar-circle green-bg"><span class="avatar-initial green">J</span></div>
+        <div class="avatar-status online-green"></div>
+      </div>
+      <div class="member-body">
+        <div class="member-name">Justin <span class="member-role">Editor Agent</span></div>
+        <div class="member-desc">Edits, formats, and publishes to the blog. Handles the Hashnode GraphQL mutation and makes sure nothing ships broken.</div>
+      </div>
+      <span class="member-badge green">AI</span>
+    </div>
+
+    <!-- Mia -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring blue-ring"></div>
+        <div class="avatar-circle blue-bg"><span class="avatar-initial blue">M</span></div>
+        <div class="avatar-status online-blue"></div>
+      </div>
+      <div class="member-body">
+        <div class="member-name">Mia <span class="member-role">Marketing Agent</span></div>
+        <div class="member-desc">Turns published articles into posts. Shares on X. Writes the hook, counts the characters, posts when the article is live.</div>
+      </div>
+      <span class="member-badge blue">AI</span>
+    </div>
+
+    <!-- Luciana -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring green-ring"></div>
+        <div class="avatar-circle human-bg"><span class="avatar-initial green">L</span></div>
+        <div class="avatar-status online-green"></div>
+      </div>
+      <div class="member-body">
+        <div class="member-name member-name-human">Luciana <span class="member-role">Human</span></div>
+        <div class="member-desc">Forms the point of view. Sets the thesis, reviews what ships, and catches what the agents miss. The judgment is mine.</div>
+      </div>
+      <span class="member-badge human-badge">Human</span>
     </div>
 
   </div>
 
+  <!-- Pipeline log -->
+  <div class="section-header">
+    <span class="section-tag">Activity Log</span>
+    <span class="section-title">What they've been doing</span>
+    <span class="section-desc" id="pipeline-last-time"></span>
+  </div>
+  <hr class="section-rule">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SECTION 2 — x402 OBSERVATORY
-  ═══════════════════════════════════════════════════════════════ -->
-  <div class="section-block" id="section-x402">
+  <div class="timeline" id="timeline">
+    <div class="timeline-line"></div>
+    <div class="state-msg" id="state-msg">Fetching log...</div>
+  </div>
 
-    <div class="section-header">
-      <span class="section-tag x402">x402 Observatory</span>
-      <span class="section-title">Live on-chain micropayments</span>
-      <span class="section-desc" id="x402-last-time"></span>
-    </div>
-    <hr class="section-rule" style="border-top-color: rgba(245,166,35,0.1)">
-
-    <!-- x402 stats -->
-    <div class="x402-stats-bar">
-      <div class="stat">
-        <div class="stat-value amber" id="stat-x402-count">—</div>
-        <div class="stat-label">Transactions observed</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value amber" id="stat-x402-volume">—</div>
-        <div class="stat-label">USDC volume</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value amber" id="stat-x402-avg">—</div>
-        <div class="stat-label">Avg tx size</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-x402-last">—</div>
-        <div class="stat-label">Last observed</div>
-      </div>
-    </div>
-
-    <!-- x402 timeline -->
-    <div class="timeline" id="x402-timeline">
-      <div class="timeline-line amber-line"></div>
-      <div id="x402-state-msg"></div>
-    </div>
-
-    <div class="load-more-wrap">
-      <button class="load-more-btn" id="x402-load-more" onclick="x402LoadMore()">Load earlier transactions</button>
-    </div>
-
+  <div class="load-more-wrap">
+    <button class="load-more-btn" id="load-more-btn" onclick="loadMore()">Load earlier entries</button>
   </div>
 
 </div>
@@ -711,11 +552,8 @@
 </footer>
 
 <script>
-// ─── Helpers ──────────────────────────────────────────────────
-
 function timeAgo(isoString) {
-  const now  = new Date();
-  const then = new Date(isoString);
+  const now = new Date(), then = new Date(isoString);
   const diff = Math.floor((now - then) / 1000);
   if (diff < 60)    return 'just now';
   if (diff < 3600)  return Math.floor(diff / 60) + 'm ago';
@@ -723,39 +561,26 @@ function timeAgo(isoString) {
   if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
   return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
-
 function formatTimestamp(isoString) {
   const d = new Date(isoString);
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) +
          ' · ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' UTC';
 }
-
 function escHtml(str) {
-  return String(str || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
-
-// ─── Card renderers ────────────────────────────────────────────
 
 function renderPublishCard(item, delay) {
   const costTag = item.run_cost_usd != null
-    ? `<span class="agent-card-tag dim" style="font-family:'JetBrains Mono',monospace;font-size:10px;margin-left:auto">run cost $${Number(item.run_cost_usd).toFixed(4)}</span>`
+    ? `<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);margin-left:auto">run $${Number(item.run_cost_usd).toFixed(4)}</span>`
     : '';
   return `
     <div class="event" style="animation-delay:${delay}s">
       <div class="event-node"><div class="node-circle"></div></div>
       <div class="event-card">
         <div class="card-topbar">
-          <div class="agent-badge">
-            <div class="badge-dot green"></div>
-            <span class="badge-name">Justin</span>
-            <span class="badge-action">· Editor · published</span>
-          </div>
-          <span class="badge-event-type publish">publish</span>
-          ${costTag}
+          <div class="agent-badge"><div class="badge-dot green"></div><span class="badge-name">Justin</span><span class="badge-action">· Editor · published</span></div>
+          <span class="badge-event-type publish">publish</span>${costTag}
           <span class="card-time">${formatTimestamp(item.timestamp)}</span>
         </div>
         <div class="card-body">
@@ -770,7 +595,7 @@ function renderPublishCard(item, delay) {
 
 function renderTweetCard(item, delay) {
   const xIcon = `<svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M17.316 3H14.34l-3.84 4.41L6.64 3H1l7.614 10.67L1.308 21h2.978l4.164-4.79L12.968 21H19l-7.931-11.11L17.316 3zm-1.37 16.07h-1.65l-8.8-12.35h1.764l8.686 12.35z"/></svg>`;
-  const xBtn  = item.tweet_url
+  const xBtn = item.tweet_url
     ? `<a href="${escHtml(item.tweet_url)}" target="_blank" class="card-btn primary">${xIcon} View on X</a>`
     : `<span class="card-btn primary" style="opacity:0.4;cursor:default">${xIcon} Pre-tracking</span>`;
   const costTag = item.cost_usd != null
@@ -786,13 +611,8 @@ function renderTweetCard(item, delay) {
       <div class="event-node"><div class="node-circle blue"></div></div>
       <div class="event-card">
         <div class="card-topbar">
-          <div class="agent-badge">
-            <div class="badge-dot blue"></div>
-            <span class="badge-name">Mia</span>
-            <span class="badge-action">· Marketing · posted on X</span>
-          </div>
-          <span class="badge-event-type tweet">tweet</span>
-          ${costTag}
+          <div class="agent-badge"><div class="badge-dot blue"></div><span class="badge-name">Mia</span><span class="badge-action">· Marketing · posted on X</span></div>
+          <span class="badge-event-type tweet">tweet</span>${costTag}
           <span class="card-time">${formatTimestamp(item.timestamp)}</span>
         </div>
         <div class="card-body">
@@ -815,81 +635,24 @@ function renderApiCallCard(item, delay) {
       <span class="token-pill in">${item.metadata.input_tokens.toLocaleString()} in</span>
       <span class="token-pill out">${item.metadata.output_tokens.toLocaleString()} out</span>
     </div>` : '';
-  const queryLine = (item.metadata && item.metadata.query) ?
-    `<div class="card-cost-meta">"${escHtml(item.metadata.query)}"</div>` : '';
-  const tavilyLine = (item.metadata && item.metadata.searches) ?
-    `<div class="card-cost-meta">${item.metadata.searches} Tavily searches · $${(item.metadata.tavily_cost||0).toFixed(3)} search cost</div>` : '';
-
+  const tavilyLine = (item.metadata && item.metadata.searches)
+    ? `<div class="card-cost-meta">${item.metadata.searches} Tavily searches · $${(item.metadata.tavily_cost||0).toFixed(3)} search cost</div>` : '';
   return `
     <div class="event" style="animation-delay:${delay}s">
       <div class="event-node"><div class="node-circle ${color}"></div></div>
       <div class="event-card">
         <div class="card-topbar">
-          <div class="agent-badge">
-            <div class="badge-dot ${color}"></div>
-            <span class="badge-name">${escHtml(item.agent)}</span>
-            <span class="badge-action">· ${action}</span>
-          </div>
+          <div class="agent-badge"><div class="badge-dot ${color}"></div><span class="badge-name">${escHtml(item.agent)}</span><span class="badge-action">· ${action}</span></div>
           <span class="badge-event-type api">${escHtml(item.service || 'API')}</span>
           <span class="card-time">${formatTimestamp(item.timestamp)}</span>
         </div>
         <div class="card-body">
           ${costStr ? `<div class="card-cost">${costStr}</div>` : ''}
           <div class="card-cost-meta">${escHtml(item.model || item.service || '')}</div>
-          ${queryLine}
-          ${tavilyLine}
-          ${tokenBar}
+          ${tavilyLine}${tokenBar}
         </div>
       </div>
     </div>`;
-}
-
-function renderX402Card(item, delay) {
-  const shortFrom = item.from_address
-    ? `${item.from_address.slice(0,6)}...${item.from_address.slice(-4)}`
-    : 'unknown';
-  const basescanUrl = `https://basescan.org/tx/${item.tx_hash}`;
-  return `
-    <div class="event" style="animation-delay:${delay}s">
-      <div class="event-node"><div class="node-circle amber"></div></div>
-      <div class="event-card x402-card">
-        <div class="card-topbar">
-          <div class="agent-badge">
-            <div class="badge-dot amber"></div>
-            <span class="badge-name">${shortFrom}</span>
-            <span class="badge-action">· paid via x402 · Base</span>
-          </div>
-          <span class="badge-event-type x402">x402</span>
-          <span class="card-time">${formatTimestamp(item.timestamp)}</span>
-        </div>
-        <div class="card-body">
-          <div class="card-x402-amount">$${Number(item.amount_usdc).toFixed(4)} <span style="font-size:13px;font-weight:400;color:var(--text-dim)">USDC</span></div>
-          <div class="card-x402-sub">${escHtml(item.contract || '')} · block ${(item.block_number||'').toLocaleString()}</div>
-          <div class="card-commentary">${escHtml(item.commentary || '')}</div>
-          <div class="card-footer">
-            <a href="${basescanUrl}" target="_blank" class="card-btn amber">View on Basescan →</a>
-          </div>
-        </div>
-      </div>
-    </div>`;
-}
-
-// ─── Pipeline feed ─────────────────────────────────────────────
-const PAGE_SIZE = 10;
-let pipelineItems = [];
-let pipelineShown = 0;
-
-function pipelineLoadMore() {
-  const timeline  = document.getElementById('pipeline-timeline');
-  const nextBatch = pipelineItems.slice(pipelineShown, pipelineShown + PAGE_SIZE);
-  nextBatch.forEach(function(item, i) {
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = renderCard(item, i);
-    timeline.appendChild(wrapper.firstElementChild);
-  });
-  pipelineShown += nextBatch.length;
-  const btn = document.getElementById('pipeline-load-more');
-  if (pipelineShown >= pipelineItems.length) btn.classList.remove('visible');
 }
 
 function renderCard(item, index) {
@@ -900,117 +663,53 @@ function renderCard(item, index) {
   return renderTweetCard(item, delay);
 }
 
-async function loadPipeline() {
-  const stateMsg = document.getElementById('pipeline-state-msg');
+const PAGE_SIZE = 10;
+let allItems = [], shownCount = 0;
+
+function loadMore() {
+  const timeline  = document.getElementById('timeline');
+  const nextBatch = allItems.slice(shownCount, shownCount + PAGE_SIZE);
+  nextBatch.forEach(function(item, i) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = renderCard(item, i);
+    timeline.appendChild(wrapper.firstElementChild);
+  });
+  shownCount += nextBatch.length;
+  if (shownCount >= allItems.length) document.getElementById('load-more-btn').classList.remove('visible');
+}
+
+async function loadFeed() {
+  const stateMsg = document.getElementById('state-msg');
   try {
     const res   = await fetch('/activity.json?t=' + Date.now());
     const items = await res.json();
-
-    if (!items.length) {
-      if (stateMsg) stateMsg.textContent = 'No pipeline activity yet.';
-      return;
-    }
+    if (!items.length) { if (stateMsg) stateMsg.textContent = 'No pipeline activity yet.'; return; }
     if (stateMsg) stateMsg.remove();
 
-    pipelineItems = [...items].reverse();
-    pipelineShown = 0;
-    document.getElementById('pipeline-timeline').innerHTML = '<div class="timeline-line"></div>';
+    allItems   = [...items].reverse();
+    shownCount = 0;
+    document.getElementById('timeline').innerHTML = '<div class="timeline-line"></div>';
 
-    // Stats
     const publishCount = items.filter(i => i.event_type === 'publish').length;
     const tweetCount   = items.filter(i => (i.event_type||'tweet') === 'tweet').length;
     const totalCost    = items.reduce((s, i) => s + (i.cost_usd || i.run_cost_usd || 0), 0);
     document.getElementById('stat-articles').textContent = publishCount || '—';
     document.getElementById('stat-tweets').textContent   = tweetCount  || '—';
     document.getElementById('stat-cost').textContent     = totalCost > 0 ? `$${totalCost.toFixed(2)}` : '—';
-    document.getElementById('stat-last').textContent     = timeAgo(pipelineItems[0].timestamp);
+    document.getElementById('stat-last').textContent     = timeAgo(allItems[0].timestamp);
 
-    // Section timestamp
     const lastEl = document.getElementById('pipeline-last-time');
-    if (lastEl) lastEl.textContent = 'Last updated ' + timeAgo(pipelineItems[0].timestamp);
+    if (lastEl) lastEl.textContent = 'Last run ' + timeAgo(allItems[0].timestamp);
 
-    pipelineLoadMore();
-    if (pipelineItems.length > PAGE_SIZE) {
-      document.getElementById('pipeline-load-more').classList.add('visible');
-    }
+    loadMore();
+    if (allItems.length > PAGE_SIZE) document.getElementById('load-more-btn').classList.add('visible');
   } catch(e) {
-    if (stateMsg) stateMsg.textContent = 'Could not fetch pipeline log.';
+    if (stateMsg) stateMsg.textContent = 'Could not fetch log.';
   }
 }
 
-// ─── x402 feed ────────────────────────────────────────────────
-let x402Items = [];
-let x402Shown = 0;
-
-function x402LoadMore() {
-  const timeline  = document.getElementById('x402-timeline');
-  const nextBatch = x402Items.slice(x402Shown, x402Shown + PAGE_SIZE);
-  nextBatch.forEach(function(item, i) {
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = renderX402Card(item, i * 0.06);
-    timeline.appendChild(wrapper.firstElementChild);
-  });
-  x402Shown += nextBatch.length;
-  const btn = document.getElementById('x402-load-more');
-  if (x402Shown >= x402Items.length) btn.classList.remove('visible');
-}
-
-async function loadX402() {
-  const stateMsg = document.getElementById('x402-state-msg');
-  try {
-    const res   = await fetch('/x402_feed.json?t=' + Date.now());
-    const items = await res.json();
-
-    const timeline = document.getElementById('x402-timeline');
-
-    if (!items.length) {
-      // Show empty state inside the section
-      if (stateMsg) stateMsg.innerHTML = `
-        <div class="x402-empty">
-          <div class="x402-empty-title">⬡ Listening for transactions</div>
-          <div class="x402-empty-sub">The observer scans Base chain every 10 minutes.<br>Live x402 micropayments will appear here automatically.</div>
-        </div>`;
-      document.getElementById('stat-x402-count').textContent  = '0';
-      document.getElementById('stat-x402-volume').textContent = '$0.0000';
-      document.getElementById('stat-x402-avg').textContent    = '—';
-      document.getElementById('stat-x402-last').textContent   = 'waiting';
-      return;
-    }
-    if (stateMsg) stateMsg.remove();
-
-    x402Items = [...items].reverse();
-    x402Shown = 0;
-    timeline.innerHTML = '<div class="timeline-line amber-line"></div>';
-
-    // Stats
-    const volume  = items.reduce((s, i) => s + (i.amount_usdc || 0), 0);
-    const avg     = items.length ? volume / items.length : 0;
-    document.getElementById('stat-x402-count').textContent  = items.length;
-    document.getElementById('stat-x402-volume').textContent = `$${volume.toFixed(4)}`;
-    document.getElementById('stat-x402-avg').textContent    = `$${avg.toFixed(4)}`;
-    document.getElementById('stat-x402-last').textContent   = timeAgo(x402Items[0].timestamp);
-
-    const lastEl = document.getElementById('x402-last-time');
-    if (lastEl) lastEl.textContent = 'Last tx ' + timeAgo(x402Items[0].timestamp);
-
-    x402LoadMore();
-    if (x402Items.length > PAGE_SIZE) {
-      document.getElementById('x402-load-more').classList.add('visible');
-    }
-  } catch(e) {
-    if (stateMsg) stateMsg.innerHTML = `
-      <div class="x402-empty">
-        <div class="x402-empty-title">⬡ Listening for transactions</div>
-        <div class="x402-empty-sub">The observer scans Base chain every 10 minutes.<br>Live x402 micropayments will appear here automatically.</div>
-      </div>`;
-  }
-}
-
-// ─── Boot ──────────────────────────────────────────────────────
-loadPipeline();
-loadX402();
-setInterval(loadPipeline, 60000);
-setInterval(loadX402, 60000);  // x402 observer runs every 10 min
+loadFeed();
+setInterval(loadFeed, 60000);
 </script>
 </body>
 </html>
