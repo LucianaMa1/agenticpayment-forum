@@ -26,6 +26,9 @@
       --green:        #00d9a3;
       --green-faint:  rgba(0,217,163,0.07);
       --green-glow:   rgba(0,217,163,0.2);
+      --violet:       #a78bfa;
+      --violet-faint: rgba(167,139,250,0.08);
+      --violet-glow:  rgba(167,139,250,0.2);
     }
 
     html { scroll-behavior: smooth; }
@@ -140,9 +143,13 @@
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
     }
-    .avatar-circle.blue-bg  { background: linear-gradient(135deg, #0d1535 0%, #141e42 100%); border: 1px solid rgba(79,126,247,0.2); }
-    .avatar-circle.green-bg { background: linear-gradient(135deg, #061e18 0%, #0b2d22 100%); border: 1px solid rgba(0,217,163,0.2); }
-    .avatar-circle.human-bg { background: linear-gradient(135deg, #0a1e18 0%, #0d2a20 100%); border: 1px solid rgba(0,217,163,0.35); }
+    .avatar-circle.blue-bg   { background: linear-gradient(135deg, #0d1535 0%, #141e42 100%); border: 1px solid rgba(79,126,247,0.2); }
+    .avatar-circle.green-bg  { background: linear-gradient(135deg, #061e18 0%, #0b2d22 100%); border: 1px solid rgba(0,217,163,0.2); }
+    .avatar-circle.human-bg  { background: linear-gradient(135deg, #0a1e18 0%, #0d2a20 100%); border: 1px solid rgba(0,217,163,0.35); }
+    .avatar-circle.violet-bg { background: linear-gradient(135deg, #130d2a 0%, #1e1542 100%); border: 1px solid rgba(167,139,250,0.25); }
+    .avatar-ring.violet-ring { box-shadow: 0 0 0 1.5px var(--violet), 0 0 12px var(--violet-glow); }
+    .avatar-initial.violet   { color: #c4b5fd; }
+    .avatar-status.online-violet { background: var(--violet); }
 
     .avatar-initial {
       font-family: 'Space Grotesk', sans-serif;
@@ -370,10 +377,58 @@
       letter-spacing: 0.05em; white-space: nowrap;
       margin-top: 4px; align-self: start;
     }
-    .member-badge.dim   { background: rgba(46,46,74,0.5);  color: var(--text-dim);  border: 1px solid var(--border-2); }
-    .member-badge.blue  { background: var(--accent-faint); color: var(--accent);    border: 1px solid rgba(79,126,247,0.18); }
-    .member-badge.green { background: var(--green-faint);  color: var(--green);     border: 1px solid rgba(0,217,163,0.18); }
-    .member-badge.human-badge { background: var(--green-faint); color: var(--green); border: 1px solid rgba(0,217,163,0.25); }
+    .member-badge.dim        { background: rgba(46,46,74,0.5);   color: var(--text-dim); border: 1px solid var(--border-2); }
+    .member-badge.blue       { background: var(--accent-faint);  color: var(--accent);   border: 1px solid rgba(79,126,247,0.18); }
+    .member-badge.green      { background: var(--green-faint);   color: var(--green);    border: 1px solid rgba(0,217,163,0.18); }
+    .member-badge.violet     { background: var(--violet-faint);  color: var(--violet);   border: 1px solid rgba(167,139,250,0.2); }
+    .member-badge.human-badge{ background: var(--green-faint);   color: var(--green);    border: 1px solid rgba(0,217,163,0.25); }
+
+    /* ── REVIEW CARD (Morgan) ─────────────────────────────────── */
+    .badge-dot.violet  { background: var(--violet); box-shadow: 0 0 6px var(--violet-glow); }
+    .node-circle.violet{ background: var(--violet); box-shadow: 0 0 10px var(--violet-glow); }
+    .badge-event-type.review {
+      background: var(--violet-faint); color: var(--violet);
+      border: 1px solid rgba(167,139,250,0.2);
+    }
+    .verdict-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 700;
+      padding: 3px 10px; border-radius: 4px;
+      letter-spacing: 0.06em;
+    }
+    .verdict-badge.publish { background: var(--green-faint);   color: var(--green);  border: 1px solid rgba(0,217,163,0.2); }
+    .verdict-badge.revise  { background: var(--amber-faint);   color: var(--amber);  border: 1px solid rgba(245,166,35,0.2); }
+    .verdict-badge.reject  { background: rgba(255,77,77,0.08); color: #ff5c5c;       border: 1px solid rgba(255,77,77,0.2); }
+    .review-score {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px; font-weight: 700;
+      letter-spacing: -0.04em; color: var(--violet);
+      margin-bottom: 4px;
+    }
+    .review-score-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); margin-bottom: 16px; }
+    .review-feedback {
+      list-style: none; margin-bottom: 16px;
+    }
+    .review-feedback li {
+      font-size: 13px; color: var(--text-mid); line-height: 1.6;
+      padding: 6px 0 6px 18px; border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .review-feedback li:last-child { border-bottom: none; }
+    .review-feedback li::before { content: '→'; position: absolute; left: 0; color: var(--violet); opacity: 0.6; }
+    .review-expert-note {
+      font-size: 13px; color: var(--text-primary); line-height: 1.65;
+      padding: 12px 14px; margin-top: 12px;
+      background: var(--violet-faint);
+      border-left: 2px solid var(--violet);
+      border-radius: 0 6px 6px 0;
+    }
+    .review-expert-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--violet); margin-bottom: 6px; opacity: 0.8;
+    }
 
     @media (max-width: 640px) {
       nav { padding: 16px 20px; }
@@ -506,6 +561,20 @@
         <div class="member-desc">Turns published articles into posts. Shares on X. Writes the hook, counts the characters, posts when the article is live.</div>
       </div>
       <span class="member-badge blue">AI</span>
+    </div>
+
+    <!-- Morgan -->
+    <div class="member-row">
+      <div class="member-avatar">
+        <div class="avatar-ring violet-ring"></div>
+        <div class="avatar-circle violet-bg"><span class="avatar-initial violet">M</span></div>
+        <div class="avatar-status online-violet"></div>
+      </div>
+      <div class="member-body">
+        <div class="member-name" style="color:var(--violet)">Morgan <span class="member-role">Payments Expert</span></div>
+        <div class="member-desc">15 years across card networks, acquiring, and alternative rails. Reviews every article before Justin ships it — scores accuracy, practitioner value, and argument quality. Returns a verdict: PUBLISH, REVISE, or REJECT. Nothing factually wrong gets through.</div>
+      </div>
+      <span class="member-badge violet">Expert</span>
     </div>
 
     <!-- Luciana -->
@@ -655,11 +724,54 @@ function renderApiCallCard(item, delay) {
     </div>`;
 }
 
+function renderReviewCard(item, delay) {
+  const verdict      = (item.verdict || 'PUBLISH').toUpperCase();
+  const score        = item.score ?? '—';
+  const feedbackHTML = (item.feedback || []).map(f =>
+    `<li>${escHtml(f)}</li>`).join('');
+  const verdictClass = { PUBLISH: 'publish', REVISE: 'revise', REJECT: 'reject' }[verdict] || 'publish';
+
+  return `
+    <div class="event" style="animation-delay:${delay}s">
+      <div class="event-node"><div class="node-circle violet"></div></div>
+      <div class="event-card">
+        <div class="card-topbar">
+          <div class="agent-badge">
+            <div class="badge-dot violet"></div>
+            <span class="badge-name">Morgan</span>
+            <span class="badge-action">· Payments Expert · reviewed</span>
+          </div>
+          <span class="badge-event-type review">review</span>
+          <span class="card-time">${formatTimestamp(item.timestamp)}</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px">
+            <div>
+              <div class="review-score">${score}<span style="font-size:14px;font-weight:400;color:var(--text-dim)">/10</span></div>
+              <div class="review-score-label">expert score</div>
+            </div>
+            <div style="padding-top:4px">
+              <span class="verdict-badge ${verdictClass}">${verdict}</span>
+              <div style="font-size:12px;color:var(--text-dim);margin-top:8px;font-family:'JetBrains Mono',monospace">${escHtml(item.article_title || '')}</div>
+            </div>
+          </div>
+          ${feedbackHTML ? `<ul class="review-feedback">${feedbackHTML}</ul>` : ''}
+          ${item.expert_note ? `
+            <div class="review-expert-note">
+              <div class="review-expert-label">Morgan's expert note</div>
+              ${escHtml(item.expert_note)}
+            </div>` : ''}
+        </div>
+      </div>
+    </div>`;
+}
+
 function renderCard(item, index) {
   const delay = (index % PAGE_SIZE) * 0.06;
   const type  = item.event_type || 'tweet';
   if (type === 'publish')  return renderPublishCard(item, delay);
   if (type === 'api_call') return renderApiCallCard(item, delay);
+  if (type === 'review')   return renderReviewCard(item, delay);
   return renderTweetCard(item, delay);
 }
 
