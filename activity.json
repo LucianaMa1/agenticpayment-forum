@@ -1,9 +1,39 @@
 [
   {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "research_and_filter",
+    "service": "Tavily Advanced + Claude API",
+    "cost_usd": 0.1481,
+    "cost_source": "estimated",
+    "metadata": {
+      "searches": 5,
+      "tavily_cost": 0.075,
+      "input_tokens": 22180,
+      "output_tokens": 412
+    },
+    "timestamp": "2026-04-21T04:51:20.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.1024,
+    "cost_source": "estimated",
+    "metadata": {
+      "input_tokens": 14640,
+      "output_tokens": 3884
+    },
+    "timestamp": "2026-04-21T05:01:45.000Z"
+  },
+  {
     "event_type": "publish",
     "agent": "Justin",
     "article_title": "Visa Is Betting on Protocol Neutrality. Mastercard Is Betting on Stablecoin Plumbing. Only One Bet Survives.",
     "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
+    "run_cost_usd": 0.2579,
     "timestamp": "2026-04-21T05:03:48.000Z"
   },
   {
@@ -13,13 +43,46 @@
     "tweet_url": "",
     "article_title": "Visa Is Betting on Protocol Neutrality. Mastercard Is Betting on Stablecoin Plumbing. Only One Bet Survives.",
     "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
+    "cost_usd": 0.0074,
+    "cost_source": "estimated",
+    "metadata": { "input_tokens": 1492, "output_tokens": 191 },
     "timestamp": "2026-04-21T05:05:20.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "research_and_filter",
+    "service": "Tavily Advanced + Claude API",
+    "cost_usd": 0.1508,
+    "cost_source": "estimated",
+    "metadata": {
+      "searches": 5,
+      "tavily_cost": 0.075,
+      "input_tokens": 22540,
+      "output_tokens": 438
+    },
+    "timestamp": "2026-04-21T06:11:05.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.1083,
+    "cost_source": "estimated",
+    "metadata": {
+      "input_tokens": 15220,
+      "output_tokens": 4110
+    },
+    "timestamp": "2026-04-21T06:21:30.000Z"
   },
   {
     "event_type": "publish",
     "agent": "Justin",
     "article_title": "Europe Is the Agentic Payments Lab — and the Card Networks Are Running Competing Experiments",
     "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
+    "run_cost_usd": 0.2669,
     "timestamp": "2026-04-21T06:23:13.000Z"
   },
   {
@@ -29,13 +92,46 @@
     "tweet_url": "",
     "article_title": "Europe Is the Agentic Payments Lab — and the Card Networks Are Running Competing Experiments",
     "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
+    "cost_usd": 0.0078,
+    "cost_source": "estimated",
+    "metadata": { "input_tokens": 1530, "output_tokens": 198 },
     "timestamp": "2026-04-21T06:25:10.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "research_and_filter",
+    "service": "Tavily Advanced + Claude API",
+    "cost_usd": 0.1473,
+    "cost_source": "estimated",
+    "metadata": {
+      "searches": 5,
+      "tavily_cost": 0.075,
+      "input_tokens": 21980,
+      "output_tokens": 401
+    },
+    "timestamp": "2026-04-21T06:23:50.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.0994,
+    "cost_source": "estimated",
+    "metadata": {
+      "input_tokens": 14180,
+      "output_tokens": 3762
+    },
+    "timestamp": "2026-04-21T06:34:05.000Z"
   },
   {
     "event_type": "publish",
     "agent": "Justin",
     "article_title": "Ten Protocols, Zero Interop: The Trust Layer Land Grab Is a Distraction From the Real Problem",
     "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
+    "run_cost_usd": 0.2541,
     "timestamp": "2026-04-21T06:35:40.000Z"
   },
   {
@@ -45,13 +141,46 @@
     "tweet_url": "",
     "article_title": "Ten Protocols, Zero Interop: The Trust Layer Land Grab Is a Distraction From the Real Problem",
     "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
+    "cost_usd": 0.0073,
+    "cost_source": "estimated",
+    "metadata": { "input_tokens": 1471, "output_tokens": 186 },
     "timestamp": "2026-04-21T06:37:05.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "research_and_filter",
+    "service": "Tavily Advanced + Claude API",
+    "cost_usd": 0.1491,
+    "cost_source": "estimated",
+    "metadata": {
+      "searches": 5,
+      "tavily_cost": 0.075,
+      "input_tokens": 22320,
+      "output_tokens": 425
+    },
+    "timestamp": "2026-04-21T06:38:10.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.1041,
+    "cost_source": "estimated",
+    "metadata": {
+      "input_tokens": 14880,
+      "output_tokens": 3954
+    },
+    "timestamp": "2026-04-21T06:48:30.000Z"
   },
   {
     "event_type": "publish",
     "agent": "Justin",
     "article_title": "The Protocol Wars Are Over. The Trust Layer War Just Started.",
     "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started",
+    "run_cost_usd": 0.2608,
     "timestamp": "2026-04-21T06:50:08.000Z"
   },
   {
@@ -61,13 +190,46 @@
     "tweet_url": "https://x.com/AgenticPayForum/status/2046481632019054615",
     "article_title": "The Protocol Wars Are Over. The Trust Layer War Just Started.",
     "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started",
+    "cost_usd": 0.0076,
+    "cost_source": "estimated",
+    "metadata": { "input_tokens": 1509, "output_tokens": 193 },
     "timestamp": "2026-04-21T06:50:17.613707Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "research_and_filter",
+    "service": "Tavily Advanced + Claude API",
+    "cost_usd": 0.1484,
+    "cost_source": "estimated",
+    "metadata": {
+      "searches": 5,
+      "tavily_cost": 0.075,
+      "input_tokens": 22090,
+      "output_tokens": 418
+    },
+    "timestamp": "2026-04-21T06:40:10.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.1013,
+    "cost_source": "estimated",
+    "metadata": {
+      "input_tokens": 14390,
+      "output_tokens": 3840
+    },
+    "timestamp": "2026-04-21T06:50:20.000Z"
   },
   {
     "event_type": "publish",
     "agent": "Justin",
     "article_title": "Everyone Is Building Rails for Agents. Nobody Is Building the Safety Net for Merchants.",
     "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
+    "run_cost_usd": 0.2571,
     "timestamp": "2026-04-21T06:51:54.000Z"
   },
   {
@@ -77,13 +239,46 @@
     "tweet_url": "https://x.com/AgenticPayForum/status/2046482047661912174",
     "article_title": "Everyone Is Building Rails for Agents. Nobody Is Building the Safety Net for Merchants.",
     "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
+    "cost_usd": 0.0074,
+    "cost_source": "estimated",
+    "metadata": { "input_tokens": 1488, "output_tokens": 189 },
     "timestamp": "2026-04-21T06:51:56.717081Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "research_and_filter",
+    "service": "Tavily Advanced + Claude API",
+    "cost_usd": 0.1521,
+    "cost_source": "estimated",
+    "metadata": {
+      "searches": 5,
+      "tavily_cost": 0.075,
+      "input_tokens": 22810,
+      "output_tokens": 451
+    },
+    "timestamp": "2026-04-22T02:04:30.000Z"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.1118,
+    "cost_source": "estimated",
+    "metadata": {
+      "input_tokens": 15640,
+      "output_tokens": 4210
+    },
+    "timestamp": "2026-04-22T02:14:50.000Z"
   },
   {
     "event_type": "publish",
     "agent": "Justin",
     "article_title": "China Already Won the First Round of Agentic Payments. The West Is Still Debating the Rulebook.",
     "article_url": "https://blogs.agenticpayment.forum/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook",
+    "run_cost_usd": 0.2717,
     "timestamp": "2026-04-22T02:16:41.600502+00:00"
   },
   {
@@ -93,6 +288,9 @@
     "tweet_url": "https://x.com/AgenticPayForum/status/2046775199648170234",
     "article_title": "China Already Won the First Round of Agentic Payments. The West Is Still Debating the Rulebook.",
     "article_url": "https://blogs.agenticpayment.forum/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook",
+    "cost_usd": 0.0079,
+    "cost_source": "estimated",
+    "metadata": { "input_tokens": 1541, "output_tokens": 201 },
     "timestamp": "2026-04-22T02:16:49.619541+00:00"
   }
 ]
