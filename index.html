@@ -60,6 +60,7 @@
       --bg:           #07070e;
       --surface:      #0d0d1a;
       --border:       #16162a;
+      --border-2:     #1e1e38;
       --text-primary: #eaeaf4;
       --text-mid:     #7070a0;
       --text-dim:     #2e2e4a;
@@ -96,14 +97,19 @@
       letter-spacing: -0.01em;
     }
     .nav-logo em { color: var(--accent); font-style: normal; }
-    .nav-cta {
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-link {
       font-size: 13px; font-weight: 500;
       color: var(--text-mid); text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 7px 16px; border-radius: 6px;
+      padding: 7px 14px; border-radius: 6px;
       transition: all 0.2s;
     }
-    .nav-cta:hover { color: var(--text-primary); border-color: var(--text-dim); }
+    .nav-link:hover { color: var(--text-primary); }
+    .nav-link.active {
+      color: var(--text-primary);
+      background: var(--surface);
+      border: 1px solid var(--border-2);
+    }
 
     /* ── HERO WRAPPER (two columns) ──────────────────── */
     .hero-wrap {
@@ -375,11 +381,12 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">agentic<em>payment</em>.forum</a>
-  <div style="display:flex;gap:8px;align-items:center;">
-    <a href="/activity.html" class="nav-cta" style="border-color:transparent;color:var(--text-mid)">Our Team</a>
-    <a href="/agent-economy.html" class="nav-cta" style="border-color:transparent;color:var(--text-mid)">Agent Economy</a>
+  <div class="nav-links">
+    <a href="/" class="nav-link active">Home</a>
+    <a href="https://blogs.agenticpayment.forum" class="nav-link" target="_blank">Newsletter</a>
     <a href="/forum.html" class="nav-link">Forum</a>
-    <a href="https://blogs.agenticpayment.forum" class="nav-cta">Newsletter →</a>
+    <a href="/activity.html" class="nav-link">Our Team</a>
+    <a href="/agent-economy.html" class="nav-link">Agent Economy</a>
   </div>
 </nav>
 
