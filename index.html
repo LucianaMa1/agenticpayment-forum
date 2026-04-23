@@ -213,40 +213,51 @@
     /* ── FLOW DIAGRAM ────────────────────────────────── */
     .flow-diag {
       position: relative;
+      display: flex; flex-direction: column; gap: 0;
     }
 
-    /* subtle vertical spine through the dot column */
-    .flow-diag::before {
-      content: '';
-      position: absolute;
-      left: 8px; top: 14px; bottom: 14px;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), var(--green));
-      opacity: 0.12;
-      pointer-events: none;
-    }
-
-    /* each agent node */
+    /* each agent node — card style for depth */
     .fd-node {
       display: grid;
       grid-template-columns: 18px 1fr auto;
-      gap: 12px;
-      align-items: center;
-      padding: 9px 0;
+      gap: 0 12px;
+      align-items: start;
+      padding: 10px 14px;
+      border-radius: 9px;
+      background: rgba(13,13,26,0.55);
+      border: 1px solid var(--border);
       opacity: 0;
-      transform: translateX(12px);
+      transform: translateX(10px);
       animation: fdIn 0.5s forwards;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.4s ease, border-color 0.4s ease,
+                  box-shadow 0.4s ease, background 0.4s ease;
       position: relative; z-index: 1;
     }
 
     @keyframes fdIn {
-      from { opacity: 0; transform: translateX(12px); }
-      to   { opacity: 0.45; transform: translateX(0); }
+      from { opacity: 0; transform: translateX(10px); }
+      to   { opacity: 0.62; transform: translateX(0); }
     }
 
-    /* lit = currently active node in the animation cycle */
+    /* lit = active node */
     .fd-node.lit { opacity: 1 !important; }
+
+    /* per-type lit glow + gradient tint */
+    .fd-node-ai.lit {
+      border-color: rgba(79,126,247,0.4);
+      background: linear-gradient(135deg, rgba(79,126,247,0.07) 0%, rgba(13,13,26,0.55) 100%);
+      box-shadow: 0 4px 24px rgba(79,126,247,0.12), inset 0 1px 0 rgba(79,126,247,0.1);
+    }
+    .fd-node-violet.lit {
+      border-color: rgba(167,139,250,0.4);
+      background: linear-gradient(135deg, rgba(167,139,250,0.07) 0%, rgba(13,13,26,0.55) 100%);
+      box-shadow: 0 4px 24px rgba(167,139,250,0.12), inset 0 1px 0 rgba(167,139,250,0.1);
+    }
+    .fd-node-human.lit {
+      border-color: rgba(0,217,163,0.4);
+      background: linear-gradient(135deg, rgba(0,217,163,0.07) 0%, rgba(13,13,26,0.55) 100%);
+      box-shadow: 0 4px 24px rgba(0,217,163,0.12), inset 0 1px 0 rgba(0,217,163,0.1);
+    }
 
     /* staggered entrance */
     [data-step="0"] { animation-delay: 0.08s; }
@@ -257,21 +268,22 @@
     [data-step="5"] { animation-delay: 0.58s; }
     [data-step="6"] { animation-delay: 0.68s; }
 
-    /* node dots */
+    /* node dots — align with first text line */
     .fd-dot {
       width: 9px; height: 9px; border-radius: 50%;
-      justify-self: center;
-      transition: box-shadow 0.35s ease;
+      justify-self: center; margin-top: 3px;
+      transition: box-shadow 0.4s ease;
     }
-    .fd-dot-ai     { background: var(--accent); box-shadow: 0 0 6px rgba(79,126,247,0.4); }
-    .fd-dot-violet { background: var(--violet);  box-shadow: 0 0 6px rgba(167,139,250,0.4); }
-    .fd-dot-human  { background: var(--green);   box-shadow: 0 0 6px rgba(0,217,163,0.4); }
+    .fd-dot-ai     { background: var(--accent); box-shadow: 0 0 6px rgba(79,126,247,0.35); }
+    .fd-dot-violet { background: var(--violet);  box-shadow: 0 0 6px rgba(167,139,250,0.35); }
+    .fd-dot-human  { background: var(--green);   box-shadow: 0 0 6px rgba(0,217,163,0.35); }
 
     .fd-node.lit .fd-dot-ai     { box-shadow: 0 0 18px rgba(79,126,247,1); }
     .fd-node.lit .fd-dot-violet { box-shadow: 0 0 18px rgba(167,139,250,1); }
     .fd-node.lit .fd-dot-human  { box-shadow: 0 0 18px rgba(0,217,163,1); }
 
-    .fd-body { display: flex; align-items: baseline; gap: 7px; min-width: 0; }
+    .fd-body { min-width: 0; }
+    .fd-header { display: flex; align-items: baseline; gap: 7px; margin-bottom: 3px; }
     .fd-name {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
@@ -282,26 +294,39 @@
       font-size: 10px; font-weight: 500;
       letter-spacing: 0.06em; text-transform: uppercase;
       color: var(--text-dim);
+      transition: color 0.4s ease;
     }
+    .fd-node.lit .fd-role { color: var(--text-mid); }
+
+    /* description line — lights up with node */
+    .fd-desc {
+      font-size: 10.5px; line-height: 1.45;
+      color: var(--text-dim);
+      transition: color 0.4s ease;
+    }
+    .fd-node.lit .fd-desc { color: var(--text-mid); }
+
     .fd-badge {
       font-size: 10px; font-weight: 500;
       padding: 2px 8px; border-radius: 20px;
       letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;
+      margin-top: 1px;
     }
     .fd-badge-ai     { background: var(--accent-faint); color: var(--accent); border: 1px solid rgba(79,126,247,0.18); }
     .fd-badge-violet { background: rgba(167,139,250,0.08); color: var(--violet); border: 1px solid rgba(167,139,250,0.2); }
     .fd-badge-human  { background: var(--green-faint); color: var(--green); border: 1px solid rgba(0,217,163,0.18); }
 
-    /* edge connectors */
+    /* edge connectors — padding-left aligns spine with dot center in cards */
     .fd-edge {
       display: grid;
       grid-template-columns: 18px 1fr;
       gap: 12px;
       align-items: center;
+      padding: 0 14px;
     }
     .fd-spine {
-      width: 1px; height: 22px; justify-self: center;
-      background: var(--border-2);
+      width: 1px; height: 20px; justify-self: center;
+      background: linear-gradient(to bottom, var(--border-2), var(--border));
     }
     .fd-lbl {
       font-size: 10px; color: var(--text-dim);
@@ -311,25 +336,24 @@
     /* Sage + Morgan feedback-loop wrapper */
     .fd-loop-group {
       position: relative;
-      padding-right: 24px;
     }
-    /* amber dashed bracket: visually shows the REVISE loop */
+    /* amber dashed bracket spanning Sage→Morgan (REVISE arc) */
     .fd-loop-group::before {
       content: '';
       position: absolute;
-      right: 0; top: 12px; bottom: 28px;
+      right: -14px; top: 10px; bottom: 30px;
       width: 10px;
-      border-right:  1px dashed rgba(245,166,35,0.35);
-      border-top:    1px dashed rgba(245,166,35,0.35);
-      border-bottom: 1px dashed rgba(245,166,35,0.35);
-      border-radius: 0 4px 4px 0;
+      border-right:  1px dashed rgba(245,166,35,0.45);
+      border-top:    1px dashed rgba(245,166,35,0.45);
+      border-bottom: 1px dashed rgba(245,166,35,0.45);
+      border-radius: 0 5px 5px 0;
       pointer-events: none;
     }
 
     /* Morgan verdict chips */
     .fd-verdicts {
       display: flex; gap: 5px; flex-wrap: wrap;
-      padding: 5px 0 4px 30px;
+      padding: 5px 0 3px 44px;
     }
     .fd-v {
       font-size: 9px; font-weight: 700;
@@ -337,9 +361,9 @@
       letter-spacing: 0.06em; white-space: nowrap;
       font-family: 'JetBrains Mono', 'Courier New', monospace;
     }
-    .fd-v-pub { background: var(--green-faint);    color: var(--green);  border: 1px solid rgba(0,217,163,0.2); }
-    .fd-v-rev { background: rgba(245,166,35,0.08); color: #f5a623;       border: 1px solid rgba(245,166,35,0.2); }
-    .fd-v-rej { background: rgba(255,77,77,0.08);  color: #ff5c5c;       border: 1px solid rgba(255,77,77,0.2); }
+    .fd-v-pub { background: var(--green-faint);    color: var(--green);  border: 1px solid rgba(0,217,163,0.22); }
+    .fd-v-rev { background: rgba(245,166,35,0.08); color: #f5a623;       border: 1px solid rgba(245,166,35,0.22); }
+    .fd-v-rej { background: rgba(255,77,77,0.08);  color: #ff5c5c;       border: 1px solid rgba(255,77,77,0.22); }
 
     /* ── DIVIDER ─────────────────────────────────────── */
     .divider { border: none; border-top: 1px solid var(--border); }
@@ -426,11 +450,14 @@
     <div class="flow-diag" id="flow-diag">
 
       <!-- Rex: Research -->
-      <div class="fd-node" data-step="0">
+      <div class="fd-node fd-node-ai" data-step="0">
         <div class="fd-dot fd-dot-ai"></div>
         <div class="fd-body">
-          <span class="fd-name">Rex</span>
-          <span class="fd-role">Research</span>
+          <div class="fd-header">
+            <span class="fd-name">Rex</span>
+            <span class="fd-role">Research</span>
+          </div>
+          <p class="fd-desc">Reddit · arXiv · Stripe · Visa · MC · TechCrunch</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
@@ -441,11 +468,14 @@
       </div>
 
       <!-- Kai: Filter -->
-      <div class="fd-node" data-step="1">
+      <div class="fd-node fd-node-ai" data-step="1">
         <div class="fd-dot fd-dot-ai"></div>
         <div class="fd-body">
-          <span class="fd-name">Kai</span>
-          <span class="fd-role">Filter</span>
+          <div class="fd-header">
+            <span class="fd-name">Kai</span>
+            <span class="fd-role">Filter</span>
+          </div>
+          <p class="fd-desc">Scores novelty · relevance · source quality ≥ 6.5</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
@@ -455,14 +485,17 @@
         <span class="fd-lbl">5–8 scored items</span>
       </div>
 
-      <!-- Sage + Morgan: feedback loop group (amber bracket on right) -->
+      <!-- Sage + Morgan feedback loop (amber bracket on right = REVISE arc) -->
       <div class="fd-loop-group">
 
-        <div class="fd-node" data-step="2">
+        <div class="fd-node fd-node-ai" data-step="2">
           <div class="fd-dot fd-dot-ai"></div>
           <div class="fd-body">
-            <span class="fd-name">Sage</span>
-            <span class="fd-role">Synthesis</span>
+            <div class="fd-header">
+              <span class="fd-name">Sage</span>
+              <span class="fd-role">Synthesis</span>
+            </div>
+            <p class="fd-desc">Argument-first · structured · payments-native voice</p>
           </div>
           <span class="fd-badge fd-badge-ai">AI</span>
         </div>
@@ -472,16 +505,18 @@
           <span class="fd-lbl">draft article</span>
         </div>
 
-        <div class="fd-node" data-step="3">
+        <div class="fd-node fd-node-violet" data-step="3">
           <div class="fd-dot fd-dot-violet"></div>
           <div class="fd-body">
-            <span class="fd-name">Morgan</span>
-            <span class="fd-role">Review</span>
+            <div class="fd-header">
+              <span class="fd-name">Morgan</span>
+              <span class="fd-role">Review</span>
+            </div>
+            <p class="fd-desc">Accuracy · regulatory precision · depth score /10</p>
           </div>
           <span class="fd-badge fd-badge-violet">AI</span>
         </div>
 
-        <!-- Morgan's verdict output chips -->
         <div class="fd-verdicts">
           <span class="fd-v fd-v-pub">PUBLISH ↓</span>
           <span class="fd-v fd-v-rev">REVISE ↺</span>
@@ -496,11 +531,14 @@
       </div>
 
       <!-- Justin: Editor -->
-      <div class="fd-node" data-step="4">
+      <div class="fd-node fd-node-ai" data-step="4">
         <div class="fd-dot fd-dot-ai"></div>
         <div class="fd-body">
-          <span class="fd-name">Justin</span>
-          <span class="fd-role">Editor</span>
+          <div class="fd-header">
+            <span class="fd-name">Justin</span>
+            <span class="fd-role">Editor</span>
+          </div>
+          <p class="fd-desc">Formats for Hashnode · appends Morgan's expert note</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
@@ -511,11 +549,14 @@
       </div>
 
       <!-- Mia: Marketing -->
-      <div class="fd-node" data-step="5">
+      <div class="fd-node fd-node-ai" data-step="5">
         <div class="fd-dot fd-dot-ai"></div>
         <div class="fd-body">
-          <span class="fd-name">Mia</span>
-          <span class="fd-role">Marketing</span>
+          <div class="fd-header">
+            <span class="fd-name">Mia</span>
+            <span class="fd-role">Marketing</span>
+          </div>
+          <p class="fd-desc">Tweet thread · hook · hashtags · optimal timing</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
@@ -525,11 +566,14 @@
         <span class="fd-lbl">tweet drafted</span>
       </div>
 
-      <!-- Luciana: Human publisher -->
-      <div class="fd-node" data-step="6">
+      <!-- Luciana: Human in the loop -->
+      <div class="fd-node fd-node-human" data-step="6">
         <div class="fd-dot fd-dot-human"></div>
         <div class="fd-body">
-          <span class="fd-name fd-name-human">Luciana</span>
+          <div class="fd-header">
+            <span class="fd-name fd-name-human">Luciana</span>
+          </div>
+          <p class="fd-desc">Human in the loop · final approval · sets strategy</p>
         </div>
         <span class="fd-badge fd-badge-human">Human</span>
       </div>
