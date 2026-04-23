@@ -45,7 +45,10 @@
     "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
     "cost_usd": 0.0074,
     "cost_source": "estimated",
-    "metadata": { "input_tokens": 1492, "output_tokens": 191 },
+    "metadata": {
+      "input_tokens": 1492,
+      "output_tokens": 191
+    },
     "timestamp": "2026-04-21T05:05:20.000Z"
   },
   {
@@ -94,7 +97,10 @@
     "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
     "cost_usd": 0.0078,
     "cost_source": "estimated",
-    "metadata": { "input_tokens": 1530, "output_tokens": 198 },
+    "metadata": {
+      "input_tokens": 1530,
+      "output_tokens": 198
+    },
     "timestamp": "2026-04-21T06:25:10.000Z"
   },
   {
@@ -143,7 +149,10 @@
     "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
     "cost_usd": 0.0073,
     "cost_source": "estimated",
-    "metadata": { "input_tokens": 1471, "output_tokens": 186 },
+    "metadata": {
+      "input_tokens": 1471,
+      "output_tokens": 186
+    },
     "timestamp": "2026-04-21T06:37:05.000Z"
   },
   {
@@ -192,7 +201,10 @@
     "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started",
     "cost_usd": 0.0076,
     "cost_source": "estimated",
-    "metadata": { "input_tokens": 1509, "output_tokens": 193 },
+    "metadata": {
+      "input_tokens": 1509,
+      "output_tokens": 193
+    },
     "timestamp": "2026-04-21T06:50:17.613707Z"
   },
   {
@@ -241,7 +253,10 @@
     "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
     "cost_usd": 0.0074,
     "cost_source": "estimated",
-    "metadata": { "input_tokens": 1488, "output_tokens": 189 },
+    "metadata": {
+      "input_tokens": 1488,
+      "output_tokens": 189
+    },
     "timestamp": "2026-04-21T06:51:56.717081Z"
   },
   {
@@ -290,7 +305,189 @@
     "article_url": "https://blogs.agenticpayment.forum/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook",
     "cost_usd": 0.0079,
     "cost_source": "estimated",
-    "metadata": { "input_tokens": 1541, "output_tokens": 201 },
+    "metadata": {
+      "input_tokens": 1541,
+      "output_tokens": 201
+    },
     "timestamp": "2026-04-22T02:16:49.619541+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "agentic payments news April 22, 2026",
+      "results": 8
+    },
+    "timestamp": "2026-04-23T04:52:03.512877+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "AI agent autonomous payment systems 2025 2026",
+      "results": 8
+    },
+    "timestamp": "2026-04-23T04:52:05.245997+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "site:reddit.com agentic payment OR agent payment",
+      "results": 8
+    },
+    "timestamp": "2026-04-23T04:52:07.962688+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "agentic payment arxiv OR research paper 2026",
+      "results": 8
+    },
+    "timestamp": "2026-04-23T04:52:09.962642+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "Visa OR Mastercard OR Stripe OR PayPal AI agent payment announcement",
+      "results": 8
+    },
+    "timestamp": "2026-04-23T04:52:14.063541+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Kai",
+    "action": "filter_and_score",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.03044,
+    "metadata": {
+      "input_tokens": 3376,
+      "output_tokens": 1354,
+      "raw_count": 14
+    },
+    "timestamp": "2026-04-23T04:52:41.254057+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.03449,
+    "metadata": {
+      "input_tokens": 2300,
+      "output_tokens": 1839
+    },
+    "timestamp": "2026-04-23T04:53:19.121749+00:00"
+  },
+  {
+    "event_type": "review",
+    "agent": "Morgan",
+    "action": "expert_review",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "verdict": "REVISE",
+    "score": 6,
+    "feedback": [
+      "The core thesis — that post-authorization infrastructure (chargebacks, VAMP thresholds, dispute logic) is the real constraint on agentic payments — is legitimate and underreported. But the article asserts a '3% chargeback rate' in the brief as if it's a known data point. It's not. There's no basis given for this figure, and using a specific number without sourcing it will get the piece dismissed immediately by any acquiring bank risk officer who reads it. Either source it or reframe it as a threshold illustration (Visa's VAMP program flags merchants above 0.9% for excessive fraud; Mastercard's Excessive Chargeback Program triggers at 1.5% — either of these would be a more credible anchor than an unattributed 3%).",
+      "The claim that 'authorization is solved' is stated flatly but it's not accurate for agentic contexts. Authorization approval rates for card-present and card-not-present are materially different, and agentic transactions — where the cardholder is not present, the merchant category may be ambiguous, and the behavioral signal is non-human — will have distinct authorization challenges. Issuers run behavioral fraud models that flag non-human transaction patterns; an agent that books 12 micro-transactions in 90 seconds will hit velocity rules and 3DS friction in ways the article doesn't acknowledge. Authorization is not solved; it's just a different problem than dispute resolution.",
+      "The Stripe characterization is presented as original analysis but the logic has a gap. The article claims 'Stripe's risk infrastructure, not Visa's rails, is the actual constraint on agentic payment scale' — but Stripe's fraud tooling (Radar) is a rules and ML layer that still runs on top of Visa's scheme rules and issuer authorization decisions. Stripe cannot unilaterally redefine chargeback liability or dispute windows. The actual constraint claim needs to be more precise: Stripe can reduce dispute initiation rates at the merchant layer, but it cannot touch the issuer-side dispute rights that cardholders retain under Reg E and scheme rules. That's the constraint the article is actually trying to describe.",
+      "The Counter-Consensus section is cut off mid-sentence ('But protocol a'). This is a submission error but it means the article's analytical payoff — the actual counter-consensus argument — is missing. Cannot evaluate the strongest part of the piece."
+    ],
+    "expert_note": "The piece is circling something real that almost nobody is writing about seriously: the mismatch between scheme dispute timelines (cardholders have up to 120 days to initiate a chargeback under Visa rules) and agentic transaction patterns where the user may genuinely not know a payment occurred until well outside that window — or conversely, may dispute a legitimate agent action they've forgotten authorizing. That asymmetry, combined with the fact that existing reason codes have no 'unauthorized autonomous agent' category, is where the acquiring relationship actually breaks down. That argument deserves to be the center of this piece, not a supporting point buried in the back half.",
+    "article_title": "Visa and Mastercard Are Solving the Easy Problem. The Hard Problem Will Kill Agentic Payments.",
+    "cost_usd": 0.01616,
+    "cost_source": "live",
+    "metadata": {
+      "input_tokens": 1762,
+      "output_tokens": 725
+    },
+    "timestamp": "2026-04-23T04:53:38.069897+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "revise_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.02956,
+    "metadata": {
+      "input_tokens": 1279,
+      "output_tokens": 1715
+    },
+    "timestamp": "2026-04-23T04:54:12.674255+00:00"
+  },
+  {
+    "event_type": "review",
+    "agent": "Morgan",
+    "action": "expert_review",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "verdict": "REVISE",
+    "score": 6,
+    "feedback": [
+      "Reg E conflation is a material error: Reg E covers electronic fund transfers — ACH, debit card, prepaid — not credit card transactions. Credit card dispute rights are governed by the Fair Credit Billing Act (FCBA), which gives cardholders 60 days from statement to dispute billing errors, not Reg E. The article uses Reg E as the governing authority for what reads like a credit card chargeback argument throughout. A payments PM or acquiring bank CTO will immediately flag this and lose trust in everything else. Fix it or split the argument by rail type.",
+      "VAMP threshold description is imprecise in a way that matters: VAMP (launched April 2025) consolidates the old VDMP and VFMP programs. The 0.9% figure cited is the Visa Acquirer Monitoring Program threshold, but the article conflates 'fraud-to-sales ratio' with chargeback ratio — these are different metrics. VAMP specifically tracks TC40 fraud reports and disputes separately, with the dispute threshold at 0.9% and the fraud threshold at 0.9% of sales volume. An agent generating TC40s through declined-then-disputed transactions hits a different bucket than one generating chargebacks. The article needs to be precise about which metric kills you first in an agentic context.",
+      "The Mastercard ECP threshold cited (1.5%) is the 'Excessive Chargeback Merchant' tier, but the program has two tiers — 'High Excessive' at 3.0% kicks in with significantly larger fines. More importantly, the article doesn't distinguish between MCC-level exposure: agents operating across ambiguous or shifting MCCs face the additional risk of scheme reclassification, which resets chargeback ratio calculations and can retroactively push a merchant into a monitored tier. This is a real operational trap for agentic architectures that the article gestures at but doesn't name.",
+      "The thesis in 'The Bet' is the strongest part but undersells a critical technical angle: cryptographic consent trails are necessary but not sufficient. Visa and Mastercard chargeback reason codes don't have a 'cryptographic proof of agent authorization' response category. Even a perfect consent record doesn't map onto existing dispute response workflows — the acquirer still has to translate that evidence into a valid rebuttal under current reason code frameworks (e.g., Visa reason code 10.4 for card-absent fraud). The article implies this is solved by 'building the evidentiary layer' without acknowledging that the schemes haven't created the procedural mechanism to accept it.",
+      "The Counter-Consensus section is blank. This is either a draft artifact or an editorial gap — but for a forum post arguing against consensus, leaving the counter-consensus section empty is structurally incoherent and will undercut credibility."
+    ],
+    "expert_note": "The real sleeper issue here that nobody is building for yet: when an AI agent is acting under a delegated payment mandate, the question of whether a dispute is 'unauthorized' under existing scheme rules is genuinely unsettled — because scheme rules define authorization as the cardholder's consent, and a cardholder delegating to an agent doesn't neatly map onto the existing authorization model. I've been in acquiring risk conversations where the bank's position is that if the agent exceeded any parameter of its mandate, every resulting transaction is potentially disputable as unauthorized, full stop. That's an existential liability posture, and acquirers will price it into merchant agreements before regulators get anywhere near this.",
+    "article_title": "Authorization Is Not the Bottleneck for Agentic Payments — Issuer-Side Dispute Rights Are",
+    "cost_usd": 0.01774,
+    "cost_source": "live",
+    "metadata": {
+      "input_tokens": 1762,
+      "output_tokens": 830
+    },
+    "timestamp": "2026-04-23T04:54:33.697485+00:00"
+  },
+  {
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "Authorization Is Not the Bottleneck for Agentic Payments — Issuer-Side Dispute Rights Are",
+    "article_url": "https://blogs.agenticpayment.forum/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are",
+    "timestamp": "2026-04-23T04:54:34.379254+00:00",
+    "run_cost_usd": 0.2034
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "Visa's 0.9% VAMP threshold was calibrated for humans buying things once. An AI agent running dozens of micro-transactions per session will breach it structurally, not fraudulently. Your acquiring bank gets fined. That is the actual",
+    "tweet_url": "https://x.com/AgenticPayForum/status/2047177301042110956",
+    "article_title": "Authorization Is Not the Bottleneck for Agentic Payments — Issuer-Side Dispute Rights Are",
+    "article_url": "https://blogs.agenticpayment.forum/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are",
+    "timestamp": "2026-04-23T04:54:38.059254+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Mia",
+    "action": "generate_tweet",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.00266,
+    "metadata": {
+      "input_tokens": 500,
+      "output_tokens": 77
+    },
+    "timestamp": "2026-04-23T04:54:37.772436+00:00"
   }
 ]
