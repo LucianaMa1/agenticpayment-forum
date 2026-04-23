@@ -68,6 +68,10 @@
       --accent-faint: rgba(79,126,247,0.08);
       --green:        #00d9a3;
       --green-faint:  rgba(0,217,163,0.08);
+      --amber:        #f5a623;
+      --amber-faint:  rgba(245,166,35,0.08);
+      --violet:       #a78bfa;
+      --violet-faint: rgba(167,139,250,0.08);
     }
 
     html { scroll-behavior: smooth; }
@@ -206,139 +210,136 @@
       color: var(--text-dim); margin-bottom: 28px;
     }
 
-    /* ── AGENT PIPELINE ──────────────────────────────── */
-    .pipeline {
+    /* ── FLOW DIAGRAM ────────────────────────────────── */
+    .flow-diag {
       position: relative;
     }
 
-    /* vertical connector line — runs through center of dot column */
-    .pipeline::before {
+    /* subtle vertical spine through the dot column */
+    .flow-diag::before {
       content: '';
       position: absolute;
-      left: 4px; top: 14px;
+      left: 8px; top: 14px; bottom: 14px;
       width: 1px;
-      height: calc(100% - 28px);
-      background: linear-gradient(
-        to bottom,
-        var(--accent) 0%,
-        var(--accent) 70%,
-        var(--green) 100%
-      );
-      opacity: 0.3;
-    }
-
-    /* flow dot — controlled by JS */
-    #flow-dot {
-      position: absolute;
-      left: 1px;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(79,126,247,0.95);
-      opacity: 0;
+      background: linear-gradient(to bottom, var(--accent), var(--green));
+      opacity: 0.12;
       pointer-events: none;
-      z-index: 2;
-      transition:
-        top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity 0.3s ease,
-        background 0.4s ease,
-        box-shadow 0.4s ease;
     }
 
-    .p-agent {
+    /* each agent node */
+    .fd-node {
       display: grid;
       grid-template-columns: 18px 1fr auto;
-      gap: 14px;
-      align-items: start;
-      padding: 12px 0;
+      gap: 12px;
+      align-items: center;
+      padding: 9px 0;
       opacity: 0;
-      transform: translateX(16px);
-      animation: slideIn 0.5s forwards;
+      transform: translateX(12px);
+      animation: fdIn 0.5s forwards;
+      transition: opacity 0.35s ease;
       position: relative; z-index: 1;
     }
 
-    /* stagger each agent */
-    .p-agent:nth-child(1) { animation-delay: 0.1s; }
-    .p-agent:nth-child(2) { animation-delay: 0.22s; }
-    .p-agent:nth-child(3) { animation-delay: 0.34s; }
-    .p-agent:nth-child(4) { animation-delay: 0.46s; }
-    .p-agent:nth-child(5) { animation-delay: 0.58s; }
-    .p-agent:nth-child(6) { animation-delay: 0.70s; }
-
-    @keyframes slideIn {
-      to { opacity: 1; transform: translateX(0); }
+    @keyframes fdIn {
+      from { opacity: 0; transform: translateX(12px); }
+      to   { opacity: 0.45; transform: translateX(0); }
     }
 
-    .p-dot {
+    /* lit = currently active node in the animation cycle */
+    .fd-node.lit { opacity: 1 !important; }
+
+    /* staggered entrance */
+    [data-step="0"] { animation-delay: 0.08s; }
+    [data-step="1"] { animation-delay: 0.18s; }
+    [data-step="2"] { animation-delay: 0.28s; }
+    [data-step="3"] { animation-delay: 0.38s; }
+    [data-step="4"] { animation-delay: 0.48s; }
+    [data-step="5"] { animation-delay: 0.58s; }
+    [data-step="6"] { animation-delay: 0.68s; }
+
+    /* node dots */
+    .fd-dot {
       width: 9px; height: 9px; border-radius: 50%;
-      margin-top: 4px;
-      background: var(--accent);
-      box-shadow: 0 0 8px rgba(79,126,247,0.6);
-      animation: pulse 2.5s ease-in-out infinite;
+      justify-self: center;
+      transition: box-shadow 0.35s ease;
     }
-    .p-dot.editor {
-      background: var(--green);
-      box-shadow: 0 0 8px rgba(0,217,163,0.6);
-      justify-self: start;
-    }
-    .p-dot.human {
-      background: var(--green);
-      box-shadow: 0 0 8px rgba(0,217,163,0.6);
-      animation: pulseGreen 2.5s ease-in-out infinite;
-    }
+    .fd-dot-ai     { background: var(--accent); box-shadow: 0 0 6px rgba(79,126,247,0.4); }
+    .fd-dot-violet { background: var(--violet);  box-shadow: 0 0 6px rgba(167,139,250,0.4); }
+    .fd-dot-human  { background: var(--green);   box-shadow: 0 0 6px rgba(0,217,163,0.4); }
 
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 6px rgba(79,126,247,0.5); }
-      50%       { box-shadow: 0 0 14px rgba(79,126,247,0.9); }
-    }
-    @keyframes pulseGreen {
-      0%, 100% { box-shadow: 0 0 6px rgba(0,217,163,0.5); }
-      50%       { box-shadow: 0 0 14px rgba(0,217,163,0.9); }
-    }
+    .fd-node.lit .fd-dot-ai     { box-shadow: 0 0 18px rgba(79,126,247,1); }
+    .fd-node.lit .fd-dot-violet { box-shadow: 0 0 18px rgba(167,139,250,1); }
+    .fd-node.lit .fd-dot-human  { box-shadow: 0 0 18px rgba(0,217,163,1); }
 
-    /* stagger the pulse so agents look "active" in sequence */
-    .p-agent:nth-child(1) .p-dot { animation-delay: 0s; }
-    .p-agent:nth-child(2) .p-dot { animation-delay: 0.5s; }
-    .p-agent:nth-child(3) .p-dot { animation-delay: 1s; }
-    .p-agent:nth-child(4) .p-dot { animation-delay: 1.5s; }
-    .p-agent:nth-child(5) .p-dot { animation-delay: 2s; }
-    .p-agent:nth-child(6) .p-dot { animation-delay: 2.5s; }
-
-    .p-body { flex: 1; }
-
-    .p-name {
+    .fd-body { display: flex; align-items: baseline; gap: 7px; min-width: 0; }
+    .fd-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px; font-weight: 600;
-      letter-spacing: -0.01em;
-      color: var(--text-primary); margin-bottom: 2px;
+      font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
+      color: var(--text-primary);
     }
-    .p-name.human { color: var(--green); }
-    .p-role {
-      font-family: 'Inter', sans-serif;
+    .fd-name-human { color: var(--green); }
+    .fd-role {
       font-size: 10px; font-weight: 500;
       letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--text-dim); margin-left: 6px;
-      vertical-align: middle;
+      color: var(--text-dim);
     }
-
-    .p-desc {
-      font-size: 12px; color: var(--text-mid); line-height: 1.5;
-    }
-
-    .p-badge {
+    .fd-badge {
       font-size: 10px; font-weight: 500;
-      padding: 3px 9px; border-radius: 20px;
-      letter-spacing: 0.04em; white-space: nowrap;
-      margin-top: 4px; flex-shrink: 0;
+      padding: 2px 8px; border-radius: 20px;
+      letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;
     }
-    .p-badge.ai {
-      background: var(--accent-faint); color: var(--accent);
-      border: 1px solid rgba(79,126,247,0.18);
+    .fd-badge-ai     { background: var(--accent-faint); color: var(--accent); border: 1px solid rgba(79,126,247,0.18); }
+    .fd-badge-violet { background: rgba(167,139,250,0.08); color: var(--violet); border: 1px solid rgba(167,139,250,0.2); }
+    .fd-badge-human  { background: var(--green-faint); color: var(--green); border: 1px solid rgba(0,217,163,0.18); }
+
+    /* edge connectors */
+    .fd-edge {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      align-items: center;
     }
-    .p-badge.human {
-      background: var(--green-faint); color: var(--green);
-      border: 1px solid rgba(0,217,163,0.18);
+    .fd-spine {
+      width: 1px; height: 22px; justify-self: center;
+      background: var(--border-2);
     }
+    .fd-lbl {
+      font-size: 10px; color: var(--text-dim);
+      letter-spacing: 0.03em; font-style: italic;
+    }
+
+    /* Sage + Morgan feedback-loop wrapper */
+    .fd-loop-group {
+      position: relative;
+      padding-right: 24px;
+    }
+    /* amber dashed bracket: visually shows the REVISE loop */
+    .fd-loop-group::before {
+      content: '';
+      position: absolute;
+      right: 0; top: 12px; bottom: 28px;
+      width: 10px;
+      border-right:  1px dashed rgba(245,166,35,0.35);
+      border-top:    1px dashed rgba(245,166,35,0.35);
+      border-bottom: 1px dashed rgba(245,166,35,0.35);
+      border-radius: 0 4px 4px 0;
+      pointer-events: none;
+    }
+
+    /* Morgan verdict chips */
+    .fd-verdicts {
+      display: flex; gap: 5px; flex-wrap: wrap;
+      padding: 5px 0 4px 30px;
+    }
+    .fd-v {
+      font-size: 9px; font-weight: 700;
+      padding: 2px 7px; border-radius: 4px;
+      letter-spacing: 0.06em; white-space: nowrap;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+    }
+    .fd-v-pub { background: var(--green-faint);    color: var(--green);  border: 1px solid rgba(0,217,163,0.2); }
+    .fd-v-rev { background: rgba(245,166,35,0.08); color: #f5a623;       border: 1px solid rgba(245,166,35,0.2); }
+    .fd-v-rej { background: rgba(255,77,77,0.08);  color: #ff5c5c;       border: 1px solid rgba(255,77,77,0.2); }
 
     /* ── DIVIDER ─────────────────────────────────────── */
     .divider { border: none; border-top: 1px solid var(--border); }
@@ -422,46 +423,118 @@
   <div class="hero-right">
     <p class="pipeline-label">this forum is built by Luciana and her agent team</p>
 
-    <div class="pipeline">
-      <div id="flow-dot"></div>
+    <div class="flow-diag" id="flow-diag">
 
-      <div class="p-agent">
-        <div class="p-dot"></div>
-        <div class="p-body"><div class="p-name">Rex <span class="p-role">Research</span></div></div>
-        <span class="p-badge ai">AI</span>
+      <!-- Rex: Research -->
+      <div class="fd-node" data-step="0">
+        <div class="fd-dot fd-dot-ai"></div>
+        <div class="fd-body">
+          <span class="fd-name">Rex</span>
+          <span class="fd-role">Research</span>
+        </div>
+        <span class="fd-badge fd-badge-ai">AI</span>
       </div>
 
-      <div class="p-agent">
-        <div class="p-dot"></div>
-        <div class="p-body"><div class="p-name">Kai <span class="p-role">Filter</span></div></div>
-        <span class="p-badge ai">AI</span>
+      <div class="fd-edge">
+        <div class="fd-spine"></div>
+        <span class="fd-lbl">40 raw signals</span>
       </div>
 
-      <div class="p-agent">
-        <div class="p-dot"></div>
-        <div class="p-body"><div class="p-name">Sage <span class="p-role">Synthesis</span></div></div>
-        <span class="p-badge ai">AI</span>
+      <!-- Kai: Filter -->
+      <div class="fd-node" data-step="1">
+        <div class="fd-dot fd-dot-ai"></div>
+        <div class="fd-body">
+          <span class="fd-name">Kai</span>
+          <span class="fd-role">Filter</span>
+        </div>
+        <span class="fd-badge fd-badge-ai">AI</span>
       </div>
 
-      <div class="p-agent">
-        <div class="p-dot editor"></div>
-        <div class="p-body"><div class="p-name">Justin <span class="p-role">Editor</span></div></div>
-        <span class="p-badge ai">AI</span>
+      <div class="fd-edge">
+        <div class="fd-spine"></div>
+        <span class="fd-lbl">5–8 scored items</span>
       </div>
 
-      <div class="p-agent">
-        <div class="p-dot"></div>
-        <div class="p-body"><div class="p-name">Mia <span class="p-role">Marketing</span></div></div>
-        <span class="p-badge ai">AI</span>
+      <!-- Sage + Morgan: feedback loop group (amber bracket on right) -->
+      <div class="fd-loop-group">
+
+        <div class="fd-node" data-step="2">
+          <div class="fd-dot fd-dot-ai"></div>
+          <div class="fd-body">
+            <span class="fd-name">Sage</span>
+            <span class="fd-role">Synthesis</span>
+          </div>
+          <span class="fd-badge fd-badge-ai">AI</span>
+        </div>
+
+        <div class="fd-edge">
+          <div class="fd-spine"></div>
+          <span class="fd-lbl">draft article</span>
+        </div>
+
+        <div class="fd-node" data-step="3">
+          <div class="fd-dot fd-dot-violet"></div>
+          <div class="fd-body">
+            <span class="fd-name">Morgan</span>
+            <span class="fd-role">Review</span>
+          </div>
+          <span class="fd-badge fd-badge-violet">AI</span>
+        </div>
+
+        <!-- Morgan's verdict output chips -->
+        <div class="fd-verdicts">
+          <span class="fd-v fd-v-pub">PUBLISH ↓</span>
+          <span class="fd-v fd-v-rev">REVISE ↺</span>
+          <span class="fd-v fd-v-rej">REJECT ✕</span>
+        </div>
+
+      </div><!-- /.fd-loop-group -->
+
+      <div class="fd-edge">
+        <div class="fd-spine"></div>
+        <span class="fd-lbl">approved + expert note</span>
       </div>
 
-      <div class="p-agent">
-        <div class="p-dot human"></div>
-        <div class="p-body"><div class="p-name human">Luciana</div></div>
-        <span class="p-badge human">Human</span>
+      <!-- Justin: Editor -->
+      <div class="fd-node" data-step="4">
+        <div class="fd-dot fd-dot-ai"></div>
+        <div class="fd-body">
+          <span class="fd-name">Justin</span>
+          <span class="fd-role">Editor</span>
+        </div>
+        <span class="fd-badge fd-badge-ai">AI</span>
       </div>
 
-    </div>
+      <div class="fd-edge">
+        <div class="fd-spine"></div>
+        <span class="fd-lbl">live article URL</span>
+      </div>
+
+      <!-- Mia: Marketing -->
+      <div class="fd-node" data-step="5">
+        <div class="fd-dot fd-dot-ai"></div>
+        <div class="fd-body">
+          <span class="fd-name">Mia</span>
+          <span class="fd-role">Marketing</span>
+        </div>
+        <span class="fd-badge fd-badge-ai">AI</span>
+      </div>
+
+      <div class="fd-edge">
+        <div class="fd-spine"></div>
+        <span class="fd-lbl">tweet drafted</span>
+      </div>
+
+      <!-- Luciana: Human publisher -->
+      <div class="fd-node" data-step="6">
+        <div class="fd-dot fd-dot-human"></div>
+        <div class="fd-body">
+          <span class="fd-name fd-name-human">Luciana</span>
+        </div>
+        <span class="fd-badge fd-badge-human">Human</span>
+      </div>
+
+    </div><!-- /.flow-diag -->
 
     <a href="/activity.html" style="
       display:inline-flex;align-items:center;gap:6px;
@@ -487,93 +560,42 @@
 
 <script>
 (function () {
-  const PAUSE  = 650;  // ms to sit at each node
-  const TRAVEL = 480;  // ms for the transition between nodes (matches CSS)
-  const RESET  = 600;  // ms invisible before restarting
+  const HOLD  = 680;  // ms a node stays lit
+  const GAP   = 180;  // ms dark gap between nodes
+  const PAUSE = 1400; // ms to pause after full cycle before restarting
 
   window.addEventListener('load', function () {
-    const pipeline  = document.querySelector('.pipeline');
-    const agentDots = document.querySelectorAll('.p-dot');
+    var nodes = document.querySelectorAll('[data-step]');
+    if (!nodes.length) return;
 
-    // inject the flow dot into the pipeline
-    const dot = document.createElement('div');
-    dot.id = 'flow-dot';
-    pipeline.appendChild(dot);
+    var step = 0;
+    var timer = null;
 
-    function positions() {
-      const pr = pipeline.getBoundingClientRect();
-      return Array.from(agentDots).map(function (d) {
-        var r = d.getBoundingClientRect();
-        // top of flow dot = center of agent dot − half of flow dot height (3.5px)
-        return Math.round(r.top - pr.top + r.height / 2 - 3.5);
-      });
+    function light(i) {
+      nodes.forEach(function (n) { n.classList.remove('lit'); });
+      if (i >= 0 && i < nodes.length) nodes[i].classList.add('lit');
     }
 
-    function setBlue() {
-      dot.style.background  = 'var(--accent)';
-      dot.style.boxShadow   = '0 0 12px rgba(79,126,247,0.95)';
-    }
-    function setGreen() {
-      dot.style.background  = 'var(--green)';
-      dot.style.boxShadow   = '0 0 12px rgba(0,217,163,0.95)';
-    }
+    function tick() {
+      light(step);
+      step++;
 
-    function run() {
-      var pos   = positions();
-      var total = pos.length;
-      var step  = 0;
-
-      // place silently at start
-      dot.style.transition = 'none';
-      dot.style.top        = pos[0] + 'px';
-      dot.style.opacity    = '0';
-      setBlue();
-
-      // small delay so browser paints the silent position first
-      setTimeout(function tick() {
-        // restore transitions
-        dot.style.transition = [
-          'top 0.5s cubic-bezier(0.4,0,0.2,1)',
-          'opacity 0.3s ease',
-          'background 0.4s ease',
-          'box-shadow 0.4s ease'
-        ].join(', ');
-
-        // show dot at current step
-        dot.style.top     = pos[step] + 'px';
-        dot.style.opacity = '1';
-
-        // turn green on the last node (Luciana)
-        if (step === total - 1) setGreen();
-        else setBlue();
-
-        step++;
-
-        if (step < total) {
-          // after pause, travel to next node
-          setTimeout(tick, PAUSE + TRAVEL);
-        } else {
-          // all nodes visited — pause, fade out, restart
-          setTimeout(function () {
-            dot.style.opacity = '0';
-            setTimeout(function () {
-              step = 0;
-              dot.style.transition = 'none';
-              dot.style.top        = pos[0] + 'px';
-              setBlue();
-              // double rAF to ensure paint before re-enabling transitions
-              requestAnimationFrame(function () {
-                requestAnimationFrame(function () {
-                  setTimeout(tick, 80);
-                });
-              });
-            }, RESET);
-          }, PAUSE);
-        }
-      }, 120);
+      if (step < nodes.length) {
+        timer = setTimeout(tick, HOLD + GAP);
+      } else {
+        // finished cycle — pause, dim all, restart
+        timer = setTimeout(function () {
+          light(-1); // dim all
+          timer = setTimeout(function () {
+            step = 0;
+            tick();
+          }, 300);
+        }, PAUSE);
+      }
     }
 
-    run();
+    // wait for entrance animations to finish (last delay 0.68s + 0.5s = ~1.2s)
+    timer = setTimeout(tick, 1400);
   });
 })();
 </script>
