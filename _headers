@@ -1,0 +1,8 @@
+# Prevent Cloudflare from caching data feeds — ensures latest activity
+# is always served without stale-CDN delay.
+
+/activity.json
+  Cache-Control: no-store, max-age=0
+
+/x402_feed.json
+  Cache-Control: no-store, max-age=0

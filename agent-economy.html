@@ -355,11 +355,11 @@
   <div class="explainer">
     <div class="explainer-item">
       <div class="explainer-label">What is x402?</div>
-      <div class="explainer-value">An open HTTP payment standard — agents send USDC for API access without accounts, OAuth, or Net-30 invoices.</div>
+      <div class="explainer-value">An open HTTP payment standard — agents pay any ERC-20 for API access without accounts, OAuth, or Net-30 invoices.</div>
     </div>
     <div class="explainer-item">
       <div class="explainer-label">What we watch</div>
-      <div class="explainer-value">USDC Transfer events to the x402 ExactProxy and UptoProxy contracts on Base mainnet, scanned every 10 minutes.</div>
+      <div class="explainer-value">Events emitted by the x402 ExactProxy &amp; UptoProxy contracts on Base mainnet — any token, scanned every 10 min.</div>
     </div>
     <div class="explainer-item">
       <div class="explainer-label">Contracts</div>
@@ -378,11 +378,11 @@
     </div>
     <div class="stat">
       <div class="stat-value" id="stat-volume">—</div>
-      <div class="stat-label">USDC volume</div>
+      <div class="stat-label" id="stat-volume-label">Volume</div>
     </div>
     <div class="stat">
       <div class="stat-value" id="stat-avg">—</div>
-      <div class="stat-label">Avg tx size</div>
+      <div class="stat-label" id="stat-avg-label">Avg tx size</div>
     </div>
     <div class="stat">
       <div class="stat-value neutral" id="stat-last">—</div>
@@ -429,14 +429,34 @@ function escHtml(str) {
   return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+/* Format a token amount for display */
+function fmtAmount(item) {
+  const sym = item.token_symbol || 'TOKEN';
+  const amt = Number(item.amount || item.amount_usdc || 0);
+  if (item.is_stablecoin) return { big: `$${amt.toFixed(4)}`, sub: sym };
+  // Non-stablecoin: show significant decimals, trim trailing zeros
+  const s = amt < 0.0001 ? amt.toExponential(3)
+          : amt < 0.001  ? amt.toFixed(6)
+          : amt < 1      ? amt.toFixed(4)
+          : amt.toFixed(3);
+  return { big: s.replace(/\.?0+$/, ''), sub: sym };
+}
+
 function renderX402Card(item, delay) {
   const shortFrom = item.from_address
-    ? `${item.from_address.slice(0,6)}...${item.from_address.slice(-4)}`
+    ? `${item.from_address.slice(0,6)}…${item.from_address.slice(-4)}`
     : 'unknown';
+  const shortTo = item.to_address
+    ? `${item.to_address.slice(0,6)}…${item.to_address.slice(-4)}`
+    : '';
   const shortHash = item.tx_hash
-    ? `${item.tx_hash.slice(0,10)}...${item.tx_hash.slice(-6)}`
+    ? `${item.tx_hash.slice(0,10)}…${item.tx_hash.slice(-6)}`
     : '';
   const basescanUrl = `https://basescan.org/tx/${item.tx_hash}`;
+  const { big, sub } = fmtAmount(item);
+  // Strip any wrapping quotes from commentary
+  const commentary = escHtml((item.commentary || '').replace(/^["']|["']$/g, ''));
+
   return `
     <div class="event" style="animation-delay:${delay}s">
       <div class="event-node"><div class="node-circle"></div></div>
@@ -445,19 +465,19 @@ function renderX402Card(item, delay) {
           <div class="agent-badge">
             <div class="badge-dot-amber"></div>
             <span class="badge-name">${shortFrom}</span>
-            <span class="badge-action">· paid via x402 · Base mainnet</span>
+            <span class="badge-action">· paid via x402 · Base</span>
           </div>
-          <span class="badge-x402">x402</span>
+          <span class="badge-x402">${escHtml(item.contract || 'x402')}</span>
           <span class="card-time">${formatTimestamp(item.timestamp)}</span>
         </div>
         <div class="card-body">
-          <div class="card-x402-amount">$${Number(item.amount_usdc).toFixed(4)} <span style="font-size:14px;font-weight:400;color:var(--text-dim)">USDC</span></div>
+          <div class="card-x402-amount">${escHtml(big)} <span style="font-size:15px;font-weight:500;color:var(--text-mid)">${escHtml(sub)}</span></div>
           <div class="card-meta-row">
-            <span class="meta-pill contract">${escHtml(item.contract || 'x402')}</span>
-            <span class="meta-pill">block ${(item.block_number||'').toLocaleString()}</span>
+            ${shortTo ? `<span class="meta-pill">→ ${shortTo}</span>` : ''}
+            <span class="meta-pill">block ${Number(item.block_number||0).toLocaleString()}</span>
             ${shortHash ? `<span class="meta-pill">${shortHash}</span>` : ''}
           </div>
-          <div class="card-commentary">${escHtml(item.commentary || '')}</div>
+          ${commentary ? `<div class="card-commentary">${commentary}</div>` : ''}
           <div class="card-footer">
             <a href="${basescanUrl}" target="_blank" class="card-btn-amber">View on Basescan →</a>
           </div>
@@ -490,7 +510,7 @@ function showEmpty() {
       <div class="empty-cron">*/10 * * * * x402_observer.py</div>
     </div>`;
   document.getElementById('stat-count').textContent  = '0';
-  document.getElementById('stat-volume').textContent = '$0.0000';
+  document.getElementById('stat-volume').textContent = '—';
   document.getElementById('stat-avg').textContent    = '—';
   document.getElementById('stat-last').textContent   = 'waiting';
 }
@@ -509,12 +529,28 @@ async function loadFeed() {
     shownCount = 0;
     document.getElementById('timeline').innerHTML = '<div class="timeline-line"></div>';
 
-    const volume = items.reduce((s, i) => s + (i.amount_usdc || 0), 0);
-    const avg    = items.length ? volume / items.length : 0;
-    document.getElementById('stat-count').textContent  = items.length;
-    document.getElementById('stat-volume').textContent = `$${volume.toFixed(4)}`;
-    document.getElementById('stat-avg').textContent    = `$${avg.toFixed(4)}`;
-    document.getElementById('stat-last').textContent   = timeAgo(allItems[0].timestamp);
+    // Stats — group volume by token symbol
+    const tokenVols = {};
+    items.forEach(function(i) {
+      const sym = i.token_symbol || 'TOKEN';
+      tokenVols[sym] = (tokenVols[sym] || 0) + Number(i.amount || i.amount_usdc || 0);
+    });
+    // Pick the dominant token by volume
+    const topSym = Object.keys(tokenVols).sort((a,b) => tokenVols[b]-tokenVols[a])[0] || 'TOKEN';
+    const topVol = tokenVols[topSym] || 0;
+    const topItems = items.filter(i => (i.token_symbol || 'TOKEN') === topSym);
+    const avgAmt   = topItems.length ? topVol / topItems.length : 0;
+
+    const isStable = items.find(i => i.token_symbol === topSym && i.is_stablecoin);
+    const fmtVol = isStable ? `$${topVol.toFixed(4)}` : topVol.toFixed(4).replace(/\.?0+$/,'');
+    const fmtAvg = isStable ? `$${avgAmt.toFixed(4)}` : avgAmt.toFixed(4).replace(/\.?0+$/,'');
+
+    document.getElementById('stat-count').textContent        = items.length.toLocaleString();
+    document.getElementById('stat-volume').textContent       = fmtVol;
+    document.getElementById('stat-volume-label').textContent = `${topSym} volume`;
+    document.getElementById('stat-avg').textContent          = fmtAvg;
+    document.getElementById('stat-avg-label').textContent    = `Avg per tx (${topSym})`;
+    document.getElementById('stat-last').textContent         = timeAgo(allItems[0].timestamp);
 
     loadMore();
     if (allItems.length > PAGE_SIZE) document.getElementById('load-more-btn').classList.add('visible');
