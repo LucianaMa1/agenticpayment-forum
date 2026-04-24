@@ -290,6 +290,20 @@
       display: inline-block;
     }
 
+    /* ── UPDATE BAR ──────────────────────────────────────────── */
+    .update-bar {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      margin-bottom: 28px;
+      padding: 10px 16px;
+      background: rgba(245,166,35,0.03);
+      border: 1px solid rgba(245,166,35,0.12);
+      border-radius: 8px;
+    }
+    .update-item { color: var(--text-mid); }
+    .update-sep  { color: var(--text-dim); }
+
     /* ── LOAD MORE ────────────────────────────────────────────── */
     .load-more-wrap { display: flex; justify-content: center; margin-top: 24px; }
     .load-more-btn {
@@ -359,7 +373,7 @@
     </div>
     <div class="explainer-item">
       <div class="explainer-label">What we watch</div>
-      <div class="explainer-value">Events emitted by the x402 ExactProxy &amp; UptoProxy contracts on Base mainnet — any token, scanned every 10 min.</div>
+      <div class="explainer-value">Events emitted by the x402 ExactProxy &amp; UptoProxy contracts on Base mainnet — any token, scanned every 12 hours.</div>
     </div>
     <div class="explainer-item">
       <div class="explainer-label">Contracts</div>
@@ -388,6 +402,15 @@
       <div class="stat-value neutral" id="stat-last">—</div>
       <div class="stat-label">Last observed</div>
     </div>
+  </div>
+
+  <!-- Update status bar -->
+  <div class="update-bar" id="update-bar" style="display:none">
+    <span class="update-item" id="last-updated-label"></span>
+    <span class="update-sep">·</span>
+    <span class="update-item" id="next-update-label"></span>
+    <span class="update-sep">·</span>
+    <span class="update-item" style="color:var(--text-dim)">runs 00:00 &amp; 12:00 UTC</span>
   </div>
 
   <!-- Transaction timeline -->
@@ -486,6 +509,30 @@ function renderX402Card(item, delay) {
     </div>`;
 }
 
+/* Show last-updated + next-scheduled-run in the update bar */
+function updateBar(latestTimestamp) {
+  var bar = document.getElementById('update-bar');
+  bar.style.display = 'flex';
+
+  // Last updated: relative time based on latest event's timestamp
+  document.getElementById('last-updated-label').textContent =
+    'Last updated: ' + timeAgo(latestTimestamp);
+
+  // Next scheduled run: next 00:00 or 12:00 UTC from now
+  var now  = new Date();
+  var utcH = now.getUTCHours();
+  var nextBoundary = utcH < 12 ? 12 : 0;
+  var next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), nextBoundary, 0, 0, 0));
+  if (nextBoundary === 0) next.setUTCDate(next.getUTCDate() + 1);
+
+  var diffMs = next - now;
+  var diffH  = Math.floor(diffMs / 3600000);
+  var diffM  = Math.floor((diffMs % 3600000) / 60000);
+  document.getElementById('next-update-label').textContent =
+    diffH > 0 ? ('Next update: in ' + diffH + 'h ' + diffM + 'm')
+              : ('Next update: in ' + diffM + 'm');
+}
+
 const PAGE_SIZE = 10;
 let allItems = [], shownCount = 0;
 
@@ -506,8 +553,8 @@ function showEmpty() {
     <div class="empty-state">
       <div class="empty-icon">⬡</div>
       <div class="empty-title">Listening for transactions</div>
-      <div class="empty-sub">The observer scans Base chain every 10 minutes. Live x402 micropayments will appear here the moment an agent pays.</div>
-      <div class="empty-cron">*/10 * * * * x402_observer.py</div>
+      <div class="empty-sub">The observer scans Base chain twice a day. Live x402 micropayments will appear here after the next scheduled run.</div>
+      <div class="empty-cron">0 */12 * * * x402_observer.py</div>
     </div>`;
   document.getElementById('stat-count').textContent  = '0';
   document.getElementById('stat-volume').textContent = '—';
@@ -552,6 +599,8 @@ async function loadFeed() {
     document.getElementById('stat-avg-label').textContent    = `Avg per tx (${topSym})`;
     document.getElementById('stat-last').textContent         = timeAgo(allItems[0].timestamp);
 
+    updateBar(allItems[0].timestamp);
+
     loadMore();
     if (allItems.length > PAGE_SIZE) document.getElementById('load-more-btn').classList.add('visible');
   } catch(e) {
@@ -560,7 +609,7 @@ async function loadFeed() {
 }
 
 loadFeed();
-setInterval(loadFeed, 15000); // poll every 15s — observer updates every 2min
+setInterval(loadFeed, 300000); // poll every 5min — observer runs at 00:00 & 12:00 UTC
 </script>
 </body>
 </html>
