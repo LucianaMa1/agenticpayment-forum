@@ -748,5 +748,20 @@
     "contract": "UptoProxy",
     "commentary": "An agent paid 0.003301 OPG for proxied AI inference via UptoProxy — routing through abstraction layers signals agents are optimizing for reliability over raw cost.",
     "timestamp": "2026-04-24T06:22:06.488157+00:00"
+  },
+  {
+    "event_type": "x402_tx",
+    "tx_hash": "0x4c1bf762493a0c1747b1e1b1480b64f1763fc485f98e7da387322983eb8b7418",
+    "block_number": 45111252,
+    "from_address": "0x11cc52fdc3f0470528667d87437f61d42d2712ad",
+    "to_address": "0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a",
+    "amount": 0.05773534,
+    "token_symbol": "OPG",
+    "token_address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "is_stablecoin": false,
+    "network": "base",
+    "contract": "UptoProxy",
+    "commentary": "An agent paid 0.057735 OPG for proxied model inference via UptoProxy — routing spend through abstraction layers signals agents are optimizing for redundancy, not just cost.",
+    "timestamp": "2026-04-24T06:26:05.295114+00:00"
   }
 ]
