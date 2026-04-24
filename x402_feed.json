@@ -688,5 +688,35 @@
     "contract": "UptoProxy",
     "commentary": "An agent paid 0.081253 OPG via x402 on Base — on-chain micropayment confirmed.",
     "timestamp": "2026-04-24T06:15:55.552641+00:00"
+  },
+  {
+    "event_type": "x402_tx",
+    "tx_hash": "0x2e49de064305e56e4a136ea7319425572258e47740ae43f1dc66e946493136cc",
+    "block_number": 45111015,
+    "from_address": "0x11cc52fdc3f0470528667d87437f61d42d2712ad",
+    "to_address": "0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a",
+    "amount": 0.04379716,
+    "token_symbol": "OPG",
+    "token_address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "is_stablecoin": false,
+    "network": "base",
+    "contract": "UptoProxy",
+    "commentary": "An agent paid 0.043797 OPG for proxied AI inference via UptoProxy — automated model routing is quietly becoming the plumbing beneath every agentic workflow.",
+    "timestamp": "2026-04-24T06:18:06.473651+00:00"
+  },
+  {
+    "event_type": "x402_tx",
+    "tx_hash": "0x0876852dedd114c6037d54b0c3ec4b7b07fbacaa77a5c2696d8677be8922f187",
+    "block_number": 45111027,
+    "from_address": "0x11cc52fdc3f0470528667d87437f61d42d2712ad",
+    "to_address": "0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a",
+    "amount": 0.08191819,
+    "token_symbol": "OPG",
+    "token_address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "is_stablecoin": false,
+    "network": "base",
+    "contract": "UptoProxy",
+    "commentary": "An agent paid 0.081918 OPG for proxied AI inference via UptoProxy — routing demand through abstraction layers signals agents are optimizing cost, not just consuming compute.",
+    "timestamp": "2026-04-24T06:18:08.953191+00:00"
   }
 ]
