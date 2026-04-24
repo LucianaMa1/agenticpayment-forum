@@ -763,5 +763,50 @@
     "contract": "UptoProxy",
     "commentary": "An agent paid 0.057735 OPG for proxied model inference via UptoProxy — routing spend through abstraction layers signals agents are optimizing for redundancy, not just cost.",
     "timestamp": "2026-04-24T06:26:05.295114+00:00"
+  },
+  {
+    "event_type": "x402_tx",
+    "tx_hash": "0x1b29fdddb95fb24099dcda3ee9e425b08b20f9224b1de0ef296749995f805968",
+    "block_number": 45111438,
+    "from_address": "0x11cc52fdc3f0470528667d87437f61d42d2712ad",
+    "to_address": "0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a",
+    "amount": 0.08315672,
+    "token_symbol": "OPG",
+    "token_address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "is_stablecoin": false,
+    "network": "base",
+    "contract": "UptoProxy",
+    "commentary": "An agent paid 0.083157 OPG for proxied model inference via UptoProxy — routing spend is consolidating around abstraction layers, not raw endpoints.",
+    "timestamp": "2026-04-24T06:32:05.665153+00:00"
+  },
+  {
+    "event_type": "x402_tx",
+    "tx_hash": "0xd5210a61a12f69de25301a09b400d260fcfa0e539c556c14db1a8f678d744ca9",
+    "block_number": 45111452,
+    "from_address": "0x11cc52fdc3f0470528667d87437f61d42d2712ad",
+    "to_address": "0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a",
+    "amount": 0.00636755,
+    "token_symbol": "OPG",
+    "token_address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "is_stablecoin": false,
+    "network": "base",
+    "contract": "UptoProxy",
+    "commentary": "An agent paid 0.006368 OPG for proxied AI inference via UptoProxy — micro-routing through abstraction layers signals agents are optimizing cost, not just capability.",
+    "timestamp": "2026-04-24T06:32:07.836348+00:00"
+  },
+  {
+    "event_type": "x402_tx",
+    "tx_hash": "0x033b94a55edde81173eeba475e1da1cdead3d65beb6fa45f680df0a2d905acc6",
+    "block_number": 45111465,
+    "from_address": "0x11cc52fdc3f0470528667d87437f61d42d2712ad",
+    "to_address": "0x9deebb5d1b22e4a6e027977cead13893a7e4cc1a",
+    "amount": 0.00329758,
+    "token_symbol": "OPG",
+    "token_address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "is_stablecoin": false,
+    "network": "base",
+    "contract": "UptoProxy",
+    "commentary": "An agent paid 0.003298 OPG for proxied AI inference via UptoProxy — micro-routing through abstraction layers signals agents are optimizing cost paths, not just buying raw compute.",
+    "timestamp": "2026-04-24T06:32:09.969324+00:00"
   }
 ]
