@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agent Economy — Agentic Payment</title>
-  <meta name="description" content="Live x402 micropayments on Base chain — agents spending USDC in real time, observed and interpreted.">
+  <meta name="description" content="The complete 9-layer map of agentic payment infrastructure — protocols, authorization, identity, rails, and live on-chain data.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,10 +24,13 @@
       --accent-faint: rgba(79,126,247,0.08);
       --green:        #00d9a3;
       --green-faint:  rgba(0,217,163,0.07);
-      --green-glow:   rgba(0,217,163,0.2);
       --amber:        #f5a623;
       --amber-faint:  rgba(245,166,35,0.08);
       --amber-glow:   rgba(245,166,35,0.2);
+      --violet:       #a78bfa;
+      --violet-faint: rgba(167,139,250,0.08);
+      --cyan:         #22d3ee;
+      --rose:         #f43f5e;
     }
 
     html { scroll-behavior: smooth; }
@@ -39,7 +42,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ──────────────────────────────────────────────────── */
+    /* ── NAV ─────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 56px;
@@ -69,26 +72,15 @@
       border: 1px solid var(--border-2);
     }
 
-    /* ── PAGE SHELL ───────────────────────────────────────────── */
-    .page { max-width: 800px; margin: 0 auto; padding: 108px 48px 100px; }
+    /* ── PAGE ─────────────────────────────────────────── */
+    .page { max-width: 1040px; margin: 0 auto; padding: 108px 48px 100px; }
 
-    /* ── HEADER ───────────────────────────────────────────────── */
-    .page-header { margin-bottom: 48px; }
+    /* ── HEADER ───────────────────────────────────────── */
     .page-eyebrow {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px; font-weight: 500;
       letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--amber); margin-bottom: 18px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .pulse-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--amber); box-shadow: 0 0 10px var(--amber-glow);
-      animation: pulseAmber 2.2s ease-in-out infinite; flex-shrink: 0;
-    }
-    @keyframes pulseAmber {
-      0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--amber-glow); }
-      50%       { opacity: 0.4; box-shadow: none; }
     }
     .page-title {
       font-family: 'Space Grotesk', sans-serif;
@@ -96,226 +88,176 @@
       letter-spacing: -0.035em; color: var(--text-primary);
       line-height: 1.15; margin-bottom: 12px;
     }
-    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 560px; }
+    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 620px; margin-bottom: 40px; }
 
-    /* ── EXPLAINER BAND ───────────────────────────────────────── */
-    .explainer {
-      border: 1px solid rgba(245,166,35,0.15);
-      border-radius: 12px;
-      background: rgba(245,166,35,0.03);
-      padding: 20px 24px;
-      margin-bottom: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
+    /* ── QUICK-NAV CHIPS ──────────────────────────────── */
+    .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .qchip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500;
+      padding: 6px 14px; border-radius: 20px;
+      text-decoration: none; transition: all 0.2s;
+      border: 1px solid var(--border-2);
+      color: var(--text-mid);
+      display: flex; align-items: center; gap: 6px;
     }
-    .explainer-item {
-      padding: 0 20px;
-      border-right: 1px solid rgba(245,166,35,0.1);
+    .qchip:hover { color: var(--text-primary); border-color: var(--text-dim); }
+    .qchip.live  { border-color: rgba(245,166,35,0.35); color: var(--amber); }
+    .qchip.live:hover { background: var(--amber-faint); }
+    .qchip .live-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--amber); animation: blink 2s ease-in-out infinite;
     }
-    .explainer-item:first-child { padding-left: 0; }
-    .explainer-item:last-child  { border-right: none; }
-    .explainer-label {
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* ── TABLE SECTION ────────────────────────────────── */
+    .section-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--amber); opacity: 0.7; margin-bottom: 6px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 16px;
     }
-    .explainer-value {
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-2);
+      border-radius: 12px;
+      margin-bottom: 56px;
+    }
+    .stack-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px; min-width: 800px;
+    }
+    .stack-table thead th {
+      padding: 12px 16px;
+      text-align: left;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px; color: var(--text-mid); line-height: 1.55;
-    }
-    .explainer-value a {
-      color: var(--amber); text-decoration: none; opacity: 0.85;
-    }
-    .explainer-value a:hover { opacity: 1; }
-
-    /* ── STATS BAR ────────────────────────────────────────────── */
-    .stats-bar {
-      display: flex; gap: 0;
-      border: 1px solid rgba(245,166,35,0.15);
-      border-radius: 10px; overflow: hidden;
-      margin-bottom: 40px;
-      background: rgba(245,166,35,0.03);
-    }
-    .stat {
-      flex: 1; padding: 18px 24px;
-      border-right: 1px solid rgba(245,166,35,0.1);
-      transition: background 0.2s;
-    }
-    .stat:last-child { border-right: none; }
-    .stat:hover { background: rgba(245,166,35,0.05); }
-    .stat-value {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 26px; font-weight: 700;
-      letter-spacing: -0.04em;
-      color: var(--amber);
-      line-height: 1; margin-bottom: 5px;
-    }
-    .stat-value.neutral { color: var(--text-primary); }
-    .stat-label {
-      font-size: 11px; font-weight: 500;
+      font-size: 10px; font-weight: 500;
       text-transform: uppercase; letter-spacing: 0.1em;
       color: var(--text-dim);
+      border-bottom: 1px solid var(--border-2);
+      background: var(--surface);
+      white-space: nowrap;
     }
+    .stack-table tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.55;
+      color: var(--text-mid);
+    }
+    .stack-table tbody tr:last-child td { border-bottom: none; }
+    .stack-table tbody tr:hover td { background: rgba(255,255,255,0.015); }
+    .stack-table tbody tr.has-dive:hover td { background: rgba(245,166,35,0.02); }
 
-    /* ── TIMELINE ─────────────────────────────────────────────── */
-    .timeline { position: relative; }
-    .timeline-line {
-      position: absolute; left: 20px; top: 0; bottom: 0;
-      width: 1px; background: rgba(245,166,35,0.15);
-    }
-
-    /* ── EVENT ────────────────────────────────────────────────── */
-    .event {
-      display: flex; gap: 24px; margin-bottom: 6px;
-      opacity: 0; transform: translateY(10px);
-      animation: slideIn 0.4s forwards;
-    }
-    @keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
-
-    .event-node {
-      flex-shrink: 0; width: 40px;
-      display: flex; flex-direction: column; align-items: center;
-      padding-top: 22px;
-    }
-    .node-circle {
-      width: 9px; height: 9px; border-radius: 50%;
-      background: var(--amber); box-shadow: 0 0 10px var(--amber-glow);
-      z-index: 1; position: relative;
-    }
-
-    .event-card {
-      flex: 1; border: 1px solid rgba(245,166,35,0.15);
-      border-radius: 12px; overflow: hidden;
-      transition: border-color 0.2s, background 0.2s;
-      margin-bottom: 16px;
-    }
-    .event-card:hover { border-color: rgba(245,166,35,0.35); background: rgba(245,166,35,0.03); }
-
-    .card-topbar {
-      display: flex; align-items: center; gap: 10px; padding: 12px 20px;
-      border-bottom: 1px solid rgba(245,166,35,0.1);
-      background: rgba(245,166,35,0.04);
-    }
-    .agent-badge { display: flex; align-items: center; gap: 7px; }
-    .badge-dot-amber {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--amber); box-shadow: 0 0 6px var(--amber-glow);
-    }
-    .badge-name {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; font-weight: 500; color: var(--text-mid); letter-spacing: 0.06em;
-    }
-    .badge-action { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); }
-    .badge-x402 {
-      margin-left: auto;
+    /* Layer cell */
+    .layer-cell { min-width: 148px; }
+    .layer-head { display: flex; align-items: flex-start; gap: 10px; }
+    .layer-num {
+      flex-shrink: 0; margin-top: 1px;
+      width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px; font-weight: 500;
-      padding: 3px 8px; border-radius: 4px;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      background: var(--amber-faint); color: var(--amber);
-      border: 1px solid rgba(245,166,35,0.2);
+      background: var(--border-2); color: var(--text-dim);
     }
-    .card-time {
+    .layer-name {
+      font-size: 13px; font-weight: 500;
+      color: var(--text-primary); line-height: 1.3;
+    }
+    .layer-name small {
+      display: block; font-size: 11px; font-weight: 400;
+      color: var(--text-dim); margin-top: 1px;
+    }
+    .dive-link {
+      display: inline-block; margin-top: 6px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim); margin-left: 8px;
+      font-size: 10px; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.04em;
+      transition: color 0.2s;
     }
+    .dive-link:hover { color: var(--text-primary); }
 
-    .card-body { padding: 20px 20px 18px; }
-    .card-x402-amount {
+    /* Player tags */
+    .players-cell { min-width: 160px; }
+    .player-wrap { display: flex; flex-wrap: wrap; gap: 4px; }
+    .ptag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; padding: 2px 7px; border-radius: 4px;
+      background: var(--surface-2); border: 1px solid var(--border-2);
+      color: var(--text-mid); white-space: nowrap;
+    }
+    .ptag.star { border-color: rgba(245,166,35,0.3); color: var(--amber); }
+
+    /* Gap cell */
+    .gap-cell { min-width: 160px; color: var(--text-dim); }
+    .gap-urgent {
+      color: var(--amber); font-size: 12px; line-height: 1.5;
+    }
+    .gap-plain { font-size: 12px; color: var(--text-dim); }
+
+    /* ── DEEP DIVE CARDS ──────────────────────────────── */
+    .dive-section-label {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 28px; font-weight: 700;
-      letter-spacing: -0.04em; color: var(--amber);
-      margin-bottom: 4px;
+      font-size: 20px; font-weight: 600;
+      color: var(--text-primary); margin-bottom: 6px;
     }
-    .card-x402-sub {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim); margin-bottom: 16px;
+    .dive-section-sub {
+      font-size: 13px; color: var(--text-dim); margin-bottom: 24px;
     }
-    .card-commentary {
-      font-size: 14px; color: var(--text-primary);
-      line-height: 1.7; margin-bottom: 18px;
-      padding: 14px 16px;
-      background: var(--amber-faint);
-      border-left: 2px solid var(--amber);
-      border-radius: 0 6px 6px 0;
+    .dive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
     }
-    .card-footer { display: flex; align-items: center; gap: 10px; }
-    .card-btn-amber {
-      font-size: 12px; font-weight: 500; text-decoration: none;
-      padding: 6px 14px; border-radius: 6px; transition: all 0.18s;
-      letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 6px;
-      background: var(--amber-faint); color: var(--amber);
-      border: 1px solid rgba(245,166,35,0.25);
+    .dive-card {
+      background: var(--surface);
+      border: 1px solid var(--border-2);
+      border-radius: 12px; padding: 22px;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      border-top: 3px solid var(--border-2);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
-    .card-btn-amber:hover { background: rgba(245,166,35,0.14); border-color: var(--amber); }
+    .dive-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
+    .dive-card.c-amber { border-top-color: var(--amber); }
+    .dive-card.c-amber:hover { box-shadow: 0 8px 32px rgba(245,166,35,0.10); }
+    .dive-card.c-violet { border-top-color: var(--violet); }
+    .dive-card.c-violet:hover { box-shadow: 0 8px 32px rgba(167,139,250,0.10); }
+    .dive-card.c-blue { border-top-color: var(--accent); }
+    .dive-card.c-blue:hover { box-shadow: 0 8px 32px rgba(79,126,247,0.10); }
+    .dive-card.c-green { border-top-color: var(--green); }
+    .dive-card.c-green:hover { box-shadow: 0 8px 32px rgba(0,217,163,0.10); }
+    .dive-card.c-rose { border-top-color: var(--rose); }
+    .dive-card.c-rose:hover { box-shadow: 0 8px 32px rgba(244,63,94,0.10); }
+    .dive-card.disabled { opacity: 0.45; pointer-events: none; }
 
-    /* ── META ROW (contract + tx hash) ───────────────────────── */
-    .card-meta-row {
-      display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    .dc-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
     }
-    .meta-pill {
-      padding: 3px 10px; border-radius: 4px;
-      background: rgba(245,166,35,0.06);
-      border: 1px solid rgba(245,166,35,0.12);
+    .dc-eyebrow.c-amber { color: var(--amber); }
+    .dc-eyebrow.c-violet { color: var(--violet); }
+    .dc-eyebrow.c-blue   { color: var(--accent); }
+    .dc-eyebrow.c-green  { color: var(--green); }
+    .dc-eyebrow.c-rose   { color: var(--rose); }
+
+    .dc-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px; font-weight: 600;
+      color: var(--text-primary); margin-bottom: 8px;
+    }
+    .dc-desc { font-size: 12px; color: var(--text-mid); line-height: 1.65; flex: 1; margin-bottom: 14px; }
+    .dc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; }
+    .dc-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; padding: 2px 8px; border-radius: 4px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border-2);
       color: var(--text-dim);
     }
-    .meta-pill.contract { color: var(--amber); opacity: 0.8; }
+    .dc-arrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); margin-top: auto; }
 
-    /* ── EMPTY STATE ──────────────────────────────────────────── */
-    .empty-state {
-      border: 1px dashed rgba(245,166,35,0.2);
-      border-radius: 16px; padding: 64px 48px;
-      text-align: center; margin-top: 8px;
-    }
-    .empty-icon {
-      font-size: 32px; margin-bottom: 20px; opacity: 0.4;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .empty-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px; font-weight: 600;
-      color: var(--amber); margin-bottom: 10px; opacity: 0.75;
-    }
-    .empty-sub { font-size: 14px; color: var(--text-dim); line-height: 1.7; max-width: 360px; margin: 0 auto; }
-    .empty-cron {
-      margin-top: 24px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--text-dim);
-      padding: 8px 16px; border-radius: 6px;
-      background: rgba(245,166,35,0.04);
-      border: 1px solid rgba(245,166,35,0.1);
-      display: inline-block;
-    }
-
-    /* ── UPDATE BAR ──────────────────────────────────────────── */
-    .update-bar {
-      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      margin-bottom: 28px;
-      padding: 10px 16px;
-      background: rgba(245,166,35,0.03);
-      border: 1px solid rgba(245,166,35,0.12);
-      border-radius: 8px;
-    }
-    .update-item { color: var(--text-mid); }
-    .update-sep  { color: var(--text-dim); }
-
-    /* ── LOAD MORE ────────────────────────────────────────────── */
-    .load-more-wrap { display: flex; justify-content: center; margin-top: 24px; }
-    .load-more-btn {
-      font-size: 13px; font-weight: 500; color: var(--text-mid);
-      background: transparent; border: 1px solid rgba(245,166,35,0.2);
-      padding: 9px 24px; border-radius: 8px;
-      cursor: pointer; transition: all 0.2s; display: none;
-    }
-    .load-more-btn:hover { color: var(--amber); border-color: var(--amber); }
-    .load-more-btn.visible { display: block; }
-
-    /* ── FOOTER ───────────────────────────────────────────────── */
+    /* ── FOOTER ───────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border); padding: 28px 56px; margin-top: 40px;
       display: flex; justify-content: space-between; align-items: center;
@@ -328,16 +270,8 @@
     @media (max-width: 640px) {
       nav { padding: 16px 20px; }
       .page { padding: 90px 20px 60px; }
-      .explainer { grid-template-columns: 1fr; gap: 16px; }
-      .explainer-item { padding: 0; border-right: none; border-bottom: 1px solid rgba(245,166,35,0.1); padding-bottom: 16px; }
-      .explainer-item:last-child { border-bottom: none; padding-bottom: 0; }
-      .stats-bar { flex-direction: column; }
-      .stat { border-right: none; border-bottom: 1px solid rgba(245,166,35,0.1); }
-      .stat:last-child { border-bottom: none; }
       .page-title { font-size: 26px; }
       footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
-      .timeline-line { left: 16px; }
-      .event-node { width: 32px; }
     }
   </style>
 </head>
@@ -356,71 +290,320 @@
 
 <div class="page">
 
-  <div class="page-header">
-    <p class="page-eyebrow">
-      <span class="pulse-dot"></span>
-      Live on Base chain
-    </p>
-    <h1 class="page-title">Agent Economy.</h1>
-    <p class="page-sub">Real agents spending real money — x402 micropayments observed live on Base. Every transaction interpreted by Claude.</p>
+  <p class="page-eyebrow">Knowledge Hub</p>
+  <h1 class="page-title">Agent Commerce Stack.</h1>
+  <p class="page-sub">The 9-layer map of agentic payment infrastructure — from the moment an agent decides to spend, to the moment money settles. Where the gaps are, and who is filling them.</p>
+
+  <!-- Quick navigation -->
+  <div class="quick-nav">
+    <a href="/ae-live.html" class="qchip live">
+      <span class="live-dot"></span> Live x402 Feed
+    </a>
+    <a href="/ae-layer-intent.html"    class="qchip">Layer 1 · Intent</a>
+    <a href="/ae-layer-identity.html"  class="qchip">Layer 2 · Identity</a>
+    <a href="/ae-layer-auth.html"      class="qchip">Layer 3 · Authorization</a>
+    <a href="/ae-layer-rails.html"     class="qchip">Layer 7 · Payment Rails</a>
   </div>
 
-  <!-- What is x402 explainer -->
-  <div class="explainer">
-    <div class="explainer-item">
-      <div class="explainer-label">What is x402?</div>
-      <div class="explainer-value">An open HTTP payment standard — agents pay any ERC-20 for API access without accounts, OAuth, or Net-30 invoices.</div>
-    </div>
-    <div class="explainer-item">
-      <div class="explainer-label">What we watch</div>
-      <div class="explainer-value">Events emitted by the x402 ExactProxy &amp; UptoProxy contracts on Base mainnet — any token, scanned every 12 hours.</div>
-    </div>
-    <div class="explainer-item">
-      <div class="explainer-label">Contracts</div>
-      <div class="explainer-value">
-        <a href="https://basescan.org/address/0x402085c248EeA27D92E8b30b2C58ed07f9E20001" target="_blank">ExactProxy ↗</a><br>
-        <a href="https://basescan.org/address/0x4020a4f3b7b90CCA423b9FabCC0CE57c6c240002" target="_blank">UptoProxy ↗</a>
+  <!-- ── The Stack Table ── -->
+  <p class="section-label">The 9-Layer Framework</p>
+  <div class="table-wrap">
+    <table class="stack-table">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>What it does</th>
+          <th>Key Capabilities</th>
+          <th>Example Players</th>
+          <th>Agent Value</th>
+          <th>Gaps / Opportunities</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- 1 -->
+        <tr class="has-dive">
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">1</span>
+              <div>
+                <div class="layer-name">Intent / Decision<small>用户或agent产生"要买"的决策</small></div>
+                <a href="/ae-layer-intent.html" class="dive-link">→ deep dive</a>
+              </div>
+            </div>
+          </td>
+          <td>Agent determines whether, what, and how much to spend based on context and policy.</td>
+          <td>LLM reasoning, planning, budgeting, preference modeling</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag">OpenAI Agents</span>
+              <span class="ptag">AutoGPT</span>
+              <span class="ptag">Adept</span>
+              <span class="ptag">Anthropic</span>
+            </div>
+          </td>
+          <td>决定"要不要花钱"</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Biggest opportunity: autonomous spend logic — no standard yet for how agents budget</span></td>
+        </tr>
+
+        <!-- 2 -->
+        <tr class="has-dive">
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">2</span>
+              <div>
+                <div class="layer-name">Identity & Trust<small>确认"是谁在操作"</small></div>
+                <a href="/ae-layer-identity.html" class="dive-link">→ deep dive</a>
+              </div>
+            </div>
+          </td>
+          <td>Verify the agent/user identity, detect bots, prevent fraud at the identity layer.</td>
+          <td>KYC, bot detection, device fingerprinting, agent attestation</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag star">Skyfire</span>
+              <span class="ptag star">KYAPay</span>
+              <span class="ptag">Forter</span>
+              <span class="ptag">DataDome</span>
+              <span class="ptag">Socure</span>
+            </div>
+          </td>
+          <td>防止假人/假agent，建立可信身份</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Agent identity still unsolved — no universal "proof of agent" standard</span></td>
+        </tr>
+
+        <!-- 3 -->
+        <tr class="has-dive">
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">3</span>
+              <div>
+                <div class="layer-name">Authorization<small>决定"是否允许支付"</small></div>
+                <a href="/ae-layer-auth.html" class="dive-link">→ deep dive</a>
+              </div>
+            </div>
+          </td>
+          <td>Policy engine that decides whether a specific payment is permitted, within what limits, and by whom.</td>
+          <td>Policy engine, spend limits, approval flows, delegation</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag star">Visa TAP</span>
+              <span class="ptag star">MC Agent Pay</span>
+              <span class="ptag star">AP2</span>
+              <span class="ptag">ACP</span>
+            </div>
+          </td>
+          <td>控制agent权限，防止越权支付</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ The next platform war — Visa, Mastercard, and crypto protocols all competing to own this layer</span></td>
+        </tr>
+
+        <!-- 4 -->
+        <tr>
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">4</span>
+              <div><div class="layer-name">Payment Credentials<small>提供支付"凭证"</small></div></div>
+            </div>
+          </td>
+          <td>Issue and store the payment instrument the agent actually uses — card token, wallet key, or signed credential.</td>
+          <td>Tokenization, vaulting, virtual cards, wallet signing</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag">Basis Theory</span>
+              <span class="ptag">Stripe Issuing</span>
+              <span class="ptag">Privacy.com</span>
+              <span class="ptag">Privy</span>
+            </div>
+          </td>
+          <td>Agent有"可用的钱包"</td>
+          <td class="gap-cell"><span class="gap-plain">Agent-native wallet missing — existing solutions adapted from human UX</span></td>
+        </tr>
+
+        <!-- 5 -->
+        <tr>
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">5</span>
+              <div><div class="layer-name">Funding Source<small>钱从哪里来</small></div></div>
+            </div>
+          </td>
+          <td>Connect agent's spending wallet to a real funding source — bank account, credit line, or stablecoin treasury.</td>
+          <td>Bank connection, card funding, stablecoin on-ramp</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag">Stripe</span>
+              <span class="ptag">Plaid</span>
+              <span class="ptag">Circle</span>
+              <span class="ptag">Coinbase</span>
+            </div>
+          </td>
+          <td>资金来源连接</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Multi-source unification hard — agent needs to route between fiat, crypto, credits seamlessly</span></td>
+        </tr>
+
+        <!-- 6 -->
+        <tr>
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">6</span>
+              <div><div class="layer-name">Checkout / Execution<small>执行购买动作</small></div></div>
+            </div>
+          </td>
+          <td>The agent actually completes the purchase — navigating checkout flows, APIs, or headless commerce.</td>
+          <td>Checkout APIs, cart automation, form filling, headless commerce</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag">Rye</span>
+              <span class="ptag">CartAI</span>
+              <span class="ptag">Shopify APIs</span>
+              <span class="ptag">Browser Use</span>
+            </div>
+          </td>
+          <td>Agent完成"点击购买"</td>
+          <td class="gap-cell"><span class="gap-plain">Agent-friendly checkout still rare — most merchant flows designed for humans, not APIs</span></td>
+        </tr>
+
+        <!-- 7 -->
+        <tr class="has-dive">
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">7</span>
+              <div>
+                <div class="layer-name">Payment Rails<small>钱怎么移动</small></div>
+                <a href="/ae-layer-rails.html" class="dive-link">→ deep dive</a>
+              </div>
+            </div>
+          </td>
+          <td>The actual movement of money — card networks, bank rails, real-time payments, or on-chain transfers.</td>
+          <td>Card networks, ACH, RTP, stablecoins, crypto settlement</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag star">x402</span>
+              <span class="ptag">Visa / MC</span>
+              <span class="ptag">FedNow</span>
+              <span class="ptag">Lightning</span>
+              <span class="ptag">Solana Pay</span>
+            </div>
+          </td>
+          <td>实际转钱</td>
+          <td class="gap-cell"><span class="gap-plain">Rails fragmentation severe — no single rail works for all agent use cases globally</span></td>
+        </tr>
+
+        <!-- 8 -->
+        <tr>
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">8</span>
+              <div><div class="layer-name">Settlement & Reconciliation<small>钱对账/落账</small></div></div>
+            </div>
+          </td>
+          <td>Money lands, books close. Automated reconciliation, ledgering, and reporting for agent-initiated spend.</td>
+          <td>Ledgering, reconciliation, reporting, treasury management</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag">Stripe Treasury</span>
+              <span class="ptag">Modern Treasury</span>
+              <span class="ptag">Adyen</span>
+            </div>
+          </td>
+          <td>企业财务闭环</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Enterprise-critical gap — CFOs can't approve agent spend without audit trails and auto-reconciliation</span></td>
+        </tr>
+
+        <!-- 9 -->
+        <tr>
+          <td class="layer-cell">
+            <div class="layer-head">
+              <span class="layer-num">9</span>
+              <div><div class="layer-name">Risk / Compliance<small>谁承担风险</small></div></div>
+            </div>
+          </td>
+          <td>Monitor for fraud, ensure AML compliance, manage chargebacks, and determine liability when something goes wrong.</td>
+          <td>AML, fraud monitoring, chargeback management, liability allocation</td>
+          <td class="players-cell">
+            <div class="player-wrap">
+              <span class="ptag">Sardine</span>
+              <span class="ptag">Alloy</span>
+              <span class="ptag">Unit21</span>
+            </div>
+          </td>
+          <td>防止损失，合规</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Agent liability boundary undefined — when an agent makes a fraudulent payment, who is responsible?</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Deep Dive cards ── -->
+  <p class="dive-section-label">Deep Dives</p>
+  <p class="dive-section-sub">Detailed breakdowns of the layers with the biggest open questions.</p>
+  <div class="dive-grid">
+
+    <a href="/ae-live.html" class="dive-card c-amber">
+      <p class="dc-eyebrow c-amber">● Live · Layer 7</p>
+      <p class="dc-title">Live x402 Feed</p>
+      <p class="dc-desc">Real-time micropayments observed on Base chain via the x402 protocol — every transaction interpreted by Claude.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">x402</span>
+        <span class="dc-tag">OPG</span>
+        <span class="dc-tag">USDC</span>
+        <span class="dc-tag">Base</span>
       </div>
-    </div>
-  </div>
+      <p class="dc-arrow">View live feed →</p>
+    </a>
 
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-value" id="stat-count">—</div>
-      <div class="stat-label">Transactions observed</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value" id="stat-volume">—</div>
-      <div class="stat-label" id="stat-volume-label">Volume</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value" id="stat-avg">—</div>
-      <div class="stat-label" id="stat-avg-label">Avg tx size</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value neutral" id="stat-last">—</div>
-      <div class="stat-label">Last observed</div>
-    </div>
-  </div>
+    <a href="/ae-layer-intent.html" class="dive-card c-violet">
+      <p class="dc-eyebrow c-violet">Layer 1</p>
+      <p class="dc-title">Intent / Decision</p>
+      <p class="dc-desc">How agents decide to spend: budgeting, preference modeling, and the emerging standards for autonomous purchase logic.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">LLM Planning</span>
+        <span class="dc-tag">Budgets</span>
+        <span class="dc-tag">Autonomy</span>
+      </div>
+      <p class="dc-arrow">Explore →</p>
+    </a>
 
-  <!-- Update status bar -->
-  <div class="update-bar" id="update-bar" style="display:none">
-    <span class="update-item" id="last-updated-label"></span>
-    <span class="update-sep">·</span>
-    <span class="update-item" id="next-update-label"></span>
-    <span class="update-sep">·</span>
-    <span class="update-item" style="color:var(--text-dim)">runs 00:00 &amp; 12:00 UTC</span>
-  </div>
+    <a href="/ae-layer-identity.html" class="dive-card c-blue">
+      <p class="dc-eyebrow c-blue">Layer 2</p>
+      <p class="dc-title">Identity & Trust</p>
+      <p class="dc-desc">Who is the agent? Skyfire, KYAPay, and others solving the unsolved problem of proving agent identity to payment systems.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Skyfire</span>
+        <span class="dc-tag">KYAPay</span>
+        <span class="dc-tag">KYC</span>
+        <span class="dc-tag">Bot Detection</span>
+      </div>
+      <p class="dc-arrow">Explore →</p>
+    </a>
 
-  <!-- Transaction timeline -->
-  <div class="timeline" id="timeline">
-    <div class="timeline-line"></div>
-    <div id="state-msg"></div>
-  </div>
+    <a href="/ae-layer-auth.html" class="dive-card c-amber">
+      <p class="dc-eyebrow c-amber">Layer 3</p>
+      <p class="dc-title">Authorization</p>
+      <p class="dc-desc">The next platform war: Visa TAP, Mastercard Agent Pay, AP2, and crypto protocols all competing to control agent spend permissions.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Visa TAP</span>
+        <span class="dc-tag">MC Agent Pay</span>
+        <span class="dc-tag">AP2</span>
+        <span class="dc-tag">ACP</span>
+      </div>
+      <p class="dc-arrow">Explore →</p>
+    </a>
 
-  <div class="load-more-wrap">
-    <button class="load-more-btn" id="load-more-btn" onclick="loadMore()">Load earlier transactions</button>
+    <a href="/ae-layer-rails.html" class="dive-card c-green">
+      <p class="dc-eyebrow c-green">Layer 7</p>
+      <p class="dc-title">Payment Rails</p>
+      <p class="dc-desc">How money actually moves: x402, Lightning, Solana Pay, card networks, and real-time bank rails compared.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">x402</span>
+        <span class="dc-tag">Lightning</span>
+        <span class="dc-tag">FedNow</span>
+        <span class="dc-tag">Solana Pay</span>
+      </div>
+      <p class="dc-arrow">Explore →</p>
+    </a>
+
   </div>
 
 </div>
@@ -428,188 +611,10 @@
 <footer>
   <span class="footer-copy">© 2026 agenticpayment.forum</span>
   <div class="footer-links">
-    <a href="https://blogs.agenticpayment.forum">Newsletter</a>
+    <a href="https://blogs.agenticpayment.forum" target="_blank">Newsletter</a>
     <a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a>
   </div>
 </footer>
 
-<script>
-function timeAgo(isoString) {
-  const now = new Date(), then = new Date(isoString);
-  const diff = Math.floor((now - then) / 1000);
-  if (diff < 60)    return 'just now';
-  if (diff < 3600)  return Math.floor(diff / 60) + 'm ago';
-  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
-  if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
-  return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
-function formatTimestamp(isoString) {
-  const d = new Date(isoString);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) +
-         ' · ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' UTC';
-}
-function escHtml(str) {
-  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-/* Format a token amount for display */
-function fmtAmount(item) {
-  const sym = item.token_symbol || 'TOKEN';
-  const amt = Number(item.amount || item.amount_usdc || 0);
-  if (item.is_stablecoin) return { big: `$${amt.toFixed(4)}`, sub: sym };
-  // Non-stablecoin: show significant decimals, trim trailing zeros
-  const s = amt < 0.0001 ? amt.toExponential(3)
-          : amt < 0.001  ? amt.toFixed(6)
-          : amt < 1      ? amt.toFixed(4)
-          : amt.toFixed(3);
-  return { big: s.replace(/\.?0+$/, ''), sub: sym };
-}
-
-function renderX402Card(item, delay) {
-  const shortFrom = item.from_address
-    ? `${item.from_address.slice(0,6)}…${item.from_address.slice(-4)}`
-    : 'unknown';
-  const shortTo = item.to_address
-    ? `${item.to_address.slice(0,6)}…${item.to_address.slice(-4)}`
-    : '';
-  const shortHash = item.tx_hash
-    ? `${item.tx_hash.slice(0,10)}…${item.tx_hash.slice(-6)}`
-    : '';
-  const basescanUrl = `https://basescan.org/tx/${item.tx_hash}`;
-  const { big, sub } = fmtAmount(item);
-  // Strip any wrapping quotes from commentary
-  const commentary = escHtml((item.commentary || '').replace(/^["']|["']$/g, ''));
-
-  return `
-    <div class="event" style="animation-delay:${delay}s">
-      <div class="event-node"><div class="node-circle"></div></div>
-      <div class="event-card">
-        <div class="card-topbar">
-          <div class="agent-badge">
-            <div class="badge-dot-amber"></div>
-            <span class="badge-name">${shortFrom}</span>
-            <span class="badge-action">· paid via x402 · Base</span>
-          </div>
-          <span class="badge-x402">${escHtml(item.contract || 'x402')}</span>
-          <span class="card-time">${formatTimestamp(item.timestamp)}</span>
-        </div>
-        <div class="card-body">
-          <div class="card-x402-amount">${escHtml(big)} <span style="font-size:15px;font-weight:500;color:var(--text-mid)">${escHtml(sub)}</span></div>
-          <div class="card-meta-row">
-            ${shortTo ? `<span class="meta-pill">→ ${shortTo}</span>` : ''}
-            <span class="meta-pill">block ${Number(item.block_number||0).toLocaleString()}</span>
-            ${shortHash ? `<span class="meta-pill">${shortHash}</span>` : ''}
-          </div>
-          ${commentary ? `<div class="card-commentary">${commentary}</div>` : ''}
-          <div class="card-footer">
-            <a href="${basescanUrl}" target="_blank" class="card-btn-amber">View on Basescan →</a>
-          </div>
-        </div>
-      </div>
-    </div>`;
-}
-
-/* Show last-updated + next-scheduled-run in the update bar */
-function updateBar(latestTimestamp) {
-  var bar = document.getElementById('update-bar');
-  bar.style.display = 'flex';
-
-  // Last updated: relative time based on latest event's timestamp
-  document.getElementById('last-updated-label').textContent =
-    'Last updated: ' + timeAgo(latestTimestamp);
-
-  // Next scheduled run: next 00:00 or 12:00 UTC from now
-  var now  = new Date();
-  var utcH = now.getUTCHours();
-  var nextBoundary = utcH < 12 ? 12 : 0;
-  var next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), nextBoundary, 0, 0, 0));
-  if (nextBoundary === 0) next.setUTCDate(next.getUTCDate() + 1);
-
-  var diffMs = next - now;
-  var diffH  = Math.floor(diffMs / 3600000);
-  var diffM  = Math.floor((diffMs % 3600000) / 60000);
-  document.getElementById('next-update-label').textContent =
-    diffH > 0 ? ('Next update: in ' + diffH + 'h ' + diffM + 'm')
-              : ('Next update: in ' + diffM + 'm');
-}
-
-const PAGE_SIZE = 10;
-let allItems = [], shownCount = 0;
-
-function loadMore() {
-  const timeline  = document.getElementById('timeline');
-  const nextBatch = allItems.slice(shownCount, shownCount + PAGE_SIZE);
-  nextBatch.forEach(function(item, i) {
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = renderX402Card(item, i * 0.06);
-    timeline.appendChild(wrapper.firstElementChild);
-  });
-  shownCount += nextBatch.length;
-  if (shownCount >= allItems.length) document.getElementById('load-more-btn').classList.remove('visible');
-}
-
-function showEmpty() {
-  document.getElementById('state-msg').innerHTML = `
-    <div class="empty-state">
-      <div class="empty-icon">⬡</div>
-      <div class="empty-title">Listening for transactions</div>
-      <div class="empty-sub">The observer scans Base chain twice a day. Live x402 micropayments will appear here after the next scheduled run.</div>
-      <div class="empty-cron">0 */12 * * * x402_observer.py</div>
-    </div>`;
-  document.getElementById('stat-count').textContent  = '0';
-  document.getElementById('stat-volume').textContent = '—';
-  document.getElementById('stat-avg').textContent    = '—';
-  document.getElementById('stat-last').textContent   = 'waiting';
-}
-
-async function loadFeed() {
-  try {
-    const res   = await fetch('/x402_feed.json?t=' + Date.now());
-    const items = await res.json();
-
-    if (!items.length) { showEmpty(); return; }
-
-    const stateMsg = document.getElementById('state-msg');
-    if (stateMsg) stateMsg.remove();
-
-    allItems   = [...items].reverse();
-    shownCount = 0;
-    document.getElementById('timeline').innerHTML = '<div class="timeline-line"></div>';
-
-    // Stats — group volume by token symbol
-    const tokenVols = {};
-    items.forEach(function(i) {
-      const sym = i.token_symbol || 'TOKEN';
-      tokenVols[sym] = (tokenVols[sym] || 0) + Number(i.amount || i.amount_usdc || 0);
-    });
-    // Pick the dominant token by volume
-    const topSym = Object.keys(tokenVols).sort((a,b) => tokenVols[b]-tokenVols[a])[0] || 'TOKEN';
-    const topVol = tokenVols[topSym] || 0;
-    const topItems = items.filter(i => (i.token_symbol || 'TOKEN') === topSym);
-    const avgAmt   = topItems.length ? topVol / topItems.length : 0;
-
-    const isStable = items.find(i => i.token_symbol === topSym && i.is_stablecoin);
-    const fmtVol = isStable ? `$${topVol.toFixed(4)}` : topVol.toFixed(4).replace(/\.?0+$/,'');
-    const fmtAvg = isStable ? `$${avgAmt.toFixed(4)}` : avgAmt.toFixed(4).replace(/\.?0+$/,'');
-
-    document.getElementById('stat-count').textContent        = items.length.toLocaleString();
-    document.getElementById('stat-volume').textContent       = fmtVol;
-    document.getElementById('stat-volume-label').textContent = `${topSym} volume`;
-    document.getElementById('stat-avg').textContent          = fmtAvg;
-    document.getElementById('stat-avg-label').textContent    = `Avg per tx (${topSym})`;
-    document.getElementById('stat-last').textContent         = timeAgo(allItems[0].timestamp);
-
-    updateBar(allItems[0].timestamp);
-
-    loadMore();
-    if (allItems.length > PAGE_SIZE) document.getElementById('load-more-btn').classList.add('visible');
-  } catch(e) {
-    showEmpty();
-  }
-}
-
-loadFeed();
-setInterval(loadFeed, 300000); // poll every 5min — observer runs at 00:00 & 12:00 UTC
-</script>
 </body>
 </html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identity & Trust — Agent Economy</title>
+  <meta name="description" content="Who is the agent? Skyfire, KYAPay, and the unsolved problem of proving agent identity to payment systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07070e; --surface: #0d0d1a; --surface-2: #111120;
+      --border: #16162a; --border-2: #1e1e38;
+      --text-primary: #eaeaf4; --text-mid: #7070a0; --text-dim: #2e2e4a;
+      --accent: #4f7ef7; --accent-faint: rgba(79,126,247,0.08);
+      --green: #00d9a3; --amber: #f5a623; --amber-faint: rgba(245,166,35,0.08);
+      --violet: #a78bfa; --cyan: #22d3ee; --rose: #f43f5e;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); background: rgba(7,7,14,0.90); backdrop-filter: blur(20px); }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--text-primary); text-decoration: none; }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-link { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 7px 14px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { color: var(--text-primary); }
+    .nav-link.active { color: var(--text-primary); background: var(--surface); border: 1px solid var(--border-2); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 0 48px 100px; }
+    .breadcrumb { padding: 88px 0 8px; }
+    .breadcrumb a { font-size: 13px; color: var(--text-dim); text-decoration: none; font-family: 'JetBrains Mono', monospace; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--text-mid); }
+    .subnav { display: flex; gap: 4px; margin-bottom: 40px; flex-wrap: wrap; margin-top: 12px; }
+    .subnav-link { font-size: 12px; font-weight: 500; color: var(--text-dim); text-decoration: none; padding: 5px 12px; border-radius: 6px; border: 1px solid transparent; transition: all 0.2s; }
+    .subnav-link:hover { color: var(--text-mid); }
+    .subnav-link.active { color: var(--text-primary); background: var(--surface); border-color: var(--border-2); }
+
+    .layer-badge { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .layer-badge-num { width: 22px; height: 22px; border-radius: 50%; background: rgba(79,126,247,0.12); border: 1px solid rgba(79,126,247,0.3); display: flex; align-items: center; justify-content: center; font-size: 11px; }
+    .page-title { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.035em; margin-bottom: 12px; }
+    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 580px; margin-bottom: 12px; }
+    .what-it-does { font-size: 13px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; padding: 10px 14px; border-left: 2px solid rgba(79,126,247,0.3); margin-bottom: 40px; line-height: 1.6; }
+
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; }
+
+    /* Company cards — star players */
+    .star-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .star-card { background: var(--surface); border: 1px solid var(--border-2); border-radius: 12px; padding: 24px; border-top: 3px solid var(--accent); transition: transform 0.2s, box-shadow 0.2s; }
+    .star-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(79,126,247,0.10); }
+    .sc-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .sc-name { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: var(--text-primary); }
+    .sc-badge { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; background: rgba(79,126,247,0.1); color: var(--accent); border: 1px solid rgba(79,126,247,0.2); }
+    .sc-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 14px; }
+    .sc-specs { display: grid; grid-template-columns: auto 1fr; gap: 5px 14px; margin-bottom: 14px; }
+    .sc-k { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); white-space: nowrap; }
+    .sc-v { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-mid); }
+    .sc-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    .sc-link:hover { color: var(--text-primary); }
+
+    /* Supporting players — smaller grid */
+    .support-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 48px; }
+    .support-card { background: var(--surface); border: 1px solid var(--border-2); border-radius: 10px; padding: 18px; transition: border-color 0.2s; }
+    .support-card:hover { border-color: rgba(79,126,247,0.25); }
+    .spc-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .spc-cat { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .spc-desc { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+
+    /* The problem box */
+    .problem-box { border: 1px solid rgba(244,63,94,0.2); border-radius: 10px; padding: 20px 24px; background: rgba(244,63,94,0.03); margin-bottom: 32px; }
+    .problem-title { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; color: var(--rose); margin-bottom: 10px; }
+    .problem-body { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    .gap-box { border: 1px solid rgba(245,166,35,0.2); border-radius: 10px; padding: 20px 24px; background: rgba(245,166,35,0.03); margin-bottom: 48px; }
+    .gap-box-title { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; color: var(--amber); margin-bottom: 10px; }
+    .gap-box p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 56px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 13px; color: var(--text-dim); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; } .page { padding: 0 20px 60px; }
+      .page-title { font-size: 26px; } footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
+      .star-grid, .support-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">agentic<em>payment</em>.forum</a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="https://blogs.agenticpayment.forum" class="nav-link" target="_blank">Newsletter</a>
+    <a href="/forum.html" class="nav-link">Forum</a>
+    <a href="/activity.html" class="nav-link">Our Team</a>
+    <a href="/agent-economy.html" class="nav-link active">Agent Economy</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb"><a href="/agent-economy.html">← Agent Economy</a></div>
+  <div class="subnav">
+    <a href="/ae-live.html"           class="subnav-link">● Live Feed</a>
+    <a href="/ae-layer-intent.html"   class="subnav-link">Layer 1 · Intent</a>
+    <a href="/ae-layer-identity.html" class="subnav-link active">Layer 2 · Identity</a>
+    <a href="/ae-layer-auth.html"     class="subnav-link">Layer 3 · Authorization</a>
+    <a href="/ae-layer-rails.html"    class="subnav-link">Layer 7 · Rails</a>
+  </div>
+
+  <div class="layer-badge">
+    <span class="layer-badge-num">2</span>
+    Identity &amp; Trust
+  </div>
+  <h1 class="page-title">Who is the agent?</h1>
+  <p class="page-sub">The most unsolved problem in agentic payments. Before a payment system allows a transaction, it needs to know: is this a human, a bot, or a legitimate autonomous agent? That answer doesn't exist yet.</p>
+  <p class="what-it-does">Layer 2 establishes the identity of the entity making a payment — authentication, KYC, bot detection, and increasingly "Know Your Agent" (KYA). Without this layer, every other payment control is bypassed.</p>
+
+  <!-- The core problem -->
+  <div class="problem-box">
+    <p class="problem-title">The Unsolved Problem</p>
+    <p class="problem-body">Every payment system built in the last 50 years assumes a human is at the keyboard. KYC collects a passport scan. 3DS sends a one-time password to your phone. Fraud models look for "human-like" behavior. Agents fail all of these tests by default — they move too fast, from too many IPs, with too-perfect timing. The industry hasn't agreed on what "prove you're a legitimate agent" even means.</p>
+  </div>
+
+  <!-- Star players -->
+  <p class="section-label">Companies building this layer</p>
+  <div class="star-grid">
+
+    <div class="star-card">
+      <div class="sc-header">
+        <div class="sc-name">Skyfire</div>
+        <span class="sc-badge">Agent Payments</span>
+      </div>
+      <p class="sc-desc">Skyfire gives AI agents a payment identity — a spending account with programmable controls. Agents get a Skyfire-issued credential that payment systems recognize as a legitimate, policy-bound entity. Backed by major VCs; one of the first companies purpose-built for the agent payment layer.</p>
+      <div class="sc-specs">
+        <span class="sc-k">Model</span><span class="sc-v">Agent spending accounts + identity credentials</span>
+        <span class="sc-k">Controls</span><span class="sc-v">Spend limits, merchant allowlists, per-agent policies</span>
+        <span class="sc-k">Stage</span><span class="sc-v">Live, raising / scaling</span>
+      </div>
+      <a href="https://skyfire.xyz" target="_blank" class="sc-link">skyfire.xyz →</a>
+    </div>
+
+    <div class="star-card">
+      <div class="sc-header">
+        <div class="sc-name">KYAPay</div>
+        <span class="sc-badge">Know Your Agent</span>
+      </div>
+      <p class="sc-desc">KYAPay (kyapay.org) addresses the "Know Your Agent" problem — verifying that an AI agent is what it claims to be, operating within sanctioned limits, and authorized by the human or organization behind it. Described by Apify as a must-have element for any agentic toolkit.</p>
+      <div class="sc-specs">
+        <span class="sc-k">Focus</span><span class="sc-v">Agent identity verification + authorization proof</span>
+        <span class="sc-k">Ecosystem</span><span class="sc-v">Connected to Skyfire's agent payment network</span>
+        <span class="sc-k">Signal</span><span class="sc-v">Highlighted by Apify, backed by Skyfire team</span>
+      </div>
+      <a href="https://kyapay.org" target="_blank" class="sc-link">kyapay.org →</a>
+    </div>
+
+  </div>
+
+  <!-- Supporting players -->
+  <p class="section-label">Supporting infrastructure (adapted from human identity)</p>
+  <div class="support-grid">
+
+    <div class="support-card">
+      <p class="spc-name">Forter</p>
+      <p class="spc-cat">Fraud Prevention</p>
+      <p class="spc-desc">Real-time fraud decisioning using behavior + device signals. Built for human transactions but increasingly used to flag anomalous agent behavior.</p>
+    </div>
+
+    <div class="support-card">
+      <p class="spc-name">DataDome</p>
+      <p class="spc-cat">Bot Detection</p>
+      <p class="spc-desc">Detects and blocks malicious bots at the edge. The irony: legitimate AI agents often look identical to the bots DataDome blocks. No "allowlist for good bots" yet.</p>
+    </div>
+
+    <div class="support-card">
+      <p class="spc-name">Socure</p>
+      <p class="spc-cat">KYC / Identity</p>
+      <p class="spc-desc">Automated KYC and identity verification for onboarding. Designed for humans (face match, document scan) — agents have no face or document to scan.</p>
+    </div>
+
+    <div class="support-card">
+      <p class="spc-name">Sardine</p>
+      <p class="spc-cat">Compliance + Risk</p>
+      <p class="spc-desc">Fraud and AML platform with strong crypto coverage. One of the better-positioned companies to extend into agent identity as the space matures.</p>
+    </div>
+
+    <div class="support-card">
+      <p class="spc-name">Persona</p>
+      <p class="spc-cat">Identity Verification</p>
+      <p class="spc-desc">Flexible KYC/KYB platform that could be extended to "KYA" — Know Your Agent — with the right policy primitives.</p>
+    </div>
+
+    <div class="support-card">
+      <p class="spc-name">Privy</p>
+      <p class="spc-cat">Embedded Wallets</p>
+      <p class="spc-desc">Gives agents a cryptographic identity via embedded wallets. Not identity verification per se, but a stepping stone: an agent with a consistent on-chain address is at least accountable.</p>
+    </div>
+
+  </div>
+
+  <div class="gap-box">
+    <p class="gap-box-title">The Gap: No Standard for "Proof of Agent"</p>
+    <p>The industry needs a "proof of agent" credential — something that says: this is an AI agent, authorized by this human/org, with these spending limits, operating in this context. It needs to be machine-readable, cryptographically verifiable, and accepted by payment processors without a human loop. Skyfire and KYAPay are early attempts. The winner of this layer may be the next Stripe — the identity infrastructure everyone builds on top of.</p>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 agenticpayment.forum</span>
+  <div class="footer-links">
+    <a href="https://blogs.agenticpayment.forum" target="_blank">Newsletter</a>
+    <a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a>
+  </div>
+</footer>
+
+</body>
+</html>
