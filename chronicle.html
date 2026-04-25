@@ -255,23 +255,23 @@
 /* Pull recent newsletter posts from the activity feed */
 async function loadNewsletter() {
   try {
-    const res   = await fetch('/activity.json?t=' + Date.now());
-    const items = await res.json();
-    const posts = items.filter(i => i.event_type === 'newsletter_published')
+    const res = await fetch('/activity.json?t=' + Date.now());
+    const data = await res.json();
+    const items = Array.isArray(data) ? data : (data.events || []);
+    const posts = items.filter(i => i.event_type === 'newsletter_published' || i.event_type === 'publish')
                        .reverse().slice(0, 12);
     if (!posts.length) {
       document.getElementById('newsletter-list').innerHTML =
         '<p style="font-size:13px;color:var(--text-dim);padding:12px 0">No issues recorded yet.</p>';
       return;
     }
-    const d = new Date;
     document.getElementById('newsletter-list').innerHTML = posts.map(p => {
       const dt = new Date(p.timestamp || p.published_at);
       const dateStr = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-      const url = p.url || p.post_url || (p.metadata && p.metadata.url) || 'https://blogs.agenticpayment.forum';
+      const url = p.url || p.post_url || p.article_url || (p.metadata && p.metadata.url) || 'https://blogs.agenticpayment.forum';
       return `<div class="newsletter-row">
         <span class="nl-date">${dateStr}</span>
-        <span class="nl-title">${p.title || p.headline || 'Issue'}</span>
+        <span class="nl-title">${p.title || p.headline || p.article_title || 'Issue'}</span>
         <a href="${url}" target="_blank" class="nl-link">Read →</a>
       </div>`;
     }).join('');
