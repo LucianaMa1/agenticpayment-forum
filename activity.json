@@ -668,5 +668,197 @@
       "output_tokens": 72
     },
     "timestamp": "2026-04-24T02:02:23.517952+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "agentic payments news April 24, 2026",
+      "results": 8
+    },
+    "timestamp": "2026-04-25T02:00:04.939364+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "agentic commerce protocol announcement April 24, 2026",
+      "results": 8
+    },
+    "timestamp": "2026-04-25T02:00:06.951244+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "site:reddit.com agentic payment OR agent payment OR agent checkout",
+      "results": 8
+    },
+    "timestamp": "2026-04-25T02:00:10.326276+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "agentic payment arxiv OR research paper 2026",
+      "results": 8
+    },
+    "timestamp": "2026-04-25T02:00:12.551714+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "(\"CartAI\" OR \"Coinbase AgentKit\" OR \"Rye checkout\" OR \"Eliza ai16z payments\" OR ",
+      "results": 8
+    },
+    "timestamp": "2026-04-25T02:00:16.630702+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Rex",
+    "action": "web_search",
+    "service": "Tavily Advanced",
+    "cost_usd": 0.015,
+    "metadata": {
+      "query": "(\"Nekuda\" OR \"Visa Intelligent Commerce\" OR \"KYAPay\" OR \"GOAT onchain agent tool",
+      "results": 8
+    },
+    "timestamp": "2026-04-25T02:00:19.633657+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Kai",
+    "action": "filter_and_score",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.04843,
+    "metadata": {
+      "input_tokens": 5805,
+      "output_tokens": 2068,
+      "raw_count": 28
+    },
+    "timestamp": "2026-04-25T02:00:54.861194+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "synthesize_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.04419,
+    "metadata": {
+      "input_tokens": 3354,
+      "output_tokens": 2275
+    },
+    "timestamp": "2026-04-25T02:01:37.350462+00:00"
+  },
+  {
+    "event_type": "review",
+    "agent": "Morgan",
+    "action": "expert_review",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "verdict": "REVISE",
+    "score": 6,
+    "feedback": [
+      "The BVNK acquisition claim is presented as fact ('Mastercard acquired stablecoin startup BVNK for $1.8 billion') but the source cited is a dead/generic CNBC venture capital URL with no specific story. BVNK has raised funding rounds but I cannot verify a $1.8B Mastercard acquisition as of my knowledge. If this deal is real, cite the actual press release or news article. If it's unverified or speculative, pull it — this is the kind of claim practitioners will immediately Google and if it's wrong it torpedoes credibility on everything else.",
+      "x402 is described as having 'Google' as a backer alongside Coinbase and Circle, but the Google Cloud involvement in x402 is indirect — Google Cloud ran a hackathon around it and some GCP tooling integrates with it. This is materially different from Google formally backing x402 as a protocol standard, especially when Google is simultaneously on the UCP Tech Council. The article needs to be precise: is this Google the company, Google Cloud as a BU, or Google Cloud as a developer platform host? Conflating these overstates x402's institutional backing.",
+      "The article asserts x402 lets AI agents pay 'without a payment processor intermediary' — this is technically imprecise in a way that will annoy practitioners. x402 still requires stablecoin infrastructure (issuers, custodians, on/off ramps), smart contract execution layers, and in most real implementations a provider handling the cryptographic payment verification. The intermediary changes form, it doesn't disappear. Saying 'no intermediary' is the kind of crypto-marketing framing that loses credibility with the acquiring bank CTOs this publication is trying to reach.",
+      "The '$300B–$500B in US agentic commerce projected by 2030' figure is cited to agenticplug.ai, which appears to be a small industry blog, not a primary research source. For a claim this specific and this large, the sourcing needs to be a named research firm with methodology. As written this looks like a number laundered through a secondary aggregator. Either find the primary source or drop the specific figure.",
+      "The article ends mid-sentence: 'The compa' — this is an obvious editorial cut that was never finished. Cannot publish with a truncated conclusion. The argument about what 'just broke' to make this moment possible is actually the most analytically interesting part of the piece and it's cut off right before the payoff."
+    ],
+    "expert_note": "The two-layer thesis — UCP for consumer-facing commerce graph, x402 for machine-to-machine settlement — is actually the most defensible framing I've seen on this topic, and it maps to how card rails and ACH coexist today rather than one replacing the other. But the article needs to say explicitly what the settlement finality and FX conversion story looks like when an x402 micropayment crosses jurisdictions, because that's where 'no intermediary' meets correspondent banking reality and the answer is not clean.",
+    "article_title": "UCP vs. x402: The Protocol War That Will Decide Whether AI Commerce Is Open or Corporate-Controlled",
+    "cost_usd": 0.01644,
+    "cost_source": "live",
+    "metadata": {
+      "input_tokens": 1855,
+      "output_tokens": 725
+    },
+    "timestamp": "2026-04-25T02:01:54.987418+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Sage",
+    "action": "revise_article",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.03536,
+    "metadata": {
+      "input_tokens": 1305,
+      "output_tokens": 2096
+    },
+    "timestamp": "2026-04-25T02:02:38.826710+00:00"
+  },
+  {
+    "event_type": "review",
+    "agent": "Morgan",
+    "action": "expert_review",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "verdict": "REVISE",
+    "score": 7,
+    "feedback": [
+      "The article ends mid-sentence: '...gap on' — this is an incomplete draft. The core argument about who closes the developer-to-enterprise gap is unfinished and it's the most important part of the thesis. This cannot publish as-is.",
+      "The claim that x402 'compresses the authorization-to-execution gap that makes card-based agent payments brittle' is directionally correct but undersells the actual mechanism. The brittleness in card-based agent flows isn't just latency — it's the mismatch between card authorization models (which assume a human-in-the-loop consent event) and agent-initiated transactions that lack a clean cardholder-present/not-present classification. x402 sidesteps this entirely by operating outside card scheme rules, which is a more precise and more interesting point than 'single round-trip.'",
+      "Describing UCP as 'the SWIFT of agentic commerce' is a useful analogy but it papers over a critical distinction: SWIFT is a messaging standard that operates on top of correspondent banking relationships and settlement finality provided by central banks and nostro/vostro accounts. UCP has no equivalent settlement backbone. The governance layer analogy holds, but the SWIFT comparison implies interbank settlement infrastructure that UCP does not have and is not building. This will make acquiring bank CTOs and treasury practitioners distrust the framing immediately.",
+      "The stablecoin legislation section correctly identifies the STABLE Act and GENIUS Act as relevant but conflates two separate regulatory questions: (1) who can issue stablecoins, and (2) whether stablecoin-denominated transactions are permissible in regulated enterprise verticals like healthcare and government procurement. Issuer clarity from the GENIUS Act does not automatically unlock HIPAA-adjacent or FAR-governed procurement workflows — those have independent compliance requirements that stablecoin legislation doesn't touch. The 'developer toy vs. infrastructure' binary is too clean.",
+      "The intermediary reframing is the strongest analytical move in the piece and it's buried in the final paragraph. The argument that x402 changes intermediary form rather than eliminating them — and that the enterprise question is about auditability and recoverability, not intermediary count — is exactly the right lens. It deserves its own section, not a closing paragraph that gets cut off."
+    ],
+    "expert_note": "The piece is missing the chargeback and dispute resolution dimension entirely, which is where I'd expect any acquiring bank CTO to push back hardest. Card rails are 'enterprise-ready' in large part because there's a known, scheme-mandated dispute resolution process with defined liability shifts — merchants, issuers, and acquirers all know who eats the loss when an agent-initiated transaction goes wrong. x402 has no equivalent today: if an agent overpays, pays the wrong counterparty, or gets exploited via a malicious 402 response, the recourse path is unclear and almost certainly involves litigation rather than a scheme-mandated chargeback flow. Until x402 or UCP answers that question with something more than 'smart contract immutability,' enterprise treasury and procurement teams won't touch it regardless of developer adoption.",
+    "article_title": "The Real Agentic Payments Battle Is Over Who Controls the Decision Loop — Not the Rails",
+    "cost_usd": 0.01646,
+    "cost_source": "live",
+    "metadata": {
+      "input_tokens": 1781,
+      "output_tokens": 741
+    },
+    "timestamp": "2026-04-25T02:02:56.831672+00:00"
+  },
+  {
+    "event_type": "publish",
+    "agent": "Justin",
+    "article_title": "The Real Agentic Payments Battle Is Over Who Controls the Decision Loop — Not the Rails",
+    "article_url": "https://blogs.agenticpayment.forum/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails",
+    "timestamp": "2026-04-25T02:02:57.413981+00:00",
+    "run_cost_usd": 0.2509
+  },
+  {
+    "event_type": "tweet",
+    "agent": "Mia",
+    "tweet_text": "Faster rails without governance primitives are just faster pipes to someone else's chokepoint — and x402 doesn't solve that problem, it sidesteps it.\n\nThe real agentic payments war is over who owns the moment an agent decides whether to",
+    "tweet_url": "https://x.com/AgenticPayForum/status/2047858882593296505",
+    "article_title": "The Real Agentic Payments Battle Is Over Who Controls the Decision Loop — Not the Rails",
+    "article_url": "https://blogs.agenticpayment.forum/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails",
+    "timestamp": "2026-04-25T02:02:59.766597+00:00"
+  },
+  {
+    "event_type": "api_call",
+    "agent": "Mia",
+    "action": "generate_tweet",
+    "service": "Claude API",
+    "model": "claude-sonnet-4-6",
+    "cost_usd": 0.00256,
+    "metadata": {
+      "input_tokens": 497,
+      "output_tokens": 71
+    },
+    "timestamp": "2026-04-25T02:02:59.328594+00:00"
   }
 ]
