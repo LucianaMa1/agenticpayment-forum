@@ -284,6 +284,7 @@
     <a href="/signal.html" class="nav-link">Signal</a>
     <a href="/landscape.html" class="nav-link active">Landscape</a>
     <a href="/chronicle.html" class="nav-link">Chronicle</a>
+    <a href="https://blogs.agenticpayment.forum" class="nav-link" target="_blank">Newsletter</a>
     <a href="/activity.html" class="nav-link">Team</a>
   </div>
 </nav>
@@ -327,23 +328,23 @@
             <div class="layer-head">
               <span class="layer-num">1</span>
               <div>
-                <div class="layer-name">Intent / Decision<small>用户或agent产生"要买"的决策</small></div>
+                <div class="layer-name">Intent / Decision<small>Where the spend decision is made</small></div>
                 <a href="/landscape-intent.html" class="dive-link">→ deep dive</a>
               </div>
             </div>
           </td>
-          <td>Agent determines whether, what, and how much to spend based on context and policy.</td>
-          <td>LLM reasoning, planning, budgeting, preference modeling</td>
+          <td>Agent determines whether, what, and how much to spend based on context, preferences, and policy constraints.</td>
+          <td>LLM reasoning, task planning, budget modeling, preference inference</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag">OpenAI Agents</span>
-              <span class="ptag">AutoGPT</span>
-              <span class="ptag">Adept</span>
               <span class="ptag">Anthropic</span>
+              <span class="ptag">CrewAI</span>
+              <span class="ptag">LangChain</span>
             </div>
           </td>
-          <td>决定"要不要花钱"</td>
-          <td class="gap-cell"><span class="gap-urgent">❗ Biggest opportunity: autonomous spend logic — no standard yet for how agents budget</span></td>
+          <td>Decides whether, what, and how much to spend</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ No standard for agent spend policies — LLM budget logic is opaque, non-auditable, and varies by model</span></td>
         </tr>
 
         <!-- 2 -->
@@ -352,24 +353,24 @@
             <div class="layer-head">
               <span class="layer-num">2</span>
               <div>
-                <div class="layer-name">Identity & Trust<small>确认"是谁在操作"</small></div>
+                <div class="layer-name">Identity & Trust<small>Who is acting — human, agent, or bot</small></div>
                 <a href="/landscape-identity.html" class="dive-link">→ deep dive</a>
               </div>
             </div>
           </td>
-          <td>Verify the agent/user identity, detect bots, prevent fraud at the identity layer.</td>
-          <td>KYC, bot detection, device fingerprinting, agent attestation</td>
+          <td>Verify agent and user identity, detect automated abuse, and establish trust before payment access is granted.</td>
+          <td>KYC/KYB, bot detection, device fingerprinting, agent attestation, W3C DID</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag star">Skyfire</span>
               <span class="ptag star">KYAPay</span>
               <span class="ptag">Forter</span>
-              <span class="ptag">DataDome</span>
+              <span class="ptag">Persona</span>
               <span class="ptag">Socure</span>
             </div>
           </td>
-          <td>防止假人/假agent，建立可信身份</td>
-          <td class="gap-cell"><span class="gap-urgent">❗ Agent identity still unsolved — no universal "proof of agent" standard</span></td>
+          <td>Establishes trusted identity before payment access is granted</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ No universal "proof of agent" standard — existing KYC frameworks were written for natural persons, not software principals</span></td>
         </tr>
 
         <!-- 3 -->
@@ -378,13 +379,13 @@
             <div class="layer-head">
               <span class="layer-num">3</span>
               <div>
-                <div class="layer-name">Authorization<small>决定"是否允许支付"</small></div>
+                <div class="layer-name">Authorization<small>Whether this payment is permitted</small></div>
                 <a href="/landscape-auth.html" class="dive-link">→ deep dive</a>
               </div>
             </div>
           </td>
-          <td>Policy engine that decides whether a specific payment is permitted, within what limits, and by whom.</td>
-          <td>Policy engine, spend limits, approval flows, delegation</td>
+          <td>Policy engine that decides whether a specific payment is permitted — within what limits, under whose delegation, and with what approval chain.</td>
+          <td>Spend policy rules, delegated authorization, approval flows, 3DS/SCA adaptation</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag star">Visa TAP</span>
@@ -393,8 +394,8 @@
               <span class="ptag">ACP</span>
             </div>
           </td>
-          <td>控制agent权限，防止越权支付</td>
-          <td class="gap-cell"><span class="gap-urgent">❗ The next platform war — Visa, Mastercard, and crypto protocols all competing to own this layer</span></td>
+          <td>Controls agent spend scope and prevents unauthorized payments</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Platform war in progress — Visa, Mastercard, and crypto protocols competing to own delegation standards; 3DS was built for humans, not agents</span></td>
         </tr>
 
         <!-- 4 -->
@@ -402,21 +403,22 @@
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">4</span>
-              <div><div class="layer-name">Payment Credentials<small>提供支付"凭证"</small></div></div>
+              <div><div class="layer-name">Payment Credentials<small>The instrument the agent uses</small></div></div>
             </div>
           </td>
-          <td>Issue and store the payment instrument the agent actually uses — card token, wallet key, or signed credential.</td>
-          <td>Tokenization, vaulting, virtual cards, wallet signing</td>
+          <td>Issue and store the payment instrument the agent actually presents — card token, wallet key, or signed credential.</td>
+          <td>Tokenization, PCI-scoped vaulting, virtual card issuance, wallet signing</td>
           <td class="players-cell">
             <div class="player-wrap">
+              <span class="ptag star">Nekuda</span>
               <span class="ptag">Basis Theory</span>
               <span class="ptag">Stripe Issuing</span>
-              <span class="ptag">Privacy.com</span>
               <span class="ptag">Privy</span>
+              <span class="ptag">Prava</span>
             </div>
           </td>
-          <td>Agent有"可用的钱包"</td>
-          <td class="gap-cell"><span class="gap-plain">Agent-native wallet missing — existing solutions adapted from human UX</span></td>
+          <td>Gives the agent a spendable payment instrument</td>
+          <td class="gap-cell"><span class="gap-plain">Most solutions are human-UX virtual card products adapted for agents; no native agent credential spec exists</span></td>
         </tr>
 
         <!-- 5 -->
@@ -424,11 +426,11 @@
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">5</span>
-              <div><div class="layer-name">Funding Source<small>钱从哪里来</small></div></div>
+              <div><div class="layer-name">Funding Source<small>Where the money comes from</small></div></div>
             </div>
           </td>
-          <td>Connect agent's spending wallet to a real funding source — bank account, credit line, or stablecoin treasury.</td>
-          <td>Bank connection, card funding, stablecoin on-ramp</td>
+          <td>Connect the agent's spending credential to a real funding source — bank account, card line, or stablecoin treasury.</td>
+          <td>Bank connectivity, card funding, stablecoin on-ramp, multi-currency treasury</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag">Stripe</span>
@@ -437,8 +439,8 @@
               <span class="ptag">Coinbase</span>
             </div>
           </td>
-          <td>资金来源连接</td>
-          <td class="gap-cell"><span class="gap-urgent">❗ Multi-source unification hard — agent needs to route between fiat, crypto, credits seamlessly</span></td>
+          <td>Links agent credentials to real money</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Multi-source routing unsolved — agent needs to select between fiat, crypto, and credits in real time; no unified abstraction layer</span></td>
         </tr>
 
         <!-- 6 -->
@@ -446,21 +448,21 @@
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">6</span>
-              <div><div class="layer-name">Checkout / Execution<small>执行购买动作</small></div></div>
+              <div><div class="layer-name">Checkout / Execution<small>Completing the purchase</small></div></div>
             </div>
           </td>
-          <td>The agent actually completes the purchase — navigating checkout flows, APIs, or headless commerce.</td>
-          <td>Checkout APIs, cart automation, form filling, headless commerce</td>
+          <td>The agent completes the purchase — navigating checkout APIs, cart flows, or headless commerce interfaces.</td>
+          <td>Checkout APIs, cart automation, headless commerce, protocol-native purchase (x402)</td>
           <td class="players-cell">
             <div class="player-wrap">
-              <span class="ptag">Rye</span>
-              <span class="ptag">CartAI</span>
+              <span class="ptag star">Stripe Agent Toolkit</span>
               <span class="ptag">Shopify APIs</span>
               <span class="ptag">Browser Use</span>
+              <span class="ptag">Rye</span>
             </div>
           </td>
-          <td>Agent完成"点击购买"</td>
-          <td class="gap-cell"><span class="gap-plain">Agent-friendly checkout still rare — most merchant flows designed for humans, not APIs</span></td>
+          <td>Translates agent intent into a completed merchant transaction</td>
+          <td class="gap-cell"><span class="gap-plain">No agent-native checkout API standard — most flows require browser automation as a workaround; x402 is the only protocol-level exception</span></td>
         </tr>
 
         <!-- 7 -->
@@ -469,24 +471,24 @@
             <div class="layer-head">
               <span class="layer-num">7</span>
               <div>
-                <div class="layer-name">Payment Rails<small>钱怎么移动</small></div>
+                <div class="layer-name">Payment Rails<small>How money moves</small></div>
                 <a href="/landscape-rails.html" class="dive-link">→ deep dive</a>
               </div>
             </div>
           </td>
           <td>The actual movement of money — card networks, bank rails, real-time payments, or on-chain transfers.</td>
-          <td>Card networks, ACH, RTP, stablecoins, crypto settlement</td>
+          <td>Card network clearing, ACH/RTP/FedNow, stablecoin settlement, on-chain transfer</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag star">x402</span>
               <span class="ptag">Visa / MC</span>
               <span class="ptag">FedNow</span>
-              <span class="ptag">Lightning</span>
+              <span class="ptag">UCP</span>
               <span class="ptag">Solana Pay</span>
             </div>
           </td>
-          <td>实际转钱</td>
-          <td class="gap-cell"><span class="gap-plain">Rails fragmentation severe — no single rail works for all agent use cases globally</span></td>
+          <td>Moves value from agent wallet to merchant</td>
+          <td class="gap-cell"><span class="gap-plain">Rail fragmentation severe — x402 (USDC/Base), card (Visa/MC), and RTP (FedNow) are incompatible; no cross-rail routing layer exists</span></td>
         </tr>
 
         <!-- 8 -->
@@ -494,11 +496,11 @@
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">8</span>
-              <div><div class="layer-name">Settlement & Reconciliation<small>钱对账/落账</small></div></div>
+              <div><div class="layer-name">Settlement & Reconciliation<small>Money lands, books close</small></div></div>
             </div>
           </td>
-          <td>Money lands, books close. Automated reconciliation, ledgering, and reporting for agent-initiated spend.</td>
-          <td>Ledgering, reconciliation, reporting, treasury management</td>
+          <td>Money lands and books close. Automated reconciliation, ledgering, and audit trails for agent-initiated spend.</td>
+          <td>Ledgering, automated reconciliation, treasury reporting, real-time audit trails</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag">Stripe Treasury</span>
@@ -506,8 +508,8 @@
               <span class="ptag">Adyen</span>
             </div>
           </td>
-          <td>企业财务闭环</td>
-          <td class="gap-cell"><span class="gap-urgent">❗ Enterprise-critical gap — CFOs can't approve agent spend without audit trails and auto-reconciliation</span></td>
+          <td>Closes the financial loop — records spend, triggers reporting</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ T+1 card settlement was designed for human-frequency transactions; agent-initiated micro-transactions at high frequency need different clearing windows and reporting hooks</span></td>
         </tr>
 
         <!-- 9 -->
@@ -515,11 +517,11 @@
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">9</span>
-              <div><div class="layer-name">Risk / Compliance<small>谁承担风险</small></div></div>
+              <div><div class="layer-name">Risk / Compliance<small>Who bears the risk</small></div></div>
             </div>
           </td>
-          <td>Monitor for fraud, ensure AML compliance, manage chargebacks, and determine liability when something goes wrong.</td>
-          <td>AML, fraud monitoring, chargeback management, liability allocation</td>
+          <td>Monitor for fraud, enforce AML compliance, manage chargebacks, and assign liability when an agent-initiated payment goes wrong.</td>
+          <td>AML/BSA monitoring, fraud scoring, chargeback management, liability allocation</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag">Sardine</span>
@@ -527,8 +529,8 @@
               <span class="ptag">Unit21</span>
             </div>
           </td>
-          <td>防止损失，合规</td>
-          <td class="gap-cell"><span class="gap-urgent">❗ Agent liability boundary undefined — when an agent makes a fraudulent payment, who is responsible?</span></td>
+          <td>Prevents losses, ensures compliance, determines liability</td>
+          <td class="gap-cell"><span class="gap-urgent">❗ Visa/MC operating regulations designate the cardholder as a natural person — no dispute or chargeback framework exists for autonomous agent transactions</span></td>
         </tr>
 
       </tbody>
