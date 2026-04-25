@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Rails — Landscape — Agentic Payment</title>
+  <meta name="description" content="How money moves in the agent economy: x402, Lightning, Solana Pay, FedNow, and card networks compared.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07070e; --surface: #0d0d1a; --surface-2: #111120;
+      --border: #16162a; --border-2: #1e1e38;
+      --text-primary: #eaeaf4; --text-mid: #7070a0; --text-dim: #2e2e4a;
+      --accent: #4f7ef7; --accent-faint: rgba(79,126,247,0.08);
+      --green: #00d9a3; --green-faint: rgba(0,217,163,0.07);
+      --amber: #f5a623; --amber-faint: rgba(245,166,35,0.08); --amber-glow: rgba(245,166,35,0.2);
+      --violet: #a78bfa; --cyan: #22d3ee; --rose: #f43f5e;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 56px; display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border); background: rgba(7,7,14,0.90); backdrop-filter: blur(20px);
+    }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--text-primary); text-decoration: none; }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-link { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 7px 14px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { color: var(--text-primary); }
+    .nav-link.active { color: var(--text-primary); background: var(--surface); border: 1px solid var(--border-2); }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 0 48px 100px; }
+
+    .breadcrumb { padding: 88px 0 8px; }
+    .breadcrumb a { font-size: 13px; color: var(--text-dim); text-decoration: none; font-family: 'JetBrains Mono', monospace; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--text-mid); }
+
+    .subnav { display: flex; gap: 4px; margin-bottom: 40px; flex-wrap: wrap; margin-top: 12px; }
+    .subnav-link { font-size: 12px; font-weight: 500; color: var(--text-dim); text-decoration: none; padding: 5px 12px; border-radius: 6px; border: 1px solid transparent; transition: all 0.2s; }
+    .subnav-link:hover { color: var(--text-mid); }
+    .subnav-link.active { color: var(--text-primary); background: var(--surface); border-color: var(--border-2); }
+
+    .layer-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 16px;
+    }
+    .layer-badge-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(0,217,163,0.12); border: 1px solid rgba(0,217,163,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+    }
+    .page-title { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.035em; margin-bottom: 12px; }
+    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 580px; margin-bottom: 12px; }
+    .what-it-does {
+      font-size: 13px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;
+      padding: 10px 14px; border-left: 2px solid rgba(0,217,163,0.3);
+      margin-bottom: 40px; line-height: 1.6;
+    }
+
+    /* Comparison table */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 14px;
+    }
+    .compare-wrap { overflow-x: auto; border: 1px solid var(--border-2); border-radius: 12px; margin-bottom: 48px; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px; }
+    .compare-table thead th {
+      padding: 10px 14px; text-align: left;
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim);
+      border-bottom: 1px solid var(--border-2); background: var(--surface); white-space: nowrap;
+    }
+    .compare-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid); vertical-align: middle; }
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+    .compare-table tbody tr:hover td { background: rgba(255,255,255,0.015); }
+    .rail-name { font-weight: 500; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+    .rail-star { color: var(--green); font-size: 11px; }
+    .status-pill {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+      padding: 2px 8px; border-radius: 4px; letter-spacing: 0.06em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .s-live    { background: rgba(0,217,163,0.1); color: var(--green); border: 1px solid rgba(0,217,163,0.2); }
+    .s-trad    { background: rgba(79,126,247,0.1); color: var(--accent); border: 1px solid rgba(79,126,247,0.2); }
+    .s-new     { background: rgba(245,166,35,0.1); color: var(--amber); border: 1px solid rgba(245,166,35,0.2); }
+    .s-emrg    { background: rgba(167,139,250,0.1); color: var(--violet); border: 1px solid rgba(167,139,250,0.2); }
+
+    /* Protocol cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .proto-card {
+      background: var(--surface); border: 1px solid var(--border-2); border-radius: 12px;
+      padding: 24px; border-left: 3px solid var(--border-2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .proto-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .proto-card.c-green  { border-left-color: var(--green); }
+    .proto-card.c-amber  { border-left-color: var(--amber); }
+    .proto-card.c-blue   { border-left-color: var(--accent); }
+    .proto-card.c-violet { border-left-color: var(--violet); }
+    .proto-card.c-cyan   { border-left-color: var(--cyan); }
+
+    .pc-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 10px; }
+    .pc-name { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: var(--text-primary); }
+    .pc-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 16px; }
+    .pc-specs { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-bottom: 16px; }
+    .pc-spec-k { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); white-space: nowrap; }
+    .pc-spec-v { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-mid); }
+    .pc-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    .pc-link:hover { color: var(--text-primary); }
+
+    .gap-box {
+      border: 1px solid rgba(245,166,35,0.2); border-radius: 10px;
+      padding: 20px 24px; background: rgba(245,166,35,0.03); margin-bottom: 48px;
+    }
+    .gap-box-title { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; color: var(--amber); margin-bottom: 10px; }
+    .gap-box p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 56px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 13px; color: var(--text-dim); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .page { padding: 0 20px 60px; }
+      .page-title { font-size: 26px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">agentic<em>payment</em>.forum</a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/signal.html" class="nav-link">Signal</a>
+    <a href="/landscape.html" class="nav-link active">Landscape</a>
+    <a href="/chronicle.html" class="nav-link">Chronicle</a>
+    <a href="/activity.html" class="nav-link">Team</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="breadcrumb"><a href="/landscape.html">← Landscape</a></div>
+  <div class="subnav">
+    <a href="/landscape-intent.html" class="subnav-link">Layer 1 · Intent</a>
+    <a href="/landscape-identity.html" class="subnav-link">Layer 2 · Identity</a>
+    <a href="/landscape-auth.html" class="subnav-link">Layer 3 · Authorization</a>
+    <a href="/landscape-rails.html" class="subnav-link active">Layer 7 · Rails</a>
+  </div>
+
+  <div class="layer-badge">
+    <span class="layer-badge-num">7</span>
+    Payment Rails
+  </div>
+  <h1 class="page-title">How money moves.</h1>
+  <p class="page-sub">Card networks, bank rails, real-time payments, and on-chain transfers — compared for agent use cases. No single rail wins everywhere.</p>
+  <p class="what-it-does">Layer 7 is the physical infrastructure of payment: the moment value actually changes hands. For agents, the ideal rail is programmable, cheap, fast, and globally accessible — none of today's rails check all four boxes.</p>
+
+  <!-- Comparison table -->
+  <p class="section-label">At a glance</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Rail</th>
+          <th>Network</th>
+          <th>Token / Currency</th>
+          <th>Finality</th>
+          <th>Typical Fee</th>
+          <th>Agent-Native?</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="rail-name"><span class="rail-star">★</span> x402</div></td>
+          <td>Base (EVM)</td>
+          <td>Any ERC-20</td>
+          <td>~2s</td>
+          <td>&lt;$0.001</td>
+          <td>Yes</td>
+          <td><span class="status-pill s-live">Live</span></td>
+        </tr>
+        <tr>
+          <td><div class="rail-name">Lightning</div></td>
+          <td>Bitcoin L2</td>
+          <td>BTC (sats)</td>
+          <td>Instant</td>
+          <td>~0</td>
+          <td>Partial</td>
+          <td><span class="status-pill s-live">Live</span></td>
+        </tr>
+        <tr>
+          <td><div class="rail-name">Solana Pay</div></td>
+          <td>Solana</td>
+          <td>Any SPL token</td>
+          <td>&lt;1s</td>
+          <td>~$0.00025</td>
+          <td>Partial</td>
+          <td><span class="status-pill s-live">Live</span></td>
+        </tr>
+        <tr>
+          <td><div class="rail-name">Stripe / Card</div></td>
+          <td>Visa / Mastercard</td>
+          <td>135+ currencies</td>
+          <td>2-3 days settle</td>
+          <td>2.9% + $0.30</td>
+          <td>Via toolkit</td>
+          <td><span class="status-pill s-trad">Traditional</span></td>
+        </tr>
+        <tr>
+          <td><div class="rail-name">FedNow / RTP</div></td>
+          <td>US Bank Network</td>
+          <td>USD</td>
+          <td>Seconds</td>
+          <td>&lt;$1</td>
+          <td>No</td>
+          <td><span class="status-pill s-new">New (2023)</span></td>
+        </tr>
+        <tr>
+          <td><div class="rail-name">NEAR Intents</div></td>
+          <td>NEAR / Cross-chain</td>
+          <td>Any token</td>
+          <td>&lt;2s</td>
+          <td>Near-zero</td>
+          <td>Yes</td>
+          <td><span class="status-pill s-emrg">Emerging</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Protocol deep-dives -->
+  <p class="section-label">Protocol Deep Dives</p>
+  <div class="card-grid">
+
+    <div class="proto-card c-green">
+      <div class="pc-header">
+        <div class="pc-name">x402</div>
+        <span class="status-pill s-live">Live · We track this</span>
+      </div>
+      <p class="pc-desc">The most agent-native rail today. An agent calls the ExactProxy or UptoProxy contract, which executes an ERC-3009 signed transfer — payer → payee in a single transaction. No account creation, no OAuth, no invoice. Any ERC-20 token works.</p>
+      <div class="pc-specs">
+        <span class="pc-spec-k">Contracts</span><span class="pc-spec-v">ExactProxy 0x402085…20001 · UptoProxy 0x4020a4…40002</span>
+        <span class="pc-spec-k">Chain</span><span class="pc-spec-v">Base mainnet (EVM)</span>
+        <span class="pc-spec-k">Standard</span><span class="pc-spec-v">HTTP 402 + ERC-3009 transferWithAuthorization</span>
+        <span class="pc-spec-k">Tokens</span><span class="pc-spec-v">OPG, USDC, and any ERC-20</span>
+        <span class="pc-spec-k">Finality</span><span class="pc-spec-v">~2s (Base block time)</span>
+      </div>
+      <a href="https://github.com/coinbase/x402" target="_blank" class="pc-link">View x402 spec on GitHub →</a>
+    </div>
+
+    <div class="proto-card c-amber">
+      <div class="pc-header">
+        <div class="pc-name">Lightning Network</div>
+        <span class="status-pill s-live">Live</span>
+      </div>
+      <p class="pc-desc">Bitcoin's Layer 2 for instant micropayments. Agents open payment channels once and send unlimited off-chain payments at near-zero cost. BOLT12 (the modern spec) adds reusable "offers" — a URL an agent can pay repeatedly, ideal for recurring service billing.</p>
+      <div class="pc-specs">
+        <span class="pc-spec-k">Spec</span><span class="pc-spec-v">BOLT12 (offers + blinded paths)</span>
+        <span class="pc-spec-k">Unit</span><span class="pc-spec-v">Satoshi (0.00000001 BTC)</span>
+        <span class="pc-spec-k">Finality</span><span class="pc-spec-v">Instant (off-chain)</span>
+        <span class="pc-spec-k">Fees</span><span class="pc-spec-v">Near-zero routing fees</span>
+        <span class="pc-spec-k">Limitation</span><span class="pc-spec-v">Bitcoin only, channel liquidity management</span>
+      </div>
+      <a href="https://bolt12.org" target="_blank" class="pc-link">bolt12.org →</a>
+    </div>
+
+    <div class="proto-card c-violet">
+      <div class="pc-header">
+        <div class="pc-name">Solana Pay</div>
+        <span class="status-pill s-live">Live</span>
+      </div>
+      <p class="pc-desc">Open protocol for payments over the Solana network. Agents pay any SPL token (USDC, SOL) with sub-second finality and ~$0.00025 per transaction. Transaction requests are structured as URLs — easy to embed in API responses for machine consumption.</p>
+      <div class="pc-specs">
+        <span class="pc-spec-k">Chain</span><span class="pc-spec-v">Solana</span>
+        <span class="pc-spec-k">Token</span><span class="pc-spec-v">Any SPL token (USDC native here)</span>
+        <span class="pc-spec-k">Finality</span><span class="pc-spec-v">&lt;1s</span>
+        <span class="pc-spec-k">Tx fee</span><span class="pc-spec-v">~$0.00025</span>
+      </div>
+      <a href="https://solanapay.com" target="_blank" class="pc-link">solanapay.com →</a>
+    </div>
+
+    <div class="proto-card c-blue">
+      <div class="pc-header">
+        <div class="pc-name">Stripe Agent Toolkit</div>
+        <span class="status-pill s-trad">Traditional Rails</span>
+      </div>
+      <p class="pc-desc">Stripe's official SDK for AI agents — wraps card-network payments as LLM-callable tools. Agents create payment intents, manage subscriptions, and list invoices via function calling. No crypto wallet needed, works in 135+ currencies. Best for B2B SaaS and subscription billing.</p>
+      <div class="pc-specs">
+        <span class="pc-spec-k">SDKs</span><span class="pc-spec-v">Python, TypeScript, MCP server</span>
+        <span class="pc-spec-k">Auth</span><span class="pc-spec-v">Stripe API key (server-side)</span>
+        <span class="pc-spec-k">Settlement</span><span class="pc-spec-v">2-3 business days</span>
+        <span class="pc-spec-k">Fee</span><span class="pc-spec-v">2.9% + $0.30 per transaction</span>
+      </div>
+      <a href="https://github.com/stripe/agent-toolkit" target="_blank" class="pc-link">stripe/agent-toolkit on GitHub →</a>
+    </div>
+
+    <div class="proto-card c-cyan">
+      <div class="pc-header">
+        <div class="pc-name">FedNow / RTP</div>
+        <span class="status-pill s-new">Live (2023)</span>
+      </div>
+      <p class="pc-desc">US real-time bank rails. FedNow (Federal Reserve, launched 2023) and RTP (The Clearing House) enable instant USD transfers between bank accounts 24/7. Not designed for agents, but Modern Treasury and similar companies provide API wrappers that agents can call.</p>
+      <div class="pc-specs">
+        <span class="pc-spec-k">Currency</span><span class="pc-spec-v">USD only</span>
+        <span class="pc-spec-k">Finality</span><span class="pc-spec-v">Seconds</span>
+        <span class="pc-spec-k">Limit</span><span class="pc-spec-v">$500K per transaction (FedNow)</span>
+        <span class="pc-spec-k">Access</span><span class="pc-spec-v">Via bank or fintech API (Modern Treasury, Treasury Prime)</span>
+      </div>
+      <a href="https://www.frbservices.org/financial-services/fednow" target="_blank" class="pc-link">FedNow overview →</a>
+    </div>
+
+    <div class="proto-card c-violet">
+      <div class="pc-header">
+        <div class="pc-name">NEAR Intents</div>
+        <span class="status-pill s-emrg">Emerging</span>
+      </div>
+      <p class="pc-desc">Chain-abstracted payment intents — an agent declares "pay X in token Y" and the protocol finds the optimal cross-chain route. No bridging UX, no slippage negotiation. Designed from the ground up for machine-initiated payments.</p>
+      <div class="pc-specs">
+        <span class="pc-spec-k">Model</span><span class="pc-spec-v">Intent-based, chain-abstracted</span>
+        <span class="pc-spec-k">Network</span><span class="pc-spec-v">NEAR + cross-chain</span>
+        <span class="pc-spec-k">Finality</span><span class="pc-spec-v">&lt;2s</span>
+      </div>
+      <a href="https://near.org/intents" target="_blank" class="pc-link">near.org/intents →</a>
+    </div>
+
+  </div>
+
+  <!-- Gap analysis -->
+  <div class="gap-box">
+    <p class="gap-box-title">The Core Gap</p>
+    <p>No single rail is programmable, cheap, fast, <em>and</em> globally accessible. x402 wins on programmability and cost but is EVM-only. Lightning wins on cost but is Bitcoin-only. Stripe wins on global reach but is expensive and slow to settle. The agent economy will need multi-rail routing — agents that choose the optimal rail per transaction type, jurisdiction, and counterparty. That router doesn't exist yet.</p>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 agenticpayment.forum</span>
+  <div class="footer-links">
+    <a href="https://blogs.agenticpayment.forum" target="_blank">Newsletter</a>
+    <a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a>
+  </div>
+</footer>
+
+</body>
+</html>
