@@ -4,442 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Activity — Agentic Payment</title>
-  <meta name="description" content="Transparent production line for agenticpayment.forum — inspect each article's lifecycle, agent inputs, outputs, and prompt debug links.">
+  <meta name="description" content="Transparent production line for agenticpayment.forum — inspect each article lifecycle with exact stages, review outcomes, and prompt debug links.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg:#07070e; --surface:#0d0d1a; --surface-2:#111120; --surface-3:#17172a;
-      --border:#16162a; --border-2:#1e1e38; --text-primary:#eaeaf4; --text-mid:#7070a0; --text-dim:#2e2e4a;
-      --accent:#4f7ef7; --accent-faint:rgba(79,126,247,0.08); --green:#00d9a3; --green-faint:rgba(0,217,163,0.08);
-      --amber:#f5a623; --amber-faint:rgba(245,166,35,0.08); --red:#f25757; --red-faint:rgba(242,87,87,0.08);
-      --violet:#a78bfa; --violet-faint:rgba(167,139,250,0.08);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 20px 56px; display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid var(--border); background: rgba(7,7,14,0.90); backdrop-filter: blur(20px);
-    }
-    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--text-primary); text-decoration: none; }
-    .nav-logo em { color: var(--accent); font-style: normal; }
-    .nav-links { display: flex; gap: 6px; align-items: center; }
-    .nav-link { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 7px 14px; border-radius: 6px; transition: all .2s; }
-    .nav-link:hover { color: var(--text-primary); }
-    .nav-link.active { color: var(--text-primary); background: var(--surface); border: 1px solid var(--border-2); }
-    .page { max-width: 1120px; margin: 0 auto; padding: 108px 40px 96px; }
-    .eyebrow { display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--green); margin-bottom:18px; }
-    .pulse { width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 12px rgba(0,217,163,.25); }
-    h1 { font-family:'Space Grotesk', sans-serif; font-size:38px; line-height:1.08; letter-spacing:-0.04em; margin-bottom:14px; }
-    .sub { color: var(--text-mid); max-width: 760px; margin-bottom: 34px; }
-    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:32px; }
-    .stat { border:1px solid var(--border-2); border-radius:14px; background:var(--surface); padding:18px 20px; }
-    .stat-value { font-family:'Space Grotesk', sans-serif; font-size:28px; line-height:1; letter-spacing:-.04em; margin-bottom:6px; }
-    .stat-label { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); }
-    .panel { border:1px solid var(--border-2); border-radius:16px; background:var(--surface); overflow:hidden; }
-    .panel-head { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:18px 22px; border-bottom:1px solid var(--border); }
-    .panel-title { font-family:'Space Grotesk', sans-serif; font-size:20px; letter-spacing:-.03em; }
-    .panel-meta { font-size:13px; color:var(--text-dim); }
-    .state-msg { padding:26px 22px; color:var(--text-mid); }
-    .article-list { display:flex; flex-direction:column; }
-    details.article { border-bottom:1px solid var(--border); }
-    details.article:last-child { border-bottom:none; }
-    details.article[open] { background: linear-gradient(180deg, rgba(79,126,247,0.03), rgba(79,126,247,0)); }
-    summary.article-summary { list-style:none; cursor:pointer; padding:20px 22px; display:grid; grid-template-columns:minmax(0,1.7fr) minmax(260px,1fr) 160px; gap:18px; align-items:center; }
-    summary.article-summary::-webkit-details-marker { display:none; }
-    .article-title { font-family:'Space Grotesk', sans-serif; font-size:20px; letter-spacing:-.03em; margin-bottom:8px; }
-    .article-meta { display:flex; flex-wrap:wrap; gap:8px 12px; color:var(--text-dim); font-size:13px; }
-    .inline-link { color:var(--accent); text-decoration:none; }
-    .inline-link:hover { color:var(--text-primary); }
-    .status-badge, .mini-badge {
-      display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:7px 12px;
-      font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--border-2);
-    }
-    .status-published, .status-tweeted, .status-ready-for-publish { color:var(--green); background:var(--green-faint); border-color:rgba(0,217,163,.16); }
-    .status-revision-required, .status-reviewing, .status-writing, .status-filtering, .status-publishing, .status-distributing { color:var(--amber); background:var(--amber-faint); border-color:rgba(245,166,35,.16); }
-    .status-failed, .status-rejected { color:var(--red); background:var(--red-faint); border-color:rgba(242,87,87,.16); }
-    .status-discovered, .status-observed { color:var(--accent); background:var(--accent-faint); border-color:rgba(79,126,247,.16); }
-    .summary-right { display:flex; flex-direction:column; gap:10px; }
-    .stage-strip { display:flex; flex-wrap:wrap; gap:8px; }
-    .stage-pill { min-width: 44px; justify-content:center; }
-    .stage-pill.pending { color:var(--text-dim); background:rgba(46,46,74,.35); }
-    .stage-pill.processing { color:var(--amber); background:var(--amber-faint); }
-    .stage-pill.completed { color:var(--green); background:var(--green-faint); }
-    .stage-pill.failed, .stage-pill.revised { color:var(--red); background:var(--red-faint); }
-    .summary-actions { text-align:right; color:var(--text-dim); font-size:13px; }
-    .summary-actions strong { color:var(--text-primary); }
-    .article-body { padding:0 22px 24px; }
-    .article-body-grid { display:grid; grid-template-columns:minmax(0, 1.65fr) 280px; gap:20px; }
-    .timeline { position:relative; padding-left:24px; }
-    .timeline::before { content:''; position:absolute; top:8px; bottom:8px; left:6px; width:1px; background:var(--border-2); }
-    .step { position:relative; padding:0 0 18px 18px; }
-    .step:last-child { padding-bottom:0; }
-    .step::before { content:''; position:absolute; left:-1px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--surface-3); border:2px solid var(--border-2); }
-    .step.completed::before { border-color:var(--green); box-shadow:0 0 0 3px rgba(0,217,163,.08); }
-    .step.processing::before { border-color:var(--amber); box-shadow:0 0 0 3px rgba(245,166,35,.08); }
-    .step.failed::before, .step.revised::before { border-color:var(--red); box-shadow:0 0 0 3px rgba(242,87,87,.08); }
-    .step-head { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:12px; }
-    .agent-chip { display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
-    .agent-code { width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-faint); color:var(--accent); border:1px solid rgba(79,126,247,.18); }
-    .step-time { color:var(--text-dim); font-size:12px; margin-left:auto; }
-    .step-copy { border:1px solid var(--border-2); border-radius:12px; overflow:hidden; background:rgba(255,255,255,.01); }
-    .step-section { border-top:1px solid var(--border); }
-    .step-section:first-child { border-top:none; }
-    .step-section-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; background:var(--surface-2); }
-    .step-section-title { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-mid); }
-    .step-section-body { padding:14px; }
-    pre.payload {
-      white-space:pre-wrap; word-break:break-word; font-family:'JetBrains Mono', monospace; font-size:12px; line-height:1.55;
-      color:#c9d3ff; background:#090b16; border:1px solid var(--border); border-radius:10px; padding:12px;
-      max-height:260px; overflow:auto;
-    }
-    .verdict { display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:8px 12px; font-family:'JetBrains Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; }
-    .verdict.publish { color:var(--green); background:var(--green-faint); }
-    .verdict.revise { color:var(--amber); background:var(--amber-faint); }
-    .verdict.reject { color:var(--red); background:var(--red-faint); }
-    .critique-list { padding-left:18px; color:var(--text-mid); display:flex; flex-direction:column; gap:8px; }
-    .side-card { border:1px solid var(--border-2); border-radius:14px; background:var(--surface-2); padding:16px; margin-bottom:14px; }
-    .side-title { font-family:'Space Grotesk', sans-serif; font-size:16px; letter-spacing:-.02em; margin-bottom:10px; }
-    .side-copy { color:var(--text-mid); font-size:14px; }
-    .error-box { border:1px solid rgba(242,87,87,.16); background:rgba(242,87,87,.04); border-radius:12px; padding:14px; }
-    .btn-link { display:inline-flex; align-items:center; gap:8px; color:var(--accent); text-decoration:none; font-size:13px; font-weight:500; }
-    .btn-link:hover { color:var(--text-primary); }
-    footer { border-top:1px solid var(--border); padding:28px 56px; margin-top:40px; display:flex; justify-content:space-between; align-items:center; }
-    .footer-copy { font-size:13px; color:var(--text-dim); }
-    .footer-links { display:flex; gap:24px; }
-    .footer-links a { font-size:13px; color:var(--text-mid); text-decoration:none; }
-    .footer-links a:hover { color:var(--text-primary); }
-    @media (max-width: 980px) {
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      summary.article-summary { grid-template-columns: 1fr; }
-      .summary-actions { text-align:left; }
-      .article-body-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 16px 20px; }
-      .page { padding: 96px 20px 72px; }
-      h1 { font-size: 30px; }
-      .stats { grid-template-columns: 1fr; }
-      footer { padding: 24px 20px; flex-direction: column; gap: 12px; }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#07070e;--surface:#0d0d1a;--surface2:#111120;--surface3:#17172a;--border:#16162a;--border2:#1e1e38;--text:#eaeaf4;--mid:#8b93b7;--dim:#59627d;--accent:#4f7ef7;--accentBg:rgba(79,126,247,.08);--green:#00d9a3;--greenBg:rgba(0,217,163,.08);--amber:#f5a623;--amberBg:rgba(245,166,35,.08);--red:#f25757;--redBg:rgba(242,87,87,.08);--violet:#a78bfa;--violetBg:rgba(167,139,250,.08)}
+    body{background:var(--bg);color:var(--text);font:15px/1.6 Inter,system-ui,sans-serif}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 56px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:rgba(7,7,14,.9);backdrop-filter:blur(20px)}
+    .nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:var(--text);text-decoration:none}.nav-logo em{color:var(--accent);font-style:normal}
+    .nav-links{display:flex;gap:6px;align-items:center}.nav-link{font-size:13px;font-weight:500;color:var(--mid);text-decoration:none;padding:7px 14px;border-radius:6px}.nav-link.active{color:var(--text);background:var(--surface);border:1px solid var(--border2)}
+    .page{max-width:1120px;margin:0 auto;padding:108px 40px 96px}.eyebrow{display:flex;gap:10px;align-items:center;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:18px}.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(0,217,163,.25)}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.05;letter-spacing:-.04em;margin-bottom:14px}.sub{color:var(--mid);max-width:760px;margin-bottom:28px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}.stat{border:1px solid var(--border2);border-radius:14px;background:var(--surface);padding:18px 20px}.stat-value{font-family:'Space Grotesk',sans-serif;font-size:30px;line-height:1;letter-spacing:-.04em;margin-bottom:6px}.stat-label{font:11px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+    .legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}.legend-pill,.status-pill,.step-pill{display:inline-flex;gap:8px;align-items:center;border-radius:999px;padding:8px 12px;border:1px solid var(--border2);font:11px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}.legend-pill{background:var(--surface);color:var(--mid)}
+    .status-published,.step-completed{color:var(--green);background:var(--greenBg);border-color:rgba(0,217,163,.18)} .status-revision-required,.status-reviewing,.status-writing,.status-filtering,.status-publishing,.status-distributing,.step-processing{color:var(--amber);background:var(--amberBg);border-color:rgba(245,166,35,.18)} .status-failed,.status-rejected,.step-failed,.step-revised{color:var(--red);background:var(--redBg);border-color:rgba(242,87,87,.18)} .status-discovered,.status-observed,.step-pending{color:var(--accent);background:var(--accentBg);border-color:rgba(79,126,247,.18)}
+    .panel{border:1px solid var(--border2);border-radius:18px;background:var(--surface);overflow:hidden}.panel-head{padding:18px 22px;border-bottom:1px solid var(--border)}.panel-title{font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:-.03em}.panel-meta{font-size:13px;color:var(--dim);margin-top:6px}
+    .state-msg{padding:26px 22px;color:var(--mid)} .list{display:flex;flex-direction:column}
+    details.article{border-bottom:1px solid var(--border)} details.article:last-child{border-bottom:none} details.article[open]{background:linear-gradient(180deg, rgba(79,126,247,.03), transparent)}
+    summary{list-style:none;cursor:pointer;padding:22px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 180px;gap:18px;align-items:start} summary::-webkit-details-marker{display:none}
+    .title{font-family:'Space Grotesk',sans-serif;font-size:22px;line-height:1.2;letter-spacing:-.03em;margin-bottom:10px}.meta{display:flex;gap:10px 14px;flex-wrap:wrap;color:var(--dim);font-size:13px}.meta a{color:var(--accent);text-decoration:none}
+    .row-center{display:flex;flex-direction:column;gap:10px}.stage-strip{display:flex;gap:8px;flex-wrap:wrap}.stage-strip .step-pill{background:var(--surface2)}
+    .row-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end}.row-note{font-size:13px;color:var(--mid);text-align:right}.row-link,.debug-link{color:var(--accent);text-decoration:none;font-size:13px;font-weight:500}
+    .body{padding:0 22px 24px}.body-grid{display:grid;grid-template-columns:minmax(0,1.6fr) 320px;gap:20px}.timeline{position:relative;padding-left:24px}.timeline:before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:1px;background:var(--border2)}
+    .step{position:relative;padding:0 0 18px 18px}.step:before{content:'';position:absolute;left:-1px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--surface3);border:2px solid var(--border2)}.step.completed:before{border-color:var(--green)}.step.processing:before{border-color:var(--amber)}.step.failed:before,.step.revised:before{border-color:var(--red)}
+    .step-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.agent-code{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--accentBg);border:1px solid rgba(79,126,247,.18);color:var(--accent);font:700 12px Inter,sans-serif}.agent-name{font:600 14px Inter,sans-serif}.agent-stage{font:11px 'JetBrains Mono',monospace;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}.step-time{margin-left:auto;color:var(--dim);font-size:12px}
+    .box{border:1px solid var(--border2);border-radius:12px;background:rgba(255,255,255,.01);overflow:hidden;margin-bottom:12px}.box-h{padding:10px 12px;background:var(--surface2);font:11px 'JetBrains Mono',monospace;color:var(--mid);text-transform:uppercase;letter-spacing:.08em}.box-b{padding:14px}.box-b pre{white-space:pre-wrap;word-break:break-word;max-height:260px;overflow:auto;font:12px/1.55 'JetBrains Mono',monospace;color:#c9d3ff;background:#090b16;border:1px solid var(--border);border-radius:10px;padding:12px}
+    .verdict{display:inline-flex;gap:8px;align-items:center;border-radius:999px;padding:8px 12px;font:11px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}.verdict.publish{color:var(--green);background:var(--greenBg)}.verdict.revise{color:var(--amber);background:var(--amberBg)}.verdict.reject{color:var(--red);background:var(--redBg)}
+    .critique{padding-left:18px;color:var(--mid);display:flex;flex-direction:column;gap:8px}.side-card{border:1px solid var(--border2);border-radius:14px;background:var(--surface2);padding:16px;margin-bottom:12px}.side-title{font-family:'Space Grotesk',sans-serif;font-size:16px;letter-spacing:-.02em;margin-bottom:8px}.side-copy{color:var(--mid);font-size:14px}.error-card{border-color:rgba(242,87,87,.16);background:rgba(242,87,87,.04)}
+    footer{border-top:1px solid var(--border);padding:28px 56px;margin-top:40px;display:flex;justify-content:space-between;align-items:center}.footer-copy{font-size:13px;color:var(--dim)}.footer-links{display:flex;gap:24px}.footer-links a{font-size:13px;color:var(--mid);text-decoration:none}
+    @media (max-width:980px){.stats{grid-template-columns:repeat(2,1fr)}summary{grid-template-columns:1fr}.row-right{align-items:flex-start}.row-note{text-align:left}.body-grid{grid-template-columns:1fr}}
+    @media (max-width:640px){nav{padding:16px 20px}.page{padding:96px 20px 72px}h1{font-size:32px}.stats{grid-template-columns:1fr}footer{padding:24px 20px;flex-direction:column;gap:12px}}
   </style>
 </head>
 <body>
-<nav>
-  <a href="/" class="nav-logo">agentic<em>payment</em>.forum</a>
-  <div class="nav-links">
-    <a href="/" class="nav-link">Home</a>
-    <a href="/signal.html" class="nav-link">Signal</a>
-    <a href="/landscape.html" class="nav-link">Landscape</a>
-    <a href="/chronicle.html" class="nav-link">Chronicle</a>
-    <a href="/activity.html" class="nav-link active">Activity</a>
-  </div>
-</nav>
-
+<nav><a href="/" class="nav-logo">agentic<em>payment</em>.forum</a><div class="nav-links"><a href="/" class="nav-link">Home</a><a href="/signal.html" class="nav-link">Signal</a><a href="/landscape.html" class="nav-link">Landscape</a><a href="/chronicle.html" class="nav-link">Chronicle</a><a href="/activity.html" class="nav-link active">Activity</a></div></nav>
 <div class="page">
   <div class="eyebrow"><span class="pulse"></span> Transparent production line</div>
-  <h1>See every article move through the pipeline.</h1>
-  <p class="sub">This is no longer a black-box automation feed. Each card shows one article lifecycle — from discovery to review to publish — with the exact agent inputs, outputs, verdicts, and prompt-debug links.</p>
-
-  <div class="stats">
-    <div class="stat"><div class="stat-value" id="stat-tracked">—</div><div class="stat-label">Articles tracked</div></div>
-    <div class="stat"><div class="stat-value" id="stat-published">—</div><div class="stat-label">Published</div></div>
-    <div class="stat"><div class="stat-value" id="stat-blocked">—</div><div class="stat-label">Blocked / revise</div></div>
-    <div class="stat"><div class="stat-value" id="stat-last">—</div><div class="stat-label">Last update</div></div>
-  </div>
-
-  <div class="panel">
-    <div class="panel-head">
-      <div>
-        <div class="panel-title">Article lifecycle view</div>
-        <div class="panel-meta" id="panel-meta">Waiting for pipeline state…</div>
-      </div>
-    </div>
-    <div class="article-list" id="article-list">
-      <div class="state-msg" id="state-msg">Fetching structured activity…</div>
-    </div>
-  </div>
+  <h1>Inspect the article lifecycle, not just the log stream.</h1>
+  <p class="sub">Each card is one article. You can see where it was discovered, what each stage produced, who blocked it, and exactly where to debug the prompt. This page only renders structured article records — not guessed lifecycle reconstructions.</p>
+  <div class="stats"><div class="stat"><div class="stat-value" id="stat-tracked">—</div><div class="stat-label">Articles tracked</div></div><div class="stat"><div class="stat-value" id="stat-published">—</div><div class="stat-label">Published</div></div><div class="stat"><div class="stat-value" id="stat-blocked">—</div><div class="stat-label">Blocked</div></div><div class="stat"><div class="stat-value" id="stat-last">—</div><div class="stat-label">Last update</div></div></div>
+  <div class="legend"><span class="legend-pill">Research</span><span class="legend-pill">Filter</span><span class="legend-pill">Draft</span><span class="legend-pill">Review</span><span class="legend-pill">Publish</span><span class="legend-pill">Distribute</span></div>
+  <div class="panel"><div class="panel-head"><div class="panel-title">Article lifecycle view</div><div class="panel-meta" id="panel-meta">Waiting for structured activity bundle…</div></div><div class="list" id="article-list"><div class="state-msg" id="state-msg">Fetching structured activity…</div></div></div>
 </div>
-
-<footer>
-  <span class="footer-copy">© 2026 agenticpayment.forum</span>
-  <div class="footer-links">
-    <a href="https://blogs.agenticpayment.forum">Newsletter</a>
-    <a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a>
-  </div>
-</footer>
-
+<footer><span class="footer-copy">© 2026 agenticpayment.forum</span><div class="footer-links"><a href="https://blogs.agenticpayment.forum">Newsletter</a><a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a></div></footer>
 <script>
-function escHtml(str) {
-  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function timeAgo(isoString) {
-  if (!isoString) return '—';
-  const now = new Date(), then = new Date(isoString);
-  const diff = Math.floor((now - then) / 1000);
-  if (diff < 60) return 'just now';
-  if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
-  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
-  if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
-  return then.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
-}
-function formatTimestamp(isoString) {
-  if (!isoString) return 'No timestamp';
-  const d = new Date(isoString);
-  return d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit', hour12:false }) + ' UTC';
-}
-function prettyJson(value) {
-  if (value == null) return 'null';
-  if (typeof value === 'string') return value;
-  try { return JSON.stringify(value, null, 2); } catch { return String(value); }
-}
-function statusClass(status) {
-  return String(status || 'discovered').toLowerCase().replace(/\s+/g, '-');
-}
-function timelinePill(step) {
-  const cls = String(step.status || 'PENDING').toLowerCase();
-  return `<span class="mini-badge stage-pill ${cls}">${escHtml(step.agent_code)} · ${escHtml(step.status || 'PENDING')}</span>`;
-}
-function renderMorgan(step) {
-  const output = step.output_payload || {};
-  const verdict = String(output.verdict || 'PENDING').toLowerCase();
-  const feedback = Array.isArray(output.feedback) && output.feedback.length
-    ? `<ul class="critique-list">${output.feedback.map(item => `<li>${escHtml(item)}</li>`).join('')}</ul>`
-    : '<div class="side-copy">No critique logged.</div>';
-  return `
-    <div class="step-section">
-      <div class="step-section-head"><div class="step-section-title">Morgan verdict</div></div>
-      <div class="step-section-body">
-        <div class="verdict ${verdict}">${escHtml(output.verdict || 'PENDING')} ${output.score != null ? `· ${escHtml(output.score)}/10` : ''}</div>
-        ${feedback}
-        ${output.expert_note ? `<div class="side-card" style="margin-top:12px"><div class="side-title">Expert note</div><div class="side-copy">${escHtml(output.expert_note)}</div></div>` : ''}
-      </div>
-    </div>`;
-}
-function renderJustin(step) {
-  const output = step.output_payload || {};
-  return `
-    <div class="step-section">
-      <div class="step-section-head"><div class="step-section-title">Justin output</div></div>
-      <div class="step-section-body">
-        ${output.article_url ? `<div style="margin-bottom:12px"><a class="btn-link" href="${escHtml(output.article_url)}" target="_blank">Read published article →</a></div>` : ''}
-        <div class="step-section-title" style="margin-bottom:8px">Final markdown</div>
-        <pre class="payload">${escHtml(prettyJson(output.final_markdown || 'No markdown captured.'))}</pre>
-        <div class="step-section-title" style="margin:14px 0 8px">Publish API response</div>
-        <pre class="payload">${escHtml(prettyJson(output.api_result || {}))}</pre>
-      </div>
-    </div>`;
-}
-function renderGenericPayload(step, label, value) {
-  return `
-    <div class="step-section">
-      <div class="step-section-head"><div class="step-section-title">${label}</div></div>
-      <div class="step-section-body"><pre class="payload">${escHtml(prettyJson(value))}</pre></div>
-    </div>`;
-}
-function renderStep(step) {
-  const cls = String(step.status || 'PENDING').toLowerCase();
-  const sections = [];
-  sections.push(renderGenericPayload(step, 'Input', step.input_payload));
-  if (step.agent === 'Morgan') {
-    sections.push(renderMorgan(step));
-  } else if (step.agent === 'Justin') {
-    sections.push(renderJustin(step));
-  } else {
-    sections.push(renderGenericPayload(step, 'Output', step.output_payload));
-  }
-  return `
-    <div class="step ${cls}">
-      <div class="step-head">
-        <div class="agent-chip"><span class="agent-code">${escHtml(step.agent_code || step.agent?.[0] || '?')}</span>${escHtml(step.agent)}</div>
-        <span class="mini-badge stage-pill ${cls}">${escHtml(step.status || 'PENDING')}</span>
-        ${step.debug_prompt_url ? `<a class="btn-link" href="${escHtml(step.debug_prompt_url)}" target="_blank">Debug Prompt ↗</a>` : ''}
-        <span class="step-time">${formatTimestamp(step.timestamp)}</span>
-      </div>
-      <div class="step-copy">${sections.join('')}</div>
-    </div>`;
-}
-function renderArticle(article) {
-  const timeline = article.timeline || [];
-  const statusCls = statusClass(article.final_status);
-  const liveTimeline = timeline.filter(step => step.status && step.status !== 'PENDING');
-  const rightMeta = article.article_url
-    ? `<a class="btn-link" href="${escHtml(article.article_url)}" target="_blank">Published URL ↗</a>`
-    : `<strong>${escHtml(article.final_status || 'Pending')}</strong>`;
-  const errorBlock = article.error_context
-    ? `<div class="side-card error-box"><div class="side-title">Blocked context</div><div class="side-copy"><strong>${escHtml(article.error_context.reason || 'Pipeline blocked')}</strong><br>${escHtml(prettyJson(article.error_context.details || {}))}</div></div>`
-    : '';
-  return `
-    <details class="article">
-      <summary class="article-summary">
-        <div>
-          <div class="article-title">${escHtml(article.title || article.source_url || article.article_id)}</div>
-          <div class="article-meta">
-            <span>${escHtml(article.article_id)}</span>
-            <span>Discovered ${timeAgo(article.discovered_at)}</span>
-            ${article.source_url ? `<a class="inline-link" href="${escHtml(article.source_url)}" target="_blank">Source ↗</a>` : ''}
-          </div>
-        </div>
-        <div class="summary-right">
-          <span class="status-badge status-${statusCls}">${escHtml(article.final_status || 'Discovered')}</span>
-          <div class="stage-strip">${timeline.map(timelinePill).join('')}</div>
-        </div>
-        <div class="summary-actions">${rightMeta}<br><span>Expand lifecycle ↓</span></div>
-      </summary>
-      <div class="article-body">
-        <div class="article-body-grid">
-          <div class="timeline">${liveTimeline.map(renderStep).join('') || '<div class="side-copy">No agent steps recorded yet.</div>'}</div>
-          <div>
-            <div class="side-card">
-              <div class="side-title">Article summary</div>
-              <div class="side-copy">Source title: ${escHtml(article.metadata?.source_title || 'Unknown')}<br>Last update: ${formatTimestamp(article.updated_at)}</div>
-            </div>
-            <div class="side-card">
-              <div class="side-title">Rex raw capture</div>
-              <pre class="payload">${escHtml(prettyJson(article.metadata?.rex_raw_text || 'No raw text captured.'))}</pre>
-            </div>
-            ${errorBlock}
-          </div>
-        </div>
-      </div>
-    </details>`;
-}
-function legacyDebugUrl(agent) {
-  const urls = {
-    Rex: 'https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158',
-    Kai: 'https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L167-L230',
-    Sage: 'https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353',
-    Morgan: 'https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445',
-    Justin: 'https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488',
-    Mia: 'https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562',
-  };
-  return urls[agent] || 'https://github.com/LucianaMa1/agentic-payment-bot';
-}
-function buildArticleFromLegacyEvents(events, fallbackKey) {
-  const articleEvent = events.find(evt => evt.article_title) || {};
-  const title = articleEvent.article_title || `Pipeline run ${fallbackKey}`;
-  const stepMap = {};
-  events.forEach((evt) => {
-    const agent = evt.agent || 'Unknown';
-    const status = evt.event_type === 'review'
-      ? (evt.verdict === 'REVISE' ? 'REVISED' : (evt.verdict === 'REJECT' ? 'FAILED' : 'COMPLETED'))
-      : 'COMPLETED';
-    stepMap[agent] = {
-      agent,
-      agent_code: agent[0],
-      status,
-      timestamp: evt.timestamp,
-      input_payload: evt.metadata?.query ? { query: evt.metadata.query } : null,
-      output_payload: evt.event_type === 'review' ? {
-        verdict: evt.verdict,
-        score: evt.score,
-        feedback: evt.feedback,
-        expert_note: evt.expert_note,
-      } : evt,
-      debug_prompt_url: legacyDebugUrl(agent),
-    };
-  });
-  const orderedAgents = ['Rex', 'Kai', 'Sage', 'Morgan', 'Justin', 'Mia'];
-  const timeline = orderedAgents.map((agent) => stepMap[agent] || {
-    agent,
-    agent_code: agent[0],
-    status: 'PENDING',
-    input_payload: null,
-    output_payload: null,
-    timestamp: null,
-    debug_prompt_url: legacyDebugUrl(agent),
-  });
-  const reviewEvt = events.find(evt => evt.event_type === 'review');
-  const publishEvt = events.find(evt => evt.event_type === 'publish');
-  return {
-    article_id: fallbackKey,
-    title,
-    source_url: null,
-    discovered_at: events[0]?.timestamp,
-    final_status: reviewEvt?.verdict === 'REVISE' ? 'Revision required' : (publishEvt ? 'Published' : 'Observed'),
-    locked: reviewEvt?.verdict === 'REVISE' || reviewEvt?.verdict === 'REJECT',
-    error_context: reviewEvt?.verdict === 'REVISE' ? { reason: 'Morgan requested revision', details: { feedback: reviewEvt.feedback || [] } } : null,
-    article_url: publishEvt?.article_url || articleEvent.article_url || null,
-    timeline,
-    updated_at: events[events.length - 1]?.timestamp,
-    created_at: events[0]?.timestamp,
-    metadata: {
-      source_title: null,
-      rex_raw_text: events.filter(evt => evt.agent === 'Rex').map(evt => evt.metadata?.query || evt.action || '').join('\n'),
-    }
-  };
-}
-function normalizeActivityData(data) {
-  if (!Array.isArray(data)) return { articles: data.articles || [], last_updated: data.last_updated || data.articles?.[0]?.updated_at };
-  const groups = [];
-  const byKey = new Map();
-  let pending = [];
-  let activeKey = null;
-  data.forEach((evt) => {
-    const key = evt.article_title || evt.article_url || null;
-    if (key) {
-      if (!byKey.has(key)) {
-        const group = { key, events: [] };
-        byKey.set(key, group);
-        groups.push(group);
-      }
-      const group = byKey.get(key);
-      if (pending.length) {
-        group.events.push(...pending);
-        pending = [];
-      }
-      group.events.push(evt);
-      activeKey = key;
-      return;
-    }
-    if (activeKey && byKey.has(activeKey)) {
-      byKey.get(activeKey).events.push(evt);
-    } else {
-      pending.push(evt);
-    }
-  });
-  if (pending.length) groups.push({ key: `legacy-${groups.length + 1}`, events: pending });
-  return {
-    articles: groups.map((group, index) => buildArticleFromLegacyEvents(group.events, group.key || `legacy-${index + 1}`)).reverse(),
-    last_updated: data[data.length - 1]?.timestamp,
-  };
-}
-async function loadFeed() {
-  const stateMsg = document.getElementById('state-msg');
-  try {
-    const res = await fetch('/activity.json?t=' + Date.now());
-    const raw = await res.json();
-    const data = normalizeActivityData(raw);
-    const articles = data.articles || [];
-    if (!articles.length) {
-      stateMsg.textContent = 'No structured pipeline state yet.';
-      return;
-    }
-    stateMsg.remove();
-    document.getElementById('article-list').innerHTML = articles.map(renderArticle).join('');
-    const published = articles.filter(a => /published|tweeted/i.test(a.final_status || '')).length;
-    const blocked = articles.filter(a => a.locked || /failed|reject|revision/i.test(a.final_status || '')).length;
-    document.getElementById('stat-tracked').textContent = articles.length;
-    document.getElementById('stat-published').textContent = published;
-    document.getElementById('stat-blocked').textContent = blocked;
-    document.getElementById('stat-last').textContent = timeAgo(data.last_updated || articles[0].updated_at);
-    document.getElementById('panel-meta').textContent = `Last sync ${timeAgo(data.last_updated || articles[0].updated_at)} · ${articles.length} lifecycle record(s)`;
-  } catch (e) {
-    stateMsg.textContent = 'Could not fetch structured activity.';
-  }
-}
-loadFeed();
-setInterval(loadFeed, 60000);
+function esc(v){return String(v ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function pretty(v){if(v==null)return 'null';if(typeof v==='string')return v;try{return JSON.stringify(v,null,2)}catch{return String(v)}}
+function timeAgo(iso){if(!iso)return '—';const now=new Date(),then=new Date(iso),diff=Math.floor((now-then)/1000);if(diff<60)return 'just now';if(diff<3600)return Math.floor(diff/60)+'m ago';if(diff<86400)return Math.floor(diff/3600)+'h ago';if(diff<604800)return Math.floor(diff/86400)+'d ago';return then.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}
+function formatTs(iso){if(!iso)return 'No timestamp';const d=new Date(iso);return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' · '+d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false})+' UTC'}
+function cls(status){return String(status||'discovered').toLowerCase().replace(/\s+/g,'-')}
+function normStatus(status){const s=String(status||'PENDING').toUpperCase();const map={PENDING:'Pending',PROCESSING:'In progress',COMPLETED:'Completed',FAILED:'Failed',REVISED:'Needs revision'};return map[s]||s}
+function finalSummary(article){if(article.locked && article.error_context){return article.error_context.reason || 'Blocked'};if(article.article_url){return 'Published to Hashnode'};return article.final_status || 'Observed'}
+function renderStepPill(step){return `<span class="step-pill step-${cls(step.status)}">${esc(step.label || step.stage_label || step.agent)} · ${esc(normStatus(step.status))}</span>`}
+function renderJsonBox(label,value){return `<div class="box"><div class="box-h">${label}</div><div class="box-b"><pre>${esc(pretty(value))}</pre></div></div>`}
+function renderMorgan(step){const out=step.output_payload||{};const verdict=String(out.verdict||'PENDING').toLowerCase();const critique=(out.feedback||[]).length?`<ul class="critique">${out.feedback.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:'<div class="side-copy">No critique recorded.</div>';return `<div class="box"><div class="box-h">Morgan verdict</div><div class="box-b"><div class="verdict ${verdict}">${esc(out.verdict||'PENDING')} ${out.score!=null?`· ${esc(out.score)}/10`:''}</div>${critique}${out.expert_note?`<div class="side-card" style="margin-top:12px"><div class="side-title">Expert note</div><div class="side-copy">${esc(out.expert_note)}</div></div>`:''}</div></div>`}
+function renderJustin(step){const out=step.output_payload||{};return `<div>${out.article_url?`<a class="debug-link" href="${esc(out.article_url)}" target="_blank">Open published article ↗</a>`:''}${renderJsonBox('Final markdown', out.final_markdown || out.draft_markdown || 'No markdown captured.')}${renderJsonBox('Publish API response', out.api_result || out.publish_response || {})}</div>`}
+function renderStep(step){const label=step.stage_label||step.label||step.agent;let body=renderJsonBox('Input', step.input_payload);if(step.agent==='Morgan'){body+=renderMorgan(step)}else if(step.agent==='Justin'){body+=renderJustin(step)}else{body+=renderJsonBox('Output', step.output_payload)}return `<div class="step ${cls(step.status)}"><div class="step-head"><span class="agent-code">${esc(step.agent_code || step.agent?.[0] || '?')}</span><span class="agent-name">${esc(step.agent)}</span><span class="agent-stage">${esc(label)}</span><span class="step-pill step-${cls(step.status)}">${esc(normStatus(step.status))}</span>${step.debug_prompt_url?`<a class="debug-link" href="${esc(step.debug_prompt_url)}" target="_blank">Debug prompt ↗</a>`:''}<span class="step-time">${esc(formatTs(step.timestamp))}</span></div>${body}</div>`}
+function renderArticle(article){const timeline=(article.timeline||[]);const summarySteps=(article.status_summary||timeline.map(step=>({label:step.stage_label||step.agent,status:step.status}))).filter(step=>step.status&&step.status!=='PENDING');const error=article.error_context?`<div class="side-card error-card"><div class="side-title">Blocked context</div><div class="side-copy"><strong>${esc(article.error_context.reason||'Pipeline blocked')}</strong><br>${esc(pretty(article.error_context.details||{}))}</div></div>`:'';return `<details class="article"><summary><div><div class="title">${esc(article.title || article.article_id)}</div><div class="meta"><span>${esc(article.article_id)}</span>${article.source_url?`<a href="${esc(article.source_url)}" target="_blank">Source ↗</a>`:''}<span>Discovered ${esc(formatTs(article.discovered_at))}</span><span>Updated ${esc(formatTs(article.updated_at))}</span></div></div><div class="row-center"><span class="status-pill status-${cls(article.final_status)}">${esc(article.final_status || 'Observed')}</span><div class="stage-strip">${summarySteps.map(renderStepPill).join('')}</div></div><div class="row-right">${article.article_url?`<a class="row-link" href="${esc(article.article_url)}" target="_blank">Published URL ↗</a>`:''}<div class="row-note">${esc(finalSummary(article))}</div><div class="row-note">Expand lifecycle ↓</div></div></summary><div class="body"><div class="body-grid"><div class="timeline">${timeline.map(renderStep).join('') || '<div class="side-copy">No stage records found.</div>'}</div><div><div class="side-card"><div class="side-title">Article summary</div><div class="side-copy">${esc(finalSummary(article))}</div></div><div class="side-card"><div class="side-title">Source snapshot</div><div class="side-copy">${esc(article.metadata?.source_title || article.metadata?.candidate_title || 'Unknown source')}</div></div>${renderJsonBox('Rex raw capture', article.metadata?.rex_raw_text || article.metadata?.raw_text || 'No raw text captured.')}${error}</div></div></div></details>`}
+async function loadFeed(){const msg=document.getElementById('state-msg');try{const res=await fetch('/activity.json?t='+Date.now());const data=await res.json();const articles=Array.isArray(data)?[]:(data.articles||[]);if(!articles.length){msg.textContent='No structured article records found yet.';return}msg.remove();document.getElementById('article-list').innerHTML=articles.map(renderArticle).join('');document.getElementById('stat-tracked').textContent=articles.length;document.getElementById('stat-published').textContent=articles.filter(a=>/published|tweeted/i.test(a.final_status||'')).length;document.getElementById('stat-blocked').textContent=articles.filter(a=>a.locked||/failed|reject|revision/i.test(a.final_status||'')).length;document.getElementById('stat-last').textContent=timeAgo(data.last_updated || articles[0].updated_at);document.getElementById('panel-meta').textContent=`Schema v${data.version || 2} · last sync ${timeAgo(data.last_updated || articles[0].updated_at)} · ${articles.length} article record(s)`}catch(e){msg.textContent='Could not fetch structured activity bundle.'}}
+loadFeed();setInterval(loadFeed,60000)
 </script>
 </body>
 </html>
