@@ -35,7 +35,7 @@
             "expert_note": "The piece is missing the chargeback and dispute resolution dimension entirely, which is where I'd expect any acquiring bank CTO to push back hardest. Card rails are 'enterprise-ready' in large part because there's a known, scheme-mandated dispute resolution process with defined liability shifts — merchants, issuers, and acquirers all know who eats the loss when an agent-initiated transaction goes wrong. x402 has no equivalent today: if an agent overpays, pays the wrong counterparty, or gets exploited via a malicious 402 response, the recourse path is unclear and almost certainly involves litigation rather than a scheme-mandated chargeback flow. Until x402 or UCP answers that question with something more than 'smart contract immutability,' enterprise treasury and procurement teams won't touch it regardless of developer adoption."
           },
           "timestamp": "2026-04-25T02:02:56.831672+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         },
         {
           "agent": "Justin",
@@ -50,7 +50,7 @@
             "run_cost_usd": 0.2509
           },
           "timestamp": "2026-04-25T02:02:57.413981+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -74,7 +74,7 @@
             "timestamp": "2026-04-25T02:02:59.328594+00:00"
           },
           "timestamp": "2026-04-25T02:02:59.328594+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails",
@@ -133,7 +133,7 @@
             "expert_note": "The two-layer thesis — UCP for consumer-facing commerce graph, x402 for machine-to-machine settlement — is actually the most defensible framing I've seen on this topic, and it maps to how card rails and ACH coexist today rather than one replacing the other. But the article needs to say explicitly what the settlement finality and FX conversion story looks like when an x402 micropayment crosses jurisdictions, because that's where 'no intermediary' meets correspondent banking reality and the answer is not clean."
           },
           "timestamp": "2026-04-25T02:01:54.987418+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         },
         {
           "agent": "Sage",
@@ -157,7 +157,7 @@
             "timestamp": "2026-04-25T02:02:38.826710+00:00"
           },
           "timestamp": "2026-04-25T02:02:38.826710+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": null,
@@ -222,7 +222,7 @@
             "expert_note": "The piece correctly identifies the authorization architecture problem but misses the settlement finality asymmetry that actually determines enterprise adoption: Tempo's irreversibility is a feature for agent-to-agent micropayments and a hard blocker for any workflow touching consumer funds or regulated entities with mandatory return rights. I've watched three 'programmable settlement' plays stall on exactly this — treasury and compliance teams at acquiring banks will not onboard a rail with no return mechanism regardless of how elegant the programmable release logic is."
           },
           "timestamp": "2026-04-24T02:02:20.463900+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         },
         {
           "agent": "Justin",
@@ -237,7 +237,7 @@
             "run_cost_usd": 0.1918
           },
           "timestamp": "2026-04-24T02:02:20.979074+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -261,7 +261,7 @@
             "timestamp": "2026-04-24T02:02:23.517952+00:00"
           },
           "timestamp": "2026-04-24T02:02:23.517952+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Rex",
@@ -284,7 +284,7 @@
             "timestamp": "2026-04-25T02:00:19.633657+00:00"
           },
           "timestamp": "2026-04-25T02:00:19.633657+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Kai",
@@ -309,7 +309,7 @@
             "timestamp": "2026-04-25T02:00:54.861194+00:00"
           },
           "timestamp": "2026-04-25T02:00:54.861194+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L167-L230"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         },
         {
           "agent": "Sage",
@@ -333,7 +333,7 @@
             "timestamp": "2026-04-25T02:01:37.350462+00:00"
           },
           "timestamp": "2026-04-25T02:01:37.350462+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/stripe-and-paradigm-built-a-rail-visa-cant-tax-then-invited-visa-to-endorse-it",
@@ -407,7 +407,7 @@
             "expert_note": "The piece nails the strategic frame but skips the mechanism that actually makes the thesis defensible: the real reason card rails fail for agent micropayments isn't authorization latency in isolation — it's that the card model requires a pre-credentialed account relationship, a per-transaction interchange cost floor that makes sub-cent payments economically irrational, and a chargeback/dispute framework that assumes a human cardholder who can attest to intent. None of those assumptions hold in M2M. Fix the technical diagnosis and this argument gets a lot harder to dismiss."
           },
           "timestamp": "2026-04-24T02:01:21.398357+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         },
         {
           "agent": "Sage",
@@ -431,7 +431,7 @@
             "timestamp": "2026-04-24T02:02:02.987194+00:00"
           },
           "timestamp": "2026-04-24T02:02:02.987194+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": null,
@@ -497,7 +497,7 @@
             "expert_note": "The real sleeper issue here that nobody is building for yet: when an AI agent is acting under a delegated payment mandate, the question of whether a dispute is 'unauthorized' under existing scheme rules is genuinely unsettled — because scheme rules define authorization as the cardholder's consent, and a cardholder delegating to an agent doesn't neatly map onto the existing authorization model. I've been in acquiring risk conversations where the bank's position is that if the agent exceeded any parameter of its mandate, every resulting transaction is potentially disputable as unauthorized, full stop. That's an existential liability posture, and acquirers will price it into merchant agreements before regulators get anywhere near this."
           },
           "timestamp": "2026-04-23T04:54:33.697485+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         },
         {
           "agent": "Justin",
@@ -512,7 +512,7 @@
             "run_cost_usd": 0.2034
           },
           "timestamp": "2026-04-23T04:54:34.379254+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -536,7 +536,7 @@
             "timestamp": "2026-04-23T04:54:37.772436+00:00"
           },
           "timestamp": "2026-04-23T04:54:37.772436+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Rex",
@@ -559,7 +559,7 @@
             "timestamp": "2026-04-24T02:00:15.157381+00:00"
           },
           "timestamp": "2026-04-24T02:00:15.157381+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Kai",
@@ -584,7 +584,7 @@
             "timestamp": "2026-04-24T02:00:33.131019+00:00"
           },
           "timestamp": "2026-04-24T02:00:33.131019+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L167-L230"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         },
         {
           "agent": "Sage",
@@ -608,7 +608,7 @@
             "timestamp": "2026-04-24T02:00:59.871328+00:00"
           },
           "timestamp": "2026-04-24T02:00:59.871328+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are",
@@ -681,7 +681,7 @@
             "expert_note": "The piece is circling something real that almost nobody is writing about seriously: the mismatch between scheme dispute timelines (cardholders have up to 120 days to initiate a chargeback under Visa rules) and agentic transaction patterns where the user may genuinely not know a payment occurred until well outside that window — or conversely, may dispute a legitimate agent action they've forgotten authorizing. That asymmetry, combined with the fact that existing reason codes have no 'unauthorized autonomous agent' category, is where the acquiring relationship actually breaks down. That argument deserves to be the center of this piece, not a supporting point buried in the back half."
           },
           "timestamp": "2026-04-23T04:53:38.069897+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L362-L445"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         },
         {
           "agent": "Sage",
@@ -705,7 +705,7 @@
             "timestamp": "2026-04-23T04:54:12.674255+00:00"
           },
           "timestamp": "2026-04-23T04:54:12.674255+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": null,
@@ -762,7 +762,7 @@
             "run_cost_usd": 0.2717
           },
           "timestamp": "2026-04-22T02:16:41.600502+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -779,7 +779,7 @@
             "article_url": "https://blogs.agenticpayment.forum/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook"
           },
           "timestamp": "2026-04-22T02:16:49.619541+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Rex",
@@ -802,7 +802,7 @@
             "timestamp": "2026-04-23T04:52:14.063541+00:00"
           },
           "timestamp": "2026-04-23T04:52:14.063541+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Kai",
@@ -827,7 +827,7 @@
             "timestamp": "2026-04-23T04:52:41.254057+00:00"
           },
           "timestamp": "2026-04-23T04:52:41.254057+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L167-L230"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         },
         {
           "agent": "Sage",
@@ -851,7 +851,7 @@
             "timestamp": "2026-04-23T04:53:19.121749+00:00"
           },
           "timestamp": "2026-04-23T04:53:19.121749+00:00",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook",
@@ -912,7 +912,7 @@
             "run_cost_usd": 0.2571
           },
           "timestamp": "2026-04-21T06:51:54.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -929,7 +929,7 @@
             "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants"
           },
           "timestamp": "2026-04-21T06:51:56.717081Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Rex",
@@ -955,7 +955,7 @@
             "timestamp": "2026-04-22T02:04:30.000Z"
           },
           "timestamp": "2026-04-22T02:04:30.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Sage",
@@ -980,7 +980,7 @@
             "timestamp": "2026-04-22T02:14:50.000Z"
           },
           "timestamp": "2026-04-22T02:14:50.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
@@ -1047,7 +1047,7 @@
             "timestamp": "2026-04-21T06:40:10.000Z"
           },
           "timestamp": "2026-04-21T06:40:10.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Justin",
@@ -1062,7 +1062,7 @@
             "run_cost_usd": 0.2608
           },
           "timestamp": "2026-04-21T06:50:08.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -1079,7 +1079,7 @@
             "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started"
           },
           "timestamp": "2026-04-21T06:50:17.613707Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Sage",
@@ -1104,7 +1104,7 @@
             "timestamp": "2026-04-21T06:50:20.000Z"
           },
           "timestamp": "2026-04-21T06:50:20.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started",
@@ -1160,7 +1160,7 @@
             "run_cost_usd": 0.2541
           },
           "timestamp": "2026-04-21T06:35:40.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -1177,7 +1177,7 @@
             "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem"
           },
           "timestamp": "2026-04-21T06:37:05.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Rex",
@@ -1203,7 +1203,7 @@
             "timestamp": "2026-04-21T06:38:10.000Z"
           },
           "timestamp": "2026-04-21T06:38:10.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Sage",
@@ -1228,7 +1228,7 @@
             "timestamp": "2026-04-21T06:48:30.000Z"
           },
           "timestamp": "2026-04-21T06:48:30.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
@@ -1284,7 +1284,7 @@
             "run_cost_usd": 0.2669
           },
           "timestamp": "2026-04-21T06:23:13.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Rex",
@@ -1310,7 +1310,7 @@
             "timestamp": "2026-04-21T06:23:50.000Z"
           },
           "timestamp": "2026-04-21T06:23:50.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Mia",
@@ -1327,7 +1327,7 @@
             "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments"
           },
           "timestamp": "2026-04-21T06:25:10.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Sage",
@@ -1352,7 +1352,7 @@
             "timestamp": "2026-04-21T06:34:05.000Z"
           },
           "timestamp": "2026-04-21T06:34:05.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
@@ -1408,7 +1408,7 @@
             "run_cost_usd": 0.2579
           },
           "timestamp": "2026-04-21T05:03:48.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L454-L488"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
           "agent": "Mia",
@@ -1425,7 +1425,7 @@
             "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives"
           },
           "timestamp": "2026-04-21T05:05:20.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L497-L562"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         },
         {
           "agent": "Rex",
@@ -1451,7 +1451,7 @@
             "timestamp": "2026-04-21T06:11:05.000Z"
           },
           "timestamp": "2026-04-21T06:11:05.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L128-L158"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
           "agent": "Sage",
@@ -1476,7 +1476,7 @@
             "timestamp": "2026-04-21T06:21:30.000Z"
           },
           "timestamp": "2026-04-21T06:21:30.000Z",
-          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/main.py#L239-L353"
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         }
       ],
       "article_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
