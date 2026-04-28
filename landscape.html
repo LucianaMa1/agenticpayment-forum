@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landscape — Agentic Payment</title>
-  <meta name="description" content="The complete 9-layer map of agentic payment infrastructure — protocols, authorization, identity, rails, and live on-chain data.">
+  <meta name="description" content="The complete 9-layer map of agentic payment infrastructure — protocols, authorization, identity, rails, and the stack gaps builders still need to solve.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -330,9 +330,6 @@
 
   <!-- Quick navigation -->
   <div class="quick-nav">
-    <a href="/signal.html" class="qchip live">
-      <span class="live-dot"></span> Live x402 Feed
-    </a>
     <a href="#layer-1" class="qchip">Layer 1 · Intent</a>
     <a href="#layer-2" class="qchip">Layer 2 · Identity</a>
     <a href="#layer-3" class="qchip">Layer 3 · Authorization</a>
@@ -490,7 +487,7 @@
             </div>
           </td>
           <td>The agent completes the purchase — navigating checkout APIs, cart flows, or headless commerce interfaces.</td>
-          <td>Checkout APIs, cart automation, headless commerce, protocol-native purchase (x402)</td>
+          <td>Checkout APIs, cart automation, headless commerce, purchase orchestration</td>
           <td class="players-cell">
             <div class="player-wrap">
               <span class="ptag star">Stripe Agent Toolkit</span>
@@ -500,7 +497,7 @@
             </div>
           </td>
           <td>Translates agent intent into a completed merchant transaction</td>
-          <td class="gap-cell"><span class="gap-plain">No agent-native checkout API standard — most flows require browser automation as a workaround; x402 is the only protocol-level exception</span></td>
+          <td class="gap-cell"><span class="gap-plain">No agent-native checkout API standard — most flows still require browser automation or custom merchant integrations.</span></td>
         </tr>
 
         <!-- 7 -->
@@ -518,7 +515,6 @@
           <td>Card network clearing, ACH/RTP/FedNow, stablecoin settlement, on-chain transfer</td>
           <td class="players-cell">
             <div class="player-wrap">
-              <span class="ptag star">x402</span>
               <span class="ptag">Visa / MC</span>
               <span class="ptag">FedNow</span>
               <span class="ptag">UCP</span>
@@ -526,7 +522,7 @@
             </div>
           </td>
           <td>Moves value from agent wallet to merchant</td>
-          <td class="gap-cell"><span class="gap-plain">Rail fragmentation severe — x402 (USDC/Base), card (Visa/MC), and RTP (FedNow) are incompatible; no cross-rail routing layer exists</span></td>
+          <td class="gap-cell"><span class="gap-plain">Rail fragmentation remains severe — card networks, real-time bank rails, and on-chain systems are still incompatible, with no cross-rail routing layer.</span></td>
         </tr>
 
         <!-- 8 -->
@@ -643,11 +639,11 @@
     <a href="#layer-6" class="dive-card c-violet">
       <p class="dc-eyebrow c-violet">Layer 6</p>
       <p class="dc-title">Checkout / Execution</p>
-      <p class="dc-desc">How agent intent turns into a completed purchase: APIs, cart flows, browser automation, and protocol-native checkout.</p>
+      <p class="dc-desc">How agent intent turns into a completed purchase: APIs, cart flows, browser automation, and merchant-side execution logic.</p>
       <div class="dc-tags">
         <span class="dc-tag">Rye</span>
         <span class="dc-tag">Shopify APIs</span>
-        <span class="dc-tag">x402</span>
+        <span class="dc-tag">Browser Use</span>
       </div>
       <p class="dc-arrow">Jump to layer →</p>
     </a>
@@ -655,11 +651,11 @@
     <a href="/landscape-rails.html" class="dive-card c-green">
       <p class="dc-eyebrow c-green">Layer 7</p>
       <p class="dc-title">Payment Rails</p>
-      <p class="dc-desc">How money actually moves: x402, Lightning, Solana Pay, card networks, and real-time bank rails compared.</p>
+      <p class="dc-desc">How money actually moves: card networks, real-time bank rails, stablecoin systems, and on-chain settlement compared.</p>
       <div class="dc-tags">
-        <span class="dc-tag">x402</span>
         <span class="dc-tag">FedNow</span>
         <span class="dc-tag">Solana Pay</span>
+        <span class="dc-tag">Visa / MC</span>
       </div>
       <p class="dc-arrow">Explore →</p>
     </a>
@@ -686,18 +682,6 @@
         <span class="dc-tag">Unit21</span>
       </div>
       <p class="dc-arrow">Jump to layer →</p>
-    </a>
-
-    <a href="/signal.html" class="dive-card c-amber">
-      <p class="dc-eyebrow c-amber">Live feed · Layer 7</p>
-      <p class="dc-title">Live x402 Feed</p>
-      <p class="dc-desc">Real-time micropayments observed on Base via x402 — useful for seeing what live agent-native payment behavior already looks like.</p>
-      <div class="dc-tags">
-        <span class="dc-tag">x402</span>
-        <span class="dc-tag">USDC</span>
-        <span class="dc-tag">Base</span>
-      </div>
-      <p class="dc-arrow">View live feed →</p>
     </a>
 
   </div>
