@@ -88,7 +88,35 @@
       letter-spacing: -0.035em; color: var(--text-primary);
       line-height: 1.15; margin-bottom: 12px;
     }
-    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 620px; margin-bottom: 40px; }
+    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 620px; margin-bottom: 18px; }
+    .founder-box {
+      margin-bottom: 32px;
+      padding: 20px 22px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(79,126,247,0.06), rgba(123,223,242,0.02));
+      border: 1px solid rgba(79,126,247,0.18);
+      max-width: 920px;
+    }
+    .founder-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .founder-goal {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .founder-thesis {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 820px;
+    }
 
     /* ── QUICK-NAV CHIPS ──────────────────────────────── */
     .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
@@ -294,16 +322,26 @@
   <p class="page-eyebrow">Knowledge Hub</p>
   <h1 class="page-title">Agent Commerce Stack.</h1>
   <p class="page-sub">The 9-layer map of agentic payment infrastructure — from the moment an agent decides to spend, to the moment money settles. Where the gaps are, and who is filling them.</p>
+  <div class="founder-box">
+    <p class="founder-label">Founder goal</p>
+    <p class="founder-goal">To become the go-to map for the agentic payments stack — where builders, payment companies, and infrastructure teams can understand who is building what, where the protocol gaps are, and what safe agent transactions require.</p>
+    <p class="founder-thesis">AI agents are becoming economic actors. I’m mapping the payment infrastructure they’ll need to transact safely.</p>
+  </div>
 
   <!-- Quick navigation -->
   <div class="quick-nav">
     <a href="/signal.html" class="qchip live">
       <span class="live-dot"></span> Live x402 Feed
     </a>
-    <a href="/landscape-intent.html"    class="qchip">Layer 1 · Intent</a>
-    <a href="/landscape-identity.html"  class="qchip">Layer 2 · Identity</a>
-    <a href="/landscape-auth.html"      class="qchip">Layer 3 · Authorization</a>
-    <a href="/landscape-rails.html"     class="qchip">Layer 7 · Payment Rails</a>
+    <a href="#layer-1" class="qchip">Layer 1 · Intent</a>
+    <a href="#layer-2" class="qchip">Layer 2 · Identity</a>
+    <a href="#layer-3" class="qchip">Layer 3 · Authorization</a>
+    <a href="#layer-4" class="qchip">Layer 4 · Credentials</a>
+    <a href="#layer-5" class="qchip">Layer 5 · Funding</a>
+    <a href="#layer-6" class="qchip">Layer 6 · Checkout</a>
+    <a href="#layer-7" class="qchip">Layer 7 · Rails</a>
+    <a href="#layer-8" class="qchip">Layer 8 · Settlement</a>
+    <a href="#layer-9" class="qchip">Layer 9 · Risk</a>
   </div>
 
   <!-- ── The Stack Table ── -->
@@ -323,7 +361,7 @@
       <tbody>
 
         <!-- 1 -->
-        <tr class="has-dive">
+        <tr class="has-dive" id="layer-1">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">1</span>
@@ -348,7 +386,7 @@
         </tr>
 
         <!-- 2 -->
-        <tr class="has-dive">
+        <tr class="has-dive" id="layer-2">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">2</span>
@@ -374,7 +412,7 @@
         </tr>
 
         <!-- 3 -->
-        <tr class="has-dive">
+        <tr class="has-dive" id="layer-3">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">3</span>
@@ -399,7 +437,7 @@
         </tr>
 
         <!-- 4 -->
-        <tr>
+        <tr id="layer-4">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">4</span>
@@ -422,7 +460,7 @@
         </tr>
 
         <!-- 5 -->
-        <tr>
+        <tr id="layer-5">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">5</span>
@@ -444,7 +482,7 @@
         </tr>
 
         <!-- 6 -->
-        <tr>
+        <tr id="layer-6">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">6</span>
@@ -466,7 +504,7 @@
         </tr>
 
         <!-- 7 -->
-        <tr class="has-dive">
+        <tr class="has-dive" id="layer-7">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">7</span>
@@ -492,7 +530,7 @@
         </tr>
 
         <!-- 8 -->
-        <tr>
+        <tr id="layer-8">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">8</span>
@@ -513,7 +551,7 @@
         </tr>
 
         <!-- 9 -->
-        <tr>
+        <tr id="layer-9">
           <td class="layer-cell">
             <div class="layer-head">
               <span class="layer-num">9</span>
@@ -542,23 +580,10 @@
   <p class="dive-section-sub">Detailed breakdowns of the layers with the biggest open questions.</p>
   <div class="dive-grid">
 
-    <a href="/signal.html" class="dive-card c-amber">
-      <p class="dc-eyebrow c-amber">● Live · Layer 7</p>
-      <p class="dc-title">Live x402 Feed</p>
-      <p class="dc-desc">Real-time micropayments observed on Base chain via the x402 protocol — every transaction interpreted by Claude.</p>
-      <div class="dc-tags">
-        <span class="dc-tag">x402</span>
-        <span class="dc-tag">OPG</span>
-        <span class="dc-tag">USDC</span>
-        <span class="dc-tag">Base</span>
-      </div>
-      <p class="dc-arrow">View live feed →</p>
-    </a>
-
     <a href="/landscape-intent.html" class="dive-card c-violet">
       <p class="dc-eyebrow c-violet">Layer 1</p>
       <p class="dc-title">Intent / Decision</p>
-      <p class="dc-desc">How agents decide to spend: budgeting, preference modeling, and the emerging standards for autonomous purchase logic.</p>
+      <p class="dc-desc">How agents decide to spend: budgeting, preference modeling, policy constraints, and the missing standard for portable spend logic.</p>
       <div class="dc-tags">
         <span class="dc-tag">LLM Planning</span>
         <span class="dc-tag">Budgets</span>
@@ -570,12 +595,11 @@
     <a href="/landscape-identity.html" class="dive-card c-blue">
       <p class="dc-eyebrow c-blue">Layer 2</p>
       <p class="dc-title">Identity & Trust</p>
-      <p class="dc-desc">Who is the agent? Skyfire, KYAPay, and others solving the unsolved problem of proving agent identity to payment systems.</p>
+      <p class="dc-desc">Who is the agent? Proof-of-agent, KYC/KYB adaptation, and the trust rails that payment systems will require.</p>
       <div class="dc-tags">
         <span class="dc-tag">Skyfire</span>
         <span class="dc-tag">KYAPay</span>
         <span class="dc-tag">KYC</span>
-        <span class="dc-tag">Bot Detection</span>
       </div>
       <p class="dc-arrow">Explore →</p>
     </a>
@@ -583,14 +607,49 @@
     <a href="/landscape-auth.html" class="dive-card c-amber">
       <p class="dc-eyebrow c-amber">Layer 3</p>
       <p class="dc-title">Authorization</p>
-      <p class="dc-desc">The next platform war: Visa TAP, Mastercard Agent Pay, AP2, and crypto protocols all competing to control agent spend permissions.</p>
+      <p class="dc-desc">Visa TAP, Mastercard Agent Pay, AP2, and crypto protocols competing to define who can delegate spend and under what conditions.</p>
       <div class="dc-tags">
         <span class="dc-tag">Visa TAP</span>
         <span class="dc-tag">MC Agent Pay</span>
         <span class="dc-tag">AP2</span>
-        <span class="dc-tag">ACP</span>
       </div>
       <p class="dc-arrow">Explore →</p>
+    </a>
+
+    <a href="#layer-4" class="dive-card c-green">
+      <p class="dc-eyebrow c-green">Layer 4</p>
+      <p class="dc-title">Payment Credentials</p>
+      <p class="dc-desc">The spendable instrument itself: tokens, virtual cards, wallet keys, and the missing credential model designed for software agents.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Nekuda</span>
+        <span class="dc-tag">Basis Theory</span>
+        <span class="dc-tag">Privy</span>
+      </div>
+      <p class="dc-arrow">Jump to layer →</p>
+    </a>
+
+    <a href="#layer-5" class="dive-card c-rose">
+      <p class="dc-eyebrow c-rose">Layer 5</p>
+      <p class="dc-title">Funding Source</p>
+      <p class="dc-desc">Where the money sits before an agent spends it: bank accounts, card lines, stablecoin treasuries, and cross-source routing logic.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Stripe</span>
+        <span class="dc-tag">Plaid</span>
+        <span class="dc-tag">Circle</span>
+      </div>
+      <p class="dc-arrow">Jump to layer →</p>
+    </a>
+
+    <a href="#layer-6" class="dive-card c-violet">
+      <p class="dc-eyebrow c-violet">Layer 6</p>
+      <p class="dc-title">Checkout / Execution</p>
+      <p class="dc-desc">How agent intent turns into a completed purchase: APIs, cart flows, browser automation, and protocol-native checkout.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Rye</span>
+        <span class="dc-tag">Shopify APIs</span>
+        <span class="dc-tag">x402</span>
+      </div>
+      <p class="dc-arrow">Jump to layer →</p>
     </a>
 
     <a href="/landscape-rails.html" class="dive-card c-green">
@@ -599,11 +658,46 @@
       <p class="dc-desc">How money actually moves: x402, Lightning, Solana Pay, card networks, and real-time bank rails compared.</p>
       <div class="dc-tags">
         <span class="dc-tag">x402</span>
-        <span class="dc-tag">Lightning</span>
         <span class="dc-tag">FedNow</span>
         <span class="dc-tag">Solana Pay</span>
       </div>
       <p class="dc-arrow">Explore →</p>
+    </a>
+
+    <a href="#layer-8" class="dive-card c-blue">
+      <p class="dc-eyebrow c-blue">Layer 8</p>
+      <p class="dc-title">Settlement & Reconciliation</p>
+      <p class="dc-desc">What happens after payment executes: ledgering, treasury visibility, reconciliation, and machine-readable audit trails for agent spend.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Modern Treasury</span>
+        <span class="dc-tag">Adyen</span>
+        <span class="dc-tag">Ledgering</span>
+      </div>
+      <p class="dc-arrow">Jump to layer →</p>
+    </a>
+
+    <a href="#layer-9" class="dive-card c-amber">
+      <p class="dc-eyebrow c-amber">Layer 9</p>
+      <p class="dc-title">Risk / Compliance</p>
+      <p class="dc-desc">Fraud, AML, chargebacks, and liability assignment once AI agents begin initiating more transactions on their own.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Sardine</span>
+        <span class="dc-tag">Alloy</span>
+        <span class="dc-tag">Unit21</span>
+      </div>
+      <p class="dc-arrow">Jump to layer →</p>
+    </a>
+
+    <a href="/signal.html" class="dive-card c-amber">
+      <p class="dc-eyebrow c-amber">Live feed · Layer 7</p>
+      <p class="dc-title">Live x402 Feed</p>
+      <p class="dc-desc">Real-time micropayments observed on Base via x402 — useful for seeing what live agent-native payment behavior already looks like.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">x402</span>
+        <span class="dc-tag">USDC</span>
+        <span class="dc-tag">Base</span>
+      </div>
+      <p class="dc-arrow">View live feed →</p>
     </a>
 
   </div>
