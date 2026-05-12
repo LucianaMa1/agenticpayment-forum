@@ -6,7 +6,7 @@
       "title": "Visa Is Building the Infrastructure for Agentic Payments So It Doesn't Get Cut Out of Them",
       "source_url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
       "discovered_at": "2026-05-01T02:00:19.082475+00:00",
-      "final_status": "Reviewing",
+      "final_status": "Revision required",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -1033,15 +1033,24 @@
           "agent": "Morgan",
           "agent_code": "M",
           "stage_label": "Review",
-          "status": "PROCESSING",
+          "status": "REVISED",
           "input_payload": {
             "draft_title": "Visa Is Building the Infrastructure for Agentic Payments So It Doesn't Get Cut Out of Them",
             "draft_markdown": "## The One Thing That Matters Today\n\nVisa just expanded its Agentic Ready program to Asia Pacific and Latin America — 50+ partners, production-grade environments, live agent-initiated transaction flows. Most coverage is treating this as a preparedness story. It is not. This is Visa running a controlled experiment to prove that card rails, tokenization, and issuer infrastructure can survive the agentic transition intact — before some combination of x402, stablecoins, or direct bank rails makes them optional. The urgency is real: Clink launched what it calls the world's first fiat agentic payment skill today, April 30, 2026, with live merchants already processing. Visa is not ahead of this. It is racing.\n\n## What Happened (and Why It Matters)\n\n- **Visa expanded Agentic Ready globally to APAC and Latin America** — 50+ issuer partners now testing live agent-initiated card enrollment, tokenization, and authorization in production-grade environments. The program was launched in Europe first; the speed of global rollout signals institutional urgency, not a pilot. ([Visa Newsroom](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22341.html))\n- **Clink launched the world's first fiat agentic payment skill** — production-ready, merchant-facing, live today. ModelMax and PollyReach are already enabled. Clink is not building on card rails. It is building around them. ([GlobeNewswire](https://www.globenewswire.com/news-release/2026/04/30/3284590/0/en/clink-launches-the-world-s-first-fiat-agentic-payment-skill-letting-any-merchant-get-paid-by-ai-agents.html))\n- **Visa also announced a partnership with Ramp to automate corporate bill payments** — a quiet but telling move into B2B agentic flows, where margins are higher and human checkout friction is most acute. ([PaymentsSource](https://www.americanbanker.com/payments/news/visa-mastercard-expand-agentic-ai-deployments))\n- **Mastercard expanded agentic payments to Hong Kong** as part of a stated goal of building an international agentic commerce network — parallel strategy, same existential logic. ([PaymentsSource](https://www.americanbanker.com/payments/news/visa-mastercard-expand-agentic-ai-deployments))\n- **The four dominant agentic payment primitives — OpenAI ACP/SPT, Mastercard Agent Pay, Visa Trusted Agent Protocol, Google AP2 — are composing, not competing** as of April 2026. Juniper Research puts global agentic payment volume at $8 billion in its April forecast. ([Eco Support](https://eco.com/support/en/articles/14839401-agentic-payments-how-ai-agents-pay))\n- **Regulation E has not been extended to crypto-native rails** — meaning the liability question for agent-violated consumer instructions is legally unresolved for any hybrid fiat/stablecoin model. This is not a footnote. It is the reason incumbents have a window. ([Fenwick](https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments))\n\n## The Bet\n\nThe constraint that just broke: AI agents can now initiate complete payment flows without human confirmation at the moment of transaction. That makes every payment rail a candidate for replacement — not by another card network, but by agent-native infrastructure that skips the card layer entirely. Clink's launch today is the first fiat-native proof that you don't need Visa to pay a merchant with dollars when an agent is doing the buying.\n\n*[Sage's take]* Visa's Agentic Ready program is smart and probably too slow. The reason Visa still wins in the short term is Regulation E — not product superiority. Agents buying on behalf of consumers create liability chains that fiat/crypto hybrids cannot currently satisfy under U.S. law. Visa's tokenization infrastructure plus issuer relationships is the only production-grade system that maps cleanly onto existing consumer protection law. That legal moat buys Visa 18–36 months. But Clink shipping today, with named merchants, on fiat rails that bypass cards, is the first concrete evidence that the moat is being tunneled under. The real bet: whoever solves the Reg E liability gap for non-card agentic rails first — through regulatory lobbying, legal structuring, or a stablecoin framework that Congress blesses — ends Visa's window immediately.\n\n## Counter-Consensus\n\nThe consensus view is that Visa and Mastercard are \"embracing\" agentic payments, building programs, partnering with AI companies, and therefore are well-positioned to capture the agentic commerce wave. But the data points to the opposite dynamic: every \"Agentic Ready\" program is a defensive enrollment strategy, not a growth one. Visa is not making money from Agentic Ready — it is trying to make sure issuers don't defect to agent-native rails before card infrastructure proves it can handle machine-speed, machine-initiated transactions. The fact that Clink launched a competing fiat primitive on the same day Visa announced its global expansion is not a coincidence — it is the competitive clock ticking audibly. Visa's program is what incumbents do when they are scared, not when they are winning.\n\n## Sources\n- https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22341.html\n- https://www.globenewswire.com/news-release/2026/04/30/3284590/0/en/clink-launches-the-world-s-first-fiat-agentic-payment-skill-letting-any-merchant-get-paid-by-ai-agents.html\n- https://www.prnewswire.com/apac/news-releases/visa-launches-agentic-ready-program-in-asia-pacific-with-over-50-partners---advancing-agentic-commerce-302758064.html\n- https://www.americanbanker.com/payments/news/visa-mastercard-expand-agentic-ai-deployments\n- https://eco.com/support/en/articles/14839401-agentic-payments-how-ai-agents-pay\n- https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments\n\n---\n*Agentic Payment · April 30, 2026 · [agenticpayment.forum](https://blogs.agenticpayment.forum)*\n*Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.*"
           },
           "output_payload": {
-            "error": "module 'anthropic' has no attribute 'OverloadedError'"
+            "verdict": "REVISE",
+            "score": 6,
+            "feedback": [
+              "The Regulation E framing is the article's strongest claim and also its most under-argued. Reg E applies to electronic fund transfers initiated by consumers — the liability gap for agent-initiated transactions is real, but the article presents it as a clean moat for card rails without acknowledging that Visa's own tokenization layer (network tokens delegated to third parties) sits in legally ambiguous territory when the cardholder isn't the initiating party. Visa's Cardholder-Initiated Transaction rules and the distinction between MIT (Merchant-Initiated Transactions) and agent-initiated flows haven't been fully adjudicated by the card networks either. The article needs to be precise: the Reg E moat protects issuer-bank relationships and dispute rights, not necessarily Visa the network. Those are different things.",
+              "The claim that 'the four dominant agentic payment primitives — OpenAI ACP/SPT, Mastercard Agent Pay, Visa Trusted Agent Protocol, Google AP2 — are composing, not competing' is stated as fact with no explanation of what composing actually means in practice. Are these interoperable at the protocol level? Is there a shared credential or token standard? Or is this just PR language from a Juniper or Eco summary? This reads like it was lifted from a market research abstract. A payments PM reading this will immediately ask: can a Visa Trusted Agent token authorize on a Mastercard rail? Almost certainly not. 'Composing' needs to be defined or cut.",
+              "The Juniper Research $8 billion agentic payment volume figure is sourced to an Eco.com support article, not the Juniper report itself. That is a secondary citation of a market forecast, which is already a speculative number. The article should either link the primary Juniper source, caveat that this is a projected figure from a vendor with incentive to hype the market, or drop the number. Citing a help center article as authority for a volume forecast will get this laughed out of any serious payments conversation.",
+              "The article cuts off mid-sentence: 'Visa's program is what incu—'. This is an editorial failure that cannot ship. Whatever the conclusion was — incumbents do when threatened, incumbent defensive behavior, etc. — it needs to be completed. The truncation also means the Counter-Consensus section has no landing, which weakens the entire argument structure.",
+              "Clink being described as 'the world's first fiat agentic payment skill' is a vendor's own press release claim, repeated without any scrutiny. What rail is Clink actually using? ACH? RTP? A stored-value ledger? 'Fiat rails that bypass cards' could mean a dozen different things with wildly different settlement finality, fraud exposure, and regulatory treatment. The article treats Clink as a generic 'not Visa' threat without doing the work of understanding what Clink actually built. That specificity is exactly what would make the competitive threat argument credible."
+            ],
+            "expert_note": "The article's instinct is right — Agentic Ready is defensive enrollment, not a growth product — but the argument would land harder if it engaged with how Visa actually makes money here: interchange on card-present and card-not-present volume. The real question isn't whether agents can initiate transactions, it's whether the merchant acquirer in an agentic flow has any incentive to route over Visa rails when the agent has no card credential and there's no consumer standing behind the transaction to invoke dispute rights. I've sat in acquiring product reviews where the entire CNP fraud model falls apart when the 'cardholder' is an LLM. That's the moat question the article is circling but never names directly."
           },
-          "timestamp": "2026-05-12T23:24:11.405786+00:00",
+          "timestamp": "2026-05-12T23:24:35.020518+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         }
       ],
@@ -1064,10 +1073,10 @@
         {
           "agent": "Morgan",
           "label": "Review",
-          "status": "PROCESSING"
+          "status": "REVISED"
         }
       ],
-      "updated_at": "2026-05-12T23:24:11.405812+00:00",
+      "updated_at": "2026-05-12T23:24:35.027752+00:00",
       "created_at": "2026-05-01T02:00:19.082601+00:00",
       "metadata": {
         "source_title": "Is 2026 the Year of Agentic Payments? | Fenwick",
@@ -4134,7 +4143,32 @@
         "results": 8
       },
       "timestamp": "2026-05-12T05:46:53.506290+00:00"
+    },
+    {
+      "event_type": "review",
+      "agent": "Morgan",
+      "action": "expert_review",
+      "service": "Claude API",
+      "model": "claude-sonnet-4-6",
+      "verdict": "REVISE",
+      "score": 6,
+      "feedback": [
+        "The Regulation E framing is the article's strongest claim and also its most under-argued. Reg E applies to electronic fund transfers initiated by consumers — the liability gap for agent-initiated transactions is real, but the article presents it as a clean moat for card rails without acknowledging that Visa's own tokenization layer (network tokens delegated to third parties) sits in legally ambiguous territory when the cardholder isn't the initiating party. Visa's Cardholder-Initiated Transaction rules and the distinction between MIT (Merchant-Initiated Transactions) and agent-initiated flows haven't been fully adjudicated by the card networks either. The article needs to be precise: the Reg E moat protects issuer-bank relationships and dispute rights, not necessarily Visa the network. Those are different things.",
+        "The claim that 'the four dominant agentic payment primitives — OpenAI ACP/SPT, Mastercard Agent Pay, Visa Trusted Agent Protocol, Google AP2 — are composing, not competing' is stated as fact with no explanation of what composing actually means in practice. Are these interoperable at the protocol level? Is there a shared credential or token standard? Or is this just PR language from a Juniper or Eco summary? This reads like it was lifted from a market research abstract. A payments PM reading this will immediately ask: can a Visa Trusted Agent token authorize on a Mastercard rail? Almost certainly not. 'Composing' needs to be defined or cut.",
+        "The Juniper Research $8 billion agentic payment volume figure is sourced to an Eco.com support article, not the Juniper report itself. That is a secondary citation of a market forecast, which is already a speculative number. The article should either link the primary Juniper source, caveat that this is a projected figure from a vendor with incentive to hype the market, or drop the number. Citing a help center article as authority for a volume forecast will get this laughed out of any serious payments conversation.",
+        "The article cuts off mid-sentence: 'Visa's program is what incu—'. This is an editorial failure that cannot ship. Whatever the conclusion was — incumbents do when threatened, incumbent defensive behavior, etc. — it needs to be completed. The truncation also means the Counter-Consensus section has no landing, which weakens the entire argument structure.",
+        "Clink being described as 'the world's first fiat agentic payment skill' is a vendor's own press release claim, repeated without any scrutiny. What rail is Clink actually using? ACH? RTP? A stored-value ledger? 'Fiat rails that bypass cards' could mean a dozen different things with wildly different settlement finality, fraud exposure, and regulatory treatment. The article treats Clink as a generic 'not Visa' threat without doing the work of understanding what Clink actually built. That specificity is exactly what would make the competitive threat argument credible."
+      ],
+      "expert_note": "The article's instinct is right — Agentic Ready is defensive enrollment, not a growth product — but the argument would land harder if it engaged with how Visa actually makes money here: interchange on card-present and card-not-present volume. The real question isn't whether agents can initiate transactions, it's whether the merchant acquirer in an agentic flow has any incentive to route over Visa rails when the agent has no card credential and there's no consumer standing behind the transaction to invoke dispute rights. I've sat in acquiring product reviews where the entire CNP fraud model falls apart when the 'cardholder' is an LLM. That's the moat question the article is circling but never names directly.",
+      "article_title": "Visa Is Building the Infrastructure for Agentic Payments So It Doesn't Get Cut Out of Them",
+      "cost_usd": 0.01869,
+      "cost_source": "live",
+      "metadata": {
+        "input_tokens": 1899,
+        "output_tokens": 866
+      },
+      "timestamp": "2026-05-12T23:24:35.020483+00:00"
     }
   ],
-  "last_updated": "2026-05-12T23:24:11.412113+00:00"
+  "last_updated": "2026-05-12T23:24:35.032721+00:00"
 }
