@@ -6,8 +6,8 @@
       "title": "Visa Is Building the Infrastructure for Agentic Payments So It Doesn't Get Cut Out of Them",
       "source_url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
       "discovered_at": "2026-05-01T02:00:19.082475+00:00",
-      "final_status": "SKIPPED",
-      "locked": false,
+      "final_status": "Filtering",
+      "locked": true,
       "error_context": {
         "agent": "Morgan",
         "reason": "Morgan requested revisions",
@@ -341,7 +341,7 @@
               "content": "designed, in part, to address these issues have been announced recently, including the Agent Payments Protocol (AP2) led by Google, the x402 extension on A2A developed by Coinbase (creating a crypto-native agentic payments model), and the Machine Payments Protocol (MPP) co-authored by Stripe and Tempo. Established payment networks (such as Mastercard and Visa) have also announced their intent to adopt agentic payments while leveraging their existing authentication and security standards. [...] while Regulation E states that consumers can authorize a payment using a “card, code, or other means,"
             }
           },
-          "timestamp": "2026-05-12T05:25:11.648098+00:00",
+          "timestamp": "2026-05-12T05:26:12.186917+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
         },
         {
@@ -1091,7 +1091,7 @@
           "status": "REVISED"
         }
       ],
-      "updated_at": "2026-05-12T05:25:11.651976+00:00",
+      "updated_at": "2026-05-12T05:26:12.190722+00:00",
       "created_at": "2026-05-01T02:00:19.082601+00:00",
       "metadata": {
         "source_title": "Is 2026 the Year of Agentic Payments? | Fenwick",
@@ -1107,8 +1107,8 @@
       "title": "Consumers Will Kill Agentic Payments Before Regulators Do",
       "source_url": "https://www.jdsupra.com/legalnews/is-2026-the-year-of-agentic-payments-3410861/",
       "discovered_at": "2026-05-04T02:00:19.469284+00:00",
-      "final_status": "SKIPPED",
-      "locked": false,
+      "final_status": "CANCELLED",
+      "locked": true,
       "error_context": null,
       "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do",
       "timeline": [
@@ -2284,8 +2284,8 @@
       "title": "Ant's AMP vs. x402: The Open Protocol War for the Agent Wallet Layer Has Begun",
       "source_url": "https://www.linkedin.com/pulse/daily-agentic-may-4-2026-agentic-ai-foundation-qqa5f",
       "discovered_at": "2026-05-05T02:00:17.881697+00:00",
-      "final_status": "SKIPPED",
-      "locked": false,
+      "final_status": "CANCELLED",
+      "locked": true,
       "error_context": {
         "agent": "Morgan",
         "reason": "Morgan requested revisions",
@@ -4062,7 +4062,67 @@
         "results": 8
       },
       "timestamp": "2026-05-12T05:25:11.648023+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "agentic payments news May 11, 2026",
+        "results": 8
+      },
+      "timestamp": "2026-05-12T05:26:10.576856+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "AI agent autonomous payment systems 2025 2026",
+        "results": 8
+      },
+      "timestamp": "2026-05-12T05:26:11.019939+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "site:reddit.com agentic payment OR agent payment",
+        "results": 8
+      },
+      "timestamp": "2026-05-12T05:26:11.471546+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "agentic payment arxiv OR research paper 2026",
+        "results": 8
+      },
+      "timestamp": "2026-05-12T05:26:11.763474+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "Visa OR Mastercard OR Stripe OR PayPal AI agent payment announcement",
+        "results": 8
+      },
+      "timestamp": "2026-05-12T05:26:12.186883+00:00"
     }
   ],
-  "last_updated": "2026-05-12T05:25:35.195947+00:00"
+  "last_updated": "2026-05-12T05:26:12.194729+00:00"
 }
