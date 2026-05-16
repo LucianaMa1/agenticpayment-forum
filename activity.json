@@ -9,7 +9,7 @@
       "final_status": "PUBLISHED_STATIC_FALLBACK",
       "locked": false,
       "error_context": null,
-      "article_url": "https://www.agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
+      "article_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
       "timeline": [
         {
           "agent": "Rex",
@@ -1084,20 +1084,20 @@
               "channel": "static_site",
               "post": {
                 "title": "Visa's Real Agentic Payments Moat Is Issuer Liability Protection, Not Network Rails",
-                "url": "https://www.agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
+                "url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
                 "path": "/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
                 "slug": "visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails",
                 "brief": "Everyone thinks Visa owns agentic payments via protocol dominance. The real moat is Reg E issuer liability — and that doesn't protect Visa the network the way most assume.",
-                "published_at": "2026-05-16T04:11:37.747938+00:00",
+                "published_at": "2026-05-16T04:13:23.408704+00:00",
                 "channel": "agenticpayment.forum static"
               }
             },
-            "fallback_url": "https://www.agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
-            "article_url": "https://www.agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
+            "fallback_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
+            "article_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
             "channel": "static_site",
             "primary_channel": "hashnode"
           },
-          "timestamp": "2026-05-16T04:11:37.748648+00:00",
+          "timestamp": "2026-05-16T04:13:23.409499+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
         },
         {
@@ -1143,7 +1143,7 @@
           "status": "PENDING"
         }
       ],
-      "updated_at": "2026-05-16T04:11:37.748652+00:00",
+      "updated_at": "2026-05-16T04:13:23.409503+00:00",
       "created_at": "2026-05-01T02:00:19.082601+00:00",
       "metadata": {
         "source_title": "Is 2026 the Year of Agentic Payments? | Fenwick",
@@ -4274,5 +4274,5 @@
       "timestamp": "2026-05-12T23:25:40.746164+00:00"
     }
   ],
-  "last_updated": "2026-05-16T04:11:37.752049+00:00"
+  "last_updated": "2026-05-16T04:13:23.412696+00:00"
 }
