@@ -6,7 +6,7 @@
       "title": "Visa's Real Agentic Payments Moat Is Issuer Liability Protection, Not Network Rails",
       "source_url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
       "discovered_at": "2026-05-01T02:00:19.082475+00:00",
-      "final_status": "PUBLISHED_STATIC_FALLBACK",
+      "final_status": "Distributing",
       "locked": false,
       "error_context": null,
       "article_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
@@ -1104,10 +1104,14 @@
           "agent": "Mia",
           "agent_code": "M",
           "stage_label": "Distribute",
-          "status": "PENDING",
-          "input_payload": null,
+          "status": "PROCESSING",
+          "input_payload": {
+            "article_title": "Visa's Real Agentic Payments Moat Is Issuer Liability Protection, Not Network Rails",
+            "article_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
+            "article_excerpt": "## The One Thing That Matters Today\n\nThe payments industry is debating which agentic payment protocol will \"win.\" That is the wrong fight. The structural advantage Visa and Mastercard hold in agentic commerce is not about tokenization standards or protocol adoption — it is about who absorbs the fraud loss when an AI agent initiates a transaction the cardholder didn't explicitly authorize. Regulation E liability protection accrues to issuers and cardholders, not to Visa the network. Most people are missing that distinction, and it matters enormously for where the moat actually sits — and who can route around it.\n\n## What Happened (and Why It Matters)\n\n- **Visa launched its Trusted Agent Protocol and Mastercard launched Agent Pay** — both position themselves as the credential layer for AI-in"
+          },
           "output_payload": null,
-          "timestamp": "2026-05-14T22:39:39.481705+00:00",
+          "timestamp": "2026-05-17T02:00:10.266486+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/mia.md"
         }
       ],
@@ -1140,10 +1144,10 @@
         {
           "agent": "Mia",
           "label": "Distribute",
-          "status": "PENDING"
+          "status": "PROCESSING"
         }
       ],
-      "updated_at": "2026-05-16T04:13:23.409503+00:00",
+      "updated_at": "2026-05-17T02:00:10.266576+00:00",
       "created_at": "2026-05-01T02:00:19.082601+00:00",
       "metadata": {
         "source_title": "Is 2026 the Year of Agentic Payments? | Fenwick",
@@ -4274,5 +4278,5 @@
       "timestamp": "2026-05-12T23:25:40.746164+00:00"
     }
   ],
-  "last_updated": "2026-05-17T02:00:09.273257+00:00"
+  "last_updated": "2026-05-17T02:00:10.277608+00:00"
 }
