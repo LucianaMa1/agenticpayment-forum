@@ -147,7 +147,7 @@
     <a href="/signal.html" class="nav-link">Signal</a>
     <a href="/landscape.html" class="nav-link">Landscape</a>
     <a href="/chronicle.html" class="nav-link active">Chronicle</a>
-    <a href="https://blogs.agenticpayment.forum" class="nav-link" target="_blank">Newsletter</a>
+    <a href="/articles/" class="nav-link">Articles</a>
     <a href="/activity.html" class="nav-link">Team</a>
   </div>
 </nav>
@@ -246,7 +246,7 @@
 <footer>
   <span class="footer-copy">© 2026 agenticpayment.forum</span>
   <div class="footer-links">
-    <a href="https://blogs.agenticpayment.forum" target="_blank">Newsletter</a>
+    <a href="/articles/">Articles</a>
     <a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a>
   </div>
 </footer>
@@ -268,7 +268,7 @@ async function loadNewsletter() {
     document.getElementById('newsletter-list').innerHTML = posts.map(p => {
       const dt = new Date(p.timestamp || p.published_at);
       const dateStr = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-      const url = p.url || p.post_url || p.article_url || (p.metadata && p.metadata.url) || 'https://blogs.agenticpayment.forum';
+      const url = p.url || p.post_url || p.article_url || (p.metadata && p.metadata.url) || '/articles/';
       return `<div class="newsletter-row">
         <span class="nl-date">${dateStr}</span>
         <span class="nl-title">${p.title || p.headline || p.article_title || 'Issue'}</span>
@@ -278,7 +278,7 @@ async function loadNewsletter() {
   } catch(e) {
     document.getElementById('newsletter-list').innerHTML =
       `<div class="newsletter-row"><span class="nl-date">—</span><span class="nl-title" style="color:var(--text-dim)">
-        <a href="https://blogs.agenticpayment.forum" target="_blank" style="color:var(--accent);text-decoration:none">View all issues at blogs.agenticpayment.forum →</a>
+        <a href="/articles/" style="color:var(--accent);text-decoration:none">View all articles →</a>
       </span></div>`;
   }
 }

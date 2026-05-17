@@ -1,11 +1,20 @@
 [
   {
+    "title": "Consumers Will Kill Agentic Payments Before Regulators Do",
+    "url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
+    "path": "/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
+    "slug": "consumers-will-kill-agentic-payments-before-regulators-do",
+    "brief": "55% of consumers won't let agents pay autonomously. The real blocker isn't law or rails — it's consent. And nobody building the infrastructure is solving for that.",
+    "published_at": "2026-05-04T02:01:50.150182+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "Visa's Real Agentic Payments Moat Is Issuer Liability Protection, Not Network Rails",
     "url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
     "path": "/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
     "slug": "visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails",
     "brief": "Everyone thinks Visa owns agentic payments via protocol dominance. The real moat is Reg E issuer liability — and that doesn't protect Visa the network the way most assume.",
     "published_at": "2026-05-16T04:13:23.408704+00:00",
-    "channel": "agenticpayment.forum static"
+    "channel": "agenticpayment.forum articles"
   }
 ]

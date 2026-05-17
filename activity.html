@@ -48,7 +48,7 @@
   <div class="legend"><span class="legend-pill">Research</span><span class="legend-pill">Filter</span><span class="legend-pill">Draft</span><span class="legend-pill">Review</span><span class="legend-pill">Publish</span><span class="legend-pill">Distribute</span></div>
   <div class="panel"><div class="panel-head"><div class="panel-title">Article lifecycle view</div><div class="panel-meta" id="panel-meta">Waiting for structured activity bundle…</div></div><div class="list" id="article-list"><div class="state-msg" id="state-msg">Fetching structured activity…</div></div></div>
 </div>
-<footer><span class="footer-copy">© 2026 agenticpayment.forum</span><div class="footer-links"><a href="https://blogs.agenticpayment.forum">Newsletter</a><a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a></div></footer>
+<footer><span class="footer-copy">© 2026 agenticpayment.forum</span><div class="footer-links"><a href="/articles/">Articles</a><a href="https://x.com/AgenticPayForum" target="_blank">X / Twitter</a></div></footer>
 <script>
 function esc(v){return String(v ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function pretty(v){if(v==null)return 'null';if(typeof v==='string')return v;try{return JSON.stringify(v,null,2)}catch{return String(v)}}
@@ -56,7 +56,7 @@ function timeAgo(iso){if(!iso)return '—';const now=new Date(),then=new Date(is
 function formatTs(iso){if(!iso)return 'No timestamp';const d=new Date(iso);return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' · '+d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false})+' UTC'}
 function cls(status){return String(status||'discovered').toLowerCase().replace(/\s+/g,'-')}
 function normStatus(status){const s=String(status||'PENDING').toUpperCase();const map={PENDING:'Pending',PROCESSING:'In progress',COMPLETED:'Completed',FAILED:'Failed',REVISED:'Needs revision'};return map[s]||s}
-function finalSummary(article){if(article.locked && article.error_context){return article.error_context.reason || 'Blocked'};if(article.article_url){return 'Published to Hashnode'};return article.final_status || 'Observed'}
+function finalSummary(article){if(article.locked && article.error_context){return article.error_context.reason || 'Blocked'};if(article.article_url){return 'Published to Articles'};return article.final_status || 'Observed'}
 function renderStepPill(step){return `<span class="step-pill step-${cls(step.status)}">${esc(step.label || step.stage_label || step.agent)} · ${esc(normStatus(step.status))}</span>`}
 function renderJsonBox(label,value){return `<div class="box"><div class="box-h">${label}</div><div class="box-b"><pre>${esc(pretty(value))}</pre></div></div>`}
 function renderMorgan(step){const out=step.output_payload||{};const verdict=String(out.verdict||'PENDING').toLowerCase();const critique=(out.feedback||[]).length?`<ul class="critique">${out.feedback.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:'<div class="side-copy">No critique recorded.</div>';return `<div class="box"><div class="box-h">Morgan verdict</div><div class="box-b"><div class="verdict ${verdict}">${esc(out.verdict||'PENDING')} ${out.score!=null?`· ${esc(out.score)}/10`:''}</div>${critique}${out.expert_note?`<div class="side-card" style="margin-top:12px"><div class="side-title">Expert note</div><div class="side-copy">${esc(out.expert_note)}</div></div>`:''}</div></div>`}

@@ -1102,7 +1102,7 @@
             "fallback_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
             "article_url": "https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html",
             "channel": "static_site",
-            "primary_channel": "hashnode"
+            "primary_channel": "static_site"
           },
           "timestamp": "2026-05-16T04:13:23.409499+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
@@ -2267,7 +2267,7 @@
       "final_status": "CANCELLED",
       "locked": true,
       "error_context": null,
-      "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do",
+      "article_url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
       "timeline": [
         {
           "agent": "Rex",
@@ -3343,12 +3343,12 @@
                   "post": {
                     "id": "69f7fe0e04f61a1a7f760156",
                     "title": "Consumers Will Kill Agentic Payments Before Regulators Do",
-                    "url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do"
+                    "url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html"
                   }
                 }
               }
             },
-            "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do"
+            "article_url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html"
           },
           "timestamp": "2026-05-04T02:01:50.150182+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/justin.md"
@@ -3360,7 +3360,7 @@
           "status": "COMPLETED",
           "input_payload": {
             "article_title": "Consumers Will Kill Agentic Payments Before Regulators Do",
-            "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do",
+            "article_url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
             "article_excerpt": "## The One Thing That Matters Today\n\nThe entire agentic payments industry is solving the wrong problem. Stripe, Visa, Mastercard, and x402 are racing to build rails, protocols, and delegation frameworks — infrastructure for a world where AI agents transact autonomously. Meanwhile, a Riskified survey of 2,000 US and UK consumers found that **55% won't authorize agents to complete purchases autonomously**, even though 61.5% already use AI for product discovery. The infrastructure is ahead of the consent. That gap doesn't close by adding more rails. It closes — if it closes — by rebuilding trust from scratch. Nobody in the current infrastructure arms race is doing that.\n\n## What Happened (and Why It Matters)\n\n- **61.5% of consumers use AI for discovery, but 55% refuse autonomous payment autho"
           },
           "output_payload": {
@@ -3372,7 +3372,7 @@
               "tweet_text": "55% of consumers won't let agents pay autonomously — but 61% already use AI to find what to buy. The infrastructure isn't the bottleneck. Trust at the moment of payment is. Stripe and Visa are building rails to nowhere until someone",
               "tweet_url": "https://x.com/AgenticPayForum/status/2051120099541897395",
               "article_title": "Consumers Will Kill Agentic Payments Before Regulators Do",
-              "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do",
+              "article_url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
               "timestamp": "2026-05-04T02:01:54.455403+00:00"
             },
             "cost_event": {
@@ -3726,7 +3726,7 @@
       "event_type": "publish",
       "agent": "Justin",
       "article_title": "Consumers Will Kill Agentic Payments Before Regulators Do",
-      "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do",
+      "article_url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
       "timestamp": "2026-05-04T02:01:50.146542+00:00",
       "run_cost_usd": 0.1628
     },
@@ -3749,7 +3749,7 @@
       "tweet_text": "55% of consumers won't let agents pay autonomously — but 61% already use AI to find what to buy. The infrastructure isn't the bottleneck. Trust at the moment of payment is. Stripe and Visa are building rails to nowhere until someone",
       "tweet_url": "https://x.com/AgenticPayForum/status/2051120099541897395",
       "article_title": "Consumers Will Kill Agentic Payments Before Regulators Do",
-      "article_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do",
+      "article_url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
       "timestamp": "2026-05-04T02:01:54.455403+00:00"
     },
     {

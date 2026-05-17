@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles — Agentic Payment</title>
-  <meta name="description" content="Agentic Payment briefings published directly on agenticpayment.forum when the external newsletter channel is unavailable.">
+  <meta name="description" content="Agentic Payment briefings published directly on agenticpayment.forum.">
   <style>
     :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
     * { box-sizing:border-box; }
@@ -25,11 +25,11 @@
   </style>
 </head>
 <body>
-  <nav><a href="/">agenticpayment.forum</a><a href="https://blogs.agenticpayment.forum" target="_blank" rel="noopener">Hashnode archive</a></nav>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
   <main>
-    <div class="eyebrow">Direct publishing channel</div>
+    <div class="eyebrow">Agentic Payment archive</div>
     <h1>Agentic Payment Articles</h1>
-    <p class="dek">A resilient article archive on agenticpayment.forum. If Hashnode is down or blocked, Justin publishes here first so the daily briefing still ships.</p>
+    <p class="dek">The home archive for Agentic Payment briefings — published directly on agenticpayment.forum.</p>
     <section id="articles" class="grid" aria-live="polite"></section>
   </main>
   <script>
@@ -38,7 +38,7 @@
       .then(r => r.ok ? r.json() : [])
       .then(items => {
         if (!Array.isArray(items) || items.length === 0) {
-          root.innerHTML = '<div class="empty">No direct-published articles yet. Hashnode may still be the primary archive.</div>';
+          root.innerHTML = '<div class="empty">No articles published yet.</div>';
           return;
         }
         root.innerHTML = items.map(item => `
