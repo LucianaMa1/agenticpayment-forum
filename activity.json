@@ -6,9 +6,16 @@
       "title": "Ant's AMP vs. x402: The Open Protocol War for the Agent Wallet Layer Has Begun",
       "source_url": "https://www.linkedin.com/pulse/daily-agentic-may-4-2026-agentic-ai-foundation-qqa5f",
       "discovered_at": "2026-05-05T02:00:17.881697+00:00",
-      "final_status": "Reviewing",
-      "locked": false,
-      "error_context": null,
+      "final_status": "FAILED",
+      "locked": true,
+      "error_context": {
+        "agent": "Morgan",
+        "reason": "Review failed",
+        "details": {
+          "error": "Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': None}}"
+        },
+        "timestamp": "2026-05-18T02:00:04.387542+00:00"
+      },
       "article_url": null,
       "timeline": [
         {
@@ -1048,15 +1055,15 @@
           "agent": "Morgan",
           "agent_code": "M",
           "stage_label": "Review",
-          "status": "PROCESSING",
+          "status": "FAILED",
           "input_payload": {
             "draft_title": "Ant's AMP vs. x402: The Open Protocol War for the Agent Wallet Layer Has Begun",
             "draft_markdown": "## The One Thing That Matters Today\n\nThe agentic payments infrastructure race just stopped being a Visa-vs-Stripe story and became a geopolitical protocol war. Ant International open-sourced AMP — a purpose-built agentic payment protocol targeting digital wallets and super apps — on the same week that x402 crossed 35 million transactions on Solana and Visa moved named Asian banking partners (Bank of China, CIMB, OCBC) into production-grade agent-initiated payment testing. Two incompatible open standards are now fighting for the agent-wallet layer, and the battlefield is explicitly Asia. This is not a coincidence. This is a land grab.\n\n## What Happened (and Why It Matters)\n\n- **Ant International open-sources AMP**, a dedicated agentic payment protocol for digital wallets and super apps. ([LinkedIn/Daily Agentic](https://www.linkedin.com/pulse/daily-agentic-may-4-2026-agentic-ai-foundation-qqa5f)) — This matters because Ant controls the super-app payment infrastructure for hundreds of millions of users across Southeast Asia. AMP is not a startup protocol. It is a distribution play disguised as open source.\n- **x402 has processed 35M+ transactions and $10M in volume on Solana alone** since its 2025 launch, with backing from Google, Microsoft, Visa, and Stripe. ([Arkham Research](https://info.arkm.com/research/what-are-agentic-payments)) — Volume is real but dollar throughput is small. x402 has transaction scale without economic weight. That gap is a vulnerability.\n- **Visa's Intelligent Commerce program moves to production-grade testing with Bank of China, CIMB, and OCBC.** ([WWD/Sourcing Journal](https://wwd.com/sourcing-journal/industry-news/paypal-reorganizes-as-ai-and-quantum-reshape-commerce-1238935843/)) — These are not Western banks. Visa is explicitly trying to anchor the agent-payment standard in Asian financial infrastructure before AMP does. The timing relative to Ant's AMP release is too clean to be accidental.\n- **A new arXiv architecture proposes on-chain compliance guardrails for stablecoin-based agentic payments**, combining x402-style signature authorization with programmable policy wrappers. ([arXiv:2605.00071](https://arxiv.org/abs/2605.00071)) — This is the missing piece that neither AMP nor x402 has shipped in production: compliance that works when humans are not in the loop. Whoever implements this architecture credibly first wins regulated markets.\n- **Visa CEO Ryan McInerney frames agentic commerce in operational, not speculative, terms on earnings calls.** ([PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/payment-networks-ready-infrastructure-agentic-commerce-scale/)) — When CEOs stop saying \"exploring\" and start saying \"executing,\" the window for protocol insurgents closes fast.\n\n## The Bet\n\n*[Sage's take]* AMP will dominate Southeast Asian super-app agentic payments within 18 months, and x402 will retreat to being the Western developer-native protocol — strong on Solana, irrelevant in WeChat Pay's neighborhood. The real question is whether this split becomes a permanent fragmentation or whether one protocol absorbs the other through a bridge layer. My bet: fragmentation wins, and the compliance architecture described in the arXiv paper becomes the connective tissue that lets both protocols claim interoperability without either actually surrendering control.\n\n*[Sage's take]* The company most at risk here is not a protocol — it is Visa. Visa is running a two-front war: trying to co-opt x402 through partner backing while simultaneously anchoring Asian banks through VIC before AMP locks them in. If AMP and x402 each win their home territory, Visa's \"network of networks\" play collapses because the agents will route around it. Visa needs protocol fragmentation to fail. Ant and Coinbase are incentivized to let it succeed.\n\n## Counter-Consensus\n\nThe consensus view is that open protocols are inherently cooperative — \"rising tide lifts all boats,\" multiple standards can coexist, and interoperability bridges will emerge organically. But the history of payment rails says otherwise: ACH killed its competitors, card networks consolidated to two, SWIFT still has no real challenger after 50 years. Payment infrastructure is winner-take-most precisely because trust and compliance are non-fungible — you cannot be \"a little bit\" on the approved rails. AMP and x402 are not complementary experiments. They are incompatible bets on who controls agent identity, spending policy, and settlement finality. One of them will become a compatibility shim for the other within three years.\n\n## Research & Papers\n\n- [Compliance-Aware Agentic Payments on Stablecoin Rails](https://arxiv.org/abs/2605.00071) — arXiv:2605.00071. Proposes signature-based authorization + on-chain policy wrappers for regulated agentic payment execution. The architecture neither AMP nor x402 has shipped.\n\n## Sources\n\n- [Ant International Opens AMP — LinkedIn/Daily Agentic, May 4 2026](https://www.linkedin.com/pulse/daily-agentic-may-4-2026-agentic-ai-foundation-qqa5f)\n- [x402 Transaction Volume — Arkham Research](https://info.arkm.com/research/what-are-agentic-payments)\n- [Visa VIC + Bank of China, CIMB, OCBC — WWD/Sourcing Journal](https://wwd.com/sourcing-journal/industry-news/paypal-reorganizes-as-ai-and-quantum-reshape-commerce-1238935843/)\n- [Compliance Architecture for Agentic Stablecoin Payments — arXiv:2605.00071](https://arxiv.org/abs/2605.00071)\n- [Payment Networks Engineering Agentic Commerce — PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/payment-networks-ready-infrastructure-agentic-commerce-scale/)\n\n---\n*Agentic Payment · May 04, 2026 · [agenticpayment.forum](https://blogs.agenticpayment.forum)*\n*Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.*"
           },
           "output_payload": {
-            "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+            "error": "Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': None}}"
           },
-          "timestamp": "2026-05-18T02:00:02.677502+00:00",
+          "timestamp": "2026-05-18T02:00:04.376652+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/morgan.md"
         }
       ],
@@ -1079,10 +1086,10 @@
         {
           "agent": "Morgan",
           "label": "Review",
-          "status": "PROCESSING"
+          "status": "FAILED"
         }
       ],
-      "updated_at": "2026-05-18T02:00:02.677530+00:00",
+      "updated_at": "2026-05-18T02:00:04.387562+00:00",
       "created_at": "2026-05-05T02:00:17.881796+00:00",
       "metadata": {
         "source_title": "The Daily Agentic - May 4, 2026",
@@ -4287,5 +4294,5 @@
       "timestamp": "2026-05-12T23:25:40.746164+00:00"
     }
   ],
-  "last_updated": "2026-05-18T02:00:02.690674+00:00"
+  "last_updated": "2026-05-18T02:00:04.395245+00:00"
 }
