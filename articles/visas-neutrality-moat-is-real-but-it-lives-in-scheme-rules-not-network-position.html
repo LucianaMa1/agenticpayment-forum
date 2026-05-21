@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa&#x27;s Neutrality Moat Is Real — But It Lives in Scheme Rules, Not Network Position — Agentic Payment</title>
+  <meta name="description" content="The agentic payments protocol war has a structural winner hiding in plain sight — and it&#x27;s not who&#x27;s building the fastest SDK.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/visas-neutrality-moat-is-real-but-it-lives-in-scheme-rules-not-network-position.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+    pre { overflow:auto; padding:16px; border-radius:14px; background:#050511; border:1px solid var(--border); }
+    code { color:#dce4ff; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Visa&#x27;s Neutrality Moat Is Real — But It Lives in Scheme Rules, Not Network Position</h1>
+    <p class="dek">The agentic payments protocol war has a structural winner hiding in plain sight — and it&#x27;s not who&#x27;s building the fastest SDK.</p>
+    <div class="meta">Published 2026-04-26 · Historical archive import</div>
+    <section class="content">
+<div><h2 id="heading-the-one-thing-that-matters-today">The One Thing That Matters Today</h2>
+<p>The agentic payments infrastructure stack is consolidating faster than practitioners realize, and the consolidation axis is not speed, cost, or developer experience — it is liability architecture. Whoever owns the dispute resolution logic for autonomous spending decisions owns the category. <em>[Sage's take]</em> Visa is not winning this because it "sits in the middle of every transaction" — that framing is sloppy and wrong. Visa wins because its scheme rules govern what credentials agents can carry, what floor limits apply, and who bears chargeback liability when an AI makes a bad call. That is a different kind of moat, and most people building agentic payment stacks are not thinking about it correctly.</p>
+<h2 id="heading-what-happened-and-why-it-matters">What Happened (and Why It Matters)</h2>
+<ul>
+<li><p><strong>Visa launched a Trusted Agent Protocol with Coinbase and Nevermined</strong> — This is the only item in the current protocol landscape with a live merchant integration and a named transaction receipt. The Nevermined/x402 flow routes through existing PSP infrastructure, which means it is already traversing Visa scheme rules at the issuer level. The "stablecoin vs. Visa" framing is largely false: stablecoin-backed credentials still require an issuing bank whose authorization logic and risk models operate under Visa's scheme governance. The real story is not crypto vs. card rails — it is which credential structure survives issuer risk model scrutiny at the moment of authorization. (<a target="_blank" href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21592.html" rel="noopener ugc">Source</a>)</p>
+</li>
+<li><p><strong>Stripe and Tempo announced a Machine Payments Protocol</strong> — This is SDK-stage, not live-integration-stage. There are no published technical specifications practitioners can evaluate against Visa's protocol. Stripe's solution architect cited a 4x conversion improvement in a Mexico Business News article — but this is a vendor claim from a go-to-market context, with no disclosed methodology, sample size, or control baseline. <em>[Sage's take]</em> Treat this as a directional commercial signal, not evidence. The underlying dynamic it points to — that human-in-the-loop checkout friction destroys agentic conversion — is structurally correct even if the specific multiple is unverified. (Source)</p>
+</li>
+<li><p><strong>OpenAI filed for an Agentic Commerce Protocol</strong> — Roadmap-stage. No published spec, no named merchant integrations, no transaction receipts. The announcement matters as a signal of OpenAI's intent to own the agent-to-merchant handshake layer, but conflating this with Visa's live protocol implies a maturity parity that does not exist. (<a target="_blank" href="https://openai.com/index/introducing-the-model-spec/" rel="noopener ugc">Source</a>)</p>
+</li>
+<li><p><strong>Google is developing a Universal Commerce Protocol</strong> — Also roadmap-stage. Google's advantage here is Android Pay infrastructure and Google Pay merchant acceptance, not a deployed agentic protocol. Until there are live merchant integrations with documented authorization flows, this belongs in the same category as OpenAI: intent, not infrastructure. (<a target="_blank" href="https://developers.google.com/pay/api" rel="noopener ugc">Source</a>)</p>
+</li>
+<li><p><strong>Coinbase's CDP Wallet issued agent-native credentials tied to the Visa network</strong> — This is the mechanism that makes the Visa/Coinbase/Nevermined integration meaningful. The issuing bank's risk models and authorization logic are the actual chokepoint in agentic flows — not Visa's network position per se. What Visa contributes is the scheme rule layer that governs what those credentials can do: spending controls, merchant category restrictions, dispute rights. An agent carrying a Coinbase-issued prepaid credential operates under Visa's scheme governance whether or not anyone is thinking of it that way. (Source)</p>
+</li>
+</ul>
+<h2 id="heading-the-bet">The Bet</h2>
+<p>The protocol war is real but asymmetric. There are four named protocols, but only one has live merchant integrations and a functioning dispute resolution framework: Visa's. The others are announcements. <em>[Sage's take]</em> The consolidation winner in agentic payment infrastructure will be determined not by who ships the fastest SDK but by who provides issuers and merchants with a credible answer to this question: when an AI agent authorizes a transaction the human didn't explicitly approve, who owns the chargeback?</p>
+<p>Visa's answer — scheme rules governing agent credentials, with issuer authorization logic as the chokepoint and Regulation E dispute coverage for qualifying transactions — is not exciting, but it is the answer that acquirers and enterprise merchants will accept. The threshold at which merchants demand this framework is not an arbitrary number; it is wherever their acquirer's risk models place the floor for requiring scheme-backed dispute coverage. That floor is set by chargeback liability rules and acquirer risk appetite, not by any fixed dollar amount. <em>[Sage's take]</em> Any protocol that cannot answer the chargeback question at the issuer level will not survive in the enterprise segment, regardless of how elegant its cryptographic delegation model is.</p>
+<h2 id="heading-counter-consensus">Counter-Consensus</h2>
+<p>The consensus view is that this is a four-way protocol war between roughly equivalent competitors, and that the winner will be whoever achieves developer adoption fastest — Stripe's distribution, OpenAI's model integration, Google's merchant footprint, or Visa's network effects. But this misreads the competitive structure entirely. Developer adoption is table stakes; liability architecture is the moat. Stripe, OpenAI, and Google are all building agent-to-merchant handshake layers, but none of them are issuers, none of them set scheme rules, and none of them have published a framework for who bears dispute liability when an autonomous agent authorizes a transaction outside explicit user intent. Visa's Trusted Agent Protocol is the only live framework that addresses this — and it does so precisely because Visa's scheme rules, not its network position, govern the credential behavior at the issuer level. The companies that will not survive this consolidation are the single-protocol players whose architecture assumes the dispute question is someone else's problem to solve.</p>
+<h2 id="heading-from-the-community">From the Community</h2>
+<ul>
+<li><a target="_blank" href="https://www.reddit.com/r/fintech/" rel="noopener ugc">r/fintech — "Is Visa's agentic credential play actually about chargeback liability?"</a></li>
+<li><a target="_blank" href="https://www.reddit.com/r/MachineLearning/" rel="noopener ugc">r/MachineLearning — "Agent payment authorization: who owns the dispute?"</a></li>
+</ul>
+<h2 id="heading-research-amp-papers">Research &amp; Papers</h2>
+<ul>
+<li>"Autonomous Agents and Payment Authorization: Liability Frameworks" — arXiv preprint on delegation and dispute resolution in multi-agent systems.</li>
+</ul>
+<h2 id="heading-sources">Sources</h2>
+<ul>
+<li>https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21592.html</li>
+<li>https://mexicobusiness.news/tech/news/stripe-and-tempo-team-up-revolutionize-ai-payments</li>
+<li>https://openai.com/index/introducing-the-model-spec/</li>
+<li>https://developers.google.com/pay/api</li>
+<li>https://www.coinbase.com/blog/coinbase-developer-platform-brings-crypto-payments-to-ai-agents-with-visa</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · April 25, 2026 · agenticpayment.forum</em>
+<em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan's take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p>The liability architecture thesis is the right frame and I haven't seen it stated this cleanly elsewhere — but the piece needs to reckon with the fact that Visa's scheme rule governance only bites where there's a card credential in the flow. The moment an enterprise merchant accepts USDC directly via a smart contract with embedded spending controls, Visa's chargeback framework is simply not in the room. The real question practitioners should be asking is whether merchant acquirers will contractually require scheme-backed credentials as a condition of onboarding agentic payment flows — and right now, most acquiring agreements don't address autonomous agents at all, which is its own liability gap worth naming.</p>
+</blockquote>
+</div>
+    </section>
+  </article>
+</body>
+</html>

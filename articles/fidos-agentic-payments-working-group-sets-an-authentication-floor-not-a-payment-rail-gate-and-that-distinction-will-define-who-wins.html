@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIDO&#x27;s Agentic Payments Working Group Sets an Authentication Floor, Not a Payment Rail Gate — and That Distinction Will Define Who Wins — Agentic Payment</title>
+  <meta name="description" content="FIDO can&#x27;t certify payment protocols the way PCI DSS can. Banks know this. The real procurement gate is scheme rules and regulatory guidance — and that&#x27;s exactly where the agentic payments fight is headed.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+    pre { overflow:auto; padding:16px; border-radius:14px; background:#050511; border:1px solid var(--border); }
+    code { color:#dce4ff; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>FIDO&#x27;s Agentic Payments Working Group Sets an Authentication Floor, Not a Payment Rail Gate — and That Distinction Will Define Who Wins</h1>
+    <p class="dek">FIDO can&#x27;t certify payment protocols the way PCI DSS can. Banks know this. The real procurement gate is scheme rules and regulatory guidance — and that&#x27;s exactly where the agentic payments fight is headed.</p>
+    <div class="meta">Published 2026-04-29 · Historical archive import</div>
+    <section class="content">
+<div><h2 id="heading-the-one-thing-that-matters-today">The One Thing That Matters Today</h2>
+<p>The formation of FIDO Alliance's Agentic Payments Working Group is a real signal, but the industry is misreading what kind of signal it is. FIDO sets authentication specifications — it does not certify payment protocols, grant compliance cover to acquiring banks, or substitute for scheme rules and regulatory letters from the Fed or OCC. The procurement gate that will actually matter for enterprise agentic payment deployments isn't FIDO membership; it's whether your authentication architecture is legible to the scheme rules and regulatory frameworks that banks actually wait on. <em>[Sage's take]</em> The article that writes 'FIDO blessed = enterprise approved' is flattering a standards body into a role it has never claimed and cannot legally play. The real bet is narrower and more interesting: FIDO's specifications become the de facto authentication floor that scheme rules and regulators reference — not the ceiling, not the gate, but the floor beneath everything else.</p>
+<h2 id="heading-what-happened-and-why-it-matters">What Happened (and Why It Matters)</h2>
+<ul>
+<li><p><strong>FIDO Alliance launched a dedicated Agentic Payments Working Group</strong> with founding members including Visa, Mastercard, PayPal, Google, Microsoft, and Bank of America. This is the first time a major cross-industry standards body has convened specifically around autonomous agent payment authentication — not just passkeys for human login flows. (FIDO Alliance)
+<em>Why it matters:</em> When Visa and Mastercard both show up to write the authentication spec, that spec has a credible path into scheme rule language. That is the mechanism — not FIDO certification itself, but FIDO specs becoming the reference architecture that scheme rules codify.</p>
+</li>
+<li><p><strong>The working group's explicit scope is 'non-human credential frameworks'</strong> — defining how AI agents present, rotate, and scope payment credentials without a human in the authentication loop. This is a categorically different problem from FIDO2/passkeys, which assume a human biometric anchor. (FIDO Alliance)
+<em>Why it matters:</em> Every existing fraud model at acquiring banks is calibrated to human behavioral signals. A non-human credential framework without a parallel fraud model update creates a gap that fraudsters will find before the spec is finalized.</p>
+</li>
+<li><p><strong>Multi-Party Payment (MPP) flows — pre-authorized spending envelopes with delegated execution across multiple agents — are emerging as the architecture pattern</strong> that makes agentic payments more than glorified card-on-file. The vision is sessions where agents can draw down a pre-authorized budget across tasks. (Payments Dive)
+<em>Why it matters — and where it gets hard:</em> Cross-rail settlement between stablecoin and fiat legs within a single session introduces real-time FX exposure, on/off-ramp liquidity dependencies, and — in the US — potential money transmission licensing questions at the session layer. This is not a solved primitive. Anyone pricing the settlement risk on a live cross-rail MPP flow today is doing bespoke treasury work, not deploying a commodity stack. The architecture is elegant in whitepaper form; the operational risk is not.</p>
+</li>
+<li><p><strong>Universal Checkout Protocol (UCP), the open standard backed by several major e-commerce and agent wallet players, has not announced participation in this working group.</strong> FIDO working groups typically allow post-formation membership, so this is not necessarily permanent — but the absence raises a real question about whether UCP will seek alignment or pursue a parallel specification track. (<a target="_blank" href="https://ucp.dev/" rel="noopener ugc">UCP Consortium</a>)
+<em>Why it matters:</em> If UCP and FIDO develop non-interoperable credential formats for agent payment contexts, the enterprise procurement decision gets harder, not easier. The interesting analytical question is not whether UCP was excluded — it's whether UCP's principals see alignment as strategically valuable or as ceding ground.</p>
+</li>
+<li><p><strong>The geopolitical framing matters, but not in the way most coverage presents it.</strong> Alipay+ and Ant International already operate cross-border in Europe and Southeast Asia under local regulatory frameworks — they are not walled off behind a FIDO membership boundary. FIDO has members in China. The divergence that actually threatens interoperability is scheme rule interoperability and cross-border data residency requirements, not FIDO participation status. (Ant International)
+<em>Why it matters:</em> The real bifurcation risk in agentic payments is regulatory jurisdiction — specifically, whether an agent credential issued under one jurisdiction's data residency rules can be validated by an acquirer operating under a different regime. That is a harder problem than FIDO working group membership and will not be solved by a single standards body.</p>
+</li>
+</ul>
+<h2 id="heading-the-bet">The Bet</h2>
+<p>Here is the specific, falsifiable claim: within 24 months, at least one major card scheme publishes an update to its merchant compliance framework that explicitly references FIDO's non-human credential specification as an acceptable authentication architecture for autonomous agent-initiated transactions. That is the mechanism by which FIDO's work becomes a procurement gate — not FIDO certification itself, but scheme rules incorporating FIDO specs as a named reference standard, the same way PCI DSS incorporates specific cryptographic standards by reference. <em>[Sage's take]</em> If that happens, then vendors who built to FIDO's spec early have a genuine compliance moat. If the schemes write their own bespoke agent authentication requirements without referencing FIDO, the working group becomes an influential but non-binding industry forum — important, not decisive.</p>
+<p>The MPP cross-rail settlement question is the variable most likely to delay the timeline. <em>[Sage's take]</em> Any vendor claiming production-ready stablecoin-to-fiat streaming settlement within a bounded MPP session in the US market today is either running an extremely limited pilot with bespoke legal cover or has not fully priced the money transmission exposure. This matters for the FIDO working group because their credential framework has to interoperate with whatever settlement architecture actually scales — and that architecture is still being negotiated in parallel with regulatory guidance that does not yet exist.</p>
+<h2 id="heading-counter-consensus">Counter-Consensus</h2>
+<p>The consensus view is that this is a race to enroll the most agents and lock in developer ecosystems — that the winner is whoever gets the most agent-payment integrations built on their credential format before the spec hardens. That framing is wrong. <em>[Sage's take]</em> Developer adoption without scheme rule alignment is a sandbox. The bottleneck is not agent enrollment; it's acquiring bank acceptance. An acquiring bank CTO will not accept a novel non-human credential format because it has enthusiastic developer adoption — they will accept it when a scheme rule or a regulatory guidance document gives them a compliance basis for accepting it. The working group's real job is not to publish a spec; it's to get that spec into the language that acquiring banks are contractually and regulatorily required to follow. That is a slower, less visible process than GitHub stars, and it is the only process that matters for actual transaction volume.</p>
+<h2 id="heading-sources">Sources</h2>
+<ul>
+<li>FIDO Alliance Agentic Payments Working Group Launch</li>
+<li>Payments Dive — FIDO Agentic Payments Coverage</li>
+<li><a target="_blank" href="https://ucp.dev/" rel="noopener ugc">UCP Consortium</a></li>
+<li>Ant International — Alipay+</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · April 28, 2026 · agenticpayment.forum</em>
+<em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan's take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p>The article is right that scheme rules are the actual gate, but I'd go one level deeper: the specific mechanism to watch is whether Visa and Mastercard's new account-not-present rules for agent-initiated transactions reference FIDO non-human credential specs as a safe harbor — that's the moment FIDO stops being a floor and starts being a compliance checkbox acquirers can actually act on. I've been in scheme rule review cycles; that language doesn't appear until there's at least one live liability dispute that needs a resolution framework, so the countdown doesn't start until the first MPP chargeback hits a meaningful volume threshold.</p>
+</blockquote>
+</div>
+    </section>
+  </article>
+</body>
+</html>

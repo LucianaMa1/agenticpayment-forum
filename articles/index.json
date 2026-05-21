@@ -6,16 +6,8 @@
     "slug": "ant-s-amp-vs-x402-the-open-protocol-war-for-the-agent-wallet-layer-has-begun",
     "brief": "Two open agentic payment protocols now compete for the same layer. One is Western, one is Eastern, and only one can become the default.",
     "published_at": "2026-05-21T05:33:43.120737+00:00",
-    "channel": "agenticpayment.forum articles"
-  },
-  {
-    "title": "Consumers Will Kill Agentic Payments Before Regulators Do",
-    "url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
-    "path": "/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
-    "slug": "consumers-will-kill-agentic-payments-before-regulators-do",
-    "brief": "55% of consumers won't let agents pay autonomously. The real blocker isn't law or rails — it's consent. And nobody building the infrastructure is solving for that.",
-    "published_at": "2026-05-04T02:01:50.150182+00:00",
-    "channel": "agenticpayment.forum articles"
+    "channel": "agenticpayment.forum articles",
+    "source": "static_site"
   },
   {
     "title": "Visa's Real Agentic Payments Moat Is Issuer Liability Protection, Not Network Rails",
@@ -24,6 +16,150 @@
     "slug": "visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails",
     "brief": "Everyone thinks Visa owns agentic payments via protocol dominance. The real moat is Reg E issuer liability — and that doesn't protect Visa the network the way most assume.",
     "published_at": "2026-05-16T04:13:23.408704+00:00",
-    "channel": "agenticpayment.forum articles"
+    "channel": "agenticpayment.forum articles",
+    "source": "static_site"
+  },
+  {
+    "title": "Consumers Will Kill Agentic Payments Before Regulators Do",
+    "url": "https://agenticpayment.forum/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
+    "path": "/articles/consumers-will-kill-agentic-payments-before-regulators-do.html",
+    "slug": "consumers-will-kill-agentic-payments-before-regulators-do",
+    "brief": "55% of consumers won't let agents pay autonomously. The real blocker isn't law or rails — it's consent. And nobody building the infrastructure is solving for that.",
+    "published_at": "2026-05-04T02:01:50.083Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/consumers-will-kill-agentic-payments-before-regulators-do"
+  },
+  {
+    "title": "FIDO's Agentic Payments Working Group Sets an Authentication Floor, Not a Payment Rail Gate — and That Distinction Will Define Who Wins",
+    "url": "https://agenticpayment.forum/articles/fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins.html",
+    "path": "/articles/fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins.html",
+    "slug": "fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins",
+    "brief": "FIDO can't certify payment protocols the way PCI DSS can. Banks know this. The real procurement gate is scheme rules and regulatory guidance — and that's exactly where the agentic payments fight is headed.",
+    "published_at": "2026-04-29T02:02:59.798Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins"
+  },
+  {
+    "title": "Google's Universal Checkout Protocol Is a Distribution Moat Dressed as a Payment Standard",
+    "url": "https://agenticpayment.forum/articles/googles-universal-checkout-protocol-is-a-distribution-moat-dressed-as-a-payment-standard.html",
+    "path": "/articles/googles-universal-checkout-protocol-is-a-distribution-moat-dressed-as-a-payment-standard.html",
+    "slug": "googles-universal-checkout-protocol-is-a-distribution-moat-dressed-as-a-payment-standard",
+    "brief": "UCP isn't a payment protocol — it's Google's bid to become the default authorization layer for agentic commerce, with card networks scrambling to stay relevant.",
+    "published_at": "2026-04-27T02:03:23.483Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/googles-universal-checkout-protocol-is-a-distribution-moat-dressed-as-a-payment-standard"
+  },
+  {
+    "title": "Visa's Neutrality Moat Is Real — But It Lives in Scheme Rules, Not Network Position",
+    "url": "https://agenticpayment.forum/articles/visas-neutrality-moat-is-real-but-it-lives-in-scheme-rules-not-network-position.html",
+    "path": "/articles/visas-neutrality-moat-is-real-but-it-lives-in-scheme-rules-not-network-position.html",
+    "slug": "visas-neutrality-moat-is-real-but-it-lives-in-scheme-rules-not-network-position",
+    "brief": "The agentic payments protocol war has a structural winner hiding in plain sight — and it's not who's building the fastest SDK.",
+    "published_at": "2026-04-26T02:03:09.919Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/visas-neutrality-moat-is-real-but-it-lives-in-scheme-rules-not-network-position"
+  },
+  {
+    "title": "The Real Agentic Payments Battle Is Over Who Controls the Decision Loop — Not the Rails",
+    "url": "https://agenticpayment.forum/articles/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails.html",
+    "path": "/articles/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails.html",
+    "slug": "the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails",
+    "brief": "x402 and UCP are both chasing the same prize: the moment an AI agent decides to pay. The infrastructure question is already settled. The governance question isn't.",
+    "published_at": "2026-04-25T06:14:20.383Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails"
+  },
+  {
+    "title": "Stripe and Paradigm Built a Rail Visa Can't Tax — Then Invited Visa to Endorse It",
+    "url": "https://agenticpayment.forum/articles/stripe-and-paradigm-built-a-rail-visa-cant-tax-then-invited-visa-to-endorse-it.html",
+    "path": "/articles/stripe-and-paradigm-built-a-rail-visa-cant-tax-then-invited-visa-to-endorse-it.html",
+    "slug": "stripe-and-paradigm-built-a-rail-visa-cant-tax-then-invited-visa-to-endorse-it",
+    "brief": "MPP/Tempo isn't a payments upgrade. It's a settlement layer designed to make interchange optional. Visa's endorsement may be the tell.",
+    "published_at": "2026-04-24T02:02:21.072Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/stripe-and-paradigm-built-a-rail-visa-cant-tax-then-invited-visa-to-endorse-it"
+  },
+  {
+    "title": "Authorization Is Not the Bottleneck for Agentic Payments — Issuer-Side Dispute Rights Are",
+    "url": "https://agenticpayment.forum/articles/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are.html",
+    "path": "/articles/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are.html",
+    "slug": "authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are",
+    "brief": "Everyone is building agent payment rails. Nobody is solving the chargeback logic. Visa's VAMP threshold sits at 0.9% — agents will blow past it.",
+    "published_at": "2026-04-23T04:54:34.166Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are"
+  },
+  {
+    "title": "China Already Won the First Round of Agentic Payments. The West Is Still Debating the Rulebook.",
+    "url": "https://agenticpayment.forum/articles/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook.html",
+    "path": "/articles/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook.html",
+    "slug": "china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook",
+    "brief": "While Visa, Mastercard, and Stripe publish specs and run pilots, Alipay just opened its 100M-user AI payment system to third-party Western agents. The protocol wars are a sideshow.",
+    "published_at": "2026-04-22T02:16:41.499Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook"
+  },
+  {
+    "title": "Everyone Is Building Rails for Agents. Nobody Is Building the Safety Net for Merchants.",
+    "url": "https://agenticpayment.forum/articles/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants.html",
+    "path": "/articles/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants.html",
+    "slug": "everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants",
+    "brief": "The agentic payments stack is agent-centric by design. When a bot-initiated transaction goes sideways, merchants eat the chargeback. That liability gap is the real systemic risk nobody is pricing in.",
+    "published_at": "2026-04-21T06:51:54.263Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants"
+  },
+  {
+    "title": "The Protocol Wars Are Over. The Trust Layer War Just Started.",
+    "url": "https://agenticpayment.forum/articles/the-protocol-wars-are-over-the-trust-layer-war-just-started.html",
+    "path": "/articles/the-protocol-wars-are-over-the-trust-layer-war-just-started.html",
+    "slug": "the-protocol-wars-are-over-the-trust-layer-war-just-started",
+    "brief": "Everyone is still arguing about x402 vs AP2 vs MPP. But Fime's FACT launch and two new arXiv SoK papers signal the real battle has already moved one level up: whoever owns trust attestation owns agentic commerce.",
+    "published_at": "2026-04-21T06:50:08.705Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/the-protocol-wars-are-over-the-trust-layer-war-just-started"
+  },
+  {
+    "title": "Ten Protocols, Zero Interop: The Trust Layer Land Grab Is a Distraction From the Real Problem",
+    "url": "https://agenticpayment.forum/articles/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem.html",
+    "path": "/articles/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem.html",
+    "slug": "ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem",
+    "brief": "As ten competing agentic commerce protocols proliferate with zero interoperability, everyone is racing to build \"trust layers\" — but only one move this month actually addresses the root cause.",
+    "published_at": "2026-04-21T06:35:40.646Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem"
+  },
+  {
+    "title": "Europe Is the Agentic Payments Lab — and the Card Networks Are Running Competing Experiments",
+    "url": "https://agenticpayment.forum/articles/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments.html",
+    "path": "/articles/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments.html",
+    "slug": "europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments",
+    "brief": "55% of consumers won't let agents pay autonomously. The real blocker isn't law or rails — it's consent. And nobody building the infrastructure is solving for that.",
+    "published_at": "2026-04-21T06:23:13.900Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments"
+  },
+  {
+    "title": "Visa Is Betting on Protocol Neutrality. Mastercard Is Betting on Stablecoin Plumbing. Only One Bet Survives.",
+    "url": "https://agenticpayment.forum/articles/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives.html",
+    "path": "/articles/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives.html",
+    "slug": "visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives",
+    "brief": "55% of consumers won't let agents pay autonomously. The real blocker isn't law or rails — it's consent. And nobody building the infrastructure is solving for that.",
+    "published_at": "2026-04-21T05:03:48.319Z",
+    "channel": "agenticpayment.forum articles",
+    "source": "hashnode",
+    "source_url": "https://blogs.agenticpayment.forum/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives"
   }
 ]

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Protocol Wars Are Over. The Trust Layer War Just Started. — Agentic Payment</title>
+  <meta name="description" content="Everyone is still arguing about x402 vs AP2 vs MPP. But Fime&#x27;s FACT launch and two new arXiv SoK papers signal the real battle has already moved one level up: whoever owns trust attestation owns agentic commerce.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/the-protocol-wars-are-over-the-trust-layer-war-just-started.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+    pre { overflow:auto; padding:16px; border-radius:14px; background:#050511; border:1px solid var(--border); }
+    code { color:#dce4ff; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>The Protocol Wars Are Over. The Trust Layer War Just Started.</h1>
+    <p class="dek">Everyone is still arguing about x402 vs AP2 vs MPP. But Fime&#x27;s FACT launch and two new arXiv SoK papers signal the real battle has already moved one level up: whoever owns trust attestation owns agentic commerce.</p>
+    <div class="meta">Published 2026-04-21 · Historical archive import</div>
+    <section class="content">
+<div><h2 id="heading-the-one-thing-that-matters-today">The One Thing That Matters Today</h2>
+<p>The payments industry spent most of Q1 2026 arguing about protocols — x402, AP2, MPP, UCP, ACP. That debate is not over, but it is no longer the most important one. This week, Fime launched FACT (Framework for Agentic Commerce Trust), billing it as "the industry's first trust layer" for agentic commerce. Simultaneously, two new arXiv papers — a <em>Systematization of Knowledge</em> on blockchain A2A payments and a security survey of autonomous LLM agents in commerce — map the same blind spot independently: the protocols we've built are competent at moving money, and almost entirely incompetent at proving the <em>intent, authority, and outcome-binding</em> behind the movement. The protocol layer is becoming commoditized. The trust attestation layer is still wide open. That is where the next infrastructure company worth a billion dollars will be built.</p>
+<hr>
+<h2 id="heading-what-happened-and-why-it-matters">What Happened (and Why It Matters)</h2>
+<ul>
+<li><p><strong>Fime launches FACT — the Framework for Agentic Commerce Trust</strong> — a neutral, real-time, lifecycle-based trust verification service covering intent validation, policy and compliance monitoring, transaction-level trust attestation, and in-session authority checks. Fime is positioning this as independent infrastructure: <em>not owned by the very actors it is supposed to hold accountable.</em> The "neutral" framing is deliberate and smart — Visa, Mastercard, and Stripe each have a conflict of interest in being the trust arbiter for their own rails. (<a target="_blank" href="https://www.fime.com/blog/news-21/post/fime-launches-fact-the-first-trust-layer-for-agentic-commerce-684" rel="noopener ugc">Fime</a> · <a target="_blank" href="https://www.biometricupdate.com/202604/fime-launches-agentic-commerce-trust-layer-service" rel="noopener ugc">Biometric Update</a>)</p>
+</li>
+<li><p><strong>arXiv SoK: Blockchain Agent-to-Agent Payments (2604.03733) identifies four structural failures in current protocol design</strong> — weak intent binding, misuse under valid authorization, payment-service decoupling, and limited accountability. The paper proposes a four-stage lifecycle model (discovery → authorization → execution → accounting) and argues that without a shared append-only execution record anchoring all stages, cross-stage consistency is fundamentally unenforceable. This is the first rigorous taxonomy of <em>what the current stack cannot do.</em> (<a target="_blank" href="https://arxiv.org/abs/2604.03733" rel="noopener ugc">arXiv</a>)</p>
+</li>
+<li><p><strong>arXiv SoK: Security of Autonomous LLM Agents in Agentic Commerce (2604.15367) maps the full threat surface</strong> across AP2, MPP, and x402, noting that Stripe's Machine Payments Protocol on the Tempo blockchain supports both charge intents (one-time) and session intents, but that intent verification is still a deployment-specific concern — not a protocol-guaranteed one. The gap between "we have a protocol" and "the protocol enforces what the user actually wanted" is documented, peer-reviewed, and now impossible to hand-wave. (<a target="_blank" href="https://arxiv.org/abs/2604.15367" rel="noopener ugc">arXiv</a>)</p>
+</li>
+<li><p><strong>eMarketer frames the macro shift</strong>: "AI is collapsing discovery and checkout into one flow, shifting control of payments upstream. New protocols, agent logic, and data control will decide which payment providers capture value." The report recommends payment providers "build the trust layer that enables agentic commerce to scale" — using almost identical language to Fime's announcement, independently. When a testing/certification body and a market research firm converge on the same prescription in the same week, that is a signal. (<a target="_blank" href="https://www.emarketer.com/content/agentic-commerce-payments-2026" rel="noopener ugc">eMarketer</a>)</p>
+</li>
+<li><p><strong>Visa's Intelligent Commerce Connect (launched April 8) is protocol-agnostic by design</strong> — supporting Visa's own Trusted Agent Protocol alongside Stripe's MPP, OpenAI's ACP, and Google's UCP through a single integration. AWS, Expedia, and Intuit are pilot partners. The decision to support <em>all four competing protocols simultaneously</em> is not a hedge. It is Visa explicitly betting that the protocol layer will commoditize and that value accrues to whoever sits above it — i.e., the credential, identity, and trust verification layer. (<a target="_blank" href="https://byteiota.com/visa-launches-ai-agent-payment-platform-what-developers-need-to-know/" rel="noopener ugc">ByteIota</a>)</p>
+</li>
+<li><p><strong>Mastercard's Pablo Fourez (Chief Digital Officer) states the company's intent plainly</strong>: "Effortless must also mean trusted... backed by strong authentication, consent and security frameworks, so that human agency is at the core of how agentic commerce unfolds." Mastercard is framing trust infrastructure as a <em>brand commitment</em>, not just a compliance checkbox. That is a tell about where they expect margin to concentrate. (<a target="_blank" href="https://www.emarketer.com/content/how-industry-leaders-say-ai-will-change-way-consumers-shop-2026" rel="noopener ugc">eMarketer</a>)</p>
+</li>
+<li><p><strong>The protocol fragmentation problem remains unresolved</strong>: As of April 2026, ten protocols are live or in active pilot — ACP, UCP, Shopify Agents, Amazon Buy for Me, Mastercard Verifiable Intent, Stripe MPP, x402, Google UCP, Visa Ready, and AP2. They are grouped across three functional layers (discovery/catalog, payment/checkout, and transport). Zero interoperability standards exist between them. (<a target="_blank" href="https://www.paz.ai/blog/agentic-commerce-protocols-2026-zero-interop-guide" rel="noopener ugc">PAZ.ai</a>)</p>
+</li>
+</ul>
+<hr>
+<h2 id="heading-the-bet">The Bet</h2>
+<p><em>[Editor's take]</em></p>
+<p>Here is the structural argument: in every prior payments infrastructure cycle, the layer that controlled <strong>risk adjudication</strong> ended up capturing disproportionate margin. Visa and Mastercard are not valuable because they move bits — ACH moves bits cheaper. They are valuable because they adjudicate disputes, certify merchants, and provide the liability backstop that makes cardholders willing to spend. In agentic commerce, the equivalent function is <strong>trust attestation</strong>: verifying that an agent had real authority from a real human to make a specific purchase at a specific moment, and providing an auditable, contestable record of that chain.</p>
+<p>No existing protocol fully solves this. The SoK papers make that plain. x402 is excellent at micropayment execution but has no binding between payment and service outcome. AP2 has cryptographic mandates but leaves intent verification to deployers. MPP handles the HTTP 402 flow cleanly but session intents are enforcement-optional. All three are solving for throughput and interoperability. None has solved for <em>accountability</em>.</p>
+<p>That is why Fime's FACT is the most interesting launch this week — not because Fime will necessarily win, but because the <em>category</em> they are entering is the one that matters. A neutral, independent trust attestation layer that can verify intent-to-outcome consistency across any underlying protocol is the EMVCo of agentic commerce. Whoever builds that durably, with enough financial institution and merchant adoption, becomes mandatory infrastructure. The candidates to watch are not just Fime: Worldpay/Trulioo's Digital Agent Passport is playing in the same space, and Mastercard's Verifiable Intent standard is a direct in-network bid for the same function. My read is that the independent/neutral players have an 18-month window before the networks consolidate this capability in-house and make it a condition of network participation — at which point it stops being an independent company opportunity and becomes a Visa/Mastercard feature.</p>
+<p>What will not survive: any startup building purely at the protocol routing layer with no trust/attestation differentiation. The Forbes framing of "Stripe, Visa, and Mastercard racing to build AI agent payment rails" is already stale — the rails are largely built. The race is now for the inspection layer sitting on top of the rails.</p>
+<hr>
+<h2 id="heading-counter-consensus">Counter-Consensus</h2>
+<p>The consensus view is that the central problem in agentic payments is <strong>protocol fragmentation</strong> — ten protocols, zero interop, pick your standard and pray it wins. But the fragmentation problem is actually being solved, awkwardly and slowly, by Visa's protocol-agnostic aggregation strategy and by converging developer adoption patterns. The <em>deeper</em> problem — which the two new SoK papers document rigorously — is that even if you collapse to one protocol, you still have <strong>no guarantee that the agent executing a payment had unambiguous, scoped, contestable authorization from the user it claimed to represent</strong>. Interoperability solves the "can these systems talk to each other" problem. It does not solve the "should I trust what this agent is telling me about its mandate" problem. The entire industry is shipping infrastructure for a threat model that is one layer too shallow.</p>
+<hr>
+<h2 id="heading-research-amp-papers">Research &amp; Papers</h2>
+<ul>
+<li><p><strong><a target="_blank" href="https://arxiv.org/abs/2604.03733" rel="noopener ugc">SoK: Blockchain Agent-to-Agent Payments</a></strong> (arXiv:2604.03733) — First rigorous systematization of blockchain-based A2A payments. Four-stage lifecycle model; identifies weak intent binding, payment-service decoupling, and limited accountability as the core unsolved problems across x402 and comparable designs.</p>
+</li>
+<li><p><strong><a target="_blank" href="https://arxiv.org/abs/2604.15367" rel="noopener ugc">SoK: Security of Autonomous LLM Agents in Agentic Commerce</a></strong> (arXiv:2604.15367) — Maps the full threat surface across AP2, MPP, and x402. Key finding: protocol specifications describe the <em>happy path</em> well; adversarial, misuse, and edge-case authorization scenarios are consistently delegated to deployment-specific enforcement, which is the same as saying they are not enforced.</p>
+</li>
+</ul>
+<hr>
+<h2 id="heading-sources">Sources</h2>
+<ul>
+<li><a target="_blank" href="https://www.fime.com/blog/news-21/post/fime-launches-fact-the-first-trust-layer-for-agentic-commerce-684" rel="noopener ugc">Fime FACT launch announcement</a></li>
+<li><a target="_blank" href="https://www.biometricupdate.com/202604/fime-launches-agentic-commerce-trust-layer-service" rel="noopener ugc">Biometric Update: Fime launches agentic commerce trust layer service</a></li>
+<li><a target="_blank" href="https://arxiv.org/abs/2604.03733" rel="noopener ugc">arXiv 2604.03733 — SoK: Blockchain Agent-to-Agent Payments</a></li>
+<li><a target="_blank" href="https://arxiv.org/abs/2604.15367" rel="noopener ugc">arXiv 2604.15367 — SoK: Security of Autonomous LLM Agents in Agentic Commerce</a></li>
+<li><a target="_blank" href="https://www.emarketer.com/content/agentic-commerce-payments-2026" rel="noopener ugc">eMarketer: Agentic Commerce and Payments 2026</a></li>
+<li><a target="_blank" href="https://www.emarketer.com/content/how-industry-leaders-say-ai-will-change-way-consumers-shop-2026" rel="noopener ugc">eMarketer: How industry leaders say AI will change the way consumers shop in 2026</a></li>
+<li><a target="_blank" href="https://byteiota.com/visa-launches-ai-agent-payment-platform-what-developers-need-to-know/" rel="noopener ugc">ByteIota: Visa Launches AI Agent Payment Platform</a></li>
+<li><a target="_blank" href="https://www.paz.ai/blog/agentic-commerce-protocols-2026-zero-interop-guide" rel="noopener ugc">PAZ.ai: 10 Agentic Commerce Protocols, Zero Interop</a></li>
+<li><a target="_blank" href="https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails/" rel="noopener ugc">Forbes: Stripe, Visa and Mastercard Race To Build AI Agent Payment Rails</a></li>
+</ul>
+<hr>
+<p><em>Agentic Payment · April 20, 2026 · <a target="_blank" href="https://agenticpayment.forum/articles/" rel="noopener ugc">agenticpayment.forum</a></em>
+<em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+</div>
+    </section>
+  </article>
+</body>
+</html>
