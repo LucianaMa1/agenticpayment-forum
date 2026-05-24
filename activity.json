@@ -6,9 +6,16 @@
       "title": "Is 2026 the Year of Agentic Payments? | Fenwick & West LLP - JDSupra",
       "source_url": "https://www.jdsupra.com/legalnews/is-2026-the-year-of-agentic-payments-3410861",
       "discovered_at": "2026-05-24T02:00:18.279104+00:00",
-      "final_status": "Filtering",
-      "locked": false,
-      "error_context": null,
+      "final_status": "FAILED",
+      "locked": true,
+      "error_context": {
+        "agent": "Kai",
+        "reason": "Filter failure",
+        "details": {
+          "error": "Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': None}}"
+        },
+        "timestamp": "2026-05-24T02:00:21.571009+00:00"
+      },
       "article_url": null,
       "timeline": [
         {
@@ -333,7 +340,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "FAILED",
           "input_payload": {
             "raw_results": [
               {
@@ -735,8 +742,10 @@
             ],
             "today": "May 23, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-05-24T02:00:19.773425+00:00",
+          "output_payload": {
+            "error": "Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': None}}"
+          },
+          "timestamp": "2026-05-24T02:00:21.556884+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -749,10 +758,10 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "FAILED"
         }
       ],
-      "updated_at": "2026-05-24T02:00:19.773454+00:00",
+      "updated_at": "2026-05-24T02:00:21.571025+00:00",
       "created_at": "2026-05-24T02:00:18.279193+00:00",
       "metadata": {
         "source_title": "Is 2026 the Year of Agentic Payments? | Fenwick & West LLP - JDSupra",
@@ -5966,5 +5975,5 @@
       "timestamp": "2026-05-24T02:00:18.279030+00:00"
     }
   ],
-  "last_updated": "2026-05-24T02:00:19.791518+00:00"
+  "last_updated": "2026-05-24T02:00:21.580745+00:00"
 }
