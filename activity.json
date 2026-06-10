@@ -2,6 +2,353 @@
   "version": 2,
   "articles": [
     {
+      "article_id": "09baf3cae596f901",
+      "title": "Volante launches “Vol360i” Agentic AI at the core of payments ...",
+      "source_url": "https://www.volantetech.com/news/volante-launches-agentic-ai",
+      "discovered_at": "2026-06-10T02:00:14.930034+00:00",
+      "final_status": "Filtering",
+      "locked": false,
+      "error_context": null,
+      "article_url": null,
+      "timeline": [
+        {
+          "agent": "Rex",
+          "agent_code": "R",
+          "stage_label": "Research",
+          "status": "COMPLETED",
+          "input_payload": {
+            "today": "June 09, 2026",
+            "queries": [
+              "agentic payments news {today}",
+              "AI agent autonomous payment systems 2025 2026",
+              "site:reddit.com agentic payment OR agent payment",
+              "agentic payment arxiv OR research paper 2026",
+              "Visa OR Mastercard OR Stripe OR PayPal AI agent payment announcement"
+            ]
+          },
+          "output_payload": {
+            "queries": [
+              "agentic payments news {today}",
+              "AI agent autonomous payment systems 2025 2026",
+              "site:reddit.com agentic payment OR agent payment",
+              "agentic payment arxiv OR research paper 2026",
+              "Visa OR Mastercard OR Stripe OR PayPal AI agent payment announcement"
+            ],
+            "results": [
+              {
+                "title": "Volante launches “Vol360i” Agentic AI at the core of payments ...",
+                "url": "https://www.volantetech.com/news/volante-launches-agentic-ai",
+                "content": "Agentic AI\n\nNEW YORK, June 9, 2026 – Volante Technologies, the global leader in Payments as a Service (PaaS), today announced that its Payments Platform and PaaS operations are now powered by its “Vol360i” Agentic AI. The core upgrade unlocks autonomous and semi-autonomous collaboration to reduce manual intervention, significantly increasing straight-through processing (STP) rates to over 95%, accelerating exception resolution, and proactively managing SLA performance.\n\nVol360i is immediately available to Volante banking and financial institution clients, with four main operating principles gu"
+              },
+              {
+                "title": "Wirex Joins Visa Agentic Ready Programme to Enable AI-Driven ...",
+                "url": "https://www.prnewswire.com/news-releases/wirex-joins-visa-agentic-ready-programme-to-enable-ai-driven-payments-302795086.html",
+                "content": "## Share this article\n\nShare this article\n\nLONDON, June 9, 2026 /PRNewswire/ -- Wirex, a global stablecoin infrastructure provider, today announced it has joined the Visa Agentic Ready programme as an issuer, supporting the development of secure, scalable agent-initiated payments as part of the next generation of digital commerce in the UK.\n\nThrough the programme, Wirex will work with Visa and ecosystem partners to test and validate how AI-driven agents can initiate and complete transactions on behalf of consumers, while maintaining the security, control and trust that underpin digital payment"
+              },
+              {
+                "title": "Rain Releases Agent Control Layer, Bringing Programmatic ...",
+                "url": "https://www.prnewswire.com/news-releases/rain-releases-agent-control-layer-bringing-programmatic-spending-guardrails-to-agentic-payments-302794541.html",
+                "content": "NEW YORK, June 9, 2026 /PRNewswire/ -- Rain, the stablecoin payments infrastructure company, today announced the release of its Agent Control Layer, a new capability embedded across Rain's APIs that gives businesses and developers precise, programmatic control over how AI agents spend using cards and move money on behalf of users. [...] ## View All Travel\n\n## Policy & Public Interest\n\n## Policy & Public Interest Overview\n\n## View All Policy & Public Interest\n\n## People & Culture\n\n## People & Culture Overview\n\n## View All People & Culture\n\nIn-Language News\n\nPR Newswire: news distribution, targe"
+              },
+              {
+                "title": "The Agentic Commerce Frontier 📅 | June 2 - June 8 2026",
+                "url": "https://agentcommerce.substack.com/p/the-agentic-commerce-frontier-june-1a2",
+                "content": "# Agentic Commerce Frontier\n\n# The Agentic Commerce Frontier 📅 | June 2 - June 8 2026\n\nM FARAH\n\nJun 09, 2026\n\nThanks for reading Agentic Commerce Frontier. This week, Mastercard, Worldline, and ING executed a live European agentic payment; Gopuff launched a predictive shopping assistant with SpaceXAI and fraud researchers documented how generative AI is reshaping refund-abuse evidence.\n\nMoney2020 took place in Amsterdam, and I prepared a roundup of everything Agentic Commerce. We speak a lot about the wars between protocols, the wars between scheme network, but Money2020 hinted and brought to "
+              },
+              {
+                "title": "Is 2026 the Year of Agentic Payments? - Fenwick",
+                "url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+                "content": "As artificial intelligence continues its rapid evolution, 2026 is shaping up to be a pivotal year for agentic payments: payment transactions initiated, managed, and executed by adaptive AI systems that can act autonomously, with delegated authority to act on behalf of a user. While automation in payments has existed for a long time (think “autopay” for recurring payments), agentic AI takes automation to another level by making decisions and taking actions to achieve goals defined by the user. This has the potential to streamline and optimize a number of different activities, like shopping, fin"
+              },
+              {
+                "title": "Agentic Commerce & Payments Summit 2026 | Stockholm",
+                "url": "https://www.industryevents.com/events/agentic-commerce-payments-summit",
+                "content": "Reserve Now\n\nAgentic Commerce & Payments Summit logo\n\nThe Agentic Commerce & Payments Summit is a premier gathering focused on the future of AI-driven commerce and next-generation payments. Bringing together merchants, PSPs, banks, fintechs, retailers, and technology innovators, the summit explores how AI agents are reshaping customer journeys, autonomous checkout, payment experiences, digital identity, fraud prevention, and transaction orchestration.  \n  \nThe event provides a platform for industry leaders to discuss emerging trends, real-world use cases, and the infrastructure required to pow"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "Visa and Mastercard (Network-Level Control)\n\nVisa’s “Intelligent Commerce” and Mastercard’s “Agent Suite” (launched in the second quarter of 2026) focus on “Know Your Agent” frameworks. These initiatives provide the registration, cryptographic signatures, and network tokens required to distinguish legitimate agents from malicious bots, ensuring that deterministic authorization stays within established rails.\n\nPayPal (Cymbio Infrastructure)\n\nThrough its 2026 acquisition of Cymbio, PayPal has positioned itself as the “trust layer” for the agentic web. This allows independent agents to use PayPal"
+              },
+              {
+                "title": "Agentic payments: Who clicked buy?",
+                "url": "https://www.eversheds-sutherland.com/en/united-states/insights/agentic-payments-who-clicked-buy",
+                "content": "Latest Insights   legal updates FS+ Country Updates – May 2026  legal updates Additional Section 892 proposed regulations to provide transitional relief  legal updates Tax impatriation webinar  legal updates The IRS strikes back – Recent developments in Kwong and Abdo  Latest News   firm news Eversheds Sutherland Welcomes Ricardo Martinez as Finance Partner in New York, Expanding Cross-Border Trade and Project Finance Capabilities  client news Advising Howden Joinery Group plc on £390m DIY Kitchens acquisition  client news Next stop, public ownership: Eversheds Sutherland advises DfT on GTR tr"
+              },
+              {
+                "title": "45 Agent-to-Agent Payment Stats for 2026 | Nevermined",
+                "url": "https://nevermined.ai/blog/agent-to-agent-payment-statistics",
+                "content": "## The Agent-to-Agent Payment Market: Size and Growth Statistics\n\n### 1. Global AI agents market valued at $7.84 billion in 2026\n\nThe AI agents market has reached a $7.84 billion valuation in 2025, establishing a substantial foundation for agent-to-agent payment infrastructure. This baseline represents the current scale of autonomous systems requiring financial transaction capabilities. As agents proliferate across industries, payment infrastructure becomes a critical bottleneck.\n\n### 2. Market projected to reach $52.62 billion by 2030 [...] ### 8. 96% of IT leaders plan to expand AI agent use"
+              },
+              {
+                "title": "Is 2026 the Year of Agentic Payments? - Fenwick",
+                "url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+                "content": "As artificial intelligence continues its rapid evolution, 2026 is shaping up to be a pivotal year for agentic payments: payment transactions initiated, managed, and executed by adaptive AI systems that can act autonomously, with delegated authority to act on behalf of a user. While automation in payments has existed for a long time (think “autopay” for recurring payments), agentic AI takes automation to another level by making decisions and taking actions to achieve goals defined by the user. This has the potential to streamline and optimize a number of different activities, like shopping, fin"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "## How Agentic AI Will Reshape Payments\n\nPrepared by Sonja Davidovic and Hervé Tourpe\n\nApril 2026\n\n## Executive Summary\n\nArtificial intelligence (AI) is entering a new phase in which systems can act autonomously on behalf of users. These “agentic” AI systems can interpret objectives, plan multistep actions, and interact with digital services with limited human intervention. In payments, this shift could move transaction initiation from explicitly human instructions toward agent-mediated decision making. Although adoption remains at an early stage, experimentation by technology firms, payment n"
+              },
+              {
+                "title": "Why AI Agents Need Crypto Wallets for Payments in 2026 - RebelFi",
+                "url": "https://rebelfi.io/blog/why-ai-agents-need-crypto-wallets-and-what-that-means-for-payments-in-2026",
+                "content": "McKinsey projects agentic commerce will reach $3 to $5 trillion globally by 2030. Stripe, Coinbase, and MoonPay all shipped AI agent crypto payment infrastructure in early 2026. Stablecoins are the default settlement asset because they combine dollar stability with near-zero transaction fees and sub-second finality. The financial layer for autonomous software is no longer theoretical. It is being built right now, and it runs on stablecoin rails with programmable compliance controls.\n\n## Why Can't AI Agents Use Traditional Payment Systems?\n\nAI agent crypto payments are impossible on legacy rail"
+              },
+              {
+                "title": "Big Firms Bet on Agentic Artificial Intelligence (AI) in Payments - Federal Reserve Bank of Atlanta",
+                "url": "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2025/12/08/big-firms-bet-on-agentic-artificial-intelligence-in-payments",
+                "content": "Federal Reserve Bank of Atlanta\n\n# Big Firms Bet on Agentic Artificial Intelligence (AI) in Payments\n\nDecember 08, 2025\n\nHeadshot of Lali Shaffer\n\nAgentic AI has the potential to reshape the payments landscape. It refers to autonomous systems that can work together toward a goal. They learn to make decisions that spark actions and adapt to situations based on their programming and data gathering. This is different from generative AI, which pulls in content based on prompts but may not execute workflows independently. Some of the biggest payment firms have already rolled out agentic AI payment "
+              },
+              {
+                "title": "AI Agents in Financial Services Market Size to Hit USD 6.54 Billion by 2035",
+                "url": "https://www.precedenceresearch.com/ai-agents-in-financial-services-market",
+                "content": "## Market Scope\n\n|  |  |\n --- |\n| Report Coverage | Details |\n| Market Size in 2025 | USD 1.79 Billion |\n| Market Size in 2026 | USD 2.04 Billion |\n| Market Size by 2035 | USD 6.54 Billion |\n| Market Growth Rate from 2026 to 2035 | CAGR of 13.84% |\n| Dominating Region | North America |\n| Fastest Growing Region | Asia Pacific |\n| Base Year | 2025 |\n| Forecast Period | 2026 to 2035 |\n| Segments Covered | Type, Technology, Deployment, Application, Enterprise Size, End-User, and Region |\n| Regions Covered | North America, Europe, Asia-Pacific, Latin America, and Middle East & Africa |\n\n## Market D"
+              },
+              {
+                "title": "SUERF - The European Money and Finance Forum",
+                "url": "https://www.suerf.org/publications/suerf-policy-notes-and-briefs/from-prompts-to-payments-ai-agents-for-cash-management-in-wholesale-payment",
+                "content": "Aldasoro and Desai (2025) address this question using controlled, prompt‑based experiments. The paper places an AI agent into stylized cash‑management situations that resemble the environment faced by a bank’s cash manager. Each scenario presents the agent with the current liquidity position, a queue of pending payments, the likelihood of urgent requests and the probabilities of incoming funds that can be recycled. The agent is asked to decide whether to send, delay, or partially execute queued payments and to recommend initial pre‑funding that balances expected delay and borrowing costs. Resp"
+              },
+              {
+                "title": "Agentic AI, explained | MIT Sloan",
+                "url": "https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained",
+                "content": "MIT Sloan professor Kate Kellogg and her co-researchersfurther explain in a 2025 paper that AI agents enhance large language models and similar generalist AI models by enabling them to automate complex procedures. “They can execute multi-step plans, use external tools, and interact with digital environments to function as powerful components within larger workflows,” the researchers write.\n\n> It’s an imperative that every organization have a strategy to deploy and utilize AI agents in customer-facing and internal use cases.\n\nSinan AralProfessor, MIT Sloan\n\nShare [...] Remember that implementat"
+              },
+              {
+                "title": "What's the state of Agent Payments? Agent to Agent Autonomous ...",
+                "url": "https://www.reddit.com/r/ycombinator/comments/1lq3l86/whats_the_state_of_agent_payments_agent_to_agent",
+                "content": "Agents paying each other autonomously without human input. most solutions are using crypto - solution to do autonomous payments using fiat"
+              },
+              {
+                "title": "is the infrastructure ready for agentic commerce payments : r/fintech",
+                "url": "https://www.reddit.com/r/fintech/comments/1txzr6j/is_the_infrastructure_ready_for_agentic_commerce",
+                "content": "Crypto / DeFi\n\nI'm torn on the issue of AI agents executing real purchases because to me stored credentials are a liability and a security risk. All it takes is one compromised agent and the exposure is always going to be significant. Issuing a singleuse card per transaction, scoped to a specific merchant and amount and canceled after the purchase completes is the cleaner and safer architecture. But as far as I know most card infrastructure wasn't built for this. Is this a card rails problem or a stablecoin problem or both?\n\nShare\n\nNew to Reddit? \nCreate your account and connect with a world o"
+              },
+              {
+                "title": "AI Agent vs Agentic AI – Can someone explain the difference clearly?",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1l9abzh/ai_agent_vs_agentic_ai_can_someone_explain_the",
+                "content": "People also ask about \n\nExplain AI Agent vs Agentic AI\n\nAgentic AI for beginners\n\nMost innovative uses of AI agents today\n\nBest AI tools for productivity enhancement\n\nTop challenges in implementing AI agents\n\n Public \n\nAnyone can view, post, and comment to this community\n\n0 0\n\n## Top Posts\n\n   Reddit reReddit: Top posts of June 12, 2025   \n   Reddit reReddit: Top posts of June 2025   \n   Reddit reReddit: Top posts of 2025   \n\n   Reddit Rules\n   Privacy Policy\n   User Agreement\n   Your Privacy Choices\n   Accessibility\n   Reddit, Inc. © 2026. All rights reserved.\n\nExpand Navigation Collapse Navi"
+              },
+              {
+                "title": "What is your definition of Agentic AI? What makes an Agent more or ...",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1jorurf/what_is_your_definition_of_agentic_ai_what_makes",
+                "content": "An agent is something given a task and certain number of tools it can figure out how to do that task because unlike a workflow there is no pre-defined flows!"
+              },
+              {
+                "title": "Somebody pls explain me the difference between AI agents and ...",
+                "url": "https://www.reddit.com/r/LLMDevs/comments/1gu31gx/somebody_pls_explain_me_the_difference_between_ai",
+                "content": "Simplest way to think about it: AI agents do tasks, agentic AI coordinates tasks toward an outcome. An AI agent is a single worker. It"
+              },
+              {
+                "title": "What really makes an AI system “agentic”? : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1nfqg6n/what_really_makes_an_ai_system_agentic",
+                "content": "# What really makes an AI system “agentic”? : r/AI_Agents\nSkip to main contentWhat really makes an AI system “agentic”? : r/AI_Agents\n\nOpen menu Open navigation[]( to Reddit Home\n\nr/AI_Agents\n\nSign UpSign up for RedditLog InLog in to Reddit\n\nExpand user menu Open settings menu\n\nImage 1 Go to AI_Agents\n\nr/AI_Agents•8mo ago\n\nWorth-Card9034\n\n# What really makes an AI system “agentic”?\n\nDiscussion\n\n2023 - we are LLMs based\n\n2024 - we are multimodal\n\n2025 - almost every tool/software/offering has become agentic suddenly.\n\nhonestly i am feeling deja vu or a confusion state. Pardon my understanding b"
+              },
+              {
+                "title": "What even is an AI agent? : r/AI_Agents - Reddit",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1kgruv2/what_even_is_an_ai_agent",
+                "content": "Iterative Reasoning: Agents \"think\" in loops, continuously generating part of an answer or taking a step, feeding that information back to themselves to decide the next action, and repeating until the task is complete. \"honestly agents just mean ai that can do a loop instead of one reply it plans, tries, checks, repeats.\"\n\n### AI Agents vs. Automation\n\n   Dynamic Decision-Making: While both involve performing tasks without human intervention, AI agents distinguish themselves by their ability to make dynamic decisions and adapt to unforeseen circumstances, whereas traditional automation follows"
+              },
+              {
+                "title": "AI Agents - Reddit",
+                "url": "https://www.reddit.com/r/AI_Agents",
+                "content": "Reddit, Inc. © 2026. All rights reserved.\n\nImage 7 [...] # AI Agents\nSkip to main contentAI Agents\n\nOpen menu Open navigation, you will be banned. A good ratio is one out of ten posts/comments.\n\n   5\n## No Low Effort Posts \n\nIf your post provides no context, or it is simply meant to drive people off the site and somewhere else, it will be removed.\n\n  \n\n   Reddit Rules\n   Privacy Policy\n   User Agreement\n   Your Privacy Choices\n   Accessibility\n   Reddit, Inc. © 2026. All rights reserved.\n\nExpand Navigation Collapse Navigation\n\n   &nbsp; \n   &nbsp; \n   &nbsp; \n\n  \n\n  \n\n   RESOURCES \n\n   About R"
+              },
+              {
+                "title": "[2605.06457] Beyond Task Success: Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems",
+                "url": "https://arxiv.org/abs/2605.06457",
+                "content": "Cornell University\narxiv logo\n\nHelp | Advanced Search\n\narXiv logo\nCornell University Logo\n\n## quick links\n\n# Computer Science > Artificial Intelligence\n\n# Title:Beyond Task Success: Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems\n\n|  |  |\n --- |\n| Comments: | 6 pages, 2 tables. Accept at AI and Data Science for Digital Finance (AIDS4DF) Workshop, PAKDD 2026 |\n| Subjects: | Artificial Intelligence (cs.AI) |\n| Cite as: | arXiv:2605.06457 [cs.AI] |\n|  | (or  arXiv:2605.06457v1 [cs.AI] for this version) |\n|  |  Focus to learn more  arXiv-issued DOI via DataCite |\n\n## Submission hi"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
+                "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+                "content": "months, indicating that more rapid and substantive change could be imminent. In the context of this, a central architectural challenge emerges. Core payment infrastructures are built on deterministic logic, requiring predictability, auditability, and legal enforceability at each step of the transaction lifecycle. Agentic AI systems, by contrast, rely on probabilistic reasoning and adaptive decision making, which can yield different outcomes under similar conditions. This paper analyzes how and where these fundamentally different properties can be reconciled, and a three-layer model is proposed"
+              },
+              {
+                "title": "[PDF] Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems",
+                "url": "https://arxiv.org/pdf/2605.06457",
+                "content": "arXiv preprint arXiv:2502.15865 (2025) 5. Chua, J.K., Huang, D., Wang, Z.: A novel hierarchical multi-agent system for pay-ments using LLMs. Proceedings of the 30th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD) (2026), main Conference 6. Dahiphale, D., Madiraju, N., Lin, J., Karve, R., Agrawal, M., Modwal, A., Bal-akrishnan, R., Shah, S., Kaushal, G., Mandawat, P., et al.: Enhancing trust and safety in digital payments: An LLM-powered approach. In: 2024 IEEE Interna-tional Conference on Big Data (BigData). pp. 4854–4863. IEEE (2024) 7. Guan, Y., Wang, D., Chu, Z., Wang"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "Current site\n\nGoogle ScholarClose\n\n Publication Date:  24 Apr 2026  eISBN:  9781513533308  Language:  English  Keywords: agentic AI; risk assessment; agentic payment systems; agentic system; agentic model; Payment systems; Liquidity management; Liquidity; Consumer credit\n\nDownload PDF (1 MB)\")\n\n   Abstract\n   Full Text\n   Related Publications [...] ## How Agentic AI Will Reshape Payments\n\nPrepared by Sonja Davidovic and Hervé Tourpe\n\nApril 2026\n\n## Executive Summary\n\nArtificial intelligence (AI) is entering a new phase in which systems can act autonomously on behalf of users. These “agentic” A"
+              },
+              {
+                "title": "Is 2026 the Year of Agentic Payments? - Fenwick",
+                "url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+                "content": "As artificial intelligence continues its rapid evolution, 2026 is shaping up to be a pivotal year for agentic payments: payment transactions initiated, managed, and executed by adaptive AI systems that can act autonomously, with delegated authority to act on behalf of a user. While automation in payments has existed for a long time (think “autopay” for recurring payments), agentic AI takes automation to another level by making decisions and taking actions to achieve goals defined by the user. This has the potential to streamline and optimize a number of different activities, like shopping, fin"
+              },
+              {
+                "title": "Compliance-Aware Agentic Payments on Stablecoin Rails",
+                "url": "https://arxiv.org/html/2605.00071v1",
+                "content": "to actions that deviate from a user’s intent due to goal mis-specification, context loss, or brittle orchestration across tools and APIs Leo et al. (2026). Consequently, responsible adoption requires safeguards that support governance, transparency, and regulation in ways that remain effective even when humans are not continuously in the loop Murugesan (2025). [...] In this paper, we demonstrate how programmable compliance integrated into stablecoin payment rails can support agentic payment systems that are both seamless and regulated. Concretely, we demonstrate an agentic workflow in which a "
+              },
+              {
+                "title": "Agentic AI in Financial Services: A Research Roundup for ...",
+                "url": "https://neurons-lab.com/articles/agentic-ai-in-financial-services-2026",
+                "content": "# Agentic AI in Financial Services: A Research Roundup for 2026\n\nImage 1: logo\n\n, and other finance-specific studies, giving you a clear view of the implications, opportunities, challenges, and benefits of agentic AI.\n\nBy the end, you’ll have the information needed to improve your decision-making about your own agentic AI strategy for 2026.\n\nIn this article: [...] Agentic AIImage 28: Multi-Agentic Systems and Knowledge Graphs for a Better Customer Experience ### Multi-Agentic Systems and Knowledge Graphs for a Better Customer Experience Traditional chatbots fail because they lack consistency a"
+              },
+              {
+                "title": "6 Payment Trends for 2026: Agentic Commerce, Crypto, Digital Identity",
+                "url": "https://www.linkedin.com/posts/mastercard_payments-crypto-ai-activity-7415046069136302080-GXtp",
+                "content": "– Instant local settlement becomes the default, without blockchain rails. • Digital identity & trust – Identity layers reduce fraud while enabling smoother payments. • Embedded MSME credit – Small businesses access credit at the point of transaction. • B2B agentic payments – Autonomous agents execute invoices, reconciliation, and treasury flows. • Creator economy rails – New payment stacks support global, programmable creator monetization. • Alternative payment methods – Local and non-card methods drive higher conversion globally. • Embedded finance via open banking – Payments, lending, and da"
+              },
+              {
+                "title": "Visa opens one integration for AI agent payments - TechInformed",
+                "url": "https://techinformed.com/visa-opens-one-integration-for-ai-agent-payments",
+                "content": "Visa’s release also lands at a time where other payments companies have been building their own agentic-commerce rails. Stripe said in December that its Agentic Commerce Suite lets businesses sell on AI agents through a single integration that covers discovery, checkout, payments and fraud handling.\n\nMastercard launched Agent Pay in April 2025 and has since announced live authenticated agentic transactions in Hong Kong on March 27 and in Thailand on April 7, using tokenized credentials and Mastercard Payment Passkeys.\n\n### AI, cyber guidance moves into regulated workflows\n\n### Origina CRO Anto"
+              },
+              {
+                "title": "Visa, Mastercard expand agentic AI deployments | PaymentsSource | American Banker",
+                "url": "https://www.americanbanker.com/payments/news/visa-mastercard-expand-agentic-ai-deployments",
+                "content": "Processing Content\n\nVisa on Wednesday announced an AI-supported program to improve payment disputes and a partnership with Ramp to automate corporate bill payments. Separately, Mastercard said it has expanded agentic payments to Hong Kong, part of a broader goal to create an international network for agentic commerce. Given the size of the card networks, their announcements could impact the rest of the payments industry by creating competitive pressure on other firms to develop generative and agentic AI. [...] Visa is also using agentic AI to streamline corporate bill payment. The card network"
+              },
+              {
+                "title": "Visa, Mastercard, PayPal Agentic Commerce Moves: Q4 2025 Guide | Paz.ai",
+                "url": "https://www.paz.ai/blog/the-payment-networks-are-all-in-what-visa-mastercard-and-paypals-q4-moves-signal",
+                "content": "On September 29, 2025, Mastercard completed the first live agentic payment transaction. Not a pilot. Not a simulation. An actual AI agent purchased a product using a tokenized credential, fundamentally changing what's possible in commerce. Two weeks later, Visa launched its Trusted Agent Protocol on GitHub. PayPal, meanwhile, partnered with three different AI platforms in three months. The payment networks aren't waiting for agentic commerce to arrive. They're building it. [...] > TL;DR: Visa, Mastercard, and PayPal all made major agentic commerce plays in Q4 2025. Visa launched the Trusted Ag"
+              },
+              {
+                "title": "Mastercard and PayPal join forces",
+                "url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+                "content": "Mastercard and PayPal are expanding their longstanding partnership to unlock secure, seamless agentic commerce.\n   Mastercard Agent Pay, the company’s agentic payments platform, will be integrated intoPayPal’s walletto allow AI agents to simply and securely complete transactions on behalf of PayPal users.\n   Hundreds of millions of consumers and tens of millions of merchants globally will be able to participate in agentic commerce experiences, including the millions of Mastercard cards on file across the PayPal platform and the company’s co-brandedcreditanddebitcards. [...] As a part of this c"
+              },
+              {
+                "title": "Visa and Partners Complete Secure AI Transactions | Visa",
+                "url": "https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-partners-complete-secure-agentic-transactions.html",
+                "content": "# Press Release Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026\n\nSAN FRANCISCO — Visa Inc. (NYSE: V) today announced a major milestone in the evolution of AI-powered commerce: hundreds of secure, agent-initiated transactions have now been successfully completed in collaboration with partners across the ecosystem. This breakthrough signals that 2025 will be the final year consumers shop and checkout alone, as AI agent-driven payments rapidly transition from experimentation to mainstream adoption. [...] “We are seeing impressive progress in ho"
+              },
+              {
+                "title": "The news just dropped | Panagiotis Kriaris | 52 comments - LinkedIn",
+                "url": "https://www.linkedin.com/posts/pkriaris_the-news-just-dropped-and-it-was-only-a-activity-7323587081706881024-HaOu",
+                "content": "Thank you for sharing Panagiotis Kriaris ! A strategic and timely move by Visa and one that signals just how fast we're shifting from AI as interface to AI as infrastructure. What stands out to me in this announcement is the redefinition of trust in the age of agentic commerce. Visa isn’t just enabling payments, it’s engineering a programmable trust layer between AI agents and financial ecosystems and doing so by leveraging decades of fraud mitigation expertise. From my experience leading transformation across payments and digital ID, the implications are significant: - For fintechs: this open"
+              },
+              {
+                "title": "Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026 | Visa",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html",
+                "content": "# Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026\n\n12/18/2025\n\nWith nearly half of consumers using AI to discover new products, Visa and partners are laying the groundwork to go from find to buy, completing secure agentic payments\n\nSAN FRANCISCO--(BUSINESS WIRE)--Dec. 18, 2025--\nVisa Inc. (NYSE: V) today announced a major milestone in the evolution of AI-powered commerce: hundreds of secure, agent-initiated transactions have now been successfully completed in collaboration with partners across the ecosystem. This breakthrough signals that 20"
+              },
+              {
+                "title": "Visa - Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026",
+                "url": "https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx",
+                "content": "SAN FRANCISCO--(BUSINESS WIRE)-- \nVisa Inc. (NYSE: V) today announced a major milestone in the evolution of AI-powered commerce: hundreds of secure, agent-initiated transactions have now been successfully completed in collaboration with partners across the ecosystem. This breakthrough signals that 2025 will be the final year consumers shop and checkout alone, as AI agent-driven payments rapidly transition from experimentation to mainstream adoption. [...] “We are seeing impressive progress in how AI will transform commerce, with many real-world transactions completed by Visa’s deep network of "
+              }
+            ],
+            "urls": [
+              "https://www.volantetech.com/news/volante-launches-agentic-ai",
+              "https://www.prnewswire.com/news-releases/wirex-joins-visa-agentic-ready-programme-to-enable-ai-driven-payments-302795086.html",
+              "https://www.prnewswire.com/news-releases/rain-releases-agent-control-layer-bringing-programmatic-spending-guardrails-to-agentic-payments-302794541.html",
+              "https://agentcommerce.substack.com/p/the-agentic-commerce-frontier-june-1a2",
+              "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+              "https://www.industryevents.com/events/agentic-commerce-payments-summit",
+              "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+              "https://www.eversheds-sutherland.com/en/united-states/insights/agentic-payments-who-clicked-buy",
+              "https://nevermined.ai/blog/agent-to-agent-payment-statistics",
+              "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+              "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+              "https://rebelfi.io/blog/why-ai-agents-need-crypto-wallets-and-what-that-means-for-payments-in-2026",
+              "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2025/12/08/big-firms-bet-on-agentic-artificial-intelligence-in-payments",
+              "https://www.precedenceresearch.com/ai-agents-in-financial-services-market",
+              "https://www.suerf.org/publications/suerf-policy-notes-and-briefs/from-prompts-to-payments-ai-agents-for-cash-management-in-wholesale-payment",
+              "https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained",
+              "https://www.reddit.com/r/ycombinator/comments/1lq3l86/whats_the_state_of_agent_payments_agent_to_agent",
+              "https://www.reddit.com/r/fintech/comments/1txzr6j/is_the_infrastructure_ready_for_agentic_commerce",
+              "https://www.reddit.com/r/AI_Agents/comments/1l9abzh/ai_agent_vs_agentic_ai_can_someone_explain_the",
+              "https://www.reddit.com/r/AI_Agents/comments/1jorurf/what_is_your_definition_of_agentic_ai_what_makes",
+              "https://www.reddit.com/r/LLMDevs/comments/1gu31gx/somebody_pls_explain_me_the_difference_between_ai",
+              "https://www.reddit.com/r/AI_Agents/comments/1nfqg6n/what_really_makes_an_ai_system_agentic",
+              "https://www.reddit.com/r/AI_Agents/comments/1kgruv2/what_even_is_an_ai_agent",
+              "https://www.reddit.com/r/AI_Agents",
+              "https://arxiv.org/abs/2605.06457",
+              "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+              "https://arxiv.org/pdf/2605.06457",
+              "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+              "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+              "https://arxiv.org/html/2605.00071v1",
+              "https://neurons-lab.com/articles/agentic-ai-in-financial-services-2026",
+              "https://www.linkedin.com/posts/mastercard_payments-crypto-ai-activity-7415046069136302080-GXtp",
+              "https://techinformed.com/visa-opens-one-integration-for-ai-agent-payments",
+              "https://www.americanbanker.com/payments/news/visa-mastercard-expand-agentic-ai-deployments",
+              "https://www.paz.ai/blog/the-payment-networks-are-all-in-what-visa-mastercard-and-paypals-q4-moves-signal",
+              "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+              "https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-partners-complete-secure-agentic-transactions.html",
+              "https://www.linkedin.com/posts/pkriaris_the-news-just-dropped-and-it-was-only-a-activity-7323587081706881024-HaOu",
+              "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html",
+              "https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx"
+            ],
+            "headlines": [
+              "Volante launches “Vol360i” Agentic AI at the core of payments ...",
+              "Wirex Joins Visa Agentic Ready Programme to Enable AI-Driven ...",
+              "Rain Releases Agent Control Layer, Bringing Programmatic ...",
+              "The Agentic Commerce Frontier 📅 | June 2 - June 8 2026",
+              "Is 2026 the Year of Agentic Payments? - Fenwick",
+              "Agentic Commerce & Payments Summit 2026 | Stockholm",
+              "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+              "Agentic payments: Who clicked buy?",
+              "45 Agent-to-Agent Payment Stats for 2026 | Nevermined",
+              "Is 2026 the Year of Agentic Payments? - Fenwick",
+              "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+              "Why AI Agents Need Crypto Wallets for Payments in 2026 - RebelFi",
+              "Big Firms Bet on Agentic Artificial Intelligence (AI) in Payments - Federal Reserve Bank of Atlanta",
+              "AI Agents in Financial Services Market Size to Hit USD 6.54 Billion by 2035",
+              "SUERF - The European Money and Finance Forum",
+              "Agentic AI, explained | MIT Sloan",
+              "What's the state of Agent Payments? Agent to Agent Autonomous ...",
+              "is the infrastructure ready for agentic commerce payments : r/fintech",
+              "AI Agent vs Agentic AI – Can someone explain the difference clearly?",
+              "What is your definition of Agentic AI? What makes an Agent more or ...",
+              "Somebody pls explain me the difference between AI agents and ...",
+              "What really makes an AI system “agentic”? : r/AI_Agents",
+              "What even is an AI agent? : r/AI_Agents - Reddit",
+              "AI Agents - Reddit",
+              "[2605.06457] Beyond Task Success: Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems",
+              "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
+              "[PDF] Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems",
+              "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+              "Is 2026 the Year of Agentic Payments? - Fenwick",
+              "Compliance-Aware Agentic Payments on Stablecoin Rails",
+              "Agentic AI in Financial Services: A Research Roundup for ...",
+              "6 Payment Trends for 2026: Agentic Commerce, Crypto, Digital Identity",
+              "Visa opens one integration for AI agent payments - TechInformed",
+              "Visa, Mastercard expand agentic AI deployments | PaymentsSource | American Banker",
+              "Visa, Mastercard, PayPal Agentic Commerce Moves: Q4 2025 Guide | Paz.ai",
+              "Mastercard and PayPal join forces",
+              "Visa and Partners Complete Secure AI Transactions | Visa",
+              "The news just dropped | Panagiotis Kriaris | 52 comments - LinkedIn",
+              "Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026 | Visa",
+              "Visa - Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026"
+            ],
+            "primary_candidate": {
+              "title": "Volante launches “Vol360i” Agentic AI at the core of payments ...",
+              "url": "https://www.volantetech.com/news/volante-launches-agentic-ai",
+              "content": "Agentic AI\n\nNEW YORK, June 9, 2026 – Volante Technologies, the global leader in Payments as a Service (PaaS), today announced that its Payments Platform and PaaS operations are now powered by its “Vol360i” Agentic AI. The core upgrade unlocks autonomous and semi-autonomous collaboration to reduce manual intervention, significantly increasing straight-through processing (STP) rates to over 95%, accelerating exception resolution, and proactively managing SLA performance.\n\nVol360i is immediately available to Volante banking and financial institution clients, with four main operating principles gu"
+            }
+          },
+          "timestamp": "2026-06-10T02:00:14.959864+00:00",
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
+        }
+      ],
+      "status_summary": [
+        {
+          "agent": "Rex",
+          "label": "Research",
+          "status": "COMPLETED"
+        }
+      ],
+      "updated_at": "2026-06-10T02:00:14.976375+00:00",
+      "created_at": "2026-06-10T02:00:14.930169+00:00",
+      "metadata": {
+        "source_title": "Volante launches “Vol360i” Agentic AI at the core of payments ...",
+        "rex_raw_text": "Agentic AI\n\nNEW YORK, June 9, 2026 – Volante Technologies, the global leader in Payments as a Service (PaaS), today announced that its Payments Platform and PaaS operations are now powered by its “Vol360i” Agentic AI. The core upgrade unlocks autonomous and semi-autonomous collaboration to reduce manual intervention, significantly increasing straight-through processing (STP) rates to over 95%, accelerating exception resolution, and proactively managing SLA performance.\n\nVol360i is immediately available to Volante banking and financial institution clients, with four main operating principles gu",
+        "raw_results_count": 40,
+        "candidate_count": 0,
+        "candidate_url": null,
+        "candidate_title": "Volante launches “Vol360i” Agentic AI at the core of payments ..."
+      }
+    },
+    {
       "article_id": "1223cc59bd67bf1d",
       "title": "Visa's Real Agentic Payments Moat Is Issuer Liability Protection, Not Network Rails",
       "source_url": "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
@@ -8886,7 +9233,67 @@
         "results": 8
       },
       "timestamp": "2026-06-09T02:00:20.377179+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "agentic payments news June 09, 2026",
+        "results": 8
+      },
+      "timestamp": "2026-06-10T02:00:05.312813+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "AI agent autonomous payment systems 2025 2026",
+        "results": 8
+      },
+      "timestamp": "2026-06-10T02:00:08.410411+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "site:reddit.com agentic payment OR agent payment",
+        "results": 8
+      },
+      "timestamp": "2026-06-10T02:00:10.492959+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "agentic payment arxiv OR research paper 2026",
+        "results": 8
+      },
+      "timestamp": "2026-06-10T02:00:12.419322+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Rex",
+      "action": "web_search",
+      "service": "Tavily Advanced",
+      "cost_usd": 0.015,
+      "metadata": {
+        "query": "Visa OR Mastercard OR Stripe OR PayPal AI agent payment announcement",
+        "results": 8
+      },
+      "timestamp": "2026-06-10T02:00:14.929938+00:00"
     }
   ],
-  "last_updated": "2026-06-09T02:00:32.050343+00:00"
+  "last_updated": "2026-06-10T02:00:14.993104+00:00"
 }
