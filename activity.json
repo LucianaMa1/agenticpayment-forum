@@ -6,9 +6,16 @@
       "title": "Authorizing Agentic Payments | Insights & Resources | Goodwin",
       "source_url": "https://www.goodwinlaw.com/en/insights/publications/2026/06/insights-technology-aiml-authorizing-agentic-payments",
       "discovered_at": "2026-06-19T02:00:20.627561+00:00",
-      "final_status": "Filtering",
-      "locked": false,
-      "error_context": null,
+      "final_status": "FAILED",
+      "locked": true,
+      "error_context": {
+        "agent": "Kai",
+        "reason": "Filter failure",
+        "details": {
+          "error": "maximum recursion depth exceeded"
+        },
+        "timestamp": "2026-06-19T02:01:05.891220+00:00"
+      },
       "article_url": null,
       "timeline": [
         {
@@ -333,7 +340,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "FAILED",
           "input_payload": {
             "raw_results": [
               {
@@ -735,8 +742,10 @@
             ],
             "today": "June 18, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-06-19T02:00:22.515752+00:00",
+          "output_payload": {
+            "error": "maximum recursion depth exceeded"
+          },
+          "timestamp": "2026-06-19T02:01:05.859965+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -749,10 +758,10 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "FAILED"
         }
       ],
-      "updated_at": "2026-06-19T02:00:22.515815+00:00",
+      "updated_at": "2026-06-19T02:01:05.891254+00:00",
       "created_at": "2026-06-19T02:00:20.627695+00:00",
       "metadata": {
         "source_title": "Authorizing Agentic Payments | Insights & Resources | Goodwin",
@@ -12323,5 +12332,5 @@
       "timestamp": "2026-06-19T02:00:20.627451+00:00"
     }
   ],
-  "last_updated": "2026-06-19T02:00:22.558703+00:00"
+  "last_updated": "2026-06-19T02:01:05.918862+00:00"
 }
