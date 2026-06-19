@@ -328,6 +328,416 @@
           },
           "timestamp": "2026-06-19T02:00:20.666266+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/rex.md"
+        },
+        {
+          "agent": "Kai",
+          "agent_code": "K",
+          "stage_label": "Filter",
+          "status": "PROCESSING",
+          "input_payload": {
+            "raw_results": [
+              {
+                "title": "Authorizing Agentic Payments | Insights & Resources | Goodwin",
+                "url": "https://www.goodwinlaw.com/en/insights/publications/2026/06/insights-technology-aiml-authorizing-agentic-payments",
+                "content": "mwhalen@goodwinlaw.com\n\n  Washington, DC+1 202 346 4315\n\n  Mike Whalen\n\n## Related Content\n\n Alert\n\n  12 June 2026\n\n  ### Expanding Corporate Criminal Liability in the UK: Key Impacts and Considerations for Organisations and Investors\n Alert\n\n  June 10, 2026\n\n  ### Colorado Enacts Law Repealing and Replacing Landmark Colorado AI Act\n Alert\n\n  June 1, 2026\n\n  ### ICC Arbitration Rules Effective June 1, 2026: Key Changes and Practical Takeaways for Parties and Counsel\n Insight\n\n  May 20, 2026\n\n  ### When Everyone Wants In: Shifting Venture Financing Terms in the AI Era\n Insight\n\n  May 18, 2026\n\n"
+              },
+              {
+                "title": "Mid-Year Payments Check-In: Revisiting Our 2026 Predictions - Glenbrook Partners, LLC",
+                "url": "https://glenbrook.com/payments_views/mid-year-payments-check-in-revisiting-our-2026-predictions",
+                "content": "Glenbrook 25th Anniversary Logo \n\nGet in Touch\n\nMy Account\n\n###### Agentic Commerce | Artificial Intelligence | Blockchain | Card Networks | Fast Payments | Global Payments | Podcasts | Regulatory Environment | Risk & Fraud | Tokenization\n\n# Mid-Year Payments Check-In: Revisiting Our 2026 Predictions\n\n#### Payments Views\n\nJune 18, 2026\n\nPOF Podcast\n\nShare On Linkedin\n\nShare On X\n\nShare Via Email\n\nBack in January, the Glenbrook team kicked off 2026 with a set of predictions about the trends most likely to shape the payments industry. Six months later, we’re taking a look at what’s actually happ"
+              },
+              {
+                "title": "Agentic Commerce Set to Generate $1.5 Trillion Globally by 2030, as Payments Infrastructure Leaders Revealed",
+                "url": "https://www.juniperresearch.com/press/agentic-commerce-set-to-generate-15-trillion-globally-by-2030-as-payments-infrastructure-leaders-revealed",
+                "content": "VIEW\n\n Fintech & Payments\n\n  #### Friendly Fraud to Make Up 28% of Chargebacks Globally by 2031, Driven by Changing Consumer Attitudes Towards Merchants\n\n  June 2026\n Fintech & Payments\n\n  #### Stablecoin P2P Remittances to Cross $10 Billion in 2030, as On-chain Settlement Undercuts Traditional Rails\n\n  June 2026\n Telecoms & Connectivity\n\n  #### Agentic Conversational AI Service Revenue Set to Triple to $8.5 Billion Globally by 2030, Driven by CX Personalisation\n\n  June 2026\n Telecoms & Connectivity\n\n  #### Direct to Cell: Monthly Active Users to Reach Over 130 Million by 2031, But Usage Forec"
+              },
+              {
+                "title": "Mastercard launches Agent Pay for Machines to unlock super-fast ...",
+                "url": "https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html",
+                "content": "News and trends\n\nFeatured topics\n\n   AI \n   Cybersecurity \n   Open finance \n   Small business \n   Digital assets \n   Account to account \n   Consumer acquisition & engagement \n   Insights & Intelligence \n\nNews and trends\n\nInsights & reports\n\n   Mastercard Economics Institute \n   SpendingPulse™opens in a new tab \n   Insights & intelligence \n   Mastercard Business Intelligence opens in a new tab \n\nNews and trends\n\nPress resources\n\n   Press releases \n   Executive bios \n   Media contacts \n\nNews and trends\n\nInvestor relations\n\n   Access our latest financial reporting opens in a new tab [...] Build w"
+              },
+              {
+                "title": "[PDF] symposium on agentic AI in payments",
+                "url": "https://consumerbankers.com/wp-content/uploads/2026/01/CBA-Agentic-Symposium-White-Paper-2026-01v2.pdf",
+                "content": "> 17 Some argue similar concerns slowed the growth of cryptocurrency use as a replacement for fiat currencies in\n> consumers ’daily transactions .See, e.g. ,Tonantzin Carmona , Protecting the American public from crypto risks and\n> harms ,BROOKINGS INST .(Jun e2,2025 ),  -the -american -public -from -\n> crypto -risks -and -harms/ .\n> 18 Required Rulemaking on Personal Financial Data Rights, 89 Fed. Reg. 90838 (Nov. 18, 2024). 19\n\nHowever, as discussed below, there was some consensus that data -related issues were \n\nnot the most significant risks of agentic payment tools .\n\nParticipants also ad"
+              },
+              {
+                "title": "4 Takeaways on AI in Payments from NY Tech Week 2026",
+                "url": "https://www.jpmorgan.com/payments/newsroom/agentic-ai-payments-takeaways-2026",
+                "content": "Key Links\n\n Insights\n Client Stories\n Newsletters\n\n Payments\n Payments Newsroom\n Four takeaways on AI’s next phase in payments\n\nUntitled design - 1\n\nAs part of New York Tech Week 2026, J.P. Morgan Payments and Tech:NYC hosted an exclusive media breakfast on June 2 featuring an on-the-record fireside chat between Zack Anderson, Chief Data & Analytics Officer at J.P. Morgan Payments, and Bloomberg Reporter Paige Smith. [...] Dig Deeper\n\n Read FinAi News’ article, “J.P. Morgan Payments not worried about escalating token cost, exec says,” citing insights from the fireside chat.\n Check out how we’r"
+              },
+              {
+                "title": "Visa Announces Global Expansion of Agentic Ready Program | Visa",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22341.html",
+                "content": "Image 1\n\nView source version on businesswire.com: \n\nConor Febos, cfebos@visa.com\n\nSource: Visa Inc.\n\n## Footer Navigation\n\n## News and media\n\n## Company\n\n   About\n   Careers\n   Corporate responsibility and sustainability\n   Visa Foundation\n\n## News and Media\n\n   Newsroom\n   Visa Perspectives\n   Investor relations\n\n## Support\n\n   Get support\n   Report a lost or stolen card\n   Contact us\n   Visa rules and policy\n\n## Legal and Privacy\n\n   Legal\n   Privacy notice\n   Cookie preferences\n   Your privacy rights\n   Accessibility\n\nUnited States|English\n\n## Footer Information"
+              },
+              {
+                "title": "How to secure agentic commerce transactions — WorkOS",
+                "url": "https://workos.com/blog/how-to-secure-agentic-commerce",
+                "content": "This isn't a future risk. Google's Universal Commerce Protocol (UCP) launched in January 2026 with Shopify, Etsy, Wayfair, Target, Walmart, Visa, Mastercard, and 20+ other partners. OpenAI's Agentic Commerce Protocol (ACP) enables purchases inside ChatGPT with Stripe processing payments, with Shopify enabling over a million merchants at launch. Chrome auto browse is rolling out to Android in late June 2026, letting Gemini complete multi-step purchasing flows in the browser the user is already logged into. Bain & Company estimates that agentic AI will handle 15 to 25% of all e-commerce volume b"
+              },
+              {
+                "title": "45 Agent-to-Agent Payment Stats for 2026 - Nevermined",
+                "url": "https://nevermined.ai/blog/agent-to-agent-payment-statistics",
+                "content": "## The Agent-to-Agent Payment Market: Size and Growth Statistics\n\n### 1. Global AI agents market valued at $7.84 billion in 2026\n\nThe AI agents market has reached a $7.84 billion valuation in 2025, establishing a substantial foundation for agent-to-agent payment infrastructure. This baseline represents the current scale of autonomous systems requiring financial transaction capabilities. As agents proliferate across industries, payment infrastructure becomes a critical bottleneck.\n\n### 2. Market projected to reach $52.62 billion by 2030 [...] ### 6. Machine customer transactions could reach $30"
+              },
+              {
+                "title": "31 AI Agent Payment Statistics for 2026",
+                "url": "https://nevermined.ai/blog/ai-agent-payment-statistics",
+                "content": "The existing non-cash payments infrastructure handles 3.4 trillion transactions annually with $1.8 quadrillion in total transaction value. Agent-to-agent commerce will layer on top of this foundation, requiring parallel systems designed specifically for autonomous transactions without human intervention. Traditional processors lack the metering granularity and real-time settlement capabilities that AI workloads demand.\n\n### 4. AI model capabilities now extend to 30+ hours of autonomous task execution [...] The market opportunity is massive and immediate - The US B2C market alone could see up t"
+              },
+              {
+                "title": "Why AI Agents Need Crypto Wallets for Payments in 2026 - RebelFi",
+                "url": "https://rebelfi.io/blog/why-ai-agents-need-crypto-wallets-and-what-that-means-for-payments-in-2026",
+                "content": "McKinsey projects agentic commerce will reach $3 to $5 trillion globally by 2030. Stripe, Coinbase, and MoonPay all shipped AI agent crypto payment infrastructure in early 2026. Stablecoins are the default settlement asset because they combine dollar stability with near-zero transaction fees and sub-second finality. The financial layer for autonomous software is no longer theoretical. It is being built right now, and it runs on stablecoin rails with programmable compliance controls.\n\n## Why Can't AI Agents Use Traditional Payment Systems?\n\nAI agent crypto payments are impossible on legacy rail"
+              },
+              {
+                "title": "Top 5 AI Agent Trends for 2026",
+                "url": "https://www.usaii.org/ai-insights/top-5-ai-agent-trends-for-2026",
+                "content": "+ Why USAII®\n  + Board of Advisors\n  + Contact Us\n  + CSR Initiative\n USAII® Partners\n Key Insights\n\n  + Blog\n  + News\n  + Resources\n\n# Top 5 AI Agent Trends for 2026\n\nNov 28, 2025\n\nFacebook X Linkedin\n\nTop 5 AI Agent Trends for 2026\n\nBy Editorial Desk\n\nEarlier, Artificial Intelligence (AI) was confined to automating specific tasks, and today, it is becoming an autonomous agent that can do a variety of tasks. With the world of AI transforming rapidly, the year 2026 is going to be highly important. The conversation surrounding Artificial General Intelligence, the machines that can reason and le"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "What Is Agentic AI?\n\nAgentic AI refers to autonomous systems that sense their environment, set goals, and perform multistep tasks with little human input. For example, in the commercial sector, such systems may track household gas tank levels, identify the most cost-effective propane supplier, and automatically arrange for a refill. Within warehouse operations, these technologies can detect incoming deliveries, retrieve corresponding billing information, and initiate payment instructions in accordance with predefined protocols. Furthermore, the Bank for International Settlements (BIS 2025) not"
+              },
+              {
+                "title": "AI Agents in Financial Services Market Size - Precedence Research",
+                "url": "https://www.precedenceresearch.com/ai-agents-in-financial-services-market",
+                "content": "North America dominated the global market in 2025, capturing nearly 40.5% of the market share.\n The Asia Pacific is expected to grow at the fastest CAGR from 2026 to 2035.\n By type, the conventional agents segment held the largest market share of 42.7% in 2025.\n By type, the autonomous decision-making agents segment is growing at a strong CAGR between 2026 and 2035.\n By technology, the machine learning segment led the market, accounting for 40.4% share in 2025.\n By technology, the generative AI segment is poised to grow at a significant CAGR from 2026 to 2035.\n By application, the customer ser"
+              },
+              {
+                "title": "Autonomous Agentic Payments System",
+                "url": "https://medium.com/@bijit211987/autonomous-agentic-payments-system-9cc033be5149",
+                "content": "## 3. Payment Orchestration Layer\n\nThis is not just routing.\n\n## Get Bijit Ghosh’s stories in your inbox\n\nJoin Medium for free to get updates from this writer.\n\nSubscribe\n\nSubscribe\n\n- [x] \n\nRemember me for faster sign in\n\n \n\nIt’s:\n\n   Intent → rail selection\n   Cost vs speed tradeoffs\n   Real-time fallback\n   Settlement awareness\n\nThis is where payments stop being “executed” and start being optimized.\n\n## Agent Swarms in Modern Payments\n\n## Why a Single Payment Agent Fails in Production\n\nIn real payment systems, a single “do-everything” AI agent quickly becomes:\n\n   Over-privileged\n   Hard to"
+              },
+              {
+                "title": "Payments Outlook: Five Trends Powering Payments in 2026",
+                "url": "https://www.jpmorgan.com/insights/payments/trends-innovation/payments-outlook-trends-2026",
+                "content": "6.\nJ.P.Morgan Strategic Research, November 2025. ‘J.P.Morgan Perspectives: Digital Future Under Threat: AI, Quantum and Geopolitical Cybersecurity Risks.’ Accessed February 2026.\n\n7.\nFTC, March 2025. ‘New FTC data show a big jump in reported losses to fraud to $12.5 Billion in 2024.’ Available at: Accessed November 2025.\n\n8.\nBiometricupdate.com, Nov 2025. ‘ Deepfake attacks now occur every five minutes, Entrust report warns.’ Available at: Accessed November 2025.\n\n9.\nUS Bank, May 2025. ‘Fight the battle against payments fraud.’ Available at: Accessed November 2025.\n\n10.\nBain & Company, ‘2030 F"
+              },
+              {
+                "title": "What's the state of Agent Payments? Agent to Agent Autonomous payments. : r/AgentsOfAI",
+                "url": "https://www.reddit.com/r/AgentsOfAI/comments/1lq6bmx/whats_the_state_of_agent_payments_agent_to_agent",
+                "content": "That matters for businesses that don’t want to bet on a single asset: the API just quotes price, the agent responds with a signed payment proof from whichever network its treasury already holds, and the server drops 402 → 200 once it verifies inclusion. No pop-up, no OTP, no new keys.\n\nMight be worth comparing your fiat workflow to that pattern: if your back-end can verify a bank API or real-time card authorization, you could expose it as just another “rail” behind the same 402 spec and keep the agent logic consistent. Curious what you think.\n\n# People also ask about section\n\n People also ask "
+              },
+              {
+                "title": "What's the state of Agent Payments? Agent to Agent Autonomous ...",
+                "url": "https://www.reddit.com/r/ycombinator/comments/1lq3l86/whats_the_state_of_agent_payments_agent_to_agent",
+                "content": "4 more replies \n\n4 more replies \n\n4 more repliesMore replies\n\n[](\n\ntony4bocce\n\n•1y ago 1y ago\n\nYou can have agents send each other USDC with coinbase AgentKit. Can even hook it up to vercel ai sdk. The infra is there\n\n[](\n\nSignificanceUpper977\n\n•1y ago 1y ago\n\nYes but we don’t use crypto. Our solution lets you use usd and other fiat currencies\n\nMore replies\n\n# People also ask about section\n\n People also ask about \n\nBest payment processor for agentic commerce\n\nAI agent payment systems overview\n\nAI agents communicating with each other\n\nHuman approval in AI payment processes\n\nTop tips for pitchin"
+              },
+              {
+                "title": "Does Agentic Commerce Need a Different Payment Model? : r/defi",
+                "url": "https://www.reddit.com/r/defi/comments/1ti32gs/does_agentic_commerce_need_a_different_payment",
+                "content": "Reply  Share \n\nImage 8: u/Several-Swordfish370 avatar\n\nSeveral-Swordfish370\n\n•1mo ago\n\nThis is where smart contract logic starts to matter for payments if the rules live in the transaction itself you don't need a human approving each step. That's just programmable money doing what it was built to do.\n\n Reply  Share \n\nImage 9: u/Royal_Low6970 avatar\n\nRoyal_Low6970\n\n•1mo ago\n\nAnd it scales in a way that approval based systems don't. Straight execution no back and forth. That's the model that makes continuous agent transactions viable without someone watching every step.\n\n Reply  Share \n\nMore rep"
+              },
+              {
+                "title": "Why agentic payments keep breaking. The IMF just put a name to it : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1th7q47/why_agentic_payments_keep_breaking_the_imf_just",
+                "content": "# Why agentic payments keep breaking. The IMF just put a name to it : r/AI_Agents\nSkip to main contentWhy agentic payments keep breaking. The IMF just put a name to it : r/AI_Agents\n\nOpen menu Open navigation is a useful support for where that tension lives. Intent is where the agent operates. Authorization and settlement are where determinism has to win.\n\nIs anyone designing agent payment flows around this distinction from the very beginning? Or is everyone retrofitting after the first production incident?\n\nShare for exactly this - PreToolUse hooks with declarative rules, works with Claude Co"
+              },
+              {
+                "title": "Is anyone actually using agentic payment protocols (x402) in production? : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1r86g99/is_anyone_actually_using_agentic_payment",
+                "content": "Best \n   Top \n   New \n   Controversial \n   Old \n   Q&A \n\nImage 10: u/AlgaeCalm4306 avatar\n\nAlgaeCalm4306\n\n•4mo ago\n\nWe are. We've had agentwallet-sdk on npm for a few weeks and ClawPay MCP live for a few days — both built on x402 + Base.\n\nThe honest answer to your question is: yes, but the production surface is still small. Here's what we've actually found.\n\nx402 works exactly as advertised for the happy path — agent hits a paywalled endpoint, gets a 402 back with payment details, signs a transaction, retries with the payment header. The whole flow is maybe 300ms of overhead on Base. [...] The"
+              },
+              {
+                "title": "Somebody pls explain me the difference between AI agents and ...",
+                "url": "https://www.reddit.com/r/LLMDevs/comments/1gu31gx/somebody_pls_explain_me_the_difference_between_ai",
+                "content": "An AI agent is a single worker. It classifies a ticket, retrieves an order status, or sends a templated response. It reacts reacts and acts, which in most situations is all it needs to do. Issue with this is when the situation falls outside its training it can struggle to know what to do.\n\nAgentic AI is the system orchestrating multiple agents to solve a problem end-to-end. Say a customer wants a refund. An agent-based setup might send them a policy link and close the ticket. An agentic system does the full loop, from verification to processing the payment.\n\n# People also ask about section\n\n P"
+              },
+              {
+                "title": "Is anyone building or consuming in any way agentic payments? I WILL NOT PROMOTE! : r/startups",
+                "url": "https://www.reddit.com/r/startups/comments/1rbtx4r/is_anyone_building_or_consuming_in_any_way",
+                "content": "Security of agentic payments\n\nAgentic payments in fintech\n\nHow agentic payment platforms work\n\nAutonomous AI agent payments\n\nImage 8: redditgold\n\nImage 9: redditgold\n\nFundraising is hard\n\n Public \n\nAnyone can view, post, and comment to this community\n\n0 0\n\n   Home\n   Popular\n   News\n   Explore\n   Best of Reddit\n   Best of Reddit in Portuguese\n   Best of Reddit in German\n   Reddit Rules\n   Privacy Policy\n   User Agreement\n   Your Privacy Choices\n   Accessibility\n   Reddit, Inc. © 2026. All rights reserved.\n\nImage 10\nJoin the most real place on the internet\n\n Continue with Phone Number \n\n Contin"
+              },
+              {
+                "title": "What is your definition of Agentic AI? What makes an Agent more or lesser Agentic? : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1jorurf/what_is_your_definition_of_agentic_ai_what_makes",
+                "content": "# What is your definition of Agentic AI? What makes an Agent more or lesser Agentic? : r/AI_Agents\nSkip to main content\n\nOpen menu Open navigation became a hot topic.\n\nRegarding the definition of Agent, my favorite intuition is to think of it as the property of a system, like “how agentic is this system”. A system whose outcomes can be explained simply by its instructions is not agentic, a system that is best interpreted by its “intentions” is agentic.\n\nAs far as foundational papers check out Woodrige’s intelligent agents (1995) for a good foundation on agent theories and architectures.\n\n Repl"
+              },
+              {
+                "title": "AI Agents in Financial Markets: Architecture, Applications ... - arXiv",
+                "url": "https://arxiv.org/html/2603.13942v1",
+                "content": "### 2.3 Theoretical contribution of this paper\n\nAgainst this background, the objective of this paper is not simply to review emerging research, but to develop an integrated theoretical framework for what we term agentic finance. The central contribution is to bridge the gap between the technical design of AI agents and the economic structure of financial markets.\n\nMore specifically, the paper makes three theoretical contributions:\n\nit proposes a modular four-layer architecture of AI financial agents that decomposes agent systems into data perception, reasoning, strategy generation, and executi"
+              },
+              {
+                "title": "[PDF] Exploring the Impact of Blockchain, AI, and ML on Financial ... - arXiv",
+                "url": "https://arxiv.org/pdf/2401.15715",
+                "content": "role in financial accounting. The results will encompass a comprehensive evaluation of the research findings, accompanied by an assessment of their alignment with the objectives outlined in the paper. A portion of the dataset used in this investigation is included in Table 1. For the chosen papers, there were roughly 185 studies in the dataset overall. The studies had to be written using primary data, and the research had to discuss the applications of blockchain, AI, and ML in financial accounting. Table 1. Overall Studies Journal Number of studies Keywords Review of Finance 1 Blockchain, cor"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
+                "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+                "content": "months, indicating that more rapid and substantive change could be imminent. In the context of this, a central architectural challenge emerges. Core payment infrastructures are built on deterministic logic, requiring predictability, auditability, and legal enforceability at each step of the transaction lifecycle. Agentic AI systems, by contrast, rely on probabilistic reasoning and adaptive decision making, which can yield different outcomes under similar conditions. This paper analyzes how and where these fundamentally different properties can be reconciled, and a three-layer model is proposed"
+              },
+              {
+                "title": "Agentic AI in Financial Services: A Research Roundup for 2026",
+                "url": "https://neurons-lab.com/articles/agentic-ai-in-financial-services-2026",
+                "content": "_Image Source: EY_\n\nThis tension is driving a notable shift. According to EY, spending on ready-made AI solutions dropped from 38% to 32% in just six months. More organizations are now building custom AI in-house, reflecting a desire to develop their own AI capabilities internally while maintaining greater control overcustomization and security.\n\nCo-creation with experts who understand both the technical and regulatory landscape is emerging as the most sustainable approach. In fact, 84% of respondents in the Forrester AWS paper believe their success now depends on working with specialist provi"
+              },
+              {
+                "title": "[PDF] How Agentic AI Will Reshape Payments; IMF Note No. 2026/004",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/068.2026.issue-004-en.pdf",
+                "content": "Henrik, Valdemar Licht, and Jan Damsgaard. 2025. “Agentic AI for Financial Crime Compliance.” arXiv preprint arXiv:2509.13137.  Bank for International Settlements (BIS). 2024. “Annual Economic Report.”  Bank for International Settlements (BIS). 2025. “The Use of Artificial Intelligence for Policy Purposes.” Report submitted to the G20 Finance Ministers and Central Bank Governors.  Bank of England (BoE). 2022. “Artificial Intelligence and Machine Learning.” Discussion Paper 5/22.  Bank of England (BoE). 2026. “Summary of AI Roundtables - February 2026.”  Beard, Nicolette V. 2025. “Ecommerce AI "
+              },
+              {
+                "title": "SoK: Blockchain Agent-to-Agent Payments - arXiv",
+                "url": "https://arxiv.org/html/2604.03733v1",
+                "content": "Therefore, in this Systematization of Knowledge (SoK) paper, we, for the first time, systematically examine and evaluate the trust, privacy, and security risks of existing mechanisms for Agent-to-Agent payment systems, particularly in which agents can autonomously or conditionally initiate payments, receive payment-triggered services, or both through blockchain-based infrastructures.\nParticularly, we categorize the identified risks and challenges, including weak intent binding, misuse under valid authorization, payment–service decoupling,and limited accountability, into a four-stage life cycle"
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "In the context of this, a central architectural challenge emerges. Core payment infrastructures are built on deterministic logic, requiring predictability, auditability, and legal enforceability at each step of the transaction lifecycle. Agentic AI systems, by contrast, rely on probabilistic reasoning and adaptive decision making, which can yield different outcomes under similar conditions. This paper analyzes how and where these fundamentally different properties can be reconciled, and a three-layer model is proposed to assess the appropriate scope for integrating agentic AI into payment work"
+              },
+              {
+                "title": "Agentic AI Payments: Navigating Consumer Protection, Innovation, and Regulatory Frameworks - consumerbankers.com",
+                "url": "https://consumerbankers.com/research/agentic-ai-payments-navigating-consumer-protection-innovation-and-regulatory-frameworks",
+                "content": "View the full white paper.\n\n## Stay Connected [...] - Press Releases\n    - Blogs\n    - Data & Research\n    - Comment Letters\n    - Sponsor Insights\n About \n  + ## About\n\n    The only member-driven trade association focused exclusively on retail banking.\n\n    - About CBA\n    - Board Of Directors\n    - Mid-Tier Retail Executives\n    - Our Team\n    - Committees and Councils\n Membership \n  + ## Membership\n\n    CBA is your go-to association for the issues that impact you most.\n\n    - Our Members\n    - Sponsors\n    - Associate Membership\n\nresearch\n\n# Agentic AI Payments: Navigating Consumer Protecti"
+              },
+              {
+                "title": "OpenAI Partners With Visa, AI Agent Gains ‘Payment Capability’ for the First Time",
+                "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261959209-openai-visa-ai-agent-purchases-online-shopping-mastercard-ai-tradingkey",
+                "content": "As of press time, Visa remains down 0.47% at $323.47. The stock rose slightly by about $3 following the announcement.\n\nIt should be noted that Visa is not the only payment giant targeting this space. Mastercard ( MA) and PayPal ( PYPL) are also exploring similar AI agent payment partnerships. Last year, Visa reached collaborations with companies such as Anthropic and Microsoft in preparation for this week's official launch.\n\nThis content was translated using AI and reviewed for clarity. It is for informational purposes only.\n\nView Original [...] facebooktwitterlinkedin\n\nView all comments（0）\n\n"
+              },
+              {
+                "title": "Stripe, Visa, Mastercard, Microsoft, Meta. All Building The Same Thing.",
+                "url": "https://www.youtube.com/watch?v=XGvDbeoSN3E",
+                "content": "# Stripe, Visa, Mastercard, Microsoft, Meta. All Building The Same Thing.\n## AI News & Strategy Daily | Nate B Jones\n298000 subscribers\n1216 likes\n\n### Description\n44114 views\nPosted: 3 May 2026\nFull Story w/ Prompt Kit: \n___________________\nWhat's really happening inside Stripe's agent commerce announcement when everyone is talking about agents buying coffee but missing the actual shift underneath?\n\nThe common headline is that agents can spend money now — but the reality is that for the first time in decades, power in the internet economy is moving from the seller to the buyer, and the entire"
+              },
+              {
+                "title": "1) Agentic AI: PayPal vs Mastercard vs Visa 2) AI Agents + Stablecoins vs Subscription Payments 3) Stripe's AI & Stablecoin Play",
+                "url": "https://pkriaris.substack.com/p/1-agentic-ai-paypal-vs-mastercard",
+                "content": "# Panagiotis' FinTech Newsletter\n\n# 1) Agentic AI: PayPal vs Mastercard vs Visa 2) AI Agents + Stablecoins vs Subscription Payments 3) Stripe's AI & Stablecoin Play\n\n### Welcome to my newsletter! Each week 2-3 hand-picked topics from the world of fintech, payments and banking with behind-the-scenes analysis!\n\nPanagiotis Kriaris\n\nMay 12, 2025\n\n# 1) Agentic AI: PayPal vs Mastercard vs Visa\n\nThe PayPal, Mastercard and Visa announcements are not about agentic AI. They are about ownership of the next chapter of commerce and payments. Here is how they compare.\n\n𝗪𝗵𝗮𝘁 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗮𝗻𝗻𝗼𝘂𝗻𝗰𝗲𝗱:\n\n- PayPal : A"
+              },
+              {
+                "title": "Enabling AI agents to buy securely and seamlessly - Visa",
+                "url": "https://www.visa.com/en-us/solutions/intelligent-commerce",
+                "content": "Article\n\nArticle\n\n### Solving for trust in the agentic era\n\nThe shift to AI-led buying is accelerating. Our latest research outlines the trust, standards and safeguards that can turn early adoption into consistent growth and engagement.\n\nAnnouncement\n\nAnnouncement\n\n### Jack Forestell—AI agents are poised to transform the shopping ecosystem\n\nEarlier this year Visa introduced Visa Intelligent Commerce, an initiative to empower agents to shop and buy.\n\nVisa Spotlight\n\nVisa Spotlight\n\n### Advancing agentic commerce for a new era in shopping\n\nSee how AI agents are transforming product discovery and"
+              },
+              {
+                "title": "Visa and Mastercard both launch new agentic AI payments tools",
+                "url": "https://www.digitalcommerce360.com/2025/10/16/visa-mastercard-both-launch-agentic-ai-payments-tools",
+                "content": "The protocol is already live on Visa’s Developer Center and GitHub. Partners backing the protocol include Microsoft, Nuvei, Shopify, Stripe and Worldpay.\n\nAccording to Visa, the protocol helps authorized agents pass payment credentials and other data to merchants. This reduces friction at checkout while helping prevent legitimate agents from being mistaken for bots.\n\nBroken down further, Visa said the framework centers on three capabilities. Those include signaling agent intent, recognizing the consumer behind the agent and transmitting payment credentials.\n\nThe goal, it says, is to give merch"
+              },
+              {
+                "title": "Mastercard and PayPal join forces",
+                "url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+                "content": "#### How it will work:\n\n   Mastercard will enable cardholders to access their credentials securely via PayPal checkout wherever PayPal is accepted on an agent platform or agentic chat experience.\n   For example, Tom wants to buy new running shoes and asks an AI agent to search for merchants and suggest tailored options.\n   Tom selects his preferred pair—on sale, in his size, and available for 2-day shipping—from a PayPal merchant and asks his agent to check out.\n   The AI agent knows that Tom uses PayPal and recognizes that the merchant accepts PayPal. It asks if Tom wants to checkout with Pay"
+              },
+              {
+                "title": "Find and Buy with AI: Visa Unveils New Era of Commerce",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21361.html",
+                "content": "Creating a Trusted Future for AI Commerce\n\nMillions of people will soon rely on AI to find the perfect sweater, research a new vacation spot or fulfill their grocery list. Visa will remove friction from the payment itself, making it possible to transact in an AI-driven world in a way that is secure and trusted.\n\nVisa Intelligent Commerce builds off more than 30 years of expertise working with AI and machine learning to manage risk and fraud to enable safe and secure payment experiences. Together with AI industry leaders including Anthropic, IBM, Microsoft, Mistral AI, OpenAI, Perplexity, Samsu"
+              },
+              {
+                "title": "Visa plugs its payment network into ChatGPT, letting AI agents shop and pay for users - ABC News",
+                "url": "https://abcnews.com/US/wireStory/visa-plugs-payment-network-chatgpt-letting-ai-agents-133757718",
+                "content": "Retailers have introduced shopping assistants powered by AI that can recommend products and personalize the customer's shopping experience, with the earliest iterations of those experiments being Amazon’s Alexa. But Alexa could only shop on Amazon, and OpenAI's Instant Checkout feature was limited to select merchants.\n\nVisa’s biggest competitor, Mastercard, has also been introducing its own AI-shopping features to its payment network on a smaller scale.\n\nMastercard announced that AI agents will have the capability to procure services on behalf of a business. For example, a coffee shop wants to"
+              }
+            ],
+            "covered_urls": [
+              "https://www.forbes.com/sites/ninabambysheva/2026/03/18/paradigm-and-stripe-roll-out-new-payment-standard-for-ai-agents-with-visas-support/",
+              "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+              "https://www.prnewswire.com/news-releases/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol-302732803.html",
+              "https://www.youtube.com/watch?v=dbwVBvHqoCw",
+              "https://www.agentpmt.com/articles/pricing-mcp-tools-unit-economics-when-your-customer-is-a-machine",
+              "https://www.mastercard.com/news/europe/en/newsroom/press-releases/en/2026/santander-and-mastercard-complete-europe-s-first-live-end-to-end-payment-executed-by-an-ai-agent/",
+              "https://arxiv.org/abs/2604.03733",
+              "https://dataconomy.com/2026/04/09/visa-unveils-platform-for-agent-driven-shopping-and-checkout/",
+              "https://ffnews.com/newsarticle/visa-opens-the-door-to-ai-driven-shopping-for-businesses-worldwide/",
+              "https://business-review.eu/money/banking/visa-launches-agentic-ready-program-to-accelerate-ai-powered-commerce-in-europe-294635",
+              "https://finance.yahoo.com/sectors/technology/articles/visa-opens-door-ai-driven-160000943.html",
+              "https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-to-Acquire-BVNK-to-Connect-On-Chain-Payments-and-Fiat-Rails/default.aspx",
+              "https://www.reddit.com/r/AI_Agents/comments/1okyalp/really_now_ai_agents_can_literally_pay_each_other/",
+              "https://financialregulation.linklaters.com/post/102meir/payments-in-2026-5-agentic-ai",
+              "https://www.fintechweekly.com/magazine/articles/ai-agents-262-billion-sales-banks-agentic-commerce-lending-2026",
+              "https://www.signifyd.com/blog/agentic-commerce-fraud/",
+              "https://hal.science/hal-05525481v1/file/_Sok_Agent_Skills.pdf",
+              "https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now/",
+              "https://www.emarketer.com/content/santander--mastercard-complete-first-ai-executed-commerce-payment",
+              "https://www.pymnts.com/news/artificial-intelligence/2025/2025-the-year-ai-agents-entered-payments-and-changed-whos-in-control/",
+              "https://www.ekamoira.com/blog/how-ai-agents-are-changing-e-commerce-in-2026-open-protocols-explained-complete-guide",
+              "https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-intelligent-commerce-connect-ai-shopping-for-businesses.html",
+              "https://medium.com/@rajaravivarman/blockchain-is-inevitable-for-agentic-ai-payments-a798186888b3",
+              "https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol",
+              "https://stripe.com/sessions/2025/evolving-ecommerce",
+              "https://fintechmagazine.com/news/santander-and-mastercard-complete-first-ai-payment",
+              "https://arxiv.org/pdf/2604.11430",
+              "https://www.cloudflare.com/press/press-releases/2025/cloudflare-and-coinbase-will-launch-x402-foundation/",
+              "https://gr4vy.com/posts/agentic-payments-in-2026-what-merchants-need-to-understand-and-prepare-for/",
+              "https://www.mytotalretail.com/article/as-agentic-ai-usage-skyrockets-retailers-face-new-challenges-and-risks/",
+              "https://www.reddit.com/r/AgentsOfAI/comments/1lq6bmx/whats_the_state_of_agent_payments_agent_to_agent/",
+              "https://www.linkedin.com/posts/inrupt_visa-launches-agentic-ready-programme-to-activity-7440424325356351488-DT5X",
+              "https://www.paz.ai/blog/agentic-commerce-protocols-2026-zero-interop-guide",
+              "https://ap2-protocol.org/",
+              "https://www.emarketer.com/content/how-industry-leaders-say-ai-will-change-way-consumers-shop-2026",
+              "https://www.fintechweekly.com/magazine/articles/payments-infrastructure-agentic-commerce-ai-agents-security-2026",
+              "https://blog.cloudflare.com/x402/",
+              "https://www.ekamoira.com/blog/ucp-vs-mcp-vs-a2a-which-ai-commerce-protocol-should-you-adopt-in-2026-complete-comparison-decision-matrix",
+              "https://www.pymnts.com/visa/2026/visa-scales-agentic-commerce-through-stripe-protocol-collaboration/",
+              "https://www.salesmate.io/blog/top-ai-agents-for-fintech/",
+              "https://wearepresta.com/ucp-vs-acp-the-complete-guide-to-agentic-commerce-protocols-in-2026/",
+              "https://www.pal.tech/technology/the-rise-of-agentic-e-commerce-how-autonomous-ai-agents-will-redefine-retail-payments-and-consumer-experience/",
+              "https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol",
+              "https://www.coindesk.com/tech/2026/03/18/stripe-led-payments-blockchain-tempo-goes-live-with-protocol-for-ai-agents",
+              "https://scholar.google.com/citations?user=z8hjVocAAAAJ&hl=en",
+              "https://chain.link/article/ai-agent-payments",
+              "https://blockeden.xyz/blog/2026/03/05/x402-foundation-ai-payment-internet/",
+              "https://www.fime.com/blog/blog-15/post/agentic-commerce-when-your-wallet-gets-a-brain-663",
+              "https://www.fintechwrapup.com/p/deep-dive-the-hidden-liability-of",
+              "https://www.fime.com/blog/blog-15/post/closing-the-trust-gap-in-agentic-commerce-673",
+              "https://www.fime.com/blog/blog-15/post/from-emotion-to-algorithms-why-agentic-commerce-needs-a-new-trust-layer-677",
+              "https://www.intelligentretail.tech/2026/04/09/visa-opens-the-door-to-ai-driven-shopping-for-businesses-worldwide/",
+              "https://www.pymnts.com/digital-payments/2026/coinbase-partners-linux-foundation-to-build-internet-native-payment-layer/",
+              "https://www.galaxy.com/insights/research/x402-ai-agents-crypto-payments",
+              "https://www.reddit.com/r/SideProject/comments/1sb70uo/built_a_laravel_payment_agent_in_2_weeks_heres",
+              "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants",
+              "https://www.forrester.com/blogs/mastercard-makes-its-stablecoin-move-the-bvnk-acquisition/",
+              "https://www.digitalcommerce360.com/2026/03/17/how-visa-views-agentic-commerce-opportunity/",
+              "https://www.nice.com/agentic-ai/future-of-agentic-ai-in-cx",
+              "https://www.reddit.com/r/ycombinator/comments/1lq3l86/whats_the_state_of_agent_payments_agent_to_agent/",
+              "https://arxiv.org/pdf/2601.04583",
+              "https://arxiv.org/pdf/2604.15367",
+              "https://www.reddit.com/r/fintech/comments/1sa6wc0/how_the_agentic_payment_stack_actually_works",
+              "https://www.cnbc.com/2026/03/17/mastercard-acquiring-stablecoin-startup-bvnk-in-crypto-bet.html",
+              "https://amlegals.com/2026-ai-agents-payments-the-shift-from-click-based-to-autonomous-commerce/",
+              "https://stripe.com/blog/supporting-additional-payment-methods-for-agentic-commerce",
+              "https://digital.nemko.com/news/google-unveils-agent-payments-protocol",
+              "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22276.html",
+              "https://www.connectingthedotsinpayments.com/visa-joins-push-toward-ai-agent-payments/",
+              "https://www.ftc.gov/legal-library/browse/warning-letters/mastercard-inc",
+              "https://www.complianceweek.com/regulatory-enforcement/ftc-warns-visa-and-other-processors-that-company-policies-may-lead-to-debanking/",
+              "https://www.pymnts.com/blockchain/2026/mastercards-bvnk-deal-highlights-the-4-barriers-to-stablecoin-adoption/",
+              "https://www.linkedin.com/posts/pkriaris_the-news-just-dropped-and-it-was-only-a-activity-7323587081706881024-HaOu",
+              "https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation",
+              "https://rebelfi.io/blog/why-ai-agents-need-crypto-wallets-and-what-that-means-for-payments-in-2026",
+              "https://www.devopsdigest.com/linux-foundation-welcomes-x402-protocol-and-launches-x402-foundation",
+              "https://www.reddit.com/r/AI_Agents/comments/1mk54u7/which_agentic_payments_solution_are_you_using/",
+              "https://www.linkedin.com/posts/thoughtfocus_agentic-commerce-the-next-wave-in-payments-activity-7370900533420687360-6j9h",
+              "https://www.humansecurity.com/learn/blog/how-to-prepare-for-agentic-commerce/",
+              "https://www.santander.com/en/press-room/press-releases/2026/03/santander-and-mastercard-complete-europes-first-live-end-to-end-payment-executed-by-an-ai-agent",
+              "https://www.digitalapplied.com/blog/stripe-machine-payments-protocol-ai-agents-autonomous-pay",
+              "https://arxiv.org/html/2602.06345v1",
+              "https://www.paymentsjournal.com/beyond-the-click-how-agentic-payments-are-redefining-global-financial-flow/",
+              "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html",
+              "https://www.linkedin.com/posts/humberto-federico-guihur-a8332ab8_fintech-agenticcommerce-payments2026-activity-7429262630919319554-AD_8",
+              "https://www.reddit.com/r/ycombinator/comments/1l5mno4/payments_for_ai_agents/",
+              "https://arxiv.org/pdf/2511.15712",
+              "https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails/",
+              "https://www.reddit.com/r/fintech/comments/1sfup4i/the_missing_layer_in_agentic_payments_is_not_the/",
+              "https://thepaypers.com/fraud-and-fincrime/news/ftc-puts-visa-mastercard-paypal-and-stripe-on-notice-over-account-restrictions",
+              "https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-chairman-andrew-n-ferguson-issues-warning-letters-ceos-paypal-stripe-visa-mastercard-about-debanking-american-consumers",
+              "https://www.digit.fyi/visa-agentic-ai/",
+              "https://www.paymentsinnovationforum.org/articles/visa-launches-agentic-ready-programme-to-advance-agentic-commerce-in-europ",
+              "https://cloudsecurityalliance.org/blog/2025/10/06/secure-use-of-the-agent-payments-protocol-ap2-a-framework-for-trustworthy-ai-driven-transactions",
+              "https://www.chargebackgurus.com/blog/agentic-commerce-chargebacks",
+              "https://wearepresta.com/ai-shopping-agents-ucp-the-2026-strategic-guide-to-agentic-commerce/",
+              "https://www.reddit.com/r/AI_Agents/comments/1kgruv2/what_even_is_an_ai_agent/",
+              "https://www.fenwick.com/insights/publications/is-2026-the-year-of-agentic-payments",
+              "https://www.emarketer.com/content/agentic-commerce-payments-2026",
+              "https://arxiv.org/html/2604.15367v1",
+              "https://www.fintechstrategy.com/blog/2026/03/09/visa-tops-ai-rankings-in-payments-outpacing-mastercard-and-paypal/",
+              "https://www.reddit.com/r/AI_Agents/comments/1r86g99/is_anyone_actually_using_agentic_payment/",
+              "https://www.fintechfutures.com/ai-in-fintech/agentic-commerce-in-2026-where-we-stand-and-what-lies-ahead",
+              "https://arxiv.org/abs/2604.11430",
+              "https://us.fashionnetwork.com/news/Santander-and-mastercard-announce-europe-s-first-payment-processed-entirely-by-ai,1812906.html",
+              "https://www.mastercard.com/global/en/news-and-trends/stories/2025/2026-payment-trends.html",
+              "https://arxiv.org/abs/2604.15367",
+              "https://www.reddit.com/r/AI_Agents/comments/1hlq5r4/no_one_agrees_on_a_single_ai_agents_definition/",
+              "https://www.morningstar.com/news/dow-jones/202603276501/stripe-denies-restricting-access-based-on-politics-after-ftc-warning-letter",
+              "https://arxiv.org/html/2511.17332v2",
+              "https://arxiv.org/html/2604.03733v1",
+              "https://www.privacy.com/blog/payment-solutions-ai-agents-2026-compared",
+              "https://www.digitalapplied.com/blog/x402-payment-protocol-ai-agents-pay-coinbase-cloudflare",
+              "https://natlawreview.com/article/agentic-ai-commerce-next-wave-online-shopping-and-retailer-risk",
+              "https://www.fime.com/blog/news-21/post/fime-launches-fact-the-first-trust-layer-for-agentic-commerce-684",
+              "https://www.reddit.com/r/AI_Agents/comments/1n5smt2/the_5_levels_of_agentic_ai_explained_like_a/",
+              "https://ffnews.com/newsarticle/santander-and-mastercard-complete-europes-first-live-end-to-end-payment-executed-by-an-ai-agent/",
+              "https://ibsintelligence.com/ibsi-news/visa-launches-agentic-payments-programme-in-europe/",
+              "https://www.datos-insights.com/blog/mastercard-bvnk-acquisition-stablecoin-payments/",
+              "https://vendoservices.com/blog/how-ai-agents-change-payment-strategy-for-high-risk-merchants/",
+              "https://www.ixopay.com/news/ixopay-and-zip-us-introduce-unified-trust-layer-framework-to-help-merchants-reduce-risk-in-agentic-commerce",
+              "https://www.jpmorgan.com/insights/payments/trends-innovation/payments-outlook-trends-2026",
+              "https://www.techflowpost.com/en-US/newsletter/119298",
+              "https://www.pymnts.com/bank-regulation/2026/ftc-warns-payment-companies-against-debanking/",
+              "https://fortune.com/2026/03/18/stripe-tempo-paradigm-mpp-ai-payments-protocol/",
+              "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22341.html",
+              "https://www.moonpay.com/learn/cryptocurrency/why-agentic-payments-are-the-future-of-ai-crypto",
+              "https://www.axios.com/2026/04/08/visa-ai-agent-payments-platform",
+              "https://via.ritzau.dk/pressemeddelelse/14849694/ixopay-and-zip-us-introduce-unified-trust-layer-framework-to-help-merchants-reduce-risk-in-agentic-commerce?publisherId=13560585&lang=en",
+              "https://thepaypers.com/payments/news/visa-launches-agentic-ready-programme-across-europe",
+              "https://arxiv.org/pdf/2602.06008",
+              "https://www.fintechfutures.com/ai-in-fintech/visa-agentic-ready-launches-in-europe",
+              "https://www.linuxfoundation.org/x402foundation",
+              "https://cryptorank.io/news/feed/552d2-tempo-mainnet-launch-march-stripe",
+              "https://coinspaidmedia.com/news/linux-foundation-oversee-development-x402-payment-protocol/",
+              "https://consensus.coindesk.com/blog-agentic-commerce/",
+              "https://www.emarketer.com/content/payments-trends-watch-2026",
+              "https://nick0.business.blog/2026/04/16/how-ai-agents-are-transforming-finance-operations-in-2026/",
+              "https://www.ftc.gov/system/files/ftc_gov/pdf/mastercard-debanking-letter.pdf",
+              "https://arxiv.org/pdf/2601.22569",
+              "https://www.reddit.com/r/rust/comments/1nud7nq/agentic_payments_for_rust_dualprotocol_payment/",
+              "https://www.digitalcommerce360.com/2025/10/16/visa-mastercard-both-launch-agentic-ai-payments-tools/",
+              "https://bitcoinfoundation.org/news/ai-news/visa-ai-agents-payments/",
+              "https://www.reddit.com/r/llc/comments/1bl2ngr/missed_registered_agent_payment_for_a_year",
+              "https://www.binance.com/en/square/post/33759340642753",
+              "https://medium.com/@gwrx2005/ai-agents-and-autonomous-payments-a-comparative-study-of-x402-and-ap2-protocols-e71b572d9838",
+              "https://docs.parallel.ai/integrations/tempo-mpp",
+              "https://www.pymnts.com/news/artificial-intelligence/2026/mastercard-santander-mark-agentic-payment-milestone/",
+              "https://www.binance.com/en/square/post/308567167379617",
+              "https://mlq.ai/news/visa-launches-intelligent-commerce-connect-to-help-businesses-plug-into-ai-powered-shopping/",
+              "https://www.jdsupra.com/legalnews/is-2026-the-year-of-agentic-payments-3410861/",
+              "https://arxiv.org/abs/2602.06008",
+              "https://www.emarketer.com/content/future-of-agentic-commerce-hinges-on-customer-experience",
+              "https://natesnewsletter.substack.com/p/agentic-commerce-buyers-power",
+              "https://www.linkedin.com/posts/visa_ai-agents-can-already-make-decisions-and-activity-7440039438853779456-qtZu",
+              "https://www.ftc.gov/system/files/ftc_gov/pdf/stripe-debanking-letter.pdf",
+              "https://byteiota.com/visa-launches-ai-agent-payment-platform-what-developers-need-to-know/",
+              "https://www.mastercard.com/global/en/business/payments/merchant-cloud/insights/payment-trends-in-2026.html",
+              "https://www.ravelin.com/blog/2026-in-payments-analysis-and-advice",
+              "https://www.linkedin.com/posts/oliverbussmann_santander-and-mastercard-complete-europe-activity-7438642195684896768-0SJ9",
+              "https://www.reddit.com/r/AI_Agents/comments/1q2e8ht/im_very_confused_are_people_actually_making_money/",
+              "https://simplywall.st/stocks/us/diversified-financials/nyse-v/visa/news/should-visas-v-intelligent-commerce-connect-push-into-ai-age",
+              "https://arxiv.org/html/2604.11430v1",
+              "https://www.emarketer.com/content/faq-on-path-purchase-what-marketers-need-know-ai-social-commerce-redefine-buying",
+              "https://co-r-e.com/method/ap2-prompt-injection-attacks",
+              "https://www.digitaltransactions.net/many-consumers-say-no-thanks-to-agent-based-payments/",
+              "https://arxiv.org/html/2603.13942v1",
+              "https://www.reddit.com/r/AI_Agents/comments/1r3p8zk/curated_list_of_ai_agent_papers_2026_filtering/",
+              "https://investor.visa.com/news/news-details/2026/Visa-Opens-the-Door-to-AI-Driven-Shopping-for-Businesses-Worldwide/default.aspx",
+              "https://www.linkedin.com/posts/mastercard_payments-crypto-ai-activity-7415046069136302080-GXtp",
+              "https://www.kai-waehner.de/blog/2026/04/06/enterprise-agentic-ai-landscape-2026-trust-flexibility-and-vendor-lock-in/",
+              "https://arxiv.org/html/2601.22569v1",
+              "https://www.rootdata.com/news/579188",
+              "https://www.juniperresearch.com/press/agentic-commerce-set-to-generate-15-trillion-globally-by-2030-as-payments-infrastructure-leaders-revealed/",
+              "https://www.mytotalretail.com/article/how-hybrid-ai-will-transform-payments-in-2026/",
+              "https://www.linuxfoundation.org/blog/linux-foundation-newsletter-april-2026",
+              "https://consumerbankers.com/wp-content/uploads/2026/01/CBA-Agentic-Symposium-White-Paper-2026-01v2.pdf",
+              "https://www.humansecurity.com/wp-content/uploads/2025/10/Guide-to-Adopting-Agentic-Commerce.pdf",
+              "https://arxiv.org/abs/2502.05439",
+              "https://www.uschamber.com/co/good-company/launch-pad/agentic-ai-impact-consumer-business-2026",
+              "https://bvnk.com/blog/why-bvnk-is-joining-mastercard",
+              "https://www.checkout.com/blog/chargebacks-in-agentic-commerce-how-merchants-can-stay-ahead",
+              "https://ffnews.com/newsarticle/visa-launches-agentic-ready-programme-to-advance-agentic-commerce-in-europe/",
+              "https://www.citizensbank.com/corporate-finance/insights/ai-trends-financial-management-2026.aspx",
+              "https://thedefiant.io/news/blockchains/tempo-launches-mainnet-unveils-machine-payments-protocol-with-stripe",
+              "https://www.forbes.com/sites/pamkaur/2026/03/17/mastercards-18-billion-bvnk-deal-brings-stablecoins-into-the-core/",
+              "https://www.greensheet.com/breakingnews&article_id=3421",
+              "https://www.forbes.com/sites/jonmarkman/2026/03/20/stripes-ai-payments-protocol-signals-machine-to-machine-commerce-era/",
+              "https://arxiv.org/abs/2508.19932",
+              "https://www.biometricupdate.com/202604/fime-launches-agentic-commerce-trust-layer-service",
+              "https://thelettertwo.com/2026/04/08/visa-wants-to-be-the-payment-rail-for-the-agentic-economy/",
+              "https://www.legionsecurity.ai/blog-posts/security-analysis-ai-protocols",
+              "https://www.metarouter.io/post/agentic-commerce-trends-statistics",
+              "https://opascope.com/insights/ai-shopping-assistant-guide-2026-agentic-commerce-protocols/"
+            ],
+            "today": "June 18, 2026"
+          },
+          "output_payload": null,
+          "timestamp": "2026-06-19T02:00:22.515752+00:00",
+          "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
       "status_summary": [
@@ -335,9 +745,14 @@
           "agent": "Rex",
           "label": "Research",
           "status": "COMPLETED"
+        },
+        {
+          "agent": "Kai",
+          "label": "Filter",
+          "status": "PROCESSING"
         }
       ],
-      "updated_at": "2026-06-19T02:00:20.690790+00:00",
+      "updated_at": "2026-06-19T02:00:22.515815+00:00",
       "created_at": "2026-06-19T02:00:20.627695+00:00",
       "metadata": {
         "source_title": "Authorizing Agentic Payments | Insights & Resources | Goodwin",
@@ -11908,5 +12323,5 @@
       "timestamp": "2026-06-19T02:00:20.627451+00:00"
     }
   ],
-  "last_updated": "2026-06-19T02:00:20.715149+00:00"
+  "last_updated": "2026-06-19T02:00:22.558703+00:00"
 }
