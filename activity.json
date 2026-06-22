@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "0440c61ead582b82",
-      "title": "Authorizing Agentic Payments | Insights & Resources | Goodwin",
+      "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004",
       "source_url": "https://www.goodwinlaw.com/en/insights/publications/2026/06/insights-technology-aiml-authorizing-agentic-payments",
       "discovered_at": "2026-06-19T02:00:20.627561+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -736,9 +736,66 @@
             "today": "June 21, 2026"
           },
           "output_payload": {
-            "error": "maximum recursion depth exceeded"
+            "filtered": [
+              {
+                "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004",
+                "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+                "content": "Core payment infrastructures are built on deterministic logic, requiring predictability, auditability, and legal enforceability at each step of the transaction lifecycle. Agentic AI systems, by contrast, rely on probabilistic reasoning and adaptive decision making, which can yield different outcomes under similar conditions. This paper analyzes how and where these fundamentally different properties can be reconciled, and a three-layer model is proposed to assess the appropriate scope for integrating agentic AI into payment workflows.",
+                "score": 9.0,
+                "why": "Primary IMF working paper proposing a concrete three-layer reconciliation model for deterministic payment rails vs. probabilistic agentic AI — the most rigorous institutional framework on this tension published to date."
+              },
+              {
+                "title": "Mastercard launches Agent Pay for Machines to unlock super-fast ...",
+                "url": "https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html",
+                "content": "Mastercard launches Agent Pay for Machines — official press release from Mastercard's own newsroom, June 2026.",
+                "score": 8.7,
+                "why": "Direct primary-source announcement of Mastercard's named agentic payment product ('Agent Pay for Machines'), a concrete infrastructure launch rather than a strategy signal."
+              },
+              {
+                "title": "Find and Buy with AI: Visa Unveils New Era of Commerce",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21361.html",
+                "content": "Visa Intelligent Commerce builds off more than 30 years of expertise working with AI and machine learning to manage risk and fraud to enable safe and secure payment experiences. Together with AI industry leaders including Anthropic, IBM, Microsoft, Mistral AI, OpenAI, Perplexity, Samsung...",
+                "score": 8.3,
+                "why": "Visa's official press release for Intelligent Commerce, naming specific AI platform partners and describing the credential-passing framework that enables agents to authenticate and transact — primary source on the actual mechanism."
+              },
+              {
+                "title": "How to secure agentic commerce transactions — WorkOS",
+                "url": "https://workos.com/blog/how-to-secure-agentic-commerce",
+                "content": "Google's Universal Commerce Protocol (UCP) launched in January 2026 with Shopify, Etsy, Wayfair, Target, Walmart, Visa, Mastercard, and 20+ other partners. OpenAI's Agentic Commerce Protocol (ACP) enables purchases inside ChatGPT with Stripe processing payments, with Shopify enabling over a million merchants at launch. Chrome auto browse is rolling out to Android in late June 2026, letting Gemini complete multi-step purchasing flows in the browser the user is already logged into.",
+                "score": 7.7,
+                "why": "Concisely maps the competing live protocol landscape (Google UCP, OpenAI ACP, Chrome auto-browse) with named partners and launch dates — useful ground-truth on what infrastructure is actually deployed as of mid-2026."
+              },
+              {
+                "title": "Is anyone actually using agentic payment protocols (x402) in production? : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1r86g99/is_anyone_actually_using_agentic_payment",
+                "content": "We are. We've had agentwallet-sdk on npm for a few weeks and ClawPay MCP live for a few days — both built on x402 + Base. x402 works exactly as advertised for the happy path — agent hits a paywalled endpoint, gets a 402 back with payment details, signs a transaction, retries with the payment header. The whole flow is maybe 300ms of overhead on Base.",
+                "score": 7.3,
+                "why": "Rare first-person production report on x402 latency and failure modes from a builder actively running it on Base — primary practitioner signal on where the protocol actually breaks."
+              },
+              {
+                "title": "4 Takeaways on AI in Payments from NY Tech Week 2026",
+                "url": "https://www.jpmorgan.com/payments/newsroom/agentic-ai-payments-takeaways-2026",
+                "content": "As part of New York Tech Week 2026, J.P. Morgan Payments and Tech:NYC hosted an exclusive media breakfast on June 2 featuring an on-the-record fireside chat between Zack Anderson, Chief Data & Analytics Officer at J.P. Morgan Payments, and Bloomberg Reporter Paige Smith.",
+                "score": 7.0,
+                "why": "On-record strategic positioning from J.P. Morgan Payments' chief data officer on agentic AI — institutional signal from a tier-1 bank's own newsroom on where they are placing bets."
+              },
+              {
+                "title": "Agentic AI Payments: Navigating Consumer Protection, Innovation, and Regulatory Frameworks",
+                "url": "https://consumerbankers.com/research/agentic-ai-payments-navigating-consumer-protection-innovation-and-regulatory-frameworks",
+                "content": "White paper from the Consumer Bankers Association on consumer protection, innovation, and regulatory frameworks for agentic AI payments.",
+                "score": 6.7,
+                "why": "Trade association white paper specifically addressing the regulatory and consumer protection gap in agentic payment flows — relevant because liability frameworks are the actual blocker to scaled deployment."
+              }
+            ],
+            "selected_candidate": {
+              "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004",
+              "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+              "content": "Core payment infrastructures are built on deterministic logic, requiring predictability, auditability, and legal enforceability at each step of the transaction lifecycle. Agentic AI systems, by contrast, rely on probabilistic reasoning and adaptive decision making, which can yield different outcomes under similar conditions. This paper analyzes how and where these fundamentally different properties can be reconciled, and a three-layer model is proposed to assess the appropriate scope for integrating agentic AI into payment workflows.",
+              "score": 9.0,
+              "why": "Primary IMF working paper proposing a concrete three-layer reconciliation model for deterministic payment rails vs. probabilistic agentic AI — the most rigorous institutional framework on this tension published to date."
+            }
           },
-          "timestamp": "2026-06-22T05:11:32.447513+00:00",
+          "timestamp": "2026-06-22T05:12:07.070287+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         },
         {
@@ -791,7 +848,7 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         },
         {
           "agent": "Sage",
@@ -814,15 +871,15 @@
           "status": "PENDING"
         }
       ],
-      "updated_at": "2026-06-22T05:11:32.447527+00:00",
+      "updated_at": "2026-06-22T05:12:07.080299+00:00",
       "created_at": "2026-06-19T02:00:20.627695+00:00",
       "metadata": {
         "source_title": "Authorizing Agentic Payments | Insights & Resources | Goodwin",
         "rex_raw_text": "mwhalen@goodwinlaw.com\n\n  Washington, DC+1 202 346 4315\n\n  Mike Whalen\n\n## Related Content\n\n Alert\n\n  12 June 2026\n\n  ### Expanding Corporate Criminal Liability in the UK: Key Impacts and Considerations for Organisations and Investors\n Alert\n\n  June 10, 2026\n\n  ### Colorado Enacts Law Repealing and Replacing Landmark Colorado AI Act\n Alert\n\n  June 1, 2026\n\n  ### ICC Arbitration Rules Effective June 1, 2026: Key Changes and Practical Takeaways for Parties and Counsel\n Insight\n\n  May 20, 2026\n\n  ### When Everyone Wants In: Shifting Venture Financing Terms in the AI Era\n Insight\n\n  May 18, 2026\n\n",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Authorizing Agentic Payments | Insights & Resources | Goodwin"
+        "candidate_url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+        "candidate_title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004"
       }
     },
     {
@@ -12443,7 +12500,21 @@
         "results": 8
       },
       "timestamp": "2026-06-20T02:07:14.809009+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.04585,
+      "metadata": {
+        "input_tokens": 8124,
+        "output_tokens": 1432,
+        "raw_count": 33
+      },
+      "timestamp": "2026-06-22T05:12:07.059758+00:00"
     }
   ],
-  "last_updated": "2026-06-22T05:11:32.460414+00:00"
+  "last_updated": "2026-06-22T05:12:07.089811+00:00"
 }
