@@ -11,7 +11,17 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agenticpayment.forum/articles/the-imf-just-named-the-real-blocker-for-agentic-payments-and-it-s-not-the-rails-it-s-the-l.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agenticpayment.forum/articles/ant-s-amp-vs-x402-the-open-protocol-war-for-the-agent-wallet-layer-has-begun.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -21,7 +31,62 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://agenticpayment.forum/articles/visa-s-real-agentic-payments-moat-is-issuer-liability-protection-not-network-rails.html</loc>
+    <loc>https://agenticpayment.forum/articles/fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/googles-universal-checkout-protocol-is-a-distribution-moat-dressed-as-a-payment-standard.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/visas-neutrality-moat-is-real-but-it-lives-in-scheme-rules-not-network-position.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/the-real-agentic-payments-battle-is-over-who-controls-the-decision-loop-not-the-rails.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/stripe-and-paradigm-built-a-rail-visa-cant-tax-then-invited-visa-to-endorse-it.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/authorization-is-not-the-bottleneck-for-agentic-payments-issuer-side-dispute-rights-are.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/china-already-won-the-first-round-of-agentic-payments-the-west-is-still-debating-the-rulebook.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/everyone-is-building-rails-for-agents-nobody-is-building-the-safety-net-for-merchants.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/the-protocol-wars-are-over-the-trust-layer-war-just-started.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/ten-protocols-zero-interop-the-trust-layer-land-grab-is-a-distraction-from-the-real-problem.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/europe-is-the-agentic-payments-lab-and-the-card-networks-are-running-competing-experiments.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/visa-is-betting-on-protocol-neutrality-mastercard-is-betting-on-stablecoin-plumbing-only-one-bet-survives.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
