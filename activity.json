@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "3b51161d3d66d50d",
-      "title": "New Ecommerce Tools: June 24, 2026 - Practical Ecommerce",
+      "title": "AAA® and Industry Leaders Launch Legal Protocol for Agentic Commerce",
       "source_url": "https://www.practicalecommerce.com/new-ecommerce-tools-june-24-2026",
       "discovered_at": "2026-06-25T02:00:20.077359+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,60 @@
             ],
             "today": "June 24, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-06-25T02:00:22.713775+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "AAA® and Industry Leaders Launch Legal Protocol for Agentic Commerce",
+                "url": "https://www.adr.org/press-releases/aaa-and-industry-leaders-launch-legal-protocol-for-agentic-commerce",
+                "content": "NEW YORK (June 24, 2026) — The American Arbitration Association (AAA), together with Integra Ledger, and a coalition of industry leaders, today launched the Legal Context Protocol (LCP), a new open standard that makes legal terms, consent, and dispute resolution discoverable and verifiable when AI agents transact on behalf of people and organizations. Joining the AAA and Integra Ledger as founding contributors are Google, IBM, Circle, Wayfair, Stellar Development Foundation, Ava Labs Inc., UiPath, Cardano, Hedera, Crossmint, Pinata, Aptos Foundation, Baselayer, Trinsic, First Person Cooperati",
+                "score": 9.0,
+                "why": "Today's primary-source announcement of LCP — an open standard for machine-readable legal consent and dispute resolution in agent transactions — directly fills the governance gap that makes autonomous payments legally unenforceable; founding coalition includes Google, Circle, and major blockchain networks."
+              },
+              {
+                "title": "FIDO Alliance to Develop Standards for Trusted AI Agent Interactions",
+                "url": "https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions",
+                "content": "April 28, 2026 – The FIDO Alliance today announced initiatives to develop interoperable standards for agentic interactions and commerce. These initiatives include the formation of an Agentic Authentication Technical Working Group and efforts to develop specifications for agent-initiated commerce, drawing from initial contributions from Google (AP2) and Mastercard (Verifiable Intent). Together, these efforts aim to define trusted mechanisms for how AI agents authenticate, act, and transact on behalf of users.",
+                "score": 8.3,
+                "why": "Primary-source announcement that FIDO Alliance is standardizing agent authentication with direct protocol contributions from Google (AP2) and Mastercard (Verifiable Intent) — the identity/auth layer is the unsolved prerequisite for any real agentic payment stack."
+              },
+              {
+                "title": "New Ecommerce Tools: June 24, 2026 — Adyen Agentic",
+                "url": "https://www.practicalecommerce.com/new-ecommerce-tools-june-24-2026",
+                "content": "Adyen announces universal agentic translator for commerce. Adyen, a financial technology platform, has announced Adyen Agentic, a suite of modular APIs to sell through conversational AI platforms. Adyen Agentic introduces three layers — Agentic Feed, Agentic Cart, and Agentic Payments — for various stages of the customer journey, from product discovery to payment. Adyen Agentic is a universal translator across agent platforms, protocols, and payment methods, so merchants can access new commerce channels without rebuilding their commerce systems.",
+                "score": 7.7,
+                "why": "Today's launch of Adyen Agentic is a concrete, named product with three defined API layers enabling agents to execute payments across multiple protocols — signal that a major PSP is shipping infrastructure, not just blogging about it."
+              },
+              {
+                "title": "Compliance-Aware Agentic Payments on Stablecoin Rails",
+                "url": "https://arxiv.org/html/2605.00071v1",
+                "content": "arXiv paper on compliance-aware agentic payments on stablecoin rails.",
+                "score": 7.7,
+                "why": "arXiv primary source specifically addressing how to layer compliance controls onto stablecoin-settled autonomous payments — directly relevant architecture research for builders, not punditry."
+              },
+              {
+                "title": "Agentic Payments: The Next Evolution in the Payments Value Chain",
+                "url": "https://aws.amazon.com/blogs/industries/agentic-payments-the-next-evolution-in-the-payments-value-chain",
+                "content": "Multi-agent collaboration architecture on Amazon Bedrock with payment conditions controller agent, legal controller agent, and collaborator agents handling regulatory/compliance validation and liquidity impact analysis for autonomous payment execution.",
+                "score": 7.3,
+                "why": "AWS industry blog showing a working multi-agent payment architecture built on Bedrock — concrete implementation pattern with named agents handling compliance and PSP selection, not conceptual hand-waving."
+              },
+              {
+                "title": "Agent Card Payments Compared: Visa, Mastercard, Stripe, Ramp and Slash",
+                "url": "https://www.crossmint.com/learn/agent-card-payments-compared",
+                "content": "Mastercard has moved fast on distribution. Citi and US Bank cardholders were enabled for Agent Pay transactions in 2025, with all US Mastercard cardholders equipped by November 2025 and global rollout following. In early 2026, Santander and Mastercard completed what they called Europe's first live end-to-end payment executed by an AI agent. Mastercard also partnered with PayPal and OpenAI, making Agentic Tokens usable within ChatGPT's commerce features and PayPal's wallet. Fiserv integrated Agent Pay into its merchant platform, broadening acceptance.",
+                "score": 7.0,
+                "why": "Crossmint (a credible agentic payments infrastructure company) produces a structured comparison of live agent card implementations including the Santander/Mastercard Europe first — useful signal on who has actually deployed vs. announced."
+              }
+            ],
+            "selected_candidate": {
+              "title": "AAA® and Industry Leaders Launch Legal Protocol for Agentic Commerce",
+              "url": "https://www.adr.org/press-releases/aaa-and-industry-leaders-launch-legal-protocol-for-agentic-commerce",
+              "content": "NEW YORK (June 24, 2026) — The American Arbitration Association (AAA), together with Integra Ledger, and a coalition of industry leaders, today launched the Legal Context Protocol (LCP), a new open standard that makes legal terms, consent, and dispute resolution discoverable and verifiable when AI agents transact on behalf of people and organizations. Joining the AAA and Integra Ledger as founding contributors are Google, IBM, Circle, Wayfair, Stellar Development Foundation, Ava Labs Inc., UiPath, Cardano, Hedera, Crossmint, Pinata, Aptos Foundation, Baselayer, Trinsic, First Person Cooperati",
+              "score": 9.0,
+              "why": "Today's primary-source announcement of LCP — an open standard for machine-readable legal consent and dispute resolution in agent transactions — directly fills the governance gap that makes autonomous payments legally unenforceable; founding coalition includes Google, Circle, and major blockchain networks."
+            }
+          },
+          "timestamp": "2026-06-25T02:00:52.606066+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +807,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-06-25T02:00:22.713815+00:00",
+      "updated_at": "2026-06-25T02:00:52.628288+00:00",
       "created_at": "2026-06-25T02:00:20.077463+00:00",
       "metadata": {
         "source_title": "New Ecommerce Tools: June 24, 2026 - Practical Ecommerce",
         "rex_raw_text": "Adyen announces universal agentic translator for commerce. Adyen, a financial technology platform, has announced Adyen Agentic, a suite of modular APIs to sell through conversational AI platforms. Adyen Agentic introduces three layers — Agentic Feed, Agentic Cart, and Agentic Payments — for various stages of the customer journey, from product discovery to payment. Adyen Agentic is a universal translator across agent platforms, protocols, and payment methods, so merchants can access new commerce channels without rebuilding their commerce systems.\n\nWeb page of Adyen Agentic\n\nAdyen Agentic [...] ",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "New Ecommerce Tools: June 24, 2026 - Practical Ecommerce"
+        "candidate_url": "https://www.adr.org/press-releases/aaa-and-industry-leaders-launch-legal-protocol-for-agentic-commerce",
+        "candidate_title": "AAA® and Industry Leaders Launch Legal Protocol for Agentic Commerce"
       }
     },
     {
@@ -13811,7 +13863,21 @@
         "results": 8
       },
       "timestamp": "2026-06-25T02:00:20.077280+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.03871,
+      "metadata": {
+        "input_tokens": 5952,
+        "output_tokens": 1390,
+        "raw_count": 24
+      },
+      "timestamp": "2026-06-25T02:00:52.582632+00:00"
     }
   ],
-  "last_updated": "2026-06-25T02:00:22.745276+00:00"
+  "last_updated": "2026-06-25T02:00:52.651404+00:00"
 }
