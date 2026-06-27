@@ -11,6 +11,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agenticpayment.forum/articles/the-agentic-payments-race-is-not-about-rails-it-s-about-who-owns-compliance-architecture.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agenticpayment.forum/articles/lcp-is-the-eidas-moment-for-machine-consent-not-the-ssl-moment-that-distinction-will-cost-.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
