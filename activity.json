@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "0a31b4d0c7ee4dfa",
-      "title": "5 Payments Trends Reshaping the US Market in 2026",
+      "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
       "source_url": "https://www.qubevents.com/post/payments-trends-reshaping-us-market-2026",
       "discovered_at": "2026-06-27T02:00:18.054398+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,60 @@
             ],
             "today": "June 26, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-06-27T02:00:20.460010+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
+                "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+                "content": "More specific gaps relate to the authentication or KYC requirements for agents. Autonomous AI agents capable of initiating transactions challenge existing identity and authentication frameworks in payments. Traditional authorization mechanisms, including KYC processes and multifactor authentication, are designed around human users who explicitly approve transactions. When payments are initiated autonomously by software agents acting under delegated authority, verifying both the identity of the agent and the intent of the underlying user becomes significantly more complex. This shift raises new",
+                "score": 8.7,
+                "why": "IMF primary publication proposing a three-layer architectural model for reconciling deterministic payment infrastructure with probabilistic agentic AI — the first multilateral policy framing of this specific technical conflict, directly actionable for protocol designers and regulators."
+              },
+              {
+                "title": "[2605.00071] Compliance-Aware Agentic Payments on Stablecoin Rails",
+                "url": "https://arxiv.org/abs/2605.00071",
+                "content": "Cornell University arXiv. Title: Compliance-Aware Agentic Payments on Stablecoin Rails. Demo Paper Track. Subjects: Cryptography and Security (cs.CR); Artificial Intelligence (cs.AI); Computational Engineering, Finance, and Science (cs.CE); Multiagent Systems (cs.MA).",
+                "score": 8.3,
+                "why": "ArXiv primary source tackling compliance enforcement specifically on stablecoin rails for agentic payments — a live unsolved problem at the intersection of autonomous execution and AML/sanctions obligations."
+              },
+              {
+                "title": "[2605.06457] Beyond Task Success: Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems",
+                "url": "https://arxiv.org/abs/2605.06457",
+                "content": "Title: Beyond Task Success: Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems. Comments: 6 pages, 2 tables. Accepted at AI and Data Science for Digital Finance (AIDS4DF) Workshop, PAKDD 2026. Subjects: Artificial Intelligence (cs.AI).",
+                "score": 8.0,
+                "why": "Peer-reviewed research introducing workflow fidelity as a distinct evaluation metric for agentic payment systems — addresses the critical gap between an agent completing a task and actually following compliant payment procedures."
+              },
+              {
+                "title": "SoK: Blockchain Agent-to-Agent Payments",
+                "url": "https://arxiv.org/html/2604.03733v1",
+                "content": "Systematization of Knowledge (SoK) paper that systematically examines and evaluates trust, privacy, and security risks of existing mechanisms for blockchain agent-to-agent payments. Supported by National Research Foundation, Singapore.",
+                "score": 7.7,
+                "why": "First SoK-class systematization of agent-to-agent payment security on blockchain — establishes a reference taxonomy for trust and privacy risks that the field has lacked."
+              },
+              {
+                "title": "What Is Agentic Commerce? The 2026 Guide | Support (eco.com)",
+                "url": "https://eco.com/support/en/articles/14839400-what-is-agentic-commerce-the-2026-guide",
+                "content": "Coinbase launched Agent.market in April 2026 as an app store for autonomous agents that pay each other in stablecoins via x402. By late April 2026, x402 had 69,000 active agents, 165 million transactions, and roughly $50 million in cumulative volume, an average value per call of about 30 cents, calibrated for sub-cent micropayments rather than retail purchases. Three of the five run on traditional card rails; two run on stablecoins.",
+                "score": 7.3,
+                "why": "Contains the only concrete transaction-level metrics for x402/Agent.market deployment (69K agents, 165M txns, $50M volume, $0.30 avg) — real numbers against which protocol claims can be benchmarked, even if the source is a support article rather than a primary announcement."
+              },
+              {
+                "title": "Enabling AI agents to buy securely and seamlessly - Visa Intelligent Commerce",
+                "url": "https://www.visa.com/en-us/solutions/intelligent-commerce",
+                "content": "The shift to AI-led buying is accelerating. Our latest research outlines the trust, standards and safeguards that can turn early adoption into consistent growth and engagement. Jack Forestell—AI agents are poised to transform the shopping ecosystem. Earlier this year Visa introduced Visa Intelligent Commerce, an initiative to empower agents to shop and buy.",
+                "score": 6.7,
+                "why": "Visa's own product page for Intelligent Commerce is the primary source for their agentic token and agent-credentialing initiative — relevant because Visa's rail decisions set de facto standards for card-based agentic payments globally."
+              }
+            ],
+            "selected_candidate": {
+              "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
+              "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+              "content": "More specific gaps relate to the authentication or KYC requirements for agents. Autonomous AI agents capable of initiating transactions challenge existing identity and authentication frameworks in payments. Traditional authorization mechanisms, including KYC processes and multifactor authentication, are designed around human users who explicitly approve transactions. When payments are initiated autonomously by software agents acting under delegated authority, verifying both the identity of the agent and the intent of the underlying user becomes significantly more complex. This shift raises new",
+              "score": 8.7,
+              "why": "IMF primary publication proposing a three-layer architectural model for reconciling deterministic payment infrastructure with probabilistic agentic AI — the first multilateral policy framing of this specific technical conflict, directly actionable for protocol designers and regulators."
+            }
+          },
+          "timestamp": "2026-06-27T02:00:55.690598+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +807,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-06-27T02:00:20.460055+00:00",
+      "updated_at": "2026-06-27T02:00:55.719166+00:00",
       "created_at": "2026-06-27T02:00:18.054517+00:00",
       "metadata": {
         "source_title": "5 Payments Trends Reshaping the US Market in 2026",
         "rex_raw_text": "## Where These Trends Converge\n\nEach of these shifts touches every other one. Agentic payments depend on the liability clarity and tokenisation infrastructure that real-time rails and card networks are still finalising. ISO20022`s structured data is what makes faster fraud detection and future stablecoin compliance monitoring operationally realistic. And the stablecoin rulebook is being built against the same AML and sanctions infrastructure that fraud and compliance teams are already stretching to modernise before November.\n\n## Join the Conversation in Austin\n\nThese five trends, and the pract",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "5 Payments Trends Reshaping the US Market in 2026"
+        "candidate_url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+        "candidate_title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026"
       }
     },
     {
@@ -15211,7 +15263,21 @@
         "results": 8
       },
       "timestamp": "2026-06-27T02:00:18.054241+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.03763,
+      "metadata": {
+        "input_tokens": 4679,
+        "output_tokens": 1573,
+        "raw_count": 18
+      },
+      "timestamp": "2026-06-27T02:00:55.659243+00:00"
     }
   ],
-  "last_updated": "2026-06-27T02:00:20.493132+00:00"
+  "last_updated": "2026-06-27T02:00:55.749000+00:00"
 }
