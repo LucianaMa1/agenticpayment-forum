@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "e0586f1f95615336",
-      "title": "Agentic Commerce to Drive Consumer Payments Market in 2026/27, Alongside Bank-backed Wallets and Click to Pay - Telecom Reseller / Technology Reseller News",
+      "title": "Visa Partners with OpenAI to Power the Next Generation of AI Agents",
       "source_url": "https://telecomreseller.com/2026/06/23/agentic-commerce-to-drive-consumer-payments-market-in-2026-27-alongside-bank-backed-wallets-and-click-to-pay",
       "discovered_at": "2026-06-28T02:00:21.687337+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,53 @@
             ],
             "today": "June 27, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-06-28T02:00:24.151686+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "Visa Partners with OpenAI to Power the Next Generation of AI Agents",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22496.html",
+                "content": "Visa today announced a strategic collaboration with OpenAI to enable secure Visa payments within agentic commerce, enabling seamless and trusted payments across OpenAI. The companies made the announcement at the Visa Payments Forum in San Francisco. Through the partnership, Visa will provide its global network, credentialing capabilities and security infrastructure to support agentic commerce experiences.",
+                "score": 9.0,
+                "why": "Primary source press release (June 10, 2026) announcing a live Visa-OpenAI integration specifically for agentic commerce — credentialing and network infrastructure for agent-initiated payments is the core plumbing problem, and this is a direct answer to it."
+              },
+              {
+                "title": "Visa Opens the Door to AI-Driven Shopping for Businesses Worldwide",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22276.html",
+                "content": "Through a single integration via the Visa Acceptance Platform, Intelligent Commerce Connect enables secure payment initiation, tokenization, spend controls, and authentication. The solution integrates both Visa Intelligent Commerce APIs, which are used to process agent purchases using Visa cards, and other networks' APIs, allowing agents to pay with both Visa and non-Visa cards.",
+                "score": 8.7,
+                "why": "Official Visa press release detailing the actual API surface — tokenization, spend controls, multi-network agent payment initiation — this is the technical spec that practitioners building agentic payment flows need."
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in: IMF Notes Volume 2026 Issue 004",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "Core payment infrastructures are built on deterministic logic, requiring predictability, auditability, and legal enforceability at each step of the transaction lifecycle. Agentic AI systems, by contrast, rely on probabilistic reasoning and adaptive decision making. This paper analyzes how and where these fundamentally different properties can be reconciled, and a three-layer model is proposed to assess the appropriate scope for integrating agentic AI into payment workflows.",
+                "score": 8.3,
+                "why": "IMF working paper proposing a formal architectural framework for reconciling probabilistic agent behavior with deterministic payment rails — the closest thing to an authoritative structural analysis of the core design tension in agentic payments."
+              },
+              {
+                "title": "Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails",
+                "url": "https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails",
+                "content": "Visa's head of crypto Cuy Sheffield unveiled Visa CLI, the first experimental product from the company's Crypto Labs unit. The tool, currently in closed beta, lets AI agents and developer scripts execute card payments from a terminal without managing API keys or pre-funding accounts.",
+                "score": 7.3,
+                "why": "Covers Visa CLI — a concrete new product letting agents execute card payments without API key management — alongside competitive moves from Stripe and Mastercard; secondhand but substantive enough to map the infrastructure race at a moment of rapid change."
+              },
+              {
+                "title": "A Novel Hierarchical Multi-Agent System for Payments Using LLMs",
+                "url": "https://arxiv.org/pdf/2602.24068",
+                "content": "Future work includes security research on developing payment-centric guardrails for agentic payments, and enabling secure tokenization. The current dataset helps validate research viability before production, however, it is relatively small and may not fully capture the complexity of all payment workflows and diverse user behaviors.",
+                "score": 7.0,
+                "why": "ArXiv primary source proposing a hierarchical multi-agent architecture (HMASP) specifically designed for payment workflows — directly relevant to how agent orchestration maps onto payment execution logic, even if the dataset is limited."
+              }
+            ],
+            "selected_candidate": {
+              "title": "Visa Partners with OpenAI to Power the Next Generation of AI Agents",
+              "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22496.html",
+              "content": "Visa today announced a strategic collaboration with OpenAI to enable secure Visa payments within agentic commerce, enabling seamless and trusted payments across OpenAI. The companies made the announcement at the Visa Payments Forum in San Francisco. Through the partnership, Visa will provide its global network, credentialing capabilities and security infrastructure to support agentic commerce experiences.",
+              "score": 9.0,
+              "why": "Primary source press release (June 10, 2026) announcing a live Visa-OpenAI integration specifically for agentic commerce — credentialing and network infrastructure for agent-initiated payments is the core plumbing problem, and this is a direct answer to it."
+            }
+          },
+          "timestamp": "2026-06-28T02:00:42.259375+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +800,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-06-28T02:00:24.151727+00:00",
+      "updated_at": "2026-06-28T02:00:42.288521+00:00",
       "created_at": "2026-06-28T02:00:21.687422+00:00",
       "metadata": {
         "source_title": "Agentic Commerce to Drive Consumer Payments Market in 2026/27, Alongside Bank-backed Wallets and Click to Pay - Telecom Reseller / Technology Reseller News",
         "rex_raw_text": "Telecom Reseller / Technology Reseller News\n\n# Agentic Commerce to Drive Consumer Payments Market in 2026/27, Alongside Bank-backed Wallets and Click to Pay\n\nAgentic Commerce and Different building on Fenchurch Street in the City of London. Space for text, Selective focus.\")\n\nAgentic Commerce to Drive Consumer Payments Market in 2026/27, Alongside Bank-backed Wallets and Click to Pay, By introducing AI agents to shopping, agentic commerce will revolutionize eCommerce. Within the next 12 months, we will see the hype around agentic commerce begin to translate into actual deployments; closing the",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Agentic Commerce to Drive Consumer Payments Market in 2026/27, Alongside Bank-backed Wallets and Click to Pay - Telecom Reseller / Technology Reseller News"
+        "candidate_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22496.html",
+        "candidate_title": "Visa Partners with OpenAI to Power the Next Generation of AI Agents"
       }
     },
     {
@@ -16548,7 +16593,21 @@
         "results": 8
       },
       "timestamp": "2026-06-28T02:00:21.687266+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.02427,
+      "metadata": {
+        "input_tokens": 2826,
+        "output_tokens": 1053,
+        "raw_count": 13
+      },
+      "timestamp": "2026-06-28T02:00:42.224116+00:00"
     }
   ],
-  "last_updated": "2026-06-28T02:00:24.194889+00:00"
+  "last_updated": "2026-06-28T02:00:42.320551+00:00"
 }
