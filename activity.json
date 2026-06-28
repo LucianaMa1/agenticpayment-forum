@@ -7,8 +7,23 @@
       "source_url": "https://telecomreseller.com/2026/06/23/agentic-commerce-to-drive-consumer-payments-market-in-2026-27-alongside-bank-backed-wallets-and-click-to-pay",
       "discovered_at": "2026-06-28T02:00:21.687337+00:00",
       "final_status": "Revision required",
-      "locked": false,
-      "error_context": null,
+      "locked": true,
+      "error_context": {
+        "agent": "Morgan",
+        "reason": "Morgan still requires changes after revision (verdict: REVISE)",
+        "details": {
+          "verdict": "REVISE",
+          "feedback": [
+            "The article's central thesis — that Visa's agentic push is an identity infrastructure play, not a payments play — is genuinely sharp and practitioner-relevant. But the structural vulnerability argument (interchange deterioration undermining the identity moat) is introduced in the brief and then never resolved. The headline promises a direct answer to whether interchange survives long enough to fund the moat. The article never delivers that answer. It's not enough to name the tension; a practitioner audience wants the actual argument: what interchange compression rate, over what timeline, via what alternative routing behavior, begins to impair Visa's ability to fund VTS development and issuer incentive structures? Without that, the brief overpromises and the article underdelivers.",
+            "The CLI authentication explanation is the strongest technical passage in the piece, and the internal Sage note adds real precision. But the article still contains a loose claim that needs tightening: describing the CLI as 'reducing integration friction for agent developers' without specifying *which* developer persona benefits is vague. A payments PM building an autonomous purchasing agent has fundamentally different integration concerns than a developer scaffolding a Visa-connected SaaS tool. The credential isolation benefit at runtime is real — but who operationally owns the upfront provisioning in an agentic deployment? That question is unresolved and practitioners will ask it immediately.",
+            "The Intelligent Commerce Connect correction is accurate and necessary — Visa cannot process Mastercard transactions under scheme rules, full stop. But the article's proposed reframe ('initiation and identity orchestration layer that hands off to each network's own processing infrastructure') creates a new unexamined problem: if Visa is the initiation orchestration layer for non-Visa rails, what is the acquiring relationship structure? Who is the acquirer of record for a Mastercard transaction initiated through Visa's orchestration layer? The article gestures at scheme-rule complexity but doesn't follow through. An acquiring bank CTO won't just flag the processing conflation — they'll also want to know whether this model requires a new acquiring agreement, a referral arrangement, or a co-processing structure. That's the question that determines whether 'orchestration layer' is a real business or a slide deck.",
+            "The IMF working paper citation is used responsibly — the article correctly flags that it's a governance framing resource rather than a technical architecture blueprint. However, the passage on probabilistic-to-deterministic translation ends with 'Visa's token infrastructure partially addresses [this] by anchoring authorization to a credential rather than an intent' without explaining the gap that remains. Anchoring to a credential resolves *who* is authorizing, not *whether the authorization was appropriate given the agent's inferred intent*. The chargeback and dispute resolution implications of that gap are significant and go unaddressed. Under current Visa scheme rules, dispute rights attach to the cardholder — when the cardholder is an AI agent acting on behalf of a human, who holds dispute rights, and what constitutes unauthorized use? That's not a hypothetical edge case; it's a live scheme rules gap that Visa has not publicly resolved.",
+            "The article is cut off mid-sentence in the VTS/VDEP section ('In the existing human-cardholder flow, a token is prov—'). This is an obvious editorial incompleteness, but it's also the most technically critical section — token provisioning mechanics for non-human principals is precisely where practitioners need specificity. The difference between a push provisioning flow (issuer-initiated) and a pull provisioning flow (merchant or agent-initiated) matters enormously for who controls the credential lifecycle in an agentic deployment. If the article is arguing that VTS is the real asset being extended, it needs to finish that argument."
+          ],
+          "expert_note": "The interchange-funds-the-moat tension is the right frame, but there's a more specific version of this problem that I haven't seen anyone write clearly: Visa's issuer incentive structure for token provisioning is built on interchange revenue share, and the issuers most likely to provision agent credentials aggressively are also the issuers with the most to lose if agents start routing to ACH or RTP for low-margin recurring transactions. You can end up in a situation where the credential infrastructure gets provisioned, the agent optimizes away from the expensive rail, and Visa has subsidized its own disintermediation — that's the economic trap worth naming directly."
+        },
+        "timestamp": "2026-06-28T02:03:08.728100+00:00"
+      },
       "article_url": null,
       "timeline": [
         {
@@ -1097,7 +1112,7 @@
           "status": "REVISED"
         }
       ],
-      "updated_at": "2026-06-28T02:03:06.901895+00:00",
+      "updated_at": "2026-06-28T02:03:08.728152+00:00",
       "created_at": "2026-06-28T02:00:21.687422+00:00",
       "metadata": {
         "source_title": "Agentic Commerce to Drive Consumer Payments Market in 2026/27, Alongside Bank-backed Wallets and Click to Pay - Telecom Reseller / Technology Reseller News",
@@ -16979,5 +16994,5 @@
       "timestamp": "2026-06-28T02:03:06.842411+00:00"
     }
   ],
-  "last_updated": "2026-06-28T02:03:06.930056+00:00"
+  "last_updated": "2026-06-28T02:03:08.771733+00:00"
 }
