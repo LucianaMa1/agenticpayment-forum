@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "db32e2c3159e2237",
-      "title": "Instagram",
+      "title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum",
       "source_url": "https://www.instagram.com/reel/DaBd05FkpJc",
       "discovered_at": "2026-07-01T02:00:26.113921+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,39 @@
             ],
             "today": "June 30, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-01T02:00:28.819044+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum",
+                "url": "https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx",
+                "content": "New Agent Scoring, Agentic Registry and Large Transaction Model capabilities announced at Visa Payments Forum.",
+                "score": 8.7,
+                "why": "Primary source investor announcement of concrete agentic payment infrastructure — Agent Scoring, an Agentic Registry, and a Large Transaction Model are specific, novel primitives that directly enable autonomous agent-initiated payments at scale."
+              },
+              {
+                "title": "Visa partners with OpenAI to let AI agents make payments for users - SiliconANGLE",
+                "url": "https://siliconangle.com/2026/06/10/visa-partners-openai-let-ai-agents-make-payments-users",
+                "content": "Visa partners with OpenAI to enable AI agents to autonomously execute payments on behalf of users, with practitioner commentary on what merchant infrastructure must change to support agent-driven checkout.",
+                "score": 7.3,
+                "why": "Covers a named, dated partnership enabling agents to transact at point of payment — not just discovery — with credible practitioner signal on the merchant-side infrastructure gap that follows."
+              },
+              {
+                "title": "Which agentic payments solution are you using? : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1mk54u7/which_agentic_payments_solution_are_you_using",
+                "content": "Practitioners comparing live agentic payment solutions including Coinbase's x402 and Visa's Intelligent Commerce.",
+                "score": 6.7,
+                "why": "Rare ground-level signal of actual practitioners evaluating and choosing between competing agentic payment protocols — x402 vs. Visa IC — indicating the market has moved past theory into live tooling decisions."
+              }
+            ],
+            "selected_candidate": {
+              "title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum",
+              "url": "https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx",
+              "content": "New Agent Scoring, Agentic Registry and Large Transaction Model capabilities announced at Visa Payments Forum.",
+              "score": 8.7,
+              "why": "Primary source investor announcement of concrete agentic payment infrastructure — Agent Scoring, an Agentic Registry, and a Large Transaction Model are specific, novel primitives that directly enable autonomous agent-initiated payments at scale."
+            }
+          },
+          "timestamp": "2026-07-01T02:00:49.226022+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +786,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-01T02:00:28.819089+00:00",
+      "updated_at": "2026-07-01T02:00:49.261221+00:00",
       "created_at": "2026-07-01T02:00:26.114053+00:00",
       "metadata": {
         "source_title": "Instagram",
         "rex_raw_text": "cybersource's profile picture\n\ncybersource\n\n#Webinar #Agentic #Visa #VisaAcceptanceSolutions #Google #AgenticCommerce #Payments\n\nReply\n\n1\n\nLog in to like or comment.\n\nMore posts from cybersource\n\nPhoto by Cybersource on June 17, 2026. May be an image of card, magazine and text that says 'VISA Intelligent Commerce Join the webinar From Discovery to Checkout: Defining Agentic Commerce ： June 30, 2026 10:00 PST Host David Rolf Head of Visa Ver Ventures VISA Prateek PrateekDudeja Dudeja AgenticPayments Agentic Payments Paym Product Manager Google Jalpesh Chitalia Head f Agentic Commerce VISA Googl",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Instagram"
+        "candidate_url": "https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx",
+        "candidate_title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum"
       }
     },
     {
@@ -17880,7 +17911,21 @@
         "results": 8
       },
       "timestamp": "2026-07-01T02:00:26.113818+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.02154,
+      "metadata": {
+        "input_tokens": 2995,
+        "output_tokens": 837,
+        "raw_count": 11
+      },
+      "timestamp": "2026-07-01T02:00:49.187076+00:00"
     }
   ],
-  "last_updated": "2026-07-01T02:00:28.868595+00:00"
+  "last_updated": "2026-07-01T02:00:49.299691+00:00"
 }
