@@ -7,8 +7,23 @@
       "source_url": "https://www.instagram.com/reel/DaBd05FkpJc",
       "discovered_at": "2026-07-01T02:00:26.113921+00:00",
       "final_status": "Revision required",
-      "locked": false,
-      "error_context": null,
+      "locked": true,
+      "error_context": {
+        "agent": "Morgan",
+        "reason": "Morgan still requires changes after revision (verdict: REVISE)",
+        "details": {
+          "verdict": "REVISE",
+          "feedback": [
+            "The LTM description is plausible but presented with more confidence than the sourcing warrants. The article says it 'appears to function as a behavioral anomaly and fraud-scoring layer specifically calibrated for non-human transaction patterns' — but then correctly notes this hasn't been publicly clarified. That's a contradiction: you can't characterize the mechanism and simultaneously flag the ambiguity as unresolved. Pick one. Either say 'Visa has not disclosed the mechanical architecture of LTM' or cite a source that supports the behavioral-anomaly characterization. As written, you're speculating and then hedging on your own speculation in the same paragraph.",
+            "The Mastercard Agent Pay section is correctly identified as the central competitive threat, and then the article just... ends mid-sentence. 'Visa has a head start in public narrative and ecosystem partnerships, but Maste' — this is an incomplete draft. The most important analytical work (what does Mastercard parity actually mean for the thesis?) is missing entirely. A practitioner reading this hits the cliff and closes the tab.",
+            "The x402 section understates the architectural specificity needed to evaluate it as a real threat. Saying it's 'a genuine architectural alternative for AI-native builders who don't want chargeback infrastructure' is doing a lot of work without support. Who specifically doesn't want chargeback infrastructure? Merchants selling digital goods to other agents with no consumer dispute risk — that's a narrow corridor. Enterprise procurement, regulated verticals, anything touching consumer funds still needs dispute resolution. The framing makes x402 sound like a broad alternative when the actual addressable use case is much narrower. Be precise about where the threat is real versus where traditional rails still win on consumer protection grounds.",
+            "The credit bureau analogy for the Agentic Registry is introduced and partially stress-tested, which is good, but the FCRA regulatory entrenchment point is undersold. The more important constraint isn't just merchant adoption — it's that a registry credentialing agents to spend money on behalf of consumers almost certainly triggers questions under existing consumer financial protection frameworks (CFPB, potentially state money transmission). The article frames adoption as a coordination problem but doesn't flag the regulatory surface area. Any acquiring bank CTO evaluating this integration will have their compliance team asking these questions on day one.",
+            "The OpenAI partnership characterization is appropriately hedged inside the Sage annotation, but the hedge is buried in italics inside a bullet that opened with 'Visa announced a partnership with OpenAI' as a declarative fact. The structure signals more certainty than the content delivers. Lead with the uncertainty, don't footnote it."
+          ],
+          "expert_note": "The framing of 'Visa vs. Mastercard for institutional agentic infrastructure' is the right thesis, but the article never gets to the question practitioners actually need answered: which side of the scheme relationship carries the credentialing liability when an agent-executed transaction gets disputed? Right now neither scheme has published rule changes that address agent-initiated transactions as a distinct authorization category — and until that scheme rule exists, the entire registry concept is a product announcement sitting on top of an unchanged liability framework. That's the real gap, and it's where the moat either gets dug or doesn't."
+        },
+        "timestamp": "2026-07-01T02:03:02.283630+00:00"
+      },
       "article_url": null,
       "timeline": [
         {
@@ -1069,7 +1084,7 @@
           "status": "REVISED"
         }
       ],
-      "updated_at": "2026-07-01T02:03:00.392374+00:00",
+      "updated_at": "2026-07-01T02:03:02.283671+00:00",
       "created_at": "2026-07-01T02:00:26.114053+00:00",
       "metadata": {
         "source_title": "Instagram",
@@ -18283,5 +18298,5 @@
       "timestamp": "2026-07-01T02:03:00.339402+00:00"
     }
   ],
-  "last_updated": "2026-07-01T02:03:00.433773+00:00"
+  "last_updated": "2026-07-01T02:03:02.338990+00:00"
 }
