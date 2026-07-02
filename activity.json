@@ -6,7 +6,7 @@
       "title": "Europe Just Ran the First Live Agentic Payment — And Mastercard Owns That Moment, Not Visa or Stripe",
       "source_url": "https://www.fintechfutures.com/ai-in-fintech/agentic-commerce-where-the-rubber-hits-the-road",
       "discovered_at": "2026-07-02T02:00:25.389337+00:00",
-      "final_status": "Revision required",
+      "final_status": "Revising",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -787,7 +787,7 @@
           "agent": "Sage",
           "agent_code": "S",
           "stage_label": "Draft",
-          "status": "COMPLETED",
+          "status": "PROCESSING",
           "input_payload": {
             "filtered": [
               {
@@ -1033,7 +1033,7 @@
               "content": "## The One Thing That Matters Today\n\nThe agentic payments race has been treated as a future-tense story for two years. It is now past tense in Europe. On June 2, 2026, three things happened simultaneously at Money20/20 Amsterdam that most people are still processing as hype: Worldline, ING, and Mastercard completed Europe's first agent-initiated card payment in a live production environment; Hey Savi and PayPal launched what they call the UK's first consumer agentic commerce platform with a major retailer; and Mastercard declared its entire European issuer base network-enabled for Agent Pay. That last point is the one that will not get enough attention — when your network is live, distribution is not a roadmap item, it is a fait accompli.\n\n## What Happened (and Why It Matters)\n\n- **Worldline + ING + Mastercard executed Europe's first live agent-initiated card payment** — not a sandbox demo, not a closed beta, not a press release. A production transaction. This is the line between 'infrastructure exists' and 'infrastructure works.' ([LinkedIn / Andrew McPherson](https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e))\n- **Mastercard's full European issuer base is now Agent Pay-enabled at the network level** — this means any agent-initiated transaction no longer needs individual bank-by-bank negotiations. The distribution problem that kills every new payment rail just got solved for an entire continent in a single announcement. ([LinkedIn / Andrew McPherson](https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e))\n- **Hey Savi + PayPal launched a live UK consumer agentic commerce platform with a major retail group** — B2C, not B2B. Real consumers, real checkout, real agent. The use case is no longer hypothetical. ([LinkedIn / Andrew McPherson](https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e))\n- **Mastercard has now run live authenticated agentic transactions in Hong Kong (March 27) and Thailand (April 7)** using tokenized credentials and Payment Passkeys — Europe in June completes a geographic trifecta of production deployments across three continents inside 90 days. ([TechInformed](https://techinformed.com/visa-opens-one-integration-for-ai-agent-payments))\n- **Visa, meanwhile, is still in closed beta with Visa CLI** — an experimental terminal-based tool for AI agents to execute card payments without API keys. Experimental. Closed. Beta. That is three qualifiers that all mean 'not live.' ([Forbes](https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails))\n- **Stripe's Agentic Commerce Suite, announced December 2025, covers discovery through fraud handling in a single integration** — strong developer story, but Stripe is a processor, not a network. It rides whichever network wins. ([TechInformed](https://techinformed.com/visa-opens-one-integration-for-ai-agent-payments))\n\n## The Bet\n\nMastercard has executed a classic network-effects land grab: get the issuers live before anyone else sets a standard, then make your authentication mechanism (Payment Passkeys + tokenized credentials) the de facto baseline. The question everyone is asking — 'who wins the agentic payment rails race?' — has a provisional answer in Europe, and it is Mastercard. Not because their technology is categorically superior, but because they moved from announcement to production across three continents while Visa was still in closed beta. In payments, distribution laps innovation every time.\n\n*[Sage's take]* Visa CLI is genuinely interesting as a primitive — AI agents executing card payments directly from a terminal without managing API keys is a real unlock for developer-built agents. But interesting primitives that are experimental and closed do not beat boring infrastructure that is live and network-wide. Mastercard's Agent Pay will not be the last word in agentic payments architecture, but it will be the default that every challenger has to displace. That is an enormous structural advantage. Stripe will win the developer layer on top of whichever network wins. The real loser here is anyone betting that crypto rails or stablecoin wallets would be the primary agentic payment mechanism before traditional card networks got their act together — Mastercard just proved that the incumbent networks can move faster than the narrative gave them credit for.\n\n## Counter-Consensus\n\nThe consensus view is that this is a three-way race between Visa, Mastercard, and Stripe, with crypto as a dark horse, and that the winner will be determined by developer adoption and API elegance. But the data points to something more structural: network-level enablement across an entire issuer base is not a developer story, it is a distribution story. Mastercard did not win developers first — they activated banks first. In a world where every AI agent needs a payment method that works without a human approving each transaction, 'works everywhere cards are already accepted' beats 'works better in a closed ecosystem.' The real story is that Mastercard is playing a different game than everyone else, and most people are missing it because they are watching the wrong scoreboard.\n\n## Sources\n- [This week, agentic payments went into production in Europe — LinkedIn/Andrew McPherson](https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e)\n- [Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails — Forbes](https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails)\n- [Visa opens one integration for AI agent payments — TechInformed](https://techinformed.com/visa-opens-one-integration-for-ai-agent-payments)\n- [Agentic Payments In B2C Commerce: Where We Are Now — Forrester](https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now)\n\n---\n*Agentic Payment · July 01, 2026 · [agenticpayment.forum](https://agenticpayment.forum/articles/)*\n*Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.*"
             }
           },
-          "timestamp": "2026-07-02T02:01:26.475487+00:00",
+          "timestamp": "2026-07-02T02:01:53.297813+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         },
         {
@@ -1075,7 +1075,7 @@
         {
           "agent": "Sage",
           "label": "Draft",
-          "status": "COMPLETED"
+          "status": "PROCESSING"
         },
         {
           "agent": "Morgan",
@@ -1083,7 +1083,7 @@
           "status": "REVISED"
         }
       ],
-      "updated_at": "2026-07-02T02:01:51.113388+00:00",
+      "updated_at": "2026-07-02T02:01:53.297866+00:00",
       "created_at": "2026-07-02T02:00:25.389456+00:00",
       "metadata": {
         "source_title": "Agentic commerce: Where the rubber hits the road",
@@ -19503,5 +19503,5 @@
       "timestamp": "2026-07-02T02:01:51.059679+00:00"
     }
   ],
-  "last_updated": "2026-07-02T02:01:51.151679+00:00"
+  "last_updated": "2026-07-02T02:01:53.356426+00:00"
 }
