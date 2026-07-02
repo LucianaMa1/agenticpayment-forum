@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "e9d8d3a70a9311fc",
-      "title": "Agentic commerce: Where the rubber hits the road",
+      "title": "This week, agentic payments went into production in Europe",
       "source_url": "https://www.fintechfutures.com/ai-in-fintech/agentic-commerce-where-the-rubber-hits-the-road",
       "discovered_at": "2026-07-02T02:00:25.389337+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,46 @@
             ],
             "today": "July 01, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-02T02:00:27.873033+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "This week, agentic payments went into production in Europe",
+                "url": "https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e",
+                "content": "Andrew McPherson\n\n### Andrew McPherson\n\nThe Money20/20 Europe conference was held in Amsterdam 2-4 June, and it provided the most interesting agentic commerce news of the week. On Tuesday, 2 June, three developments were announced: Worldline, ING and Mastercard completed Europe's first agent-initiated card payment within a live production environment, Hey Savi and PayPal launched what they describe as the UK's first consumer agentic commerce platform with a major retail group, and Mastercard stated that its entire European issuer base is now enabled at a network level for Agent Pay.",
+                "score": 8.0,
+                "why": "Three simultaneous production-environment milestones at Money20/20 Europe — Worldline/ING/Mastercard live agent-initiated card payment, Hey Savi/PayPal UK consumer platform launch, and Mastercard's full European issuer network enablement — represent concrete go-live events, not announcements."
+              },
+              {
+                "title": "Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails",
+                "url": "https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails",
+                "content": "Visa's head of crypto Cuy Sheffield unveiled Visa CLI, the first experimental product from the company's Crypto Labs unit. The tool, currently in closed beta, lets AI agents and developer scripts execute card payments from a terminal without managing API keys or pre-funding accounts.",
+                "score": 7.3,
+                "why": "Visa CLI is a specific, novel product — AI agents executing card payments directly from a terminal without API key management — that signals a meaningful infrastructure primitive for agentic payment execution."
+              },
+              {
+                "title": "Visa opens one integration for AI agent payments",
+                "url": "https://techinformed.com/visa-opens-one-integration-for-ai-agent-payments",
+                "content": "Mastercard launched Agent Pay in April 2025 and has since announced live authenticated agentic transactions in Hong Kong on March 27 and in Thailand on April 7, using tokenized credentials and Mastercard Payment Passkeys. Stripe said in December that its Agentic Commerce Suite lets businesses sell on AI agents through a single integration that covers discovery, checkout, payments and fraud handling.",
+                "score": 7.0,
+                "why": "Consolidates concrete production milestones across Visa, Mastercard, and Stripe with specific dates and technical mechanisms (tokenized credentials, Payment Passkeys), making it a useful primary-adjacent status tracker for the agent payment rails race."
+              },
+              {
+                "title": "Agentic Payments In B2C Commerce: Where We Are Now",
+                "url": "https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now",
+                "content": "Forrester Logo\n\n# Agentic Payments In B2C Commerce: Where We Are Now\n\nLily Varon, Principal Analyst\n\nIn November, we answered five questions on the state of agentic payments and provided a key timeline of critical announcements up to that point. It's time to take a fresh look. To summarize the biggest updates since my last post, the headlines are:\n\n### Where are we now?\n\nAnnouncements are still flying left and right. Let's review the key events in agentic payments in B2C e-commerce since mid-November 2025 (for a timeline predating that, please see my last post). In order of recency:\n\nMARCH 2026",
+                "score": 6.7,
+                "why": "Forrester analyst primary coverage of B2C agentic payment milestones through March 2026 provides structured signal aggregation from a credible research source, though paywalled content limits full scoring."
+              }
+            ],
+            "selected_candidate": {
+              "title": "This week, agentic payments went into production in Europe",
+              "url": "https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e",
+              "content": "Andrew McPherson\n\n### Andrew McPherson\n\nThe Money20/20 Europe conference was held in Amsterdam 2-4 June, and it provided the most interesting agentic commerce news of the week. On Tuesday, 2 June, three developments were announced: Worldline, ING and Mastercard completed Europe's first agent-initiated card payment within a live production environment, Hey Savi and PayPal launched what they describe as the UK's first consumer agentic commerce platform with a major retail group, and Mastercard stated that its entire European issuer base is now enabled at a network level for Agent Pay.",
+              "score": 8.0,
+              "why": "Three simultaneous production-environment milestones at Money20/20 Europe — Worldline/ING/Mastercard live agent-initiated card payment, Hey Savi/PayPal UK consumer platform launch, and Mastercard's full European issuer network enablement — represent concrete go-live events, not announcements."
+            }
+          },
+          "timestamp": "2026-07-02T02:00:50.709333+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +793,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-02T02:00:27.873075+00:00",
+      "updated_at": "2026-07-02T02:00:50.746487+00:00",
       "created_at": "2026-07-02T02:00:25.389456+00:00",
       "metadata": {
         "source_title": "Agentic commerce: Where the rubber hits the road",
         "rex_raw_text": "#LedaWrites\n\nRead more about:\n\nAnt InternationalGoogle\n\n #### SEI makes three new AI-focused executive appointments by Francis Bignell Jun 11, 2026AI in FintechImage 23: Agentic commerce in 2026: Where we stand and what lies ahead #### Agentic commerce in 2026: Where we stand and what lies ahead by Cameron Emanuel-Burns Apr 01, 2026\n\n### Latest News\n\nSee all chevron_right\n\nImage 24: Banisi - FinTech News\n\nBankingTech\n\nPanama's Banisi migrates Visa card processing to Pomelo\n\nPanama's Banisi migrates Visa card processing to Pomelo\n\nJul 1, 2026\n\nImage 25: Agentic Commerce - FinTech News\n\nAI in Fi",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Agentic commerce: Where the rubber hits the road"
+        "candidate_url": "https://www.linkedin.com/pulse/week-agentic-payments-went-production-europe-andrew-mcpherson-suz1e",
+        "candidate_title": "This week, agentic payments went into production in Europe"
       }
     },
     {
@@ -19124,7 +19162,21 @@
         "results": 8
       },
       "timestamp": "2026-07-02T02:00:25.389239+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.02676,
+      "metadata": {
+        "input_tokens": 3786,
+        "output_tokens": 1027,
+        "raw_count": 16
+      },
+      "timestamp": "2026-07-02T02:00:50.666388+00:00"
     }
   ],
-  "last_updated": "2026-07-02T02:00:27.925174+00:00"
+  "last_updated": "2026-07-02T02:00:50.784776+00:00"
 }
