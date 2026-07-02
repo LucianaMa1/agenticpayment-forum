@@ -7,8 +7,23 @@
       "source_url": "https://www.fintechfutures.com/ai-in-fintech/agentic-commerce-where-the-rubber-hits-the-road",
       "discovered_at": "2026-07-02T02:00:25.389337+00:00",
       "final_status": "Revision required",
-      "locked": false,
-      "error_context": null,
+      "locked": true,
+      "error_context": {
+        "agent": "Morgan",
+        "reason": "Morgan still requires changes after revision (verdict: REVISE)",
+        "details": {
+          "verdict": "REVISE",
+          "feedback": [
+            "The core thesis — network-level enablement ≠ issuer authorization readiness — is correct and practitioner-relevant. That distinction is genuinely underappreciated in coverage of Agent Pay, and the article earns credit for leading with it. The problem is that the argument is asserted more than it's demonstrated. Where are the specific issuer authorization changes that would actually need to happen? Which SCA exemption categories are most likely to be contested for agent-initiated transactions? The article identifies the gap but doesn't map it with enough specificity to be actionable for a payments PM trying to build an integration roadmap.",
+            "The 'Sage's take' inline commentary is an editorial artifact that hasn't been cleaned out of the draft. These read as internal review notes embedded in the article body — not editorial voice, not sourced perspective. Either attribute them properly or remove them. Publishing with '[Sage's take: ...]' inline will signal to any practitioner reader that this is an unfinished draft, which undermines the credibility of an otherwise technically grounded piece.",
+            "The Visa CLI characterization correction is directionally correct but underdeveloped. The article says Visa's approach is 'about credential and token management architecture, not a literal command-line terminal' — but then doesn't explain what Visa's actual model is. Pointing to generic Visa Developer Documentation doesn't support the specific claim being made. If you're going to correct a mischaracterization, replace it with the accurate characterization and source it precisely. Otherwise you've identified an error without fixing it.",
+            "The article ends mid-sentence: '...trained' — the conclusion is cut off. The Bet section sets up a real payoff and then doesn't deliver it. This isn't a minor edit; the conclusion is where the practitioner-value lands or doesn't. The piece needs a complete ending that tells the reader what to actually do with this analysis.",
+            "The geographic deployment bullet — Hong Kong, Thailand, 'three continents in 90 days' — is flagged as unverified but still included in the article body. If the sourcing can't support it, cut it or don't run the piece until it can. Publishing a claim while simultaneously noting it may be wrong is not responsible hedging; it's having it both ways. Pick a lane: source it or remove it."
+          ],
+          "expert_note": "The issuer authorization gap the article identifies is real, and here's the layer most coverage misses entirely: even where issuers are nominally Agent Pay-enabled, their fraud scoring models are trained on human behavioral patterns — session timing, device fingerprinting, velocity curves — and agent-initiated transactions will fail those heuristics at meaningful rates until issuers retrain or carve out agent transaction profiles. That's not a scheme problem Mastercard can solve. It's an issuer data science problem that will play out over 18-24 months of decline-rate pain, and it's the actual timeline practitioners should be planning against."
+        },
+        "timestamp": "2026-07-02T02:03:01.697540+00:00"
+      },
       "article_url": null,
       "timeline": [
         {
@@ -1083,7 +1098,7 @@
           "status": "REVISED"
         }
       ],
-      "updated_at": "2026-07-02T02:02:59.896682+00:00",
+      "updated_at": "2026-07-02T02:03:01.697582+00:00",
       "created_at": "2026-07-02T02:00:25.389456+00:00",
       "metadata": {
         "source_title": "Agentic commerce: Where the rubber hits the road",
@@ -19541,5 +19556,5 @@
       "timestamp": "2026-07-02T02:02:59.844540+00:00"
     }
   ],
-  "last_updated": "2026-07-02T02:02:59.934192+00:00"
+  "last_updated": "2026-07-02T02:03:01.754464+00:00"
 }
