@@ -1,5 +1,32 @@
 [
   {
+    "title": "Mastercard Agent Pay Has Network Coverage. It Does Not Have Issuer Readiness. Those Are Not the Same Thing.",
+    "url": "https://agenticpayment.forum/articles/mastercard-agent-pay-has-network-coverage-it-does-not-have-issuer-readiness-those-are-not-.html",
+    "path": "/articles/mastercard-agent-pay-has-network-coverage-it-does-not-have-issuer-readiness-those-are-not-.html",
+    "slug": "mastercard-agent-pay-has-network-coverage-it-does-not-have-issuer-readiness-those-are-not-",
+    "brief": "Mastercard's Agent Pay network rollout is real. Calling it 'production-ready across Europe' is not. The gap between scheme announcement and issuer authorization is where this actually gets decided.",
+    "published_at": "2026-07-07T19:18:14.476935+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Visa Is Building the Trust Layer for Agentic Payments — But the Moat Isn't Dug Yet",
+    "url": "https://agenticpayment.forum/articles/visa-is-building-the-trust-layer-for-agentic-payments-but-the-moat-isn-t-dug-yet.html",
+    "path": "/articles/visa-is-building-the-trust-layer-for-agentic-payments-but-the-moat-isn-t-dug-yet.html",
+    "slug": "visa-is-building-the-trust-layer-for-agentic-payments-but-the-moat-isn-t-dug-yet",
+    "brief": "Visa has the right instincts on agentic infrastructure, but its registry and LTM are bets requiring merchant adoption and scheme rule changes — not accomplished facts.",
+    "published_at": "2026-07-07T19:18:14.391025+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Visa Is Selling Identity Infrastructure to Agents, Not Just Payments — But the Economics Could Eat the Moat",
+    "url": "https://agenticpayment.forum/articles/visa-is-selling-identity-infrastructure-to-agents-not-just-payments-but-the-economics-coul.html",
+    "path": "/articles/visa-is-selling-identity-infrastructure-to-agents-not-just-payments-but-the-economics-coul.html",
+    "slug": "visa-is-selling-identity-infrastructure-to-agents-not-just-payments-but-the-economics-coul",
+    "brief": "Visa's agentic push is really a credential play. The question isn't whether agents need identity — it's whether interchange survives long enough to fund it.",
+    "published_at": "2026-07-07T19:18:14.298478+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "The Agentic Payments Race Is Not About Rails — It's About Who Owns Compliance Architecture",
     "url": "https://agenticpayment.forum/articles/the-agentic-payments-race-is-not-about-rails-it-s-about-who-owns-compliance-architecture.html",
     "path": "/articles/the-agentic-payments-race-is-not-about-rails-it-s-about-who-owns-compliance-architecture.html",
