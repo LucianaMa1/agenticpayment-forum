@@ -6,7 +6,7 @@
       "title": "The Authorization Gap Is the Real Agentic Payments Crisis — and Nobody Has Solved It",
       "source_url": "https://www.instagram.com/reel/DZmZ-EhCnqX",
       "discovered_at": "2026-07-07T19:38:09.348126+00:00",
-      "final_status": "Revision required",
+      "final_status": "Revising",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -801,7 +801,7 @@
           "agent": "Sage",
           "agent_code": "S",
           "stage_label": "Draft",
-          "status": "COMPLETED",
+          "status": "PROCESSING",
           "input_payload": {
             "filtered": [
               {
@@ -1061,7 +1061,7 @@
               "content": "## The One Thing That Matters Today\n\nThe entire agentic payments industry is building rails while ignoring the bridge collapse in the middle. The fundamental assumption baked into every protocol — x402, ERC-8004, Mastercard Agent Pay, Visa Agentic Ready — is that what a user authorized is what the agent executes. The IMF's April 2026 note put a formal name to why this is structurally broken: the shift from \"click\" to \"instruct\" creates a permanent authorization-execution gap that no amount of cryptographic signing or card tokenization actually closes. This is not a security vulnerability. It is a category error in how the whole industry is thinking about trust.\n\n## What Happened (and Why It Matters)\n\n- **The IMF identified the authorization-execution gap as the defining risk of agentic payments** — not fraud, not identity, but the structural mismatch between what a human intended and what a multi-step agent actually did by the time execution completes. This matters because regulators will write rules around this framing, and every protocol that ignores it is building toward a compliance cliff. ([IMF Note 2026/004](https://www.imf.org/en/publications/imf-notes/issues/2026/04/22/how-agentic-ai-will-reshape-payments-575560))\n\n- **A new arXiv paper on blockchain payment trust infrastructure for autonomous agents confirms the gap is architectural, not incidental** — the paper frames agent payment trust as requiring continuous verification across the full execution chain, not a single authorization event at the start. The implicit critique: every existing payment protocol is designed around point-in-time consent, not process-level accountability. ([arXiv:2607.00245](https://arxiv.org/html/2607.00245v1))\n\n- **The SoK security paper reveals that most protocols in the market are not actually deployed** — ERC-8004 and ERC-8183 are still in draft/community review with limited on-chain deployment, AP2 has no reference implementation, and OKX APP's escrow and dispute features are described as \"forthcoming.\" Only x402 has early adopter deployment via Coinbase. The industry is debating protocol wars where only one combatant is actually in the field. ([arXiv:2604.15367](https://arxiv.org/html/2604.15367))\n\n- **Visa's \"Agentic Ready\" programme launches in Europe with Revolut, Barclays, and Commerzbank — and its entire value proposition is structured testing of agent-initiated transactions**, not solving the authorization gap itself. Visa is selling readiness infrastructure while the core trust problem remains unaddressed. ([Fintech Futures](https://www.fintechfutures.com/ai-fintech/agentic-commerce-in-2026-where-we-stand-and-what-lies-ahead))\n\n- **A Reddit practitioner thread on the IMF framing captures the operational reality**: payment systems are built on the assumption that what was authorized is what happens. Agents break this assumption by design — they are hired precisely because they make intermediate decisions humans didn't pre-specify. ([r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1th7q47/why_agentic_payments_keep_breaking_the_imf_just))\n\n- **Cambridge's peer-reviewed 2026 paper on agentic payment risks frames the ecosystem shift as \"agents becoming customers\"** — but stops short of solving how liability flows when the agent's intermediate decision diverges from the human's original intent. The academic literature is describing the problem with increasing precision while the industry ships protocols that don't address it. ([Cambridge University Press](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C2EF22C4CD9513A9A6459D10680A5D12/S1867299X26101032a.pdf/ai-agents-in-payments-applications-risks-and-regulations.pdf))\n\n## The Bet\n\n*[Sage's take]* The winner in agentic payments will not be the protocol with the best rail — it will be the first actor to ship a credible **process-level authorization layer**: something that tracks agent decision state continuously, not just at transaction initiation. This is not a blockchain problem or a card network problem. It is a runtime audit problem. The company that builds verifiable, replayable agent decision logs — tied to payment events — owns the compliance stack for the next decade. That could be a hyperscaler (Google with A2A, already cited in the arXiv trust paper), a niche infrastructure player, or a regtech firm that nobody is watching yet. What it will not be is Visa or Mastercard, whose entire architecture is optimized for point-in-time authorization.\n\n*[Sage's take]* x402's early deployment advantage will not last unless Coinbase moves aggressively to solve the gap — right now x402 is the only protocol with real-world deployment, but \"deployed\" is not the same as \"trusted.\" The first high-profile agentic payment dispute — where an agent spent money the user didn't expect — will crater trust in whatever protocol was running underneath it. The race is not to deploy first. It is to survive the first scandal.\n\n## Counter-Consensus\n\nThe consensus view is that agentic payments is a protocol competition — x402 vs. ERC-8004 vs. Mastercard Agent Pay — and that whoever achieves network effects on the rail wins. But the SoK paper makes clear that most of these protocols are vaporware in terms of actual deployment, and the IMF framing reveals that the rail is not the constraint. The real bottleneck is post-authorization accountability: who is liable when an agent executes a transaction the user authorized in principle but not in specific? No protocol on the market answers this question. The winner will be whoever makes liability legible, not whoever moves value fastest.\n\n## From the Community\n\n- [Why agentic payments keep breaking — IMF framing thread](https://www.reddit.com/r/AI_Agents/comments/1th7q47/why_agentic_payments_keep_breaking_the_imf_just) — practitioners diagnosing the authorization-execution gap in real deployed systems.\n\n## Research & Papers\n\n- [Blockchain Payments and Trust Infrastructure for Autonomous AI Agents](https://arxiv.org/html/2607.00245v1) — arXiv, July 2026. Frames agent payment trust as requiring continuous chain-of-execution verification, not point-in-time consent.\n- [SoK: Security of Autonomous LLM Agents in Agentic Commerce](https://arxiv.org/html/2604.15367) — arXiv, April 2026. Maps deployment status of x402, ERC-8004, ERC-8183, AP2 — separating live protocols from announced ones.\n\n## Sources\n\n- https://www.imf.org/en/publications/imf-notes/issues/2026/04/22/how-agentic-ai-will-reshape-payments-575560\n- https://arxiv.org/html/2607.00245v1\n- https://arxiv.org/html/2604.15367\n- https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C2EF22C4CD9513A9A6459D10680A5D12/S1867299X26101032a.pdf/ai-agents-in-payments-applications-risks-and-regulations.pdf\n- https://www.fintechfutures.com/ai-fintech/agentic-commerce-in-2026-where-we-stand-and-what-lies-ahead\n- https://www.reddit.com/r/AI_Agents/comments/1th7q47/why_agentic_payments_keep_breaking_the_imf_just\n\n---\n*Agentic Payment · July 07, 2026 · [agenticpayment.forum](https://agenticpayment.forum/articles/)*\n*Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.*"
             }
           },
-          "timestamp": "2026-07-07T19:39:30.436629+00:00",
+          "timestamp": "2026-07-07T19:39:58.210751+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/sage.md"
         },
         {
@@ -1104,7 +1104,7 @@
         {
           "agent": "Sage",
           "label": "Draft",
-          "status": "COMPLETED"
+          "status": "PROCESSING"
         },
         {
           "agent": "Morgan",
@@ -1112,7 +1112,7 @@
           "status": "REVISED"
         }
       ],
-      "updated_at": "2026-07-07T19:39:55.369748+00:00",
+      "updated_at": "2026-07-07T19:39:58.210787+00:00",
       "created_at": "2026-07-07T19:38:09.348135+00:00",
       "metadata": {
         "source_title": "Instagram",
@@ -21178,5 +21178,5 @@
       "timestamp": "2026-07-07T19:39:55.343974+00:00"
     }
   ],
-  "last_updated": "2026-07-07T19:39:55.390830+00:00"
+  "last_updated": "2026-07-07T19:39:58.237699+00:00"
 }
