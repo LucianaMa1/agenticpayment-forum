@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Authorization-Execution Gap Is a Category Error, Not a Security Flaw — and Nobody's Payment Stack Is Ready for It",
+    "url": "https://agenticpayment.forum/articles/the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme.html",
+    "path": "/articles/the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme.html",
+    "slug": "the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme",
+    "brief": "Agentic payments don't have a fraud problem. They have a philosophy problem: every protocol assumes authorization and execution are the same event.",
+    "published_at": "2026-07-07T19:41:17.106637+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "Mastercard Agent Pay Has Network Coverage. It Does Not Have Issuer Readiness. Those Are Not the Same Thing.",
     "url": "https://agenticpayment.forum/articles/mastercard-agent-pay-has-network-coverage-it-does-not-have-issuer-readiness-those-are-not-.html",
     "path": "/articles/mastercard-agent-pay-has-network-coverage-it-does-not-have-issuer-readiness-those-are-not-.html",
