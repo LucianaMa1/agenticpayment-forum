@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "b5ede75fa2e426db",
-      "title": "Instagram",
+      "title": "Blockchain Payments and Trust Infrastructure for Autonomous AI Agents",
       "source_url": "https://www.instagram.com/reel/DZmZ-EhCnqX",
       "discovered_at": "2026-07-07T19:38:09.348126+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,60 @@
             ],
             "today": "July 07, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-07T19:38:12.276262+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "Blockchain Payments and Trust Infrastructure for Autonomous AI Agents",
+                "url": "https://arxiv.org/html/2607.00245v1",
+                "content": "Google Developers Blog (2025) 'Announcing the Agent2Agent Protocol (A2A)'. Available at: (Accessed: 30 June 2026). Jin, Y., Wu, S., Chen, C., Bao, L., Yang, X. and Chen, J. (2026) 'The Web4 Agent Economy: A Large-Scale Empirical Study of the Landscape, Challenges, and Opportunities', arXiv:2606.25876. Mafrur, R. and Khusumanegara, P. (2026) 'From Agent Identity to Agent Economy: Measuring the Operational Readiness of ERC-8004 AI Agents', arXiv:2606.12128.",
+                "score": 8.7,
+                "why": "Primary arXiv paper (July 2026) directly addressing blockchain payment infrastructure for autonomous AI agents, citing live 2026 empirical work on ERC-8004 operational readiness and the Web4 agent economy — this is technical primary research, not commentary."
+              },
+              {
+                "title": "SoK: Security of Autonomous LLM Agents in Agentic Commerce",
+                "url": "https://arxiv.org/html/2604.15367",
+                "content": "We explicitly qualify the deployment status of the agent payment protocols analyzed in this SoK, as of early 2026, to distinguish deployed behavior from proposed features. ERC-8004 and ERC-8183 are Ethereum Improvement Proposals in draft/community review status with limited on-chain deployment. AP2 is a research proposal with no widely adopted reference implementation. OKX APP is a newly announced open-standard and SDK-oriented protocol stack whose escrow and dispute-resolution features are still described as forthcoming. x402 has early adopter deployment by Coinbase and a growing ecosystem.",
+                "score": 8.3,
+                "why": "Rare primary arXiv SoK paper that rigorously maps deployment status of specific agentic payment protocols (x402, ERC-8004, ERC-8183, AP2) as of early 2026 — separating live behavior from vaporware, which is exactly what this forum needs."
+              },
+              {
+                "title": "AI Agents in Payments: Applications, Risks and Regulations",
+                "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C2EF22C4CD9513A9A6459D10680A5D12/S1867299X26101032a.pdf/ai-agents-in-payments-applications-risks-and-regulations.pdf",
+                "content": "The payment ecosystem as fruitful ground for agentic payments. These technological developments have paved the way for the expectation that agents will soon become customers, or otherwise deploy or receive financial value. Recognising this trajectory, several key actors in the payment ecosystem have begun adapting to accommodate agentic functionality.",
+                "score": 7.7,
+                "why": "Cambridge University Press peer-reviewed paper (2026) on agentic payment applications, risks, and regulation — a primary academic source with a DOI, not a blog post, covering the specific intersection of agent autonomy and payment system adaptation."
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments",
+                "url": "https://www.imf.org/en/publications/imf-notes/issues/2026/04/22/how-agentic-ai-will-reshape-payments-575560",
+                "content": "Subject: Anti-money laundering and combating the financing of terrorism (AML/CFT), Crime, Financial markets, Infrastructure, National accounts, Payment systems, Technology. Keywords: agentic AI, Agentic compliance, AML/CFT, Artificial intelligence, compliance, cross-border payment, cross-border payments, e-commerce, Global, IMF note, Infrastructure, mitigation strategy, Payment systems, payments. Pages: 26. Volume: 2026. DOI: Issue: 004. Series: IMF Notes No 2026/004.",
+                "score": 7.7,
+                "why": "Official IMF Note (April 2026, 26 pages) on agentic AI reshaping payments infrastructure and compliance — a primary institutional publication carrying regulatory weight that will directly shape how agentic payment systems are governed."
+              },
+              {
+                "title": "Why agentic payments keep breaking. The IMF just put a name to it",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1th7q47/why_agentic_payments_keep_breaking_the_imf_just",
+                "content": "Payment systems are built on the assumption that what was authorized is what happens. The IMF frames the practical shift as moving from 'click'...",
+                "score": 7.0,
+                "why": "Practitioner Reddit thread directly referencing the IMF note and diagnosing the authorization-execution gap in deployed agentic payment systems — the IMF framing of 'what was authorized vs. what happens' is a precise, novel signal on a real failure mode."
+              },
+              {
+                "title": "Agentic commerce in 2026: Where we stand and what lies ahead",
+                "url": "https://www.fintechfutures.com/ai-fintech/agentic-commerce-in-2026-where-we-stand-and-what-lies-ahead",
+                "content": "Additionally, Visa recently unveiled a new programme called Visa Agentic Ready, which the company says is designed to 'support the payments ecosystem as it prepares for a new era of agentic commerce'. The programme is launching first in Europe, with partnerships involving some of the region's largest financial institutions, including Revolut, Barclays, and Commerzbank. These institutions will be provided with a 'structured pathway to test and validate agent-initiated transactions'.",
+                "score": 6.7,
+                "why": "Reports a specific, named Visa program ('Visa Agentic Ready') with named European banking partners actively testing agent-initiated transactions — concrete ecosystem movement, not a trend piece."
+              }
+            ],
+            "selected_candidate": {
+              "title": "Blockchain Payments and Trust Infrastructure for Autonomous AI Agents",
+              "url": "https://arxiv.org/html/2607.00245v1",
+              "content": "Google Developers Blog (2025) 'Announcing the Agent2Agent Protocol (A2A)'. Available at: (Accessed: 30 June 2026). Jin, Y., Wu, S., Chen, C., Bao, L., Yang, X. and Chen, J. (2026) 'The Web4 Agent Economy: A Large-Scale Empirical Study of the Landscape, Challenges, and Opportunities', arXiv:2606.25876. Mafrur, R. and Khusumanegara, P. (2026) 'From Agent Identity to Agent Economy: Measuring the Operational Readiness of ERC-8004 AI Agents', arXiv:2606.12128.",
+              "score": 8.7,
+              "why": "Primary arXiv paper (July 2026) directly addressing blockchain payment infrastructure for autonomous AI agents, citing live 2026 empirical work on ERC-8004 operational readiness and the Web4 agent economy — this is technical primary research, not commentary."
+            }
+          },
+          "timestamp": "2026-07-07T19:38:45.400335+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +807,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-07T19:38:12.276275+00:00",
+      "updated_at": "2026-07-07T19:38:45.421065+00:00",
       "created_at": "2026-07-07T19:38:09.348135+00:00",
       "metadata": {
         "source_title": "Instagram",
         "rex_raw_text": "ffnews247\n\nTom Taraniuk from Sumsub shared a massive projection on how agentic payments are set to completely disrupt the global financial ecosystem! 🚀💸 Major industry leaders like Visa and Mastercard are predicting that agentic payments will capture a staggering 20% of the payments market flow by 2029. This shift moves far beyond automated, routine retail orders, consumers will soon trust AI agents to independently book high-value transactions, like holiday trips up to €5,000. As this technology scales, the industry faces a critical new hurdle: developing strict verification protocols for AI ",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Instagram"
+        "candidate_url": "https://arxiv.org/html/2607.00245v1",
+        "candidate_title": "Blockchain Payments and Trust Infrastructure for Autonomous AI Agents"
       }
     },
     {
@@ -20769,7 +20821,21 @@
         "results": 8
       },
       "timestamp": "2026-07-07T19:38:09.347104+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.03641,
+      "metadata": {
+        "input_tokens": 4536,
+        "output_tokens": 1520,
+        "raw_count": 21
+      },
+      "timestamp": "2026-07-07T19:38:45.377182+00:00"
     }
   ],
-  "last_updated": "2026-07-07T19:38:12.298208+00:00"
+  "last_updated": "2026-07-07T19:38:45.442033+00:00"
 }
