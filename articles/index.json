@@ -4,7 +4,7 @@
     "url": "https://agenticpayment.forum/articles/the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme.html",
     "path": "/articles/the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme.html",
     "slug": "the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme",
-    "brief": "Agentic payments don't have a fraud problem. They have a philosophy problem: every protocol assumes authorization and execution are the same event.",
+    "brief": "Tokenization, authentication, and certification are necessary foundations. The unsolved gap is what happens when an agent executes hours after the original authorization.",
     "published_at": "2026-07-07T19:41:17.106637+00:00",
     "channel": "agenticpayment.forum articles"
   },
