@@ -1,5 +1,14 @@
 [
   {
+    "title": "Agents Can Be Authorized to Pay. They Cannot Yet Be Authorized to Decide.",
+    "url": "https://agenticpayment.forum/articles/agents-can-be-authorized-to-pay-they-cannot-yet-be-authorized-to-decide.html",
+    "path": "/articles/agents-can-be-authorized-to-pay-they-cannot-yet-be-authorized-to-decide.html",
+    "slug": "agents-can-be-authorized-to-pay-they-cannot-yet-be-authorized-to-decide",
+    "brief": "Visa CLI and Mastercard In Control solve static delegation. The gap is dynamic context — constraints set at issuance can't evaluate what changed before the agent acted.",
+    "published_at": "2026-07-10T02:03:39.406669+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "The Authorization-Execution Gap Is a Category Error, Not a Security Flaw — and Nobody's Payment Stack Is Ready for It",
     "url": "https://agenticpayment.forum/articles/the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme.html",
     "path": "/articles/the-authorization-execution-gap-is-a-category-error-not-a-security-flaw-and-nobody-s-payme.html",

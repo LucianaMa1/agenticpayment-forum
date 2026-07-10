@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agents Can Be Authorized to Pay. They Cannot Yet Be Authorized to Decide. — Agentic Payment</title>
+  <meta name="description" content="Visa CLI and Mastercard In Control solve static delegation. The gap is dynamic context — constraints set at issuance can&#x27;t evaluate what changed before the agent acted.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/agents-can-be-authorized-to-pay-they-cannot-yet-be-authorized-to-decide.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Agents Can Be Authorized to Pay. They Cannot Yet Be Authorized to Decide.</h1>
+    <p class="dek">Visa CLI and Mastercard In Control solve static delegation. The gap is dynamic context — constraints set at issuance can&#x27;t evaluate what changed before the agent acted.</p>
+    <div class="meta">Published 2026-07-10 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Two developments are sharpening the agentic payments problem from opposite ends. Visa has reportedly launched a CLI tool — described in closed-beta reporting via Forbes, not yet in published developer documentation or a Visa press release — that allows AI agents to initiate payments without requiring the human developer to manually manage API keys or pre-fund accounts in the traditional sense. The exact credential mechanism is not publicly specified: it may be a Visa-issued virtual card, a tokenized credential, or something else entirely. What the reporting establishes is that Visa is actively building agent-facing payment primitives. Mastercard&#x27;s In Control product, which is commercially deployed across virtual card programs, already allows issuers and program managers to attach conditional rules to credentials — merchant category codes, per-transaction limits, time windows, merchant locks — before the card is issued. These are not prototype features. They are production infrastructure used today in corporate travel, B2B procurement, and consumer fintech programs.</p>
+<p>This context matters before any argument about gaps. Tokenization solves credential exposure. Virtual card controls solve static delegation — the ability to say, at issuance time, &quot;this card can only be used at office supply merchants, up to $500 per transaction, on weekdays.&quot; Fraud models at scale, including Visa Decision Manager and Mastercard&#x27;s risk stack, solve population-level anomaly detection. The existing rails are not naive. They encode decades of operational learning about how authorization abuse actually occurs and where liability should sit.</p>
+<h2>The Gap</h2>
+<p>The constraint that breaks under agentic conditions is not the absence of conditional authorization — it is the assumption that context is fixed at credential issuance. Virtual card controls like Mastercard In Control set rules statically: the constraint is defined when the credential is created, and the issuer evaluates the transaction against that static rule set at authorization time. This works well when the delegation is narrow and the context is predictable. It breaks when an agent operates across a session in which material context changes after the credential was issued but before the transaction executes.</p>
+<p>An agent authorized to book the cheapest available flight operates within a defined constraint. But &quot;cheapest available&quot; is a dynamic evaluation — it depends on what is available at execution time, what the user&#x27;s calendar looks like, what competing options exist, and what the user would have chosen if asked again. The credential cannot encode that reasoning. The issuer cannot evaluate it at authorization time. The static rule set confirms that the merchant category is correct and the amount is within limit. It cannot confirm that the agent&#x27;s selection still reflects the principal&#x27;s intent given what the agent learned during the session. The gap is not that no box exists — it is that the available boxes evaluate the transaction, not the decision that produced it.</p>
+<h2>The Practical Example</h2>
+<p>A user delegates a travel-booking agent with a virtual card scoped to airline merchants, capped at $1,200, valid for 48 hours — a reasonable Mastercard In Control-style configuration. The agent finds two options: a $950 direct flight and an $1,100 flight with a $200 travel credit applicable to a hotel the user mentioned wanting. The agent books the $1,100 option, reasoning that the net cost is lower when the credit is applied. The authorization clears. The transaction is within the MCC scope, within the spending cap, within the time window. Every static control passes.</p>
+<p>The user reviews the statement and disputes the charge. They intended the cheapest cash-cost flight; they were unaware the agent had applied multi-step credit reasoning across a separate merchant relationship. Now the dispute enters the existing regulatory framework. Under Reg Z (credit) or Reg E (debit), the issuer sees a validly authorized transaction — the credential was used by the agent that held it, at the right merchant type, within the programmed limits. The cardholder&#x27;s claim that the transaction wasn&#x27;t authorized &quot;in the meaningful sense&quot; maps most closely to a billing error dispute, but billing error provisions assume a mechanical failure — a wrong amount posted, a duplicate charge, a merchant error — not a reasoning failure by a delegated agent that acted within its technical permissions but outside the user&#x27;s actual intent. The issuer&#x27;s likely outcome: denial, because authorization was technically valid. The cardholder&#x27;s actual harm: real. The category exists in today&#x27;s dispute framework; it just produces the wrong answer for this class of event, because it was designed to adjudicate execution errors, not delegation failures.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The products that win the agentic delegation layer will not replace virtual card controls — they will sit above them, supplying the dynamic context that static rule sets cannot evaluate. Mastercard In Control and similar infrastructure solve the credential-scoping problem at issuance. The missing layer evaluates whether the agent&#x27;s reasoning at execution time still falls within the principal&#x27;s intent, given what changed between issuance and transaction. That is a different problem: it requires capturing a representation of delegated intent that is interpretable both to the agent and to a dispute adjudicator after the fact.</p>
+<p><em>[Sage&#x27;s take]</em> Incumbents are not structurally blocked from building this. Visa&#x27;s CyberSource and Decision Manager already sit between authorization and settlement and apply rule logic. Mastercard has the virtual card program relationships and the In Control infrastructure. The stronger version of the argument is not that incumbents lack capability — it is that their current architecture evaluates transaction attributes, not decision provenance. The company that builds a verifiable intent record — a structured log of what the agent was authorized to decide, what context it observed, and why it selected the outcome it did — creates the audit artifact that makes delegation commercially insurable and dispute adjudication tractable. That is the new layer. Whether it is built by a network, a fintech, or an identity infrastructure provider is an open race. The constraint that makes it urgent is not new agent capability; it is the existing dispute framework producing systematically wrong outcomes for a transaction class that is about to scale.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Visa CLI for agentic payments (closed beta)</strong> — Reported via Forbes from closed-beta access; no published developer documentation or press release at time of writing. Signals Visa&#x27;s intent to build agent-native payment primitives. The exact credential mechanism — virtual card, token, or otherwise — is unspecified, which means the extent to which existing virtual card controls apply is also unresolved. (Source)</li>
+</ul>
+<ul>
+<li><strong>Mastercard In Control (commercially deployed)</strong> — Allows program managers and issuers to attach MCC restrictions, per-transaction caps, time windows, and merchant locks to virtual card credentials at issuance. This is a partial solution to the static delegation problem and is already in production. It does not evaluate dynamic context or reasoning provenance. (Source)</li>
+</ul>
+<ul>
+<li><strong>Visa Decision Manager / CyberSource</strong> — Incumbent rule-logic infrastructure sitting between authorization and settlement. Demonstrates that networks already apply conditional logic in the authorization flow. The gap is not that this logic doesn&#x27;t exist; it is that it operates on transaction attributes, not on the agent decision process that produced the transaction. (Source)</li>
+</ul>
+<ul>
+<li><strong>Reg E and Reg Z dispute frameworks</strong> — The regulatory categories that govern unauthorized transaction disputes exist and are well-defined. They are mismatched to delegation failures not because no category applies, but because the applicable categories (billing error, unauthorized use) were designed around mechanical and identity failures, not around reasoning failures by authorized agents acting outside delegated intent. (<a href="https://www.consumerfinance.gov/rules-policy/regulations/1005/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view — that virtual card controls and tokenization already solve agentic delegation — is right about the static case and wrong about the dynamic case. Mastercard In Control is a genuine, deployed solution to the problem of scoping a credential to a defined use case. The consensus underestimates how quickly the dynamic case becomes the dominant case once agents operate across multi-step reasoning sessions where context changes between delegation and execution. The missing assumption is that constraints can be fully specified at issuance time. For narrow, predictable tasks, they can. For agents that observe new information, apply cross-merchant reasoning, or optimize across user preferences that weren&#x27;t fully articulated — which is the commercially interesting agentic use case — static controls are necessary but not sufficient. The constraint that changes is not the credential; it is the gap between what the principal said they wanted and what the agent concluded they wanted.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li>Kolt, N. (2025). &quot;Governing AI Agents.&quot; Discusses frameworks for accountability in multi-step agent decisions, including how delegation chains complicate existing liability models. Relevant to the dispute adjudication gap identified above. (<a href="https://arxiv.org/abs/2505.03793" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://www.forbes.com/sites/digital-assets/2025/05/28/visa-launches-ai-payment-agent-tool/</li>
+<li>https://www.mastercardservices.com/en/solutions/in-control</li>
+<li>https://usa.visa.com/run-your-business/small-business-tools/payment-technology/cybersource.html</li>
+<li>https://www.consumerfinance.gov/rules-policy/regulations/1005/</li>
+<li>https://arxiv.org/abs/2505.03793</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 09, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The dispute framework point is the sleeper issue practitioners aren&#x27;t talking about yet — I&#x27;d add that most issuer dispute teams are operationally configured to adjudicate Reg E and Reg Z claims through rule-matching workflows, not discretionary reasoning about delegation intent, so even if a sympathetic legal reading of &#x27;unauthorized&#x27; existed, the operational layer wouldn&#x27;t surface it. The liability gap here isn&#x27;t just regulatory, it&#x27;s organizational.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>
