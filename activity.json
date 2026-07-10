@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "e1ad74e4681c2d78",
-      "title": "Agentic Commerce & Payments Summit 2026 | Stockholm",
+      "title": "Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails",
       "source_url": "https://www.industryevents.com/events/agentic-commerce-payments-summit",
       "discovered_at": "2026-07-10T02:00:29.692602+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,39 @@
             ],
             "today": "July 09, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-10T02:00:32.447693+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails",
+                "url": "https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails",
+                "content": "Visa CLI, currently in closed beta, lets AI agents and developer scripts execute card payments from a terminal without managing API keys or pre-funding accounts. 'Agentic commerce is a once in a generation growth opportunity and Visa is built for this moment.'",
+                "score": 7.7,
+                "why": "Concrete product announcement — Visa CLI in closed beta enabling agents to execute card payments without API key management — signals infrastructure race entering testable reality, not just roadmap."
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments in - IMF e-Library",
+                "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+                "content": "Prepared by Sonja Davidovic and Hervé Tourpe, April 2026. AI systems can interpret objectives, plan multistep actions, and interact with digital services with limited human intervention, moving transaction initiation from explicitly human instructions toward agent-mediated decision making.",
+                "score": 7.3,
+                "why": "IMF policy paper on agentic payments is a primary institutional source that will shape regulatory framing — the first major multilateral body to formally analyze the shift from human-instructed to agent-mediated transaction initiation."
+              },
+              {
+                "title": "Micro-Transaction Markets for Verified Product Information",
+                "url": "https://arxiv.org/pdf/2606.24783",
+                "content": "A solicit-then-suggest model of agentic purchasing. Preprint, arXiv:2603.20972. Working paper, University of Toronto. Presented at the Marketplace Innovation Workshop (MIW) 2026.",
+                "score": 6.7,
+                "why": "arXiv preprint proposes a novel micro-transaction market architecture for agent-to-agent verified information exchange — primary research on payment mechanics specific to agentic purchasing flows."
+              }
+            ],
+            "selected_candidate": {
+              "title": "Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails",
+              "url": "https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails",
+              "content": "Visa CLI, currently in closed beta, lets AI agents and developer scripts execute card payments from a terminal without managing API keys or pre-funding accounts. 'Agentic commerce is a once in a generation growth opportunity and Visa is built for this moment.'",
+              "score": 7.7,
+              "why": "Concrete product announcement — Visa CLI in closed beta enabling agents to execute card payments without API key management — signals infrastructure race entering testable reality, not just roadmap."
+            }
+          },
+          "timestamp": "2026-07-10T02:00:50.961320+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +786,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-10T02:00:32.447708+00:00",
+      "updated_at": "2026-07-10T02:00:50.996774+00:00",
       "created_at": "2026-07-10T02:00:29.692658+00:00",
       "metadata": {
         "source_title": "Agentic Commerce & Payments Summit 2026 | Stockholm",
         "rex_raw_text": "Reserve Now\n\nAgentic Commerce & Payments Summit logo\n\nThe Agentic Commerce & Payments Summit is a premier gathering focused on the future of AI-driven commerce and next-generation payments. Bringing together merchants, PSPs, banks, fintechs, retailers, and technology innovators, the summit explores how AI agents are reshaping customer journeys, autonomous checkout, payment experiences, digital identity, fraud prevention, and transaction orchestration.  \n  \nThe event provides a platform for industry leaders to discuss emerging trends, real-world use cases, and the infrastructure required to pow",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Agentic Commerce & Payments Summit 2026 | Stockholm"
+        "candidate_url": "https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails",
+        "candidate_title": "Stripe, Visa And Mastercard Race To Build AI Agent Payment Rails"
       }
     },
     {
@@ -22107,7 +22138,21 @@
         "results": 8
       },
       "timestamp": "2026-07-10T02:00:29.687631+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.023,
+      "metadata": {
+        "input_tokens": 3897,
+        "output_tokens": 754,
+        "raw_count": 15
+      },
+      "timestamp": "2026-07-10T02:00:50.906833+00:00"
     }
   ],
-  "last_updated": "2026-07-10T02:00:32.486968+00:00"
+  "last_updated": "2026-07-10T02:00:51.034313+00:00"
 }
