@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "f8be024b38f16aa2",
-      "title": "Instagram",
+      "title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum",
       "source_url": "https://www.instagram.com/p/DW4JYMCjZVn",
       "discovered_at": "2026-07-11T02:00:32.766122+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,60 @@
             ],
             "today": "July 10, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-11T02:00:36.127880+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum",
+                "url": "https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx",
+                "content": "New Agent Scoring, Agentic Registry and Large Transaction Model capabilities announced at Visa Payments Forum.",
+                "score": 8.7,
+                "why": "Primary source (Visa investor relations) announcing concrete agentic payment infrastructure — Agent Scoring, Agentic Registry, stablecoin rails — not a press rehash."
+              },
+              {
+                "title": "[2602.24068] A Novel Hierarchical Multi-Agent System for Payments Using LLMs",
+                "url": "https://arxiv.org/abs/2602.24068",
+                "content": "12 pages, 1 figure, 3 tables. Accepted at PAKDD 2026. Proposes hierarchical multi-agent architecture for payment workflows using LLMs.",
+                "score": 8.3,
+                "why": "Peer-reviewed arXiv paper accepted at PAKDD 2026 — primary research source proposing a concrete multi-agent payment architecture, not industry PR."
+              },
+              {
+                "title": "Visa, Mastercard, UnionPay, and Nevermined Are Building the Payment Rails for Autonomous Agents — When an Agent Fails, Who Pays?",
+                "url": "https://www.linkedin.com/pulse/visa-mastercard-unionpay-nevermined-building-payment-rails-pylarinou-s1d8e",
+                "content": "Cross-institutional team from Google DeepMind, Microsoft Research, and Columbia University proposes the Agentic Risk Standard (ARS): fee-only tasks require escrow only; fund-involving tasks require underwriting.",
+                "score": 7.7,
+                "why": "Surfaces the ARS liability framework from a DeepMind/MSR/Columbia collaboration — the agent liability question is the unsolved governance problem that determines whether agentic payments scale."
+              },
+              {
+                "title": "Google and PayPal team on agentic AI payments",
+                "url": "https://www.americanbanker.com/payments/news/google-and-paypal-team-on-agentic-ai-payments",
+                "content": "PayPal and Google plan to collaborate on agentic commerce requiring little or no human supervision for shopping and checkout. Partnership followed Mastercard's release with Stripe, Google, and Antom to scale agentic payments.",
+                "score": 7.3,
+                "why": "American Banker reporting on a live Google–PayPal partnership plus the Mastercard–Stripe–Antom stack signals that production-level agentic payment coalitions are now forming across all major rails simultaneously."
+              },
+              {
+                "title": "agentic-commerce-research/PAPER.md at main - GitHub",
+                "url": "https://github.com/minddog/agentic-commerce-research/blob/main/PAPER.md",
+                "content": "Cites: Clink launches world's first fiat agentic payment skill (April 30, 2026); Alchemy AgentPay integration for every agentic payment protocol (April 28, 2026); OKX Agent Payments Protocol (April 2026); Alipay AI payment product for agent commerce (April 28, 2026).",
+                "score": 7.0,
+                "why": "A curated primary-source reference list tracking four distinct production launches in April 2026 — useful as a verified protocol tracker, not commentary."
+              },
+              {
+                "title": "OpenAI and Stripe's Agentic Commerce Protocol: What Every Builder Needs to Know About the New Payment Stack",
+                "url": "https://www.mindstudio.ai/blog/openai-stripe-agentic-commerce-protocol-new-payment-stack-builders",
+                "content": "Covers OpenAI–Stripe Agentic Commerce Protocol, notes Walmart test failed, fraud economics already changed (Stripe Radar token-theft signal), most Visa/Mastercard/Meta/PayPal infrastructure still in prototype phase.",
+                "score": 6.7,
+                "why": "Cuts through hype with a concrete failure data point (Walmart test) and an honest infrastructure readiness assessment — rare signal-to-noise ratio for this genre."
+              }
+            ],
+            "selected_candidate": {
+              "title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum",
+              "url": "https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx",
+              "content": "New Agent Scoring, Agentic Registry and Large Transaction Model capabilities announced at Visa Payments Forum.",
+              "score": 8.7,
+              "why": "Primary source (Visa investor relations) announcing concrete agentic payment infrastructure — Agent Scoring, Agentic Registry, stablecoin rails — not a press rehash."
+            }
+          },
+          "timestamp": "2026-07-11T02:00:57.835745+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +807,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-11T02:00:36.127908+00:00",
+      "updated_at": "2026-07-11T02:00:57.884340+00:00",
       "created_at": "2026-07-11T02:00:32.766232+00:00",
       "metadata": {
         "source_title": "Instagram",
         "rex_raw_text": "More posts from wearemastercard\n\nPhoto by Mastercard Careers on November 24, 2025.\n\nPhoto by Mastercard Careers on August 13, 2024.\n\nVideo by Mastercard Careers on March 07, 2025.\n\nPhoto by Mastercard Careers on July 10, 2026.\n\nPhoto by Mastercard Careers on July 08, 2026. May be an image of text that says 'Welcome C'.\n\nVideo by Mastercard Careers on July 07, 2026. May be an image of one or more people, beard, people standing, phone, Times Square and text.\n\nVideo by Mastercard Careers on July 02, 2026. May be an image of text.\n\nVideo by Mastercard Careers on June 30, 2026. May be an image of l",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Instagram"
+        "candidate_url": "https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx",
+        "candidate_title": "Visa Announces New AI, Stablecoin and Token Innovations to Power Intelligent, Programmable Commerce at Visa Payments Forum"
       }
     },
     {
@@ -23403,7 +23455,21 @@
         "results": 8
       },
       "timestamp": "2026-07-11T02:00:32.763913+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.02969,
+      "metadata": {
+        "input_tokens": 4210,
+        "output_tokens": 1137,
+        "raw_count": 16
+      },
+      "timestamp": "2026-07-11T02:00:57.779982+00:00"
     }
   ],
-  "last_updated": "2026-07-11T02:00:36.184501+00:00"
+  "last_updated": "2026-07-11T02:00:57.933261+00:00"
 }
