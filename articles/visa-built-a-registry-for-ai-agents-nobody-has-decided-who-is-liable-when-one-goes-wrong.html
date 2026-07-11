@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa Built a Registry for AI Agents. Nobody Has Decided Who Is Liable When One Goes Wrong. — Agentic Payment</title>
+  <meta name="description" content="The infrastructure for agentic payments is live. The liability framework isn&#x27;t. That gap is where the next constraint lives.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/visa-built-a-registry-for-ai-agents-nobody-has-decided-who-is-liable-when-one-goes-wrong.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Visa Built a Registry for AI Agents. Nobody Has Decided Who Is Liable When One Goes Wrong.</h1>
+    <p class="dek">The infrastructure for agentic payments is live. The liability framework isn&#x27;t. That gap is where the next constraint lives.</p>
+    <div class="meta">Published 2026-07-11 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>In the past 90 days, the major rails have moved from roadmaps to production infrastructure. At the Visa Payments Forum, Visa announced three concrete capabilities: Agent Scoring (a trust signal for autonomous agents initiating transactions), an Agentic Registry (an identity layer for enrolling agents to act on behalf of cardholders), and a Large Transaction Model (a risk engine trained for the spending patterns of software agents rather than humans). (<a href="https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx" target="_blank" rel="noopener">Visa investor relations</a>) Simultaneously, Google and PayPal announced a partnership to enable agentic commerce with minimal human supervision (<a href="https://www.americanbanker.com/payments/news/google-and-paypal-team-on-agentic-ai-payments" target="_blank" rel="noopener">American Banker</a>), and April 2026 saw four distinct production-level launches: Clink&#x27;s fiat agentic payment skill, Alchemy AgentPay, OKX Agent Payments Protocol, and Alipay&#x27;s AI payment product. (<a href="https://github.com/minddog/agentic-commerce-research/blob/main/PAPER.md" target="_blank" rel="noopener">GitHub agentic-commerce-research</a>) The existing system — tokenization, authentication, scheme rules, fraud scoring — solved the problem of verifying a human-initiated transaction. Visa&#x27;s new stack extends that logic to verify the agent itself.</p>
+<p>This is not incremental. An Agentic Registry means Visa is positioning itself as the root-of-trust for agent identity, not just card identity. Agent Scoring means the authorization decision now incorporates a software principal&#x27;s behavioral history, not just a cardholder&#x27;s. These are real additions to the stack and they matter: without them, every agentic transaction falls back to static credentials that were never designed for multi-step, cross-context, autonomous spending.</p>
+<h2>The Gap</h2>
+<p>The infrastructure solves authentication — it can tell you <em>which agent</em> initiated a transaction and <em>whether that agent was registered</em>. What it does not solve is the question that follows every disputed agentic transaction: <em>who bears the loss?</em> A cross-institutional team from Google DeepMind, Microsoft Research, and Columbia University has proposed what they call the Agentic Risk Standard (ARS), which draws a structural line between two categories: fee-only tasks (where an agent charges a service fee and escrow is sufficient) and fund-involving tasks (where an agent moves principal and underwriting is required). (LinkedIn/Pylarinou) That distinction does not yet exist in Visa&#x27;s scheme rules, Mastercard&#x27;s operating regulations, or any published cardholder agreement. The Agentic Registry tells you the agent&#x27;s identity. Nothing in the current rulebook tells you the agent&#x27;s <em>liability class</em>.</p>
+<p>This is the assumption that breaks: the existing chargeback and dispute framework assumes a human cardholder who can testify to intent. When an agent acts autonomously over a multi-hour shopping session, crosses multiple merchant categories, and triggers a large purchase based on a reasoning chain the cardholder never reviewed, the question of intent becomes structurally unanswerable under current rules. The MindStudio analysis of the OpenAI–Stripe Agentic Commerce Protocol noted that the Walmart test failed, and that fraud economics have already shifted — Stripe Radar is picking up token-theft signals that the old model wasn&#x27;t trained to catch. (<a href="https://www.mindstudio.ai/blog/openai-stripe-agentic-commerce-protocol-new-payment-stack-builders" target="_blank" rel="noopener">MindStudio</a>) Authentication improved. Liability allocation did not.</p>
+<h2>The Practical Example</h2>
+<p>A cardholder enrolls their Visa card in an Agentic Registry and authorizes a travel-planning agent to book within a $3,000 monthly budget. The agent, reasoning across a multi-step itinerary, books a refundable hotel for $2,800, then — before the human checks in — re-optimizes and cancels that booking, triggering a $280 early-cancellation fee the cardholder did not explicitly approve. The cardholder disputes the fee. The merchant has a valid contract with the agent. Visa&#x27;s Agent Scoring confirms the registered agent initiated the charge. The issuer has no rule for whether a registered agent&#x27;s re-optimization decision constitutes authorized cardholder intent. Under current scheme rules, the dispute resolves as a standard cardholder dispute — the issuer eats the cost or the merchant fights it — with no mechanism to assess whether the agent&#x27;s principal (the platform that deployed the agent) bears any liability. The registry proved the agent&#x27;s identity. It could not answer who owns the consequence.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next constraint in agentic payments is not technical — it is jurisdictional and contractual. Visa&#x27;s Agentic Registry and Agent Scoring are necessary preconditions, not sufficient ones. The missing layer is a liability taxonomy embedded in scheme rules: a formal distinction between an agent acting as a <em>payment instrument</em> (the card model, where the issuer guarantees) and an agent acting as a <em>contracting principal</em> (the merchant model, where the platform underwrites). The ARS framework from DeepMind/MSR/Columbia is the clearest public attempt to define this taxonomy, and it will likely become the template that networks are pressured to adopt — either by a large-loss event that forces a scheme rule change, or by a regulator (CFPB, FCA, or RBA) that decides the chargeback framework is simply not fit for software principals.</p>
+<p><em>[Sage&#x27;s take]</em> The businesses positioned to win this layer are not the registries themselves — Visa already owns that. They are the underwriting platforms and compliance infrastructure vendors who can evaluate an agent&#x27;s <em>liability class</em> at enrollment time and price the risk accordingly. Think of it as the difference between issuing a card and issuing a merchant account: both require the network, but the risk models are entirely different. The company that builds agent underwriting — not agent authentication — captures the margin that the current stack cannot see.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Visa announces Agent Scoring, Agentic Registry, and Large Transaction Model</strong> — creates infrastructure for enrolling and scoring autonomous agents as payment principals; solves agent identity, does not solve agent liability class. (<a href="https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx" target="_blank" rel="noopener">Visa investor relations</a>)</li>
+<li><strong>Google and PayPal partner on agentic commerce</strong> — signals that production coalitions are forming across all major rails simultaneously; raises the stakes for liability framework timing. (<a href="https://www.americanbanker.com/payments/news/google-and-paypal-team-on-agentic-ai-payments" target="_blank" rel="noopener">American Banker</a>)</li>
+<li><strong>DeepMind/MSR/Columbia publish Agentic Risk Standard (ARS)</strong> — proposes fee-only vs. fund-involving liability split; first serious public framework for agent liability classification. (LinkedIn/Pylarinou)</li>
+<li><strong>Four production launches in April 2026 (Clink, Alchemy, OKX, Alipay)</strong> — agentic payment protocols are live across fiat and crypto rails; the liability gap is no longer theoretical. (<a href="https://github.com/minddog/agentic-commerce-research/blob/main/PAPER.md" target="_blank" rel="noopener">GitHub agentic-commerce-research</a>)</li>
+<li><strong>Walmart agentic test fails; Stripe Radar detects new token-theft patterns</strong> — concrete evidence that fraud economics have already shifted before liability rules exist. (<a href="https://www.mindstudio.ai/blog/openai-stripe-agentic-commerce-protocol-new-payment-stack-builders" target="_blank" rel="noopener">MindStudio</a>)</li>
+<li><strong>PAKDD 2026 paper proposes hierarchical multi-agent payment architecture</strong> — peer-reviewed research operationalizes multi-agent payment workflows; further widens the gap between technical capability and governance readiness. (<a href="https://arxiv.org/abs/2602.24068" target="_blank" rel="noopener">arXiv 2602.24068</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that the main barrier to agentic payments is authentication and trust — get the agent identity right, and the rest of the stack follows. The consensus is correct that authentication is necessary: you cannot dispute a transaction if you cannot identify the agent that initiated it. But the consensus underestimates that authentication is a precondition, not a solution. The chargeback framework, scheme rules, and consumer protection law were all written around a single assumption: a human authorized the spend. Visa&#x27;s registry confirms which agent acted; it does not resolve whether the agent&#x27;s platform, the deploying merchant, the issuing bank, or the cardholder bears liability when the agent&#x27;s reasoning produces an outcome the human did not foresee. Solving authentication while leaving liability unresolved is the equivalent of building a merchant terminal without a merchant agreement — you can process the transaction, you just cannot settle a dispute.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>A Novel Hierarchical Multi-Agent System for Payments Using LLMs</strong> — proposes a concrete multi-agent architecture for payment workflows; accepted at PAKDD 2026. Relevant because it operationalizes the multi-step agent payment flow that existing dispute rules cannot handle. (<a href="https://arxiv.org/abs/2602.24068" target="_blank" rel="noopener">arXiv 2602.24068</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://investor.visa.com/news/news-details/2026/Visa-Announces-New-AI-Stablecoin-and-Token-Innovations-to-Power-Intelligent-Programmable-Commerce-at-Visa-Payments-Forum/default.aspx</li>
+<li>https://www.americanbanker.com/payments/news/google-and-paypal-team-on-agentic-ai-payments</li>
+<li>https://www.linkedin.com/pulse/visa-mastercard-unionpay-nevermined-building-payment-rails-autonomous-pylarinou-s1d8e</li>
+<li>https://github.com/minddog/agentic-commerce-research/blob/main/PAPER.md</li>
+<li>https://www.mindstudio.ai/blog/openai-stripe-agentic-commerce-protocol-new-payment-stack-builders</li>
+<li>https://arxiv.org/abs/2602.24068</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 10, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The fee-only vs. fund-involving distinction the ARS proposes maps loosely onto how correspondent banking already differentiates payment-versus-advice liability — but nobody in scheme rules has operationalized that split at the card network layer, and the moment you try, you run straight into Reg E&#x27;s &#x27;authorized transaction&#x27; definition, which was written assuming a human who either did or didn&#x27;t press the button. That&#x27;s the specific statutory wall this article is gesturing at, and naming it would give the jurisdictional claim real teeth.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>
