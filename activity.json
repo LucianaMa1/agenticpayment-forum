@@ -6,7 +6,7 @@
       "title": "What new rules for agentic AI in payments might look like",
       "source_url": "https://www.pinsentmasons.com/out-law/analysis/what-new-rules-agentic-ai-payments-look-like",
       "discovered_at": "2026-07-12T02:00:25.146916+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,66 @@
             ],
             "today": "July 11, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-12T02:00:27.946868+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "What new rules for agentic AI in payments might look like",
+                "url": "https://www.pinsentmasons.com/out-law/analysis/what-new-rules-agentic-ai-payments-look-like",
+                "content": "Show me more\n\nOUT-LAW ANALYSIS\n\nUK subsidy control post-Brexit: access to effective judicial remedies\n\nShow me more\n\nOUT-LAW NEWS\n\n'Steps of court' settlement was not negligent, court rules\n\nShow me more\n\nOUT-LAW NEWS\n\n'Vast majority' of companies not seeking to avoid tax\n\nShow me more\n\nOUT-LAW NEWS\n\n'World first' industrial decarbonisation strategy developed in the UK\n\nShow me more\n\nOUT-LAW ANALYSIS\n\n3D printing: UK product safety issues\n\nShow me more\n\nOUT-LAW NEWS\n\n5G potential for business highlighted in UK funding programme\n\nShow me more\n\n## Your privacy matters to us [...] Technology, Med"
+              },
+              {
+                "title": "Instagram",
+                "url": "https://www.instagram.com/reel/DVhLW2OEjgq",
+                "content": "Log in to like or comment.\n\nMore posts from mastercardca\n\nVideo by Mastercard Canada on July 07, 2026. May be an image of football, sports equipment, sportswear and text that says 'HOLD HOLDTOFINDYOUR ΤΟ FIND YOUR FAVORITEPLAYER FAVORITE PLAYER'.\n\nVideo by Mastercard Canada on June 28, 2026. May be an image of soccer, sportswear, sports equipment and text that says 'Everything has been leading up to this Tout α mené à ce moment MESSI 19'.\n\nPhoto by Mastercard Canada on June 26, 2026. May be an image of hockey stick, rack, sportswear, card and text that says 'A new chapter calls for new gear. G"
+              },
+              {
+                "title": "PYMNTS | Permission Is Powering the Agentic Commerce Revolution",
+                "url": "https://www.pymnts.com/news/artificial-intelligence/2026/permission-not-payments-will-shape-agentic-commerce-revolution",
+                "content": "For all PYMNTS AI coverage, subscribe to the daily AI Newsletter.\n\nTim Joslyn is the chief technology officer at Paymentology, where he leads the development and deployment of next-generation technology solutions.\n\n#### Recommended\n\nOCC Applying Bank Secrecy Act to Stablecoin Issuers\n\nInstagram\n\nMeta Takes on Streaming Giants With New ‘Instagram for TV’ Offerings\n\nMoonPay\n\nMoonPay Acquires AI Accounting Agent Maker Entendre\n\nBilt and Preferred Hotels\n\nBilt Adds Preferred Hotels & Resorts as Transfer Partner for Members\n\n#### Trending News\n\n#### The Big Story\n\n#### Featured News\n\n#### Subscribe"
+              },
+              {
+                "title": "Agentic AI Takes the Wheel 2026 - United States - Insentra",
+                "url": "https://www.insentragroup.com/us/insights/not-geek-speak/generative-ai/agentic-ai-takes-the-wheel-a-deep-dive-into-2026",
+                "content": "1.   Autonomous reasoning(breaking complex goals into subtasks and adapting when approaches fail)\n2.   Tool orchestration(accessing APIs, databases, and other AI systems)\n3.   Persistent context(maintaining awareness of ongoing projects and organisational knowledge). Industry analysts estimate only about 130 of thousands of claimed “AI agent” vendors are building genuinely agentic systems. Watch for “agent washing”vendors rebranding existing automation with a shiny new label.\n\n## The Enterprise Reality: A Tale of Different Speeds [...] 15. Microsoft, “Microsoft Agent 365: The Control Plane for"
+              },
+              {
+                "title": "Dual-protocol payment infrastructure for autonomous AI commerce ...",
+                "url": "https://www.reddit.com/r/rust/comments/1nud7nq/agentic_payments_for_rust_dualprotocol_payment",
+                "content": "Agentic Payments for Rust: Dual-protocol payment infrastructure for autonomous AI commerce. Supports new Google AP2 (Agent Payments Protocol)"
+              },
+              {
+                "title": "What really makes an AI system “agentic”? : r/AI_Agents",
+                "url": "https://www.reddit.com/r/AI_Agents/comments/1nfqg6n/what_really_makes_an_ai_system_agentic",
+                "content": "# What really makes an AI system “agentic”? : r/AI_Agents\nSkip to main contentWhat really makes an AI system “agentic”? : r/AI_Agents\n\nOpen menu Open navigation[]( to Reddit Home\n\nr/AI_Agents\n\nSign UpSign up for RedditLog InLog in to Reddit\n\nExpand user menu Open settings menu\n\nImage 1 Go to AI_Agents\n\nr/AI_Agents•8mo ago\n\nWorth-Card9034\n\n# What really makes an AI system “agentic”?\n\nDiscussion\n\n2023 - we are LLMs based\n\n2024 - we are multimodal\n\n2025 - almost every tool/software/offering has become agentic suddenly.\n\nhonestly i am feeling deja vu or a confusion state. Pardon my understanding b"
+              },
+              {
+                "title": "SoK: Security of Autonomous LLM Agents in Agentic Commerce",
+                "url": "https://arxiv.org/html/2604.15367v2",
+                "content": "Terminology note. We disambiguate three overloaded acronyms throughout this paper. ACP as used in this paper refers exclusively to the Agent Commerce Protocol by Virtuals Protocol , which is a settlement and escrow coordination layer (we call this ACP-Commerce when disambiguation is needed). Unrelated concurrent work uses “ACP” for an Agent Control Protocol, which is a deterministic pre-action authorization fabric , and we denote that protocol as ACP-Control. Similarly, PDR in this paper means Payment Delivery Receipt (a post-settlement cryptographic proof of payment completion, as formalized "
+              },
+              {
+                "title": "How Agentic AI Will Reshape Payments; IMF Note No. 2026/004; April 2026",
+                "url": "https://www.imf.org/-/media/files/publications/imf-notes/2026/english/insea2026004.pdf",
+                "content": "Desai, Akshar Prabhu. 2025. “Beyond the Subscription: Why Agentic Commerce Needs Stablecoins to Scale.” Fintech Weekly. IMF IMF Note | 23 \n\n nts \n\nErrico, Herman, Jiquan Ngiam, and Shanita Sojan. 2025. “Securing the Model Context Protocol (MCP): Risks, Controls, and Governance.” arXiv preprint arXiv:2511.20920.   \n\nEuropean Union Artificial Intelligence Act. 2024.   \n\nFinancial Stability Board (FSB). 2022. “Assessment of Risks to Financial Stability from Crypto-Assets.” \n\n \n\nFinancial Stability Board (FSB). 2023. “IMF-FSB Synthesis Paper: Policies for Crypto-Assets.” \n\n \n\nFinancial Stability B"
+              },
+              {
+                "title": "Visa Just Handed Your AI Agent a Payment Card — Here’s What Actually Changes",
+                "url": "https://medium.com/@aminshamim/visa-just-handed-your-ai-agent-a-payment-card-heres-what-actually-changes-378bdc31e1cc",
+                "content": "That’s not a demo anymore. On June 10, 2026, at the Visa Payments Forum in San Francisco, Visa announced a strategic partnership with OpenAI to enable secure Visa payments inside agentic commerce — AI agents that don’t just recommend purchases, but complete them.\n\nIt’s arguably the biggest AI story of the week, in a week that included a record-breaking IPO and blockbuster earnings. Here’s why this one matters more than it might first appear, and what it means for you whether you’re a founder, a developer, a creator, or just someone with a credit card.\n\n## What happened\n\nVisa is integrating its"
+              },
+              {
+                "title": "Visa and Mastercard both launch new agentic AI payments ...",
+                "url": "https://www.digitalcommerce360.com/2025/10/16/visa-mastercard-both-launch-agentic-ai-payments-tools",
+                "content": "In Visa’s announcement, it cited Adobe Insights data showing the 2024 holiday season marked a turning point, with generative AI traffic to U.S. retail sites increasing 1,300% year over year between Nov. 1 and Dec. 31. On Cyber Monday alone, traffic spiked 1,950%.\n\nBy July 2025, Adobe said generative AI-driven visits had jumped 4,700% year over year, based on click-throughs that led to purchases. Analysts expect that growth to accelerate this holiday season, as AI agents not only search for and recommend products but also complete purchases, sometimes without the shopper present at the time.\n\nA"
+              }
+            ],
+            "selected_candidate": {
+              "title": "What new rules for agentic AI in payments might look like",
+              "url": "https://www.pinsentmasons.com/out-law/analysis/what-new-rules-agentic-ai-payments-look-like",
+              "content": "Show me more\n\nOUT-LAW ANALYSIS\n\nUK subsidy control post-Brexit: access to effective judicial remedies\n\nShow me more\n\nOUT-LAW NEWS\n\n'Steps of court' settlement was not negligent, court rules\n\nShow me more\n\nOUT-LAW NEWS\n\n'Vast majority' of companies not seeking to avoid tax\n\nShow me more\n\nOUT-LAW NEWS\n\n'World first' industrial decarbonisation strategy developed in the UK\n\nShow me more\n\nOUT-LAW ANALYSIS\n\n3D printing: UK product safety issues\n\nShow me more\n\nOUT-LAW NEWS\n\n5G potential for business highlighted in UK funding programme\n\nShow me more\n\n## Your privacy matters to us [...] Technology, Med"
+            }
+          },
+          "timestamp": "2026-07-12T02:00:51.115881+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,17 +813,17 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-12T02:00:27.946903+00:00",
+      "updated_at": "2026-07-12T02:00:51.157447+00:00",
       "created_at": "2026-07-12T02:00:25.147037+00:00",
       "metadata": {
         "source_title": "What new rules for agentic AI in payments might look like",
         "rex_raw_text": "Show me more\n\nOUT-LAW ANALYSIS\n\nUK subsidy control post-Brexit: access to effective judicial remedies\n\nShow me more\n\nOUT-LAW NEWS\n\n'Steps of court' settlement was not negligent, court rules\n\nShow me more\n\nOUT-LAW NEWS\n\n'Vast majority' of companies not seeking to avoid tax\n\nShow me more\n\nOUT-LAW NEWS\n\n'World first' industrial decarbonisation strategy developed in the UK\n\nShow me more\n\nOUT-LAW ANALYSIS\n\n3D printing: UK product safety issues\n\nShow me more\n\nOUT-LAW NEWS\n\n5G potential for business highlighted in UK funding programme\n\nShow me more\n\n## Your privacy matters to us [...] Technology, Med",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
+        "candidate_url": "https://www.pinsentmasons.com/out-law/analysis/what-new-rules-agentic-ai-payments-look-like",
         "candidate_title": "What new rules for agentic AI in payments might look like"
       }
     },
@@ -24700,7 +24758,21 @@
         "results": 8
       },
       "timestamp": "2026-07-12T02:00:25.146716+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.02816,
+      "metadata": {
+        "input_tokens": 2891,
+        "output_tokens": 1299,
+        "raw_count": 11
+      },
+      "timestamp": "2026-07-12T02:00:51.071390+00:00"
     }
   ],
-  "last_updated": "2026-07-12T02:00:28.002994+00:00"
+  "last_updated": "2026-07-12T02:00:51.198416+00:00"
 }
