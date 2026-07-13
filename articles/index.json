@@ -1,5 +1,14 @@
 [
   {
+    "title": "Agentic Tokens Solve Authorization. They Don't Solve Who Authorized the Authorizer.",
+    "url": "https://agenticpayment.forum/articles/agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer.html",
+    "path": "/articles/agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer.html",
+    "slug": "agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer",
+    "brief": "Visa and Mastercard have live agentic transaction rails. The missing layer is provable delegation: who told the agent it could spend, and can you prove it after the fact?",
+    "published_at": "2026-07-13T02:02:12.690208+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "Mandate Drift and Mandate Ambiguity Are Different Problems — And the Payments Stack Solves Neither",
     "url": "https://agenticpayment.forum/articles/mandate-drift-and-mandate-ambiguity-are-different-problems-and-the-payments-stack-solves-n.html",
     "path": "/articles/mandate-drift-and-mandate-ambiguity-are-different-problems-and-the-payments-stack-solves-n.html",

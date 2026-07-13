@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Tokens Solve Authorization. They Don&#x27;t Solve Who Authorized the Authorizer. — Agentic Payment</title>
+  <meta name="description" content="Visa and Mastercard have live agentic transaction rails. The missing layer is provable delegation: who told the agent it could spend, and can you prove it after the fact?">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Agentic Tokens Solve Authorization. They Don&#x27;t Solve Who Authorized the Authorizer.</h1>
+    <p class="dek">Visa and Mastercard have live agentic transaction rails. The missing layer is provable delegation: who told the agent it could spend, and can you prove it after the fact?</p>
+    <div class="meta">Published 2026-07-13 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>The plumbing is real now. Mastercard Agent Pay embeds directly into the PayPal wallet, using a new class of credential called Agentic Tokens — built on the same tokenization rails that already protect hundreds of millions of cards on file — so that an AI agent can complete a purchase without ever touching the underlying card number. Visa, for its part, has confirmed hundreds of live agent-initiated transactions completed with ecosystem partners, referencing its Trusted Agent Protocol as the emerging standard for how an agent presents itself to an issuer. AWS demonstrated agentic workflows integrating with the PayPal Agent Toolkit. Independent developers are already shipping open-source SDKs for the Agentic Commerce Protocol and Google&#x27;s AP2 simultaneously, which is the clearest signal that these protocols are crossing from announcement into ecosystem. (Mastercard) (<a href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html" target="_blank" rel="noopener">Visa</a>) (<a href="https://www.digitaltransactions.net/ai-commerce-gets-a-boost-from-visa-paypal-and-mastercard" target="_blank" rel="noopener">Digital Transactions</a>) (<a href="https://www.reddit.com/r/PHP/comments/1nvxfe2/i_built_a_php_sdk_for_the_agentic_commerce" target="_blank" rel="noopener">Reddit/PHP</a>)</p>
+<p>Tokenization deserves full credit here. The reason card-on-file commerce survived a decade of breaches is that the actual PAN is never in motion at point of sale — a surrogate token is. Agentic Tokens extend this logic sensibly: the agent holds a scoped, revocable credential rather than a real account number. This is not a naive repurposing of old rails. It is a deliberate application of the most battle-tested security layer in consumer payments to a new class of actor. The existing system solves credential exposure at the transaction layer, and it solves it well.</p>
+<h2>The Gap</h2>
+<p>What tokenization does not solve is the chain of authority above the token. A token proves that <em>someone</em> provisioned an agent with spending rights. It does not prove that the human who holds the underlying account gave informed, bounded, and revocable consent for the specific agent that used it — and it does not create a durable, machine-readable record that a bank&#x27;s disputes team, a regulator, or a merchant&#x27;s fraud model can interrogate after the fact.</p>
+<p>The existing scheme rules were designed around a two-party delegation model: the cardholder authorizes the merchant to charge them. Agentic commerce introduces a third party — the agent — whose authority derives from a configuration event (the user enabling an agent in a wallet UI) that may have happened weeks or months before the transaction, across a different interface, under different understood conditions. The Agentic Token proves the credential is valid. It does not encode what the user thought they were authorizing, under what spending limits, for what category of goods, or whether the agent acted within those boundaries. The constraint that changes is not authentication — it is the auditability of delegation.</p>
+<h2>The Practical Example</h2>
+<p>A PayPal user enables a travel-booking agent in October, grants it access to their Mastercard on file, sets a vague &quot;up to $2,000 for flights&quot; permission, and forgets about it. In March, the agent — following a multi-step reasoning chain that interprets a calendar event as a travel trigger — books a $1,800 business-class seat and a $340 airport lounge membership the user didn&#x27;t anticipate. The Agentic Token authorizes both transactions cleanly. The issuer sees two valid, tokenized charges from a credentialed agent. The user disputes the lounge charge as unauthorized.</p>
+<p>Now the issuer&#x27;s disputes team has a problem that existing chargeback rules don&#x27;t fully address: was this fraud, or was it an agent acting within technically valid but practically misunderstood permission boundaries? The Mastercard or Visa infrastructure can confirm the token was used. It cannot answer whether the agent exceeded the scope of what the user understood they had delegated — because that scope was never encoded in a machine-readable, timestamped, retrievable format. The merchant wins the dispute technically. The user churns from the platform. The issuer absorbs the relationship cost with no systemic fix.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next layer to be built — and the one that will determine which wallet or agent platform wins enterprise and regulated consumer use — is a <strong>delegation ledger</strong>: a signed, timestamped, structured record of what a human authorized an agent to do, queryable by issuers, merchants, and compliance teams at dispute or audit time. This is not a blockchain pitch; it is an operational necessity. It looks more like a policy-as-data format attached to the token provisioning event than a new rail. Think of it as the agentic equivalent of a 3DS authentication record — the proof layer that sits above the transaction and survives it.</p>
+<p>The business model follows from whoever controls the delegation record: wallet providers who own the consent UI have first-mover advantage, but they have an incentive to keep delegation records opaque to preserve their platform position. The pressure for open, portable delegation records will come from issuers and regulators — and from merchants who need a chargeback defense that works. The player that defines the schema for what a valid agent delegation looks like, and makes it readable across schemes, owns the trust infrastructure for the next decade of agentic commerce. Visa&#x27;s Trusted Agent Protocol and Mastercard&#x27;s Agentic Token standard are both racing toward this, but neither has published the delegation record format. That gap is the opening.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Mastercard Agent Pay integrates into PayPal wallet</strong> — Agentic Tokens, built on existing tokenization rails, allow AI agents to transact on behalf of PayPal users at scale (hundreds of millions of consumers). Solves: credential exposure at transaction time. Leaves unsolved: encoding the scope and conditions of human delegation in a retrievable format. (Mastercard)</li>
+</ul>
+<ul>
+<li><strong>Visa confirms hundreds of live agent-initiated transactions</strong> — The Trusted Agent Protocol moves from announced to evidenced. Solves: agent authentication against existing issuer infrastructure. Leaves unsolved: post-hoc auditability of what the delegating human understood they were permitting. (<a href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html" target="_blank" rel="noopener">Visa</a>)</li>
+</ul>
+<ul>
+<li><strong>AWS + PayPal Agent Toolkit demonstrates multi-party agentic workflows</strong> — Businesses can trigger payment-capable agent chains from campaign or workflow logic. Solves: developer integration of payments into agentic pipelines. Leaves unsolved: which entity in the chain is responsible when the agent&#x27;s reasoning chain exceeds user intent. (<a href="https://www.digitaltransactions.net/ai-commerce-gets-a-boost-from-visa-paypal-and-mastercard" target="_blank" rel="noopener">Digital Transactions</a>)</li>
+</ul>
+<ul>
+<li><strong>Independent developers build ACP and Google AP2 SDKs simultaneously</strong> — Open-source tooling implementing multiple agentic payment protocols signals ecosystem maturity. Solves: lowers entry barrier for agent builders. Leaves unsolved: protocol fragmentation means delegation records encoded in one format may be unreadable by an issuer operating on a different scheme&#x27;s standard. (<a href="https://www.reddit.com/r/PHP/comments/1nvxfe2/i_built_a_php_sdk_for_the_agentic_commerce" target="_blank" rel="noopener">Reddit/PHP</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view — that the main challenge for agentic payments is authentication and fraud prevention at the transaction layer — is correct as far as it goes. Tokenization and Trusted Agent Protocols genuinely solve the problem of a bad actor spoofing an agent credential. But the consensus underestimates how much of the dispute, compliance, and trust infrastructure in payments depends not on proving <em>who transacted</em> but on proving <em>what was authorized to happen</em>. Chargeback rules, Regulation E liability frameworks, and merchant fraud models were all built assuming that the cardholder and the transacting party are the same human making a contemporaneous decision. The delegation chain in agentic commerce breaks that assumption silently — and no amount of better tokenization repairs it, because the gap is not in the credential layer, it is in the consent record layer above it.</p>
+<h2>From the Community</h2>
+<ul>
+<li>A developer thread on building PHP and Rust SDKs for ACP and Google AP2 simultaneously surfaces the protocol fragmentation question in practical form — if two open-source SDKs handle delegation state differently, the resulting permission records will be non-interoperable at dispute time. (<a href="https://www.reddit.com/r/PHP/comments/1nvxfe2/i_built_a_php_sdk_for_the_agentic_commerce" target="_blank" rel="noopener">Reddit/PHP</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html</li>
+<li>https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html</li>
+<li>https://www.digitaltransactions.net/ai-commerce-gets-a-boost-from-visa-paypal-and-mastercard</li>
+<li>https://www.reddit.com/r/PHP/comments/1nvxfe2/i_built_a_php_sdk_for_the_agentic_commerce</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 12, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The 3DS liability-shift parallel is exactly right, and I&#x27;d push it one step further: the reason 3DS actually moved chargeback liability was not the technology — it was Visa and Mastercard amending their dispute rules to recognize the authentication record as dispositive. A delegation ledger without a corresponding scheme rule amendment is just audit theater. Whoever builds this layer needs to be in a room with the scheme compliance teams, not just the engineering teams.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>
