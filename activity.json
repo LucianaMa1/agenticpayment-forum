@@ -3,10 +3,10 @@
   "articles": [
     {
       "article_id": "4df22baaec20b54c",
-      "title": "Visa and Partners Complete Secure AI Transactions, Setting the ...",
+      "title": "Mastercard and PayPal join forces",
       "source_url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html",
       "discovered_at": "2026-07-13T02:00:24.643206+00:00",
-      "final_status": "Filtering",
+      "final_status": "Writing",
       "locked": false,
       "error_context": null,
       "article_url": null,
@@ -333,7 +333,7 @@
           "agent": "Kai",
           "agent_code": "K",
           "stage_label": "Filter",
-          "status": "PROCESSING",
+          "status": "COMPLETED",
           "input_payload": {
             "raw_results": [
               {
@@ -741,8 +741,46 @@
             ],
             "today": "July 12, 2026"
           },
-          "output_payload": null,
-          "timestamp": "2026-07-13T02:00:27.312398+00:00",
+          "output_payload": {
+            "filtered": [
+              {
+                "title": "Mastercard and PayPal join forces",
+                "url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+                "content": "Mastercard Agent Pay, the company's agentic payments platform, will be integrated into PayPal's wallet to allow AI agents to simply and securely complete transactions on behalf of PayPal users. Hundreds of millions of consumers and tens of millions of merchants globally will be able to participate in agentic commerce experiences, including the millions of Mastercard cards on file across the PayPal platform.",
+                "score": 8.3,
+                "why": "Primary source announcement of a concrete integration — Mastercard Agent Pay embedded into PayPal wallet — with named infrastructure (Agentic Tokens, tokenization rails) and real scale numbers; this is actual plumbing, not a prediction."
+              },
+              {
+                "title": "Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026",
+                "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html",
+                "content": "Visa Inc. today announced a major milestone in the evolution of AI-powered commerce: hundreds of secure, agent-initiated transactions have now been successfully completed in collaboration with partners across the ecosystem.",
+                "score": 7.7,
+                "why": "Official Visa press release confirming hundreds of live agent-initiated transactions completed — moves agentic payments from announced to evidenced, and references the Trusted Agent Protocol as an emerging standard."
+              },
+              {
+                "title": "AI Commerce Gets a Boost From Visa, PayPal, and Mastercard – Digital Transactions",
+                "url": "https://www.digitaltransactions.net/ai-commerce-gets-a-boost-from-visa-paypal-and-mastercard",
+                "content": "Mastercard Inc. earlier this week announced Mastercard Agent Pay, which enables AI agents to handle payments for consumers. The program leverages Mastercard's tokenization capabilities and introduces new Agentic Tokens to ensure transactions with the AI commerce landscape. Amazon Web Services showcased how businesses can transform an idea into a digital campaign using agentic workflows by integrating with PayPal Agent Toolkit.",
+                "score": 7.0,
+                "why": "Adds detail on Mastercard's Agentic Tokens mechanism and the AWS/PayPal Agent Toolkit integration not covered in the Mastercard primary release — useful for understanding the multi-party stack, though it is trade press not a primary source."
+              },
+              {
+                "title": "I built a PHP SDK for the Agentic Commerce Protocol (ACP) - Reddit",
+                "url": "https://www.reddit.com/r/PHP/comments/1nvxfe2/i_built_a_php_sdk_for_the_agentic_commerce",
+                "content": "Agentic Payments for Rust: Dual-protocol payment infrastructure for autonomous AI commerce. Supports new Google AP2 (Agent Payments Protocol)",
+                "score": 6.7,
+                "why": "First-party developer signal: an open-source SDK implementing ACP and Google AP2 simultaneously suggests these protocols are reaching the point where independent developers are building tooling — a leading indicator of ecosystem maturity worth tracking, even if the snippet is thin."
+              }
+            ],
+            "selected_candidate": {
+              "title": "Mastercard and PayPal join forces",
+              "url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+              "content": "Mastercard Agent Pay, the company's agentic payments platform, will be integrated into PayPal's wallet to allow AI agents to simply and securely complete transactions on behalf of PayPal users. Hundreds of millions of consumers and tens of millions of merchants globally will be able to participate in agentic commerce experiences, including the millions of Mastercard cards on file across the PayPal platform.",
+              "score": 8.3,
+              "why": "Primary source announcement of a concrete integration — Mastercard Agent Pay embedded into PayPal wallet — with named infrastructure (Agentic Tokens, tokenization rails) and real scale numbers; this is actual plumbing, not a prediction."
+            }
+          },
+          "timestamp": "2026-07-13T02:00:44.702940+00:00",
           "debug_prompt_url": "https://github.com/LucianaMa1/agentic-payment-bot/blob/main/prompts/kai.md"
         }
       ],
@@ -755,18 +793,18 @@
         {
           "agent": "Kai",
           "label": "Filter",
-          "status": "PROCESSING"
+          "status": "COMPLETED"
         }
       ],
-      "updated_at": "2026-07-13T02:00:27.312420+00:00",
+      "updated_at": "2026-07-13T02:00:44.751143+00:00",
       "created_at": "2026-07-13T02:00:24.643253+00:00",
       "metadata": {
         "source_title": "Visa and Partners Complete Secure AI Transactions, Setting the ...",
         "rex_raw_text": "# Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026\n\n12/18/2025\n\nWith nearly half of consumers using AI to discover new products, Visa and partners are laying the groundwork to go from find to buy, completing secure agentic payments\n\nSAN FRANCISCO--(BUSINESS WIRE)--Dec. 18, 2025--\nVisa Inc. (NYSE: V) today announced a major milestone in the evolution of AI-powered commerce: hundreds of secure, agent-initiated transactions have now been successfully completed in collaboration with partners across the ecosystem. This breakthrough signals that 20",
         "raw_results_count": 40,
         "candidate_count": 0,
-        "candidate_url": null,
-        "candidate_title": "Visa and Partners Complete Secure AI Transactions, Setting the ..."
+        "candidate_url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-and-PayPal-join-forces.html",
+        "candidate_title": "Mastercard and PayPal join forces"
       }
     },
     {
@@ -26052,7 +26090,21 @@
         "results": 8
       },
       "timestamp": "2026-07-13T02:00:24.639199+00:00"
+    },
+    {
+      "event_type": "api_call",
+      "agent": "Kai",
+      "action": "filter_and_score",
+      "service": "Anthropic API",
+      "model": "claude-sonnet-4-6",
+      "cost_usd": 0.02264,
+      "metadata": {
+        "input_tokens": 3392,
+        "output_tokens": 831,
+        "raw_count": 14
+      },
+      "timestamp": "2026-07-13T02:00:44.645614+00:00"
     }
   ],
-  "last_updated": "2026-07-13T02:00:27.360224+00:00"
+  "last_updated": "2026-07-13T02:00:44.800086+00:00"
 }
