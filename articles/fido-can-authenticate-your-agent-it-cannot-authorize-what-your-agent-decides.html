@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIDO Can Authenticate Your Agent. It Cannot Authorize What Your Agent Decides. — Agentic Payment</title>
+  <meta name="description" content="Authentication proves an agent is who it claims. The missing layer is authorizing what the agent is allowed to decide—and that gap is where liability lands.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/fido-can-authenticate-your-agent-it-cannot-authorize-what-your-agent-decides.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>FIDO Can Authenticate Your Agent. It Cannot Authorize What Your Agent Decides.</h1>
+    <p class="dek">Authentication proves an agent is who it claims. The missing layer is authorizing what the agent is allowed to decide—and that gap is where liability lands.</p>
+    <div class="meta">Published 2026-07-19 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>The existing authentication stack is not naive. FIDO2/WebAuthn solved a real problem: phishing-resistant, device-bound credential verification that removes shared secrets from the authentication flow. FIDO Alliance&#x27;s current mandate to extend these standards to AI agents—defining how agents authenticate, act, and transact on behalf of end users—is a logical continuation of that work. The protocols exist, they scale, and they are trusted by every major browser, device manufacturer, and payments network. Stripe&#x27;s Agentic Commerce Suite, announced at Sessions 2026, builds on this by letting businesses expose purchase endpoints to agents, with Stripe Link providing tokenized payment references rather than raw card numbers. Visa&#x27;s completed secure AI transaction pilots establish agent-compatible credential flows at network scale. The stack from credential to token to network rail is, in broad strokes, coherent.</p>
+<p>So is the agent market it is being built for. The AI agents market sits at $7.84 billion in 2026 and is projected to reach $52.62 billion by 2030, with autonomous decision-making agents as the fastest-growing segment. The infrastructure investment is rational. The authentication conversation is necessary. The credential and tokenization layers solve real, solvable problems—and the industry is rightly solving them. (<a href="https://www.precedenceresearch.com/ai-agents-in-financial-services-market" target="_blank" rel="noopener">Precedence Research</a>) (<a href="https://nevermined.ai/blog/agent-to-agent-payment-statistics" target="_blank" rel="noopener">Nevermined</a>)</p>
+<h2>The Gap</h2>
+<p>Authentication answers one question: <em>is this agent who it claims to be?</em> Authorization answers a different question: <em>is this agent permitted to make this specific decision, right now, given what has changed since the user last expressed a preference?</em> The existing system solves the first. It does not solve the second.</p>
+<p>FIDO&#x27;s own framing of the problem is revealing: existing standards were designed for direct human interaction, not delegated agent action. The concern named is trust, liability, and user consent. But the proposed remedy—extending authentication standards to agents—addresses identity continuity, not decision scope. A token proves an agent is authorized to transact. It does not encode what spending logic was approved, under what conditions that approval lapses, or what happens when context shifts between the user&#x27;s last instruction and the agent&#x27;s next transaction. The compliance gap is equally stark: European PSPs operating under PSD2 and forthcoming AI Act provisions have no current framework for attributing liability when an authenticated, tokenized agent makes a payment the user would have rejected had they been asked. Authentication is necessary but not sufficient—and the industry is currently treating it as if it were both. (Tech Channels) (<a href="https://www.financexmagazine.com/post/agentic-payments-are-coming-what-european-psps-and-compliance-teams-must-do-before-regulators-catch" target="_blank" rel="noopener">Finance X Magazine</a>)</p>
+<h2>The Practical Example</h2>
+<p>A user instructs a travel agent to book the cheapest available flight to Berlin for a conference, budget capped at €400. The agent authenticates via FIDO-compliant credential, receives a scoped payment token from Stripe, and begins searching. Three hours later, the cheapest option is a €387 fare with a 48-hour layover. The agent books it—it is within scope, the token is valid, the authentication is unimpeachable. The user misses the conference. The dispute hits the issuer: was this authorized? Under current rules, yes—the credential was valid, the token was used within its parameters, the merchant completed a legitimate transaction. The user&#x27;s actual intent (arrive in time for the conference) was never encoded anywhere the payment system could read it. The authorization layer stopped at &quot;agent is real and token is valid.&quot; No existing protocol captured the conditional logic the user actually meant. The chargeback process was designed for card fraud, not for semantic drift between user intent and agent execution. (Reddit/AI_Agents)</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The constraint that changes next is not authentication—that problem is being solved competently. The constraint is <strong>delegated authorization scope</strong>: a machine-readable, auditable record of what a user actually intended the agent to optimize for, the conditions under which that authorization expires or requires re-confirmation, and which party bears liability when the agent&#x27;s reasoning drifts from that scope. This is not a credential problem. It is a policy problem that needs to be expressed at the protocol layer.</p>
+<p>The businesses positioned to build this are not the card networks or the FIDO Alliance—they are the platforms that sit between user intent and agent execution: the orchestration layers, the agent wallet providers, and the compliance tooling vendors who can encode authorization policies as structured, versioned objects that travel with the payment context. Stripe, notably, is closer than most—its bounded payment reference architecture is a first approximation of scoped authorization. But the assumption that needs updating is this: the industry is treating agent payment safety as an authentication and tokenization problem. It is actually a <em>policy legibility</em> problem. Until user intent can be expressed in a form that issuers, networks, and dispute resolution systems can parse, the liability from every semantically-misaligned agent transaction will land somewhere arbitrary—and that uncertainty will slow adoption faster than any credential gap.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>FIDO Alliance moves to define agent authentication standards</strong> — Extends phishing-resistant credential standards to AI agents acting on behalf of users. Solves identity continuity; leaves decision-scope authorization entirely unaddressed. (Tech Channels)</li>
+<li><strong>Stripe Agentic Commerce Suite launches at Sessions 2026</strong> — Businesses can now sell through AI agents using tokenized payment references, keeping raw card data out of agent context. Solves PCI exposure; does not encode what the agent is permitted to decide within a purchase flow. (Tech Channels)</li>
+<li><strong>Visa completes secure AI transaction pilots, targets Holiday 2026 mainstream</strong> — Agent-compatible credential and acceptance infrastructure validated at network scale. Forecasts millions of autonomous checkouts daily. Creates volume pressure on dispute and liability frameworks that were not designed for this traffic class. (AI CERTs) (<a href="https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx" target="_blank" rel="noopener">Visa Investor Relations</a>)</li>
+<li><strong>European PSPs face compliance gap with no regulatory framework yet</strong> — PSD2 strong authentication requirements apply to the credential, not to the agent&#x27;s decision logic. AI Act provisions for high-risk automated decisions have not been mapped to payment authorization flows. (<a href="https://www.financexmagazine.com/post/agentic-payments-are-coming-what-european-psps-and-compliance-teams-must-do-before-regulators-catch" target="_blank" rel="noopener">Finance X Magazine</a>)</li>
+<li><strong>IJISAE paper identifies hallucination detection and payment governance as open challenges</strong> — Academic synthesis confirms that multi-agent payment systems require cryptographic trust <em>and</em> governance frameworks—authentication alone is insufficient for production safety. (<a href="https://ijisae.org/index.php/IJISAE/article/view/8360" target="_blank" rel="noopener">IJISAE</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus is right that authentication is the foundation—you cannot build authorization scope without knowing which agent you are scoping. FIDO&#x27;s extension work and Stripe&#x27;s tokenized reference architecture are genuine progress, not theater. The assumption that needs updating is that solving authentication <em>creates</em> a safe agentic payment system. Authentication proves the agent&#x27;s identity is stable. It says nothing about whether the agent&#x27;s <em>reasoning</em> stayed within the user&#x27;s actual intent across a multi-step, time-delayed task. When Visa processes millions of autonomous checkouts daily by late 2026, the disputes that follow will not mostly be about stolen credentials—they will be about agents that were correctly authenticated and incorrectly scoped. The industry needs to build the policy legibility layer before that volume arrives, not after the first wave of chargebacks forces the question.</p>
+<h2>From the Community</h2>
+<ul>
+<li>A CartAI founder on Reddit describes the production architecture that works: bounded, deterministic tasks with payment references—not a &quot;free-roaming shopper with your wallet.&quot; This is manual policy enforcement at the application layer. The argument here is that it needs to become a protocol primitive. (Reddit/AI_Agents)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://www.tech-channels.com/breaking-news/agentic-payments-move-into-fintech-mainstream</li>
+<li>https://www.aicerts.ai/news/visa-pushes-agentic-ai-commerce-toward-holiday-2026-reality</li>
+<li>https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx</li>
+<li>https://www.financexmagazine.com/post/agentic-payments-are-coming-what-european-psps-and-compliance-teams-must-do-before-regulators-catch</li>
+<li>https://nevermined.ai/blog/agent-to-agent-payment-statistics</li>
+<li>https://www.precedenceresearch.com/ai-agents-in-financial-services-market</li>
+<li>https://ijisae.org/index.php/IJISAE/article/view/8360</li>
+<li>https://www.reddit.com/r/AI_Agents/comments/1tt63lu/has_anyone_actually_used_an_agent_to_make_payments</li>
+<li>https://techinformed.com/agentic-ai-and-more-to-reshape-fintech-in-2026</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 18, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The dynamic linking requirement under PSD2 RTS Article 5 is the sharpest edge of this problem that nobody in the agentic payments conversation is talking about precisely enough: if an agent re-prices and re-executes a transaction hours after user instruction, the cryptographic binding between authentication and the specific transaction — amount, payee, timestamp — is broken by definition. European issuers cannot treat that as SCA-compliant without a rule change, and right now there is no rule change on the table. That is the regulatory exposure that should anchor the compliance section.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

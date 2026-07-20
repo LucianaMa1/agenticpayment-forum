@@ -41,7 +41,13 @@
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
     }
     .page-title { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.035em; margin-bottom: 12px; }
-    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 560px; margin-bottom: 48px; }
+    .page-sub { font-size: 15px; color: var(--text-mid); line-height: 1.6; max-width: 580px; margin-bottom: 14px; }
+    .page-note {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 48px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim);
+      border: 1px solid var(--border-2); background: var(--surface); border-radius: 999px; padding: 7px 12px;
+    }
+    .page-note::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px rgba(0,217,163,0.45); }
 
     /* ── Timeline ─────────────────────────────────────────── */
     .timeline { position: relative; }
@@ -156,10 +162,88 @@
 
   <p class="page-eyebrow">Chronicle</p>
   <h1 class="page-title">The Record.</h1>
-  <p class="page-sub">AI payment infrastructure is being built from scratch, right now. This is the timeline — protocol launches, governance shifts, and market milestones documented as they happen.</p>
+  <p class="page-sub">Four months in, agentic payment infrastructure is no longer a blank page. The timeline now tracks the live protocol race — authentication, authorization, compliance, dispute logic, and the market milestones that decide what becomes durable infrastructure.</p>
+  <p class="page-note">Updated Jul 2026 · newest milestones first</p>
 
   <!-- Timeline -->
   <div class="timeline">
+
+    <div class="entry">
+      <div class="entry-date">2026<br>Jul</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-blue"></div></div>
+      <div class="entry-card milestone">
+        <p class="entry-category cat-protocol">Protocol · Scale</p>
+        <p class="entry-title">x402 reports 165M transactions — and the definition becomes the story</p>
+        <p class="entry-body">The market starts quoting x402 at internet-scale volume. The important question shifts from “does agent payment demand exist?” to “what does the transaction count actually measure — HTTP 402 responses, channel opens, authorizations, or settled transfers?” Metrics become governance.</p>
+        <a href="/articles/165-million-x402-transactions-what-the-number-actually-counts-determines-whether-the-thesi.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2026<br>Jul</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-amber"></div></div>
+      <div class="entry-card milestone c-amber">
+        <p class="entry-category cat-network">Card Networks · Checkout</p>
+        <p class="entry-title">Mastercard Agent Pay and PayPal push agent checkout into the dispute layer</p>
+        <p class="entry-body">Agent authentication starts looking commercially real: networks and wallets can identify the agent and constrain spend. But the harder problem moves downstream — who arbitrates intent, mandate drift, refunds, and chargebacks when the buyer was an autonomous system?</p>
+        <a href="/articles/mastercard-and-paypal-just-solved-agent-authentication-the-dispute-layer-is-still-broken.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2026<br>Jul</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-violet"></div></div>
+      <div class="entry-card milestone c-violet">
+        <p class="entry-category cat-identity">Identity · Liability</p>
+        <p class="entry-title">Visa’s agent registry makes identity visible; liability remains unresolved</p>
+        <p class="entry-body">Agent identity and registration become table stakes for scheme-grade trust. The open issue is no longer whether an agent can be recognized — it is whether the network, issuer, merchant, user, or agent operator owns the loss when a recognized agent makes the wrong call.</p>
+        <a href="/articles/visa-built-a-registry-for-ai-agents-nobody-has-decided-who-is-liable-when-one-goes-wrong.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2026<br>Jun</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-green"></div></div>
+      <div class="entry-card milestone c-green">
+        <p class="entry-category cat-infra">Compliance · Logic</p>
+        <p class="entry-title">The blocker shifts from rails to enforceable agent logic</p>
+        <p class="entry-body">The industry converges on the same constraint: deterministic payment rails are being connected to probabilistic decision-makers. The next infrastructure layer is not another wallet SDK — it is machine-readable consent, enforceable mandates, audit trails, and compliance architecture.</p>
+        <a href="/articles/the-imf-just-named-the-real-blocker-for-agentic-payments-and-it-s-not-the-rails-it-s-the-l.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2026<br>May</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-blue"></div></div>
+      <div class="entry-card milestone">
+        <p class="entry-category cat-protocol">Protocol · Wallet Layer</p>
+        <p class="entry-title">Ant AMP vs. x402 turns agent wallets into a two-stack protocol contest</p>
+        <p class="entry-body">The protocol race stops being Western card networks versus crypto rails. Ant’s AMP shows that the agent wallet layer can be built from a different commercial and regulatory base entirely. The open question becomes interoperability, not merely adoption.</p>
+        <a href="/articles/ant-s-amp-vs-x402-the-open-protocol-war-for-the-agent-wallet-layer-has-begun.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2026<br>Apr</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-violet"></div></div>
+      <div class="entry-card milestone c-violet">
+        <p class="entry-category cat-identity">Authentication · Standards</p>
+        <p class="entry-title">FIDO’s Agentic Payments Working Group sets the authentication floor</p>
+        <p class="entry-body">Agentic payments get a standards-track authentication conversation. That matters because procurement, bank risk, and merchant acceptance need a shared floor for “is this agent real?” But authentication is still not authorization, liability, or enforceable consent.</p>
+        <a href="/articles/fidos-agentic-payments-working-group-sets-an-authentication-floor-not-a-payment-rail-gate-and-that-distinction-will-define-who-wins.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2026<br>Apr</div>
+      <div class="entry-dot-wrap"><div class="entry-dot dot-amber"></div></div>
+      <div class="entry-card milestone c-amber">
+        <p class="entry-category cat-network">Distribution · Checkout</p>
+        <p class="entry-title">Google UCP reframes checkout as the agent distribution layer</p>
+        <p class="entry-body">Universal checkout protocols turn payment acceptance into a distribution fight. If the agent’s decision loop sits inside the search, browser, or assistant surface, the payment standard becomes a way to own the moment of commercial intent.</p>
+        <a href="/articles/googles-universal-checkout-protocol-is-a-distribution-moat-dressed-as-a-payment-standard.html" class="entry-link">→ Read the analysis</a>
+      </div>
+    </div>
 
     <div class="entry">
       <div class="entry-date">2025<br>Apr</div>

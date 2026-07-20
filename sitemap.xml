@@ -11,6 +11,21 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agenticpayment.forum/articles/165-million-x402-transactions-what-the-number-actually-counts-determines-whether-the-thesi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/fido-can-authenticate-your-agent-it-cannot-authorize-what-your-agent-decides.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/mastercard-and-paypal-just-solved-agent-authentication-the-dispute-layer-is-still-broken.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agenticpayment.forum/articles/agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

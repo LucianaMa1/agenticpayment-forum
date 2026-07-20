@@ -1,5 +1,32 @@
 [
   {
+    "title": "165 Million x402 Transactions: What the Number Actually Counts Determines Whether the Thesis Holds",
+    "url": "https://agenticpayment.forum/articles/165-million-x402-transactions-what-the-number-actually-counts-determines-whether-the-thesi.html",
+    "path": "/articles/165-million-x402-transactions-what-the-number-actually-counts-determines-whether-the-thesi.html",
+    "slug": "165-million-x402-transactions-what-the-number-actually-counts-determines-whether-the-thesi",
+    "brief": "x402's 165M figure could mean channel opens, HTTP 402 responses, or settlements. That definitional gap is the whole agentic payments story.",
+    "published_at": "2026-07-20T02:03:26.900573+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "FIDO Can Authenticate Your Agent. It Cannot Authorize What Your Agent Decides.",
+    "url": "https://agenticpayment.forum/articles/fido-can-authenticate-your-agent-it-cannot-authorize-what-your-agent-decides.html",
+    "path": "/articles/fido-can-authenticate-your-agent-it-cannot-authorize-what-your-agent-decides.html",
+    "slug": "fido-can-authenticate-your-agent-it-cannot-authorize-what-your-agent-decides",
+    "brief": "Authentication proves an agent is who it claims. The missing layer is authorizing what the agent is allowed to decide—and that gap is where liability lands.",
+    "published_at": "2026-07-19T02:02:42.000097+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Mastercard and PayPal Just Solved Agent Authentication. The Dispute Layer Is Still Broken.",
+    "url": "https://agenticpayment.forum/articles/mastercard-and-paypal-just-solved-agent-authentication-the-dispute-layer-is-still-broken.html",
+    "path": "/articles/mastercard-and-paypal-just-solved-agent-authentication-the-dispute-layer-is-still-broken.html",
+    "slug": "mastercard-and-paypal-just-solved-agent-authentication-the-dispute-layer-is-still-broken",
+    "brief": "Agent Pay + PayPal checkout is a real milestone. But when an agent disputes a charge, no one has built the stack to adjudicate it.",
+    "published_at": "2026-07-18T02:02:16.851251+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "Agentic Tokens Solve Authorization. They Don't Solve Who Authorized the Authorizer.",
     "url": "https://agenticpayment.forum/articles/agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer.html",
     "path": "/articles/agentic-tokens-solve-authorization-they-don-t-solve-who-authorized-the-authorizer.html",
