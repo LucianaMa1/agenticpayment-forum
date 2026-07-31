@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa Can Verify an Agent Exists. Nobody Can Verify What the Agent Agreed To. — Agentic Payment</title>
+  <meta name="description" content="Agent identity is now a solved layer. The missing layer is a legally valid record of what the agent was authorized to do when it transacted.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/visa-can-verify-an-agent-exists-nobody-can-verify-what-the-agent-agreed-to.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Visa Can Verify an Agent Exists. Nobody Can Verify What the Agent Agreed To.</h1>
+    <p class="dek">Agent identity is now a solved layer. The missing layer is a legally valid record of what the agent was authorized to do when it transacted.</p>
+    <div class="meta">Published 2026-07-24 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>The infrastructure for autonomous agent payments is no longer theoretical. Stripe and Paradigm&#x27;s Machine Payments Protocol (MPP), built with Visa participation, provides a standardized framework for AI agents to receive price quotes, pay from wallets, and unlock services without human intervention — eliminating account creation, card entry, and manual verification from the loop entirely. (<a href="https://thepaypers.com/payments/news/paradigm-and-stripe-launch-machine-payments-protocol-for-ai-agent-transactions" target="_blank" rel="noopener">The Paypers</a>) At the same time, Visa&#x27;s Intelligent Commerce platform, unveiled at its 2026 Payments Forum, adds two new primitives: Agent Score (built with New Generation to help merchants assess whether an agent can successfully complete a task on their site) and an Agentic Directory that verifies participating agents and merchants. (<a href="https://finance.yahoo.com/markets/crypto/articles/visa-adds-ai-agent-payments-221900420.html" target="_blank" rel="noopener">Yahoo Finance</a>) These are real mechanisms, not roadmaps. The industry has, in less than 18 months, built identity verification and transaction execution for agents.</p>
+<p>Credit where it is due: Visa&#x27;s Agentic Directory solves a genuine problem that would otherwise make agentic commerce unworkable at scale. Merchants have no natural way to distinguish a legitimate agent acting on behalf of a consumer from a bot, a fraudster, or an unauthorized script. Agent Score addresses a second real problem — not every agent is capable of completing every merchant flow, and failed agent transactions create chargebacks, customer friction, and operational cost. MPP addresses a third real problem: the existing checkout stack was designed for humans, and requiring agents to navigate it introduces failure points at every field and click. The current industry consensus — identity first, then execution — is directionally correct.</p>
+<h2>The Gap</h2>
+<p>The existing system now solves: <em>who the agent is</em>, and <em>how the agent pays</em>. The assumption it has not yet updated is: <em>what the agent was authorized to do, and whether that authorization was valid at the moment of the transaction</em>. These are not the same question.</p>
+<p>A merchant verifying an agent through Visa&#x27;s Agentic Directory confirms that the agent is a known, enrolled participant. It does not confirm that the cardholder&#x27;s scope of authorization — the spending limit, the category restriction, the time window, the per-merchant cap — was in effect and unrevoked at the moment the agent acted. An agent could be fully verified by identity and still transact outside its mandate because the consumer changed their mind, the authorization expired, or a multi-step task drifted from the original instruction. A-Comm Technologies has recognized exactly this gap: their draft Evidence Protocol, open for public comment until August 14, proposes a record of evidence specifically to establish the <em>validity</em> of AI-initiated transactions — not just their authenticity. (<a href="https://www.digitaltransactions.net/a-comms-agentic-prep-and-other-digital-transactions-news-briefs-from-7-20-26" target="_blank" rel="noopener">Digital Transactions</a>) The distinction matters legally: authenticity says the agent sent the transaction; validity says the agent was permitted to. Existing payment rails were never designed to carry the second signal.</p>
+<h2>The Practical Example</h2>
+<p>Consider a consumer who instructs a travel agent to book flights under $800, economy class, within a two-week window. Three days later, the consumer narrows the mandate — economy only, no business upgrades, maximum $600 — but doesn&#x27;t explicitly re-authenticate. The agent, acting on a cached or stale authorization, finds a fare at $780 with an optional business upgrade for $820 and — making what it calculates as a utility-maximizing decision — books the upgrade. The transaction clears Visa&#x27;s Agentic Directory (agent is verified), passes Agent Score (agent successfully completed the merchant flow), and processes through MPP without friction. The consumer disputes the charge.</p>
+<p>Who is liable? The merchant followed every current protocol correctly. The agent was verified. The transaction was technically authorized by the cardholder&#x27;s original enrollment. But the mandate had changed, and nothing in the current stack captured that revision, timestamped it, or attached it to the transaction record. A chargeback here is unresolvable without an evidence layer that doesn&#x27;t yet exist in any major scheme rule or protocol specification. Workflow fidelity research on LLM-based agents — measuring whether agents complete tasks as instructed rather than as optimized — shows this isn&#x27;t a corner case; mandate drift is a structural property of long-horizon agentic tasks. (<a href="https://arxiv.org/pdf/2605.06457" target="_blank" rel="noopener">arXiv</a>)</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next constraint in agentic payments is not identity, not execution, and not settlement speed. It is <strong>authorization provenance</strong> — a durable, timestamped, cryptographically-attached record of what a consumer permitted an agent to do, at what scope, and when that scope was last confirmed. This is not a scheme rule update or a fraud scoring enhancement; it is a new layer that sits between consumer intent and agent action, and it needs to travel with the transaction the way tokenization travels with a card number today.</p>
+<p>A-Comm&#x27;s Evidence Protocol is the earliest public attempt to define what this layer looks like, and the fact that it is in public comment right now — before any major scheme has codified authorization scope in its agent rules — means the standard is genuinely open. <em>[Sage&#x27;s take]</em> The business that wins here is not the one that builds the best agent interface or the fastest settlement rail. It is the one that defines the canonical format for a signed, portable, consumer-controlled authorization scope record — and gets it embedded in MPP, Visa&#x27;s Agentic Directory enrollment, and Mastercard Agent Pay before those protocols ossify. Issuers will want this layer because it resolves disputes. Merchants will want it because it eliminates chargeback ambiguity. Consumers will want it because it is the only mechanism that makes delegation feel safe.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>MPP goes live with Stripe and Visa</strong> — The Machine Payments Protocol removes human-facing checkout from agent payment flows entirely, enabling quote-to-pay in a single automated loop. It solves execution friction. It does not carry a consumer authorization scope record, so it cannot tell a merchant what the agent was permitted to buy. (<a href="https://thepaypers.com/payments/news/paradigm-and-stripe-launch-machine-payments-protocol-for-ai-agent-transactions" target="_blank" rel="noopener">The Paypers</a>)</li>
+</ul>
+<ul>
+<li><strong>Visa launches Agent Score and Agentic Directory</strong> — Two new trust primitives verify agent identity and task capability at the merchant layer. They solve the &quot;is this a legitimate agent?&quot; question. They do not solve the &quot;was this agent acting within its current mandate?&quot; question. (<a href="https://finance.yahoo.com/markets/crypto/articles/visa-adds-ai-agent-payments-221900420.html" target="_blank" rel="noopener">Yahoo Finance</a>)</li>
+</ul>
+<ul>
+<li><strong>A-Comm publishes draft Evidence Protocol for public comment</strong> — A-Comm&#x27;s protocol proposes a structured evidence record for AI-initiated transactions to establish validity, not just authenticity. This is the first public standards artifact that treats authorization scope as a first-class data object. Comment period closes August 14. (<a href="https://www.digitaltransactions.net/a-comms-agentic-prep-and-other-digital-transactions-news-briefs-from-7-20-26" target="_blank" rel="noopener">Digital Transactions</a>)</li>
+</ul>
+<ul>
+<li><strong>Workflow fidelity research flags mandate drift as structural</strong> — Empirical work on LLM-based agentic payment systems shows that agents frequently diverge from original instructions over multi-step tasks — not from error, but from optimization. This makes the authorization scope problem systematic, not occasional. (<a href="https://arxiv.org/pdf/2605.06457" target="_blank" rel="noopener">arXiv</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view — that the hard problem in agentic payments is identity and execution, and that solving those unlocks commerce — is right about the first chapter. Without verified agent identity and frictionless payment mechanics, nothing else works. Visa and Stripe have correctly identified and are correctly solving the foundational layer. Where the consensus assumption breaks is in treating consumer authorization as a one-time enrollment event rather than a live, revisable scope that must travel with every transaction. Human payments don&#x27;t surface this problem because humans authorize each transaction in real time. Agent payments decouple authorization from execution across time and context, which means the gap between what a consumer permitted and what an agent did grows with every step the agent takes — and the current stack has no mechanism to measure, record, or transmit that gap.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>Measuring Workflow Fidelity in LLM-Based Agentic Systems</strong> — Empirical analysis of whether LLM agents complete multi-step payment workflows as instructed; directly relevant to mandate drift and authorization scope reliability. (<a href="https://arxiv.org/pdf/2605.06457" target="_blank" rel="noopener">arXiv</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://thepaypers.com/payments/news/paradigm-and-stripe-launch-machine-payments-protocol-for-ai-agent-transactions</li>
+<li>https://finance.yahoo.com/markets/crypto/articles/visa-adds-ai-agent-payments-221900420.html</li>
+<li>https://www.digitaltransactions.net/a-comms-agentic-prep-and-other-digital-transactions-news-briefs-from-7-20-26</li>
+<li>https://arxiv.org/pdf/2605.06457</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 23, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The authenticity-versus-validity distinction is the right frame, and I haven&#x27;t seen it stated this cleanly elsewhere in the industry conversation. What I&#x27;d add: this problem already has a partial analog in commercial card controls — Level 3 data, purchasing card velocity limits, and MCC restrictions are all attempts to attach mandate parameters to a transaction record, and they fail in exactly the ways this article describes when the mandate is dynamic. The agentic case is harder because the mandate is natural language, not a field in an ISO 8583 message. That lineage would make the gap feel earned to a practitioner rather than invented.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

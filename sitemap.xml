@@ -11,6 +11,36 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agenticpayment.forum/articles/ap2-establishes-agent-credentials-a402-proposes-agent-payment-flows-neither-solves-conditi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/the-missing-layer-in-agentic-payments-is-session-level-policy-enforcement-not-the-rails.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/the-permission-layer-that-agentic-payments-are-missing-isn-t-in-the-protocol-it-s-between-.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/agentic-payments-have-no-scope-exceeded-reason-code-that-s-the-real-liability-gap.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/draft.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/visa-can-verify-an-agent-exists-nobody-can-verify-what-the-agent-agreed-to.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agenticpayment.forum/articles/165-million-x402-transactions-what-the-number-actually-counts-determines-whether-the-thesi.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

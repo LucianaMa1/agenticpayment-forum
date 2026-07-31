@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Missing Layer in Agentic Payments Is Session-Level Policy Enforcement, Not the Rails — Agentic Payment</title>
+  <meta name="description" content="Issuers have velocity limits. Schemes have liability rules. Neither enforces policy across a multi-step agent session in real time. That gap is the next infrastructure problem.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/the-missing-layer-in-agentic-payments-is-session-level-policy-enforcement-not-the-rails.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>The Missing Layer in Agentic Payments Is Session-Level Policy Enforcement, Not the Rails</h1>
+    <p class="dek">Issuers have velocity limits. Schemes have liability rules. Neither enforces policy across a multi-step agent session in real time. That gap is the next infrastructure problem.</p>
+    <div class="meta">Published 2026-07-31 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>The major card schemes and issuers already have meaningful controls on agent-initiated payments. Visa&#x27;s credential-on-file and Agent-on-File frameworks allow issuers to attach spending parameters to a stored credential — merchant category restrictions, velocity limits, cumulative exposure caps — enforced at authorization time. Mastercard&#x27;s Agent Pay initiative extends similar controls to agent-initiated transaction flows, with the issuer retaining real-time decline authority on every leg of a transaction sequence. Standard 3DS adds device-binding, behavioral scoring, and step-up authentication at the transaction level. And when something goes wrong, scheme rulebooks do assign liability: Visa and Mastercard are actively developing reason codes and liability-shift logic for agent-initiated scenarios, so acquirers and issuers have a post-hoc framework for dispute resolution. None of this is naive. These controls represent decades of operational learning about how to prevent unauthorized spend and assign accountability when authorization fails.</p>
+<p>The interoperability layer is also developing. Anthropic&#x27;s Agent Communication Protocol (ACP) is an open specification for message-passing between agents. The Agoric/NEAR Universal Commitment Protocol (UCP) focuses on cross-chain economic commitments with cryptographic enforceability, closer to a settlement primitive than an authorization layer. AP2 is an earlier, narrower proposal for agent-to-agent payment messaging, less mature and without major institutional backing. These are meaningfully different in scope — ACP is a communication standard, UCP is an economic primitive, AP2 is a payment-specific messaging format — and none of them is a complete answer to the enforcement problem this article addresses. They establish channels; they do not enforce session-level policy.</p>
+<h2>The Gap</h2>
+<p>Here is the assumption that breaks: every control described above operates at the <strong>transaction level</strong>. An issuer&#x27;s velocity limit fires when a single authorization would breach a configured threshold. An MCC restriction declines a transaction that falls outside the permitted merchant category. A 3DS challenge triggers when a single transaction looks anomalous. Scheme liability rules assign fault after a specific transaction is disputed. What none of these layers do is evaluate an <strong>agent session</strong> — a sequence of interdependent decisions made by an autonomous system on behalf of a user, across multiple merchants, acquiring relationships, and time windows, under a mandate that was specified once at the start.</p>
+<p>The gap is not that issuers do nothing. The gap is that the unit of policy in the existing stack is the transaction, while the unit of risk in agentic payments is the session. A session is not just a batch of transactions — it is a stateful reasoning process with an objective, operating under constraints that can shift mid-execution. Issuer-side velocity controls don&#x27;t know what the agent is trying to accomplish or what prior steps have been taken. They see individual authorization requests. The policy the user actually specified — &quot;book the cheapest business-class flight and hotel for this trip, total budget $3,000&quot; — exists nowhere in the authorization flow. It lives in the agent&#x27;s system prompt, invisible to every downstream party that processes the resulting transactions.</p>
+<p>There is also a subtler technical gap worth naming precisely. Pre-authorizations — holds placed against a card by one acquirer — may not be visible in real time to the issuer&#x27;s authorization system when a second acquirer submits a separate authorization for the same session. Available balance calculations across multiple open holds, across different acquiring relationships, are not reliably synchronized in real time across all issuers and processing environments. This means the issuer&#x27;s velocity limit may fire correctly in isolation but still allow cumulative session exposure to exceed the user&#x27;s intent, because the full picture of open holds is not always present at the moment of each individual authorization decision.</p>
+<h2>The Practical Example</h2>
+<p>A user instructs a travel agent to book a business-class flight and hotel for a trip to Amsterdam, with a $3,000 total budget. The agent holds a stored credential with the issuer, configured with a $3,500 monthly limit and no MCC restrictions — standard setup for a travel-capable agent credential.</p>
+<p>The agent books the flight: $2,100 pre-authorization against one acquirer, approved. The agent books the hotel: $800 pre-authorization against a second acquirer — also approved, because this authorization request arrives while the first hold is still pending settlement and may not yet be fully reflected in the issuer&#x27;s available-balance calculation. The agent then identifies a &quot;recommended&quot; airport transfer and business lounge access add-on, totaling $340, and initiates a third authorization. The issuer approves this too — the cumulative exposure is now $3,240, above the user&#x27;s stated budget, but the monthly velocity limit of $3,500 hasn&#x27;t been breached, so no decline fires.</p>
+<p>At no point did any party break a rule. The issuer enforced its configured velocity limit correctly. The scheme&#x27;s authorization flow worked as designed. The agent followed its instructions as literally as it could. The user&#x27;s actual policy — $3,000 total for this session — was never represented in any system that had authority to enforce it. The dispute, if one arises, will be adjudicated under existing chargeback frameworks that assign liability based on who authorized what credential under what terms — frameworks that correctly identify the credential was legitimately used, and therefore assign no liability shift. The user&#x27;s budget constraint simply had no enforcement point in the stack.</p>
+<p>The more interesting version of this scenario isn&#x27;t just about the final overage — it&#x27;s about the intermediate state. Between the first and second authorizations, the agent had no mechanism to query &quot;what is my current session exposure including unsettled holds across all acquirers?&quot; That query doesn&#x27;t exist as a standardized API call. The agent is navigating blind between legs of its own session.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next infrastructure layer in agentic payments is a <strong>session policy runtime</strong> — a component that evaluates agent actions against the user&#x27;s original mandate before each authorization is submitted, with visibility into the full session state including pending holds. The architectural question is non-trivial: this component needs to sit somewhere that has (a) access to the agent&#x27;s reasoning context and session state, (b) real-time visibility into authorization holds across acquiring relationships, and (c) authority to block or modify an authorization request before it reaches the issuer.</p>
+<p>That combination points to one likely location: the <strong>agent wallet or agent credential manager</strong> — the software layer that holds the stored credential and signs authorization requests on the agent&#x27;s behalf. If that layer is extended to maintain session state, track cumulative holds, and evaluate each proposed authorization against the session policy before submission, it can enforce the user&#x27;s original mandate without requiring changes to issuer systems, scheme rules, or acquiring infrastructure. This is not a scheme extension — it doesn&#x27;t require Visa or Mastercard to redefine their authorization message formats. It is not an issuer-side API — it doesn&#x27;t require real-time cross-acquirer hold synchronization at the issuer level, which is a hard infrastructure problem. It is a new responsibility assigned to the agent credential layer, which today is typically a thin pass-through. The business model for this layer is either (a) a trust and compliance service offered by agent platform providers like Anthropic, OpenAI, or their enterprise integrators, or (b) a specialized fintech that sits between agent runtimes and payment networks as a session-aware authorization proxy. Whoever builds the session policy runtime credibly — with auditable policy logs, real-time hold tracking, and dispute-ready session records — owns the accountability layer that issuers, regulators, and enterprise buyers will eventually require.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Visa Agent-on-File framework</strong> — Visa extended its credential-on-file rules to allow issuers to configure agent-specific authorization parameters: MCC restrictions, velocity limits, spending caps. This solves transaction-level authorization controls for known agents. It does not solve session-level policy enforcement across a multi-step agent task, because session state is not represented in the authorization message. (<a href="https://usa.visa.com/visa-everywhere/blog/bdp/2024/03/18/visa-introduces-new-1710769618369.html" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Mastercard Agent Pay</strong> — Mastercard&#x27;s framework for agent-initiated payments similarly focuses on credential trust and issuer-side controls, with the issuer retaining real-time decline authority. This is the right design for transaction-level risk management. The session policy problem — does this transaction conform to the user&#x27;s original multi-step mandate? — is out of scope for the issuer&#x27;s authorization system by design. (<a href="https://www.mastercard.com/news/press/2025/april/mastercard-introduces-agent-pay-pioneering-the-future-of-agentic-commerce/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Anthropic Agent Communication Protocol (ACP)</strong> — ACP defines how agents pass messages to each other, establishing a communication standard for multi-agent systems. This is a necessary interoperability layer. It is a messaging format, not a payment policy enforcement mechanism. (<a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Scheme liability rules for agent transactions</strong> — Visa and Mastercard are actively developing reason codes and liability-shift logic for agent-initiated transaction disputes. This is important work that gives acquirers and issuers a post-hoc framework. It assigns accountability after a disputed transaction; it does not prevent an out-of-policy action from completing in the first place. The article&#x27;s claim is not that liability is unaddressed — it is that pre-hoc session policy enforcement doesn&#x27;t exist yet.</li>
+</ul>
+<ul>
+<li><strong>3DS behavioral scoring</strong> — 3DS2 incorporates device-binding and transaction-level behavioral signals. This catches anomalous individual transactions. It has no visibility into whether a transaction is consistent with the agent&#x27;s session mandate, because the session mandate is not part of the 3DS data model. (<a href="https://www.emvco.com/emv-technologies/3d-secure/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that the agentic payments problem is primarily one of authentication and trust — if we can reliably identify which agent is acting, under whose authority, with what credential, the existing authorization infrastructure handles the rest. This is largely correct: authentication is a genuine prerequisite, and the schemes and issuers are right to focus there first. The missing assumption is that authentication and authorization are the same problem. They are not. Authenticating an agent credential tells the issuer that a known, permissioned agent is making a request. It tells the issuer nothing about whether that request is consistent with the user&#x27;s current session objective, the agent&#x27;s prior actions in this session, or the cumulative exposure already committed across other acquirers in the same task. The existing stack authenticates agents well. It has no architecture for evaluating whether an authenticated agent action is in-policy for the session it is currently executing.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>&quot;AgentPay: A Secure and Flexible Payment Protocol for LLM-Based Agents&quot;</strong> — Examines the authorization gap between agent capability and user intent in payment contexts, with a formal model of session-level policy constraints. (<a href="https://arxiv.org/abs/2503.13320" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://usa.visa.com/visa-everywhere/blog/bdp/2024/03/18/visa-introduces-new-1710769618369.html</li>
+<li>https://www.mastercard.com/news/press/2025/april/mastercard-introduces-agent-pay-pioneering-the-future-of-agentic-commerce/</li>
+<li>https://www.anthropic.com/research/building-effective-agents</li>
+<li>https://www.emvco.com/emv-technologies/3d-secure/</li>
+<li>https://arxiv.org/abs/2503.13320</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 26, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+    </section>
+  </article>
+</body>
+</html>

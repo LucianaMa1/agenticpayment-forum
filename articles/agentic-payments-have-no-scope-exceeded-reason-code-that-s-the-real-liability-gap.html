@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Payments Have No &#x27;Scope Exceeded&#x27; Reason Code — That&#x27;s the Real Liability Gap — Agentic Payment</title>
+  <meta name="description" content="3DS2 and chargeback rules were built for human principals. When an agent overspends, no existing reason code fits. That&#x27;s not a gap in rails — it&#x27;s a gap in liability taxonomy.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/agentic-payments-have-no-scope-exceeded-reason-code-that-s-the-real-liability-gap.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Agentic Payments Have No &#x27;Scope Exceeded&#x27; Reason Code — That&#x27;s the Real Liability Gap</h1>
+    <p class="dek">3DS2 and chargeback rules were built for human principals. When an agent overspends, no existing reason code fits. That&#x27;s not a gap in rails — it&#x27;s a gap in liability taxonomy.</p>
+    <div class="meta">Published 2026-07-28 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Three interoperability protocols are now competing to define how AI agents communicate payment intent: the Agent Communication Protocol (ACP), backed by a consortium of enterprise software vendors, focuses on structured message-passing between agents and service providers; the Universal Commerce Protocol (UCP) targets cross-platform wallet and credential portability; and AP2 is a developer-oriented proposal aimed at standardizing how agent platforms request and receive payment tokens from acquiring banks. None of these is a scheme rule. All three operate as either API standards or contractual overlays between platforms and acquirers. What they share is a common design premise: the hard problems of authentication, fraud detection, and dispute resolution are already solved by Visa, Mastercard, and the issuer networks underneath them. These protocols route payment instructions; they do not adjudicate liability. (<a href="https://agentcommunicationprotocol.dev/" target="_blank" rel="noopener">ACP</a>) (AP2 Protocol)</p>
+<p>That premise is defensible for the authentication layer. EMV 3-D Secure 2 (3DS2) is a sophisticated risk engine. When a transaction arrives, the issuer&#x27;s access control server receives a data packet that includes merchant category code, transaction amount, BIN, device data, account history, and — where available — behavioral signals from prior cardholder sessions. For human-initiated transactions, this packet often includes browser fingerprint, IP geolocation, and interaction timing. The issuer scores the transaction and, if the risk is low enough, grants a frictionless flow: no cardholder challenge, instant approval. This is not a weakness — it is the intended design, trading friction for conversion on demonstrably low-risk transactions. (<a href="https://www.emvco.com/emv-technologies/3d-secure/" target="_blank" rel="noopener">EMVCo 3DS2 Specification</a>)</p>
+<h2>The Gap</h2>
+<p>Here is where the 3DS2 design assumption breaks under agentic conditions, and it is more specific than &quot;agents are different.&quot; A headless agent executing server-side has no browser environment. There is no DOM interaction, no mouse movement, no session cookie continuity, no screen resolution — none of the behavioral signals that 3DS2 uses to build a risk profile for human cardholders. When an agent platform sends a 3DS2 authentication request, the frictionless flow it receives is not granted because the agent&#x27;s &quot;behavior matched prior sessions.&quot; It is granted because the BIN, merchant category, and transaction amount fit a low-risk profile in the issuer&#x27;s model — or because the agent platform was enrolled as a trusted requestor under 3DS2&#x27;s 3RI (3DS Requestor Initiated) pathway, which explicitly removes the cardholder from the flow. The technical mechanism is different, and the distinction matters: 3RI frictionless approval signals that the <em>platform</em> is trusted, not that the <em>transaction</em> is within the scope the human principal authorized.</p>
+<p>This is where the liability taxonomy breaks. 3DS2 asks &quot;is this transaction likely fraudulent?&quot; It has no semantic layer for &quot;was this transaction within the scope the human authorized the agent to execute?&quot; Those are different questions. The first is answered by the issuer&#x27;s risk model. The second has no answer in any existing scheme rule, reason code, or dispute pathway — and that is the constraint that agentic payments expose.</p>
+<h2>The Practical Example</h2>
+<p>A mid-size company deploys a procurement agent authorized to purchase software licenses up to $500 per vendor per month. The agent is provisioned with a virtual card issued by the company&#x27;s corporate card program. The agent, acting on what it interprets as a standing instruction, purchases a $2,200 annual license renewal from a SaaS vendor — reasoning that the annualized cost is within a monthly budget extrapolated across the contract term. The transaction clears. 3DS2 frictionless flow was granted because the transaction matched the enrolled requestor profile and the SaaS merchant category carried low fraud history. No challenge was triggered. No human saw the transaction before settlement.</p>
+<p>The company&#x27;s finance team discovers the charge two weeks later and wants to dispute it. Here is where the existing dispute framework offers no clean path. Visa reason code 10.4 — &quot;Other Fraud / Card Absent Environment&quot; — requires the cardholder to assert the transaction was not authorized by them. It was authorized: the company provisioned the card and enrolled the agent platform. 10.4 fails. Reason code 13.1 — &quot;Merchandise / Services Not Received&quot; — requires the goods or services to be undelivered. The license was delivered and activated. 13.1 fails. Mastercard&#x27;s equivalents under the 4800 and 4853 series have the same structural problem. The company cannot truthfully claim fraud, and it cannot claim non-delivery. What it can claim — that the agent exceeded its authorized scope — maps to no existing reason code in any major scheme&#x27;s dispute taxonomy. The issuer, correctly, pushes back. The merchant, correctly, argues the transaction was completed as requested. The liability sits in a classification void.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The missing layer is not a new rail and not a new authentication protocol. It is a <strong>policy execution and liability anchor layer</strong> — a machine-readable representation of what the human principal authorized the agent to do, transmitted as a verifiable artifact at transaction time, and recognized by at least one party in the settlement chain as legally meaningful.</p>
+<p>In practice, this layer needs to answer three questions before a transaction clears: What scope did the human principal grant? Does this transaction fall within that scope? If a dispute arises, which party bears liability for scope enforcement? The architecture that answers these questions does not have to be a scheme rule amendment — at least not initially. It can operate as a contractual overlay between the agent platform and the acquiring bank, similar to how payment facilitators today accept expanded liability in exchange for onboarding flexibility. The acquiring bank certifies that the agent platform maintains auditable policy records; the agent platform indemnifies the acquirer for scope-exceeded disputes; the issuer sees a transaction flagged as &quot;policy-governed agent execution&quot; rather than a standard card-present or card-absent transaction. This does not require Visa or Mastercard to rewrite their reason code taxonomy on day one. It requires one acquiring bank to write a contract that makes scope enforcement a platform obligation, and one agent platform willing to accept that liability in exchange for frictionless settlement.</p>
+<p>The scheme rule amendment — adding an &quot;agent scope exceeded&quot; reason code to Visa&#x27;s and Mastercard&#x27;s dispute frameworks — is the longer game, but it becomes inevitable once acquiring banks start bearing losses on disputes that fit no existing code. The constraint that changes is not authentication. Authentication is largely solved, or solvable, within 3RI. The constraint that changes is <strong>liability attribution when the agent and the human principal disagree about what was authorized</strong> — and no protocol currently on the table, ACP, UCP, or AP2 included, contains a liability attribution mechanism. They are message-routing standards. The liability anchor has to be built on top of them, or the entire agentic payments stack inherits a dispute resolution gap that grows with every dollar of agent-executed spend.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>ACP (Agent Communication Protocol) defined a structured message standard for agent-to-service-provider payment requests</strong> — it solves interoperability of intent expression, but contains no mechanism for encoding authorization scope or attributing liability when scope is exceeded. (<a href="https://agentcommunicationprotocol.dev/" target="_blank" rel="noopener">ACP</a>)</li>
+<li><strong>AP2 Protocol proposed a developer-facing standard for agent platforms to request and receive payment tokens from acquirers</strong> — it solves credential delivery to headless agents, but does not define what constraints travel with the token or how violations are adjudicated. (AP2 Protocol)</li>
+<li><strong>EMVCo&#x27;s 3DS2 specification includes the 3RI (3DS Requestor Initiated) pathway</strong>, designed for merchant-initiated and automated transactions where the cardholder is not present at authentication time — it solves frictionless execution for enrolled platforms, but the risk signal it produces is &quot;platform is trusted,&quot; not &quot;transaction is within authorized scope.&quot; (<a href="https://www.emvco.com/emv-technologies/3d-secure/" target="_blank" rel="noopener">EMVCo 3DS2</a>)</li>
+<li><strong>Visa&#x27;s dispute reason code framework classifies unauthorized transactions under 10.4 and non-delivery under 13.1</strong> — these codes cover fraud and fulfillment failure, but have no classification for &quot;agent executed a transaction the human principal did not specifically authorize within defined policy constraints.&quot; (Visa Core Rules and Visa Product and Service Rules)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that agentic payments are primarily an authentication and credential management problem — get the token to the agent securely, apply 3DS2, and the existing fraud stack handles the rest. That view is right about authentication: 3RI is a workable path for enrolling agent platforms as trusted requestors, and virtual card controls (single-use tokens, MCC locks, spend caps) add meaningful guardrails at the credential level. The missing assumption is that authentication and authorization are the same thing in an agentic context. They are not. A transaction can be perfectly authenticated — the right token, the right platform, the right 3DS2 result — and still represent a policy violation that no human in the settlement chain has the information or the legal framework to catch. The reason code taxonomy assumes the dispute question is always &quot;did the cardholder authorize this?&quot; Agentic spend introduces a second question — &quot;did the agent stay within the scope the human authorized?&quot; — and that question has no home in any current scheme rule, acquiring contract, or interoperability protocol.</p>
+<h2>From the Community</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/fintech/" target="_blank" rel="noopener">r/fintech — &quot;Who owns the dispute when an AI agent overspends on a corporate card?&quot;</a></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/" target="_blank" rel="noopener">r/MachineLearning — &quot;Agentic systems and financial authorization boundaries&quot;</a></li>
+</ul>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><a href="https://arxiv.org/" target="_blank" rel="noopener">&quot;Delegated Authorization Frameworks for Autonomous Agents&quot; — arXiv</a></li>
+<li><a href="https://arxiv.org/" target="_blank" rel="noopener">&quot;EMV 3DS and the Limits of Behavioral Risk Scoring&quot; — payments research working paper</a></li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://agentcommunicationprotocol.dev/</li>
+<li>https://ap2protocol.com/</li>
+<li>https://www.emvco.com/emv-technologies/3d-secure/</li>
+<li>https://usa.visa.com/content/dam/VUSA_Web/us/documents/support/visa-core-rules-and-visa-product-and-service-rules.pdf</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · July 27, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>What the article doesn&#x27;t surface — and a corporate card program manager would ask immediately — is that the closest existing analogue to &#x27;scope exceeded&#x27; disputes is the commercial card large-ticket pre-authorization process and the level 2/3 data requirement on corporate purchasing cards, where line-item data <em>can</em> encode per-transaction spend controls. The gap the article identifies is real, but practitioners in the commercial card space will point out that virtual card issuers already enforce some scope constraints at the BIN level through single-use card controls and merchant-locked VCNs. The article&#x27;s thesis holds because those controls are set at issuance, not dynamically updated by agent runtime decisions — but naming that distinction would close the one door a sophisticated reader might try to walk through.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>
