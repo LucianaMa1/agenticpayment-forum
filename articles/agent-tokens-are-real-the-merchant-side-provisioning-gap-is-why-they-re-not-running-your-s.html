@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Tokens Are Real. The Merchant-Side Provisioning Gap Is Why They&#x27;re Not Running Your Spend Yet. — Agentic Payment</title>
+  <meta name="description" content="Mastercard and Visa have agent-bound token architectures. The constraint isn&#x27;t credential issuance — it&#x27;s that merchants haven&#x27;t provisioned for them.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/agent-tokens-are-real-the-merchant-side-provisioning-gap-is-why-they-re-not-running-your-s.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Agent Tokens Are Real. The Merchant-Side Provisioning Gap Is Why They&#x27;re Not Running Your Spend Yet.</h1>
+    <p class="dek">Mastercard and Visa have agent-bound token architectures. The constraint isn&#x27;t credential issuance — it&#x27;s that merchants haven&#x27;t provisioned for them.</p>
+    <div class="meta">Published 2026-08-04 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>The payments industry has spent a decade building tokenization infrastructure that genuinely works. Mastercard&#x27;s Digital Enablement Service (MDES) and Visa&#x27;s Token Service (VTS) together process billions of tokenized transactions annually — replacing raw PANs with network tokens that are merchant- and device-bound, reducing fraud and enabling seamless credential lifecycle management across card-on-file, in-app, and contactless flows. This is not legacy infrastructure being papered over; it is the reason card-not-present fraud rates have declined even as e-commerce volume exploded. The <a href="https://www.emvco.com/emv-technologies/payment-tokenisation/" target="_blank" rel="noopener">EMVCo tokenization framework</a> that underpins both schemes is a genuine engineering achievement: token provisioning, cryptographic binding to a specific domain or device, and automated token refresh on card reissuance all happen at scale without merchant-side complexity after initial integration.</p>
+<p>Now both networks are extending that architecture toward agentic credentials. Mastercard&#x27;s Agent Pay initiative and Visa&#x27;s Intelligent Commerce program both propose token architectures that carry agent-specific attributes — spend limits, merchant category constraints, time bounds, and principal-agent relationships — alongside the credential itself. Mastercard has named Microsoft, IBM, and Braintree as launch partners. Stripe and OpenAI have released the Agentic Commerce Protocol (ACP), which pipes AI agent payment actions through Stripe&#x27;s acquiring infrastructure. The infrastructure direction is coherent and the industry alignment is real.</p>
+<h2>The Gap</h2>
+<p>Understanding why MDES token issuance is hard to extend to agent-bound credentials requires understanding what the existing provisioning flow actually demands. Today, when a merchant integrates with MDES or VTS, they register a token requestor ID, implement the network&#x27;s provisioning API, and handle token lifecycle events — expiry, refresh, suspension. This is a non-trivial integration lift, but it is a one-time cost that most large acquirers and payment facilitators have already absorbed. The merchant-side token vault then receives a network token in place of the PAN, and subsequent authorizations use that token with a transaction-specific cryptogram. The system works because the domain binding is established at provisioning time and the merchant&#x27;s infrastructure treats the token like a stable credential.</p>
+<p>Agent-bound tokens break this model in a specific way: the binding is no longer just merchant-to-device but merchant-to-agent-to-task, and the constraints embedded in the token — spend limits, permitted MCCs, expiry tied to a task scope rather than a card cycle — need to be readable and enforceable at the point of authorization, not just at issuance. That requires the merchant&#x27;s authorization path to parse and act on token-level policy, which MDES&#x27;s current merchant integration does not require. Mastercard&#x27;s named launch partners — Microsoft, IBM, Braintree — are infrastructure vendors and a payment facilitator, not the long tail of SaaS vendors and API marketplaces where agentic spend is actually materializing first. The merchant-side provisioning lift required to enforce agent token constraints is real, and it has not yet been absorbed by the ecosystem. Mastercard&#x27;s Agent Pay architecture is published and the token specification is in development with partners; the gap is not that the credential design is wrong, but that merchant authorization systems have not yet been updated to consume the policy fields that make agent tokens meaningful.</p>
+<p>Visa&#x27;s position is structurally similar. The Token Assurance Framework that makes VTS tokens trustworthy in card-on-file flows relies on domain binding and assurance levels that the current framework maps to device and merchant categories it has well-established coverage for. Infrastructure API payments — compute, model inference, data pipeline execution — do not map cleanly to existing Merchant Category Codes, which means the assurance scoring that underlies Visa&#x27;s risk-based authorization logic has no calibrated baseline for the transaction patterns agents generate. That is an interchange category problem as much as a token architecture problem.</p>
+<h2>The Practical Example</h2>
+<p>A hedge fund&#x27;s AI research infrastructure team deploys an agent that autonomously sources market data, runs inference on a hosted model (Hyperbolic), and posts structured signals to a social analytics API (Neynar). The treasury team wants to put this spend on the corporate card program — it is recurring, auditable, and the CFO&#x27;s expense policy already covers SaaS and data subscriptions.</p>
+<p>Here is where the specific failure modes appear, not the summary conclusion. First, neither Hyperbolic nor Neynar has provisioned as a Mastercard token requestor, so there is no MDES token domain to bind an agent credential to — the agent is authenticating via API key and paying via a stored card-on-file with no agent-specific token scope. Second, the MCC classification for compute-as-a-service and inference API calls is unresolved: these transactions are being processed under generic software or data processing codes that carry different interchange tiers and fraud model priors than the actual transaction pattern warrants. Third, if the treasury team wants to issue a task-scoped virtual card with a spend ceiling tied to the agent&#x27;s monthly inference budget, the card program can provision a virtual card number — but that VCN carries no machine-readable policy that the merchant&#x27;s authorization system can enforce; the spend ceiling lives in the issuer&#x27;s system and the merchant has no visibility into whether a given charge is within scope until a dispute arises.</p>
+<p>The compliance team&#x27;s question — can we put this on the corporate card program — has a technically correct answer in 2026: yes, you can pay with a card, but the agent-token policy layer that would make the corporate card program aware of task scope, principal-agent binding, and MCC-level spend governance does not exist at the merchant endpoints where the spend is occurring. The card goes through. The governance does not.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The constraint that changes first is not credential issuance — both Mastercard and Visa have agent token architectures that are credible and in active partner development. The constraint is merchant-side authorization policy: the ability to receive, parse, and enforce token-embedded agent constraints at the point of sale. The businesses positioned to close this gap are payment facilitators and embedded finance platforms that sit between the agent runtime and the card network — Braintree&#x27;s inclusion as a Mastercard launch partner is not incidental, it is the model. A PayFac that normalizes agent token ingestion across its merchant base effectively becomes the policy enforcement layer that neither the network nor the issuer can enforce unilaterally.</p>
+<p>The enterprise spend governance pressure accelerates this. As hedge funds, consulting firms, and technology companies route meaningful operational budget through AI agents, procurement and treasury teams will require the same auditability they have for human-initiated corporate card spend — MCC-level categorization, task-scoped authorization, and dispute resolution that names a principal, not just a credential. The first payment facilitator or corporate card program that integrates agent token policy enforcement — not just agent-initiated payment initiation — wins the enterprise agentic spend stack. That is a more durable position than owning the agent wallet, because it sits in the authorization path regardless of which AI platform the agent runs on.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Mastercard Agent Pay launched with Microsoft, IBM, and Braintree as named partners</strong> — establishes the agent-bound token architecture and begins the partner provisioning process, but launch partners are infrastructure vendors, not the merchant long tail where agentic spend is materializing. (Source)</li>
+<li><strong>Visa Intelligent Commerce published its agent token roadmap</strong> — extends VTS assurance framework toward AI agent credentials with spend constraints and principal binding, but merchant MCC coverage for infrastructure API payments remains unresolved. (Source)</li>
+<li><strong>Stripe and OpenAI released the Agentic Commerce Protocol</strong> — routes agent payment actions through Stripe&#x27;s acquiring infrastructure, giving agents a payment execution path today. ACP uses Stripe&#x27;s standard card acquiring; any revenue-share arrangement between OpenAI and Stripe is a platform economics question distinct from per-transaction interchange and processing fees, which follow Stripe&#x27;s published rate structure. (Source)</li>
+<li><strong>A Survey of Knowledge (SoK) audit of agentic payment platforms flagged OKX APP&#x27;s escrow and dispute-resolution features as forthcoming</strong> — OKX&#x27;s trade execution API may support agent-initiated order flow, but OKX APP&#x27;s agentic payment layer (escrow, dispute resolution, policy enforcement) is not yet deployed. These are distinct products; citing the trade execution CLI as a live agentic payment stack conflates execution capability with payment governance. (<a href="https://arxiv.org/abs/2507.10755" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>EMVCo tokenization framework underpins both MDES and VTS at scale</strong> — the existing tokenization layer is the reason card-not-present fraud declined even as e-commerce grew; agent token architectures extend this foundation rather than replace it. (<a href="https://www.emvco.com/emv-technologies/payment-tokenisation/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that agentic payments are primarily a credential and authentication problem — give the agent a token, bind it to a scope, and the payment layer works. That consensus is right about the credential architecture: MDES and VTS are the correct foundation, and agent-bound tokens that carry spend constraints are a coherent extension of existing tokenization logic. The missing assumption is that credential issuance and policy enforcement are separable problems. In human-initiated card payments, they are separable because the human cardholder enforces policy through intent. In agentic payments, policy enforcement must be machine-readable and executable at the merchant authorization endpoint — and the merchant ecosystem has not yet provisioned for that. The bet is not that tokens are wrong; it is that the merchant-side authorization update is the slower, harder, and more valuable half of the problem.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>SoK: Agentic Payment Systems</strong> — systematic audit of deployment status across agentic payment platforms, methodology distinguishes live production features from roadmap claims. (<a href="https://arxiv.org/abs/2507.10755" target="_blank" rel="noopener">arXiv:2507.10755</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://www.mastercard.com/news/press/2025/april/mastercard-launches-agent-pay-pioneering-the-future-of-agentic-commerce/</li>
+<li>https://investor.visa.com/news/news-details/2025/Visa-Unveils-Intelligent-Commerce-to-Reimagine-Commerce-for-the-AI-Era/default.aspx</li>
+<li>https://stripe.com/newsroom/news/stripe-openai-agentic-payments</li>
+<li>https://www.emvco.com/emv-technologies/payment-tokenisation/</li>
+<li>https://developer.visa.com/capabilities/visa-token-service</li>
+<li>https://arxiv.org/abs/2507.10755</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 03, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The MCC calibration problem is real and underappreciated — I&#x27;d add that the interchange category issue isn&#x27;t just about assurance scoring. When an AI agent hammers an inference API 400 times in an hour, that transaction velocity pattern will trigger fraud rules calibrated for human card-not-present behavior, and the merchant&#x27;s acquirer will start seeing auth rate degradation before any token policy question even surfaces. That operational friction is going to hit teams in the wild before the token architecture gap does, and it&#x27;s worth flagging as the near-term blocker.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

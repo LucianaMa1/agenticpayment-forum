@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gap None of Them Have Solved: Runtime Scope Negotiation in Agentic Payments — Agentic Payment</title>
+  <meta name="description" content="Visa, Mastercard, and Cloudflare have all published delegated-auth specs. None of them operate at agent runtime speed, asynchronously, mid-task. That gap is the constraint.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>The Gap None of Them Have Solved: Runtime Scope Negotiation in Agentic Payments</h1>
+    <p class="dek">Visa, Mastercard, and Cloudflare have all published delegated-auth specs. None of them operate at agent runtime speed, asynchronously, mid-task. That gap is the constraint.</p>
+    <div class="meta">Published 2026-08-07 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Three of the most credible infrastructure players in payments have now published explicit positions on agentic authorization. Mastercard&#x27;s Agent Pay introduces a delegated credential model that allows a human cardholder to pre-authorize an AI agent to transact on their behalf, with spend controls and merchant-category constraints baked into the credential at issuance. (Mastercard Newsroom) Visa&#x27;s Intelligent Commerce program follows a structurally similar path: tokenized agent credentials, scoped permissions, and a delegated authorization framework intended to let agents spend within human-defined rails. (Visa Intelligent Commerce) Cloudflare has entered from the infrastructure side, announcing an AI Wallet and payment primitive designed to let agents hold and spend stablecoins or fiat balances without requiring a human to re-enter the authorization loop at each transaction. (Cloudflare Blog)</p>
+<p>These are serious efforts from serious organizations, and they deserve to be understood on their own terms before being challenged. Mastercard and Visa are not bolting AI onto legacy rails and calling it innovation. Both specs recognize that agents cannot use card-present flows, that cardholder verification methods designed for humans do not transfer cleanly to software, and that delegated authority requires a new credential primitive — not just a stored card token. Cloudflare is solving a different but related problem: that agents operating across APIs and services need a payment primitive that is native to the request-response model of the web, not retrofitted from a point-of-sale paradigm. The shared logic across all three is correct: agentic payments require scoped, delegated, machine-readable authorization. The existing system solves the issuance and scoping problem. The question is what it does not yet solve.</p>
+<h2>The Gap</h2>
+<p>Both Visa&#x27;s Intelligent Commerce spec and Mastercard&#x27;s Agent Pay documentation describe delegated authorization flows that allow scope updates — a credential can be refreshed to reflect changed permissions. That is a real capability and it matters. But the refresh cycle in both architectures operates on a human-initiated or session-bounded cadence. A cardholder, or a cardholder&#x27;s application, triggers the refresh. The new scope is then available for subsequent transactions. What neither architecture currently supports is asynchronous, mid-task scope expansion requested by the agent itself at runtime — without pausing the task, without surfacing a human approval prompt, and without waiting for a session boundary to expire and reset.</p>
+<p>This is not a minor implementation gap. It is a structural one. The existing delegated-auth model assumes that the scope of an agent&#x27;s authority is knowable before the task begins, or that the task can be paused while a human updates it. Agentic tasks break that assumption in a specific way: the new authorization requirement is discovered by the agent mid-execution, as a consequence of decisions made earlier in the same task, in a context that did not exist when the original credential was issued. The scope that was correct at issuance is no longer correct at runtime, and no part of the current infrastructure has a protocol for the agent to request, negotiate, and receive an updated authorization scope in real time, asynchronously, without human intervention at that moment.</p>
+<h2>The Practical Example</h2>
+<p>A corporate travel agent is authorized to book flights and hotels up to $4,000 per trip for a specific employee. The employee asks the agent to book a trip to a conference. Midway through the booking flow, the agent discovers that all hotels within the approved per-night rate are sold out within 15 miles of the venue. The only available options either exceed the rate cap or require a refundable deposit — an incidental hold, which is a pre-authorization, not a purchase authorization — that the agent&#x27;s credential does not cover because incidental holds were not anticipated when the scope was defined.</p>
+<p>Here is where the gap becomes concrete. Visa&#x27;s and Mastercard&#x27;s credential refresh flows would, in principle, allow the scope to be updated to include a higher rate or incidental hold authorization. But that refresh requires a human to initiate it — or requires the agent to surface the conflict, halt the booking, wait for human input, receive a new credential, and then resume. In a task that spans multiple API calls, holds locks on inventory, and operates across a reservation system with session timeouts, that pause is not a minor inconvenience. It is a task failure. The practical effect is that the agent either exceeds its authorization and creates a dispute liability, abandons the task and returns an incomplete result, or — in a system designed to avoid both — surfaces an error that the human now has to resolve manually, which is precisely the outcome agentic systems are supposed to eliminate. The missing layer is a runtime negotiation protocol: a structured, authenticated, auditable channel through which an agent can say, mid-task, &#x27;my current scope is insufficient for a decision I have encountered — here is the decision, here is what I need, here is the context&#x27; and receive a real-time authorization update without requiring a human to be present at that moment.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The competitive question is not which of these three players has the best delegated-auth spec at issuance. Mastercard and Visa are roughly equivalent in structural sophistication at the credential layer, and Cloudflare is solving a different segment of the problem. The competitive question is which player is architecturally closest to owning the runtime authorization layer — the loop that operates after issuance, mid-task, at agent speed.</p>
+<p>Cloudflare has a structural advantage here that is underappreciated in payments circles. Its infrastructure sits at the request layer — between agents and APIs — which is exactly where runtime authorization decisions surface. A payment primitive that lives at that layer can, in principle, observe the task context, evaluate the scope conflict, and mediate a real-time authorization update without requiring a round-trip to a human session. Mastercard and Visa, by contrast, are working from the credential issuance layer outward. They can describe what an updated credential should look like; they do not yet have infrastructure at the runtime request layer to detect when an update is needed and broker it in real time. The player that builds the runtime negotiation protocol — the authenticated, auditable channel for mid-task scope expansion — will own the highest-value layer in agentic payments infrastructure. Right now, Cloudflare is closest to the right position in the stack, but has not yet shipped that capability. Mastercard and Visa have the scheme authority to make the credential valid, but not yet the runtime presence to negotiate it dynamically. The gap is open, and it will not stay open.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Mastercard launches Agent Pay</strong> — Introduces delegated credential infrastructure allowing human cardholders to authorize AI agents with scoped spend controls. Solves the issuance and initial scoping problem. Does not yet support asynchronous, agent-initiated scope expansion mid-task. (Mastercard Newsroom)</li>
+<li><strong>Visa publishes Intelligent Commerce spec</strong> — Tokenized agent credentials with delegated authorization and scope-refresh capability. Refresh cycle is human-initiated or session-bounded, not agent-runtime-speed. The spec describes the right primitive; the cadence is the constraint. (Visa Intelligent Commerce)</li>
+<li><strong>Cloudflare ships AI Gateway as Payment Gateway</strong> — Positions infrastructure-layer payment primitives for agents operating across APIs. Structurally closest to the runtime request layer where mid-task authorization conflicts surface. Has not yet shipped a runtime scope negotiation protocol. (Cloudflare Blog)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view in payments is that delegated authorization — scoped credentials issued before a task begins, with refresh flows available — is the correct and sufficient architecture for agentic payments. That consensus is right about the issuance layer. Scoped, tokenized, delegated credentials are genuinely better than stored card numbers or session-level tokens for agents, and the work Mastercard and Visa have done to define this primitive is not incremental — it is a real architectural advance. The missing assumption is that agent tasks are predictable enough at issuance time for a pre-defined scope to remain valid through execution. The constraint that changes under agentic conditions is not the credential format — it is the moment of authorization. When the authorization requirement is discovered mid-task, by the agent, as a consequence of its own reasoning, the pre-issuance scope model requires the task to pause for human re-entry. That pause is the failure mode the industry has not yet designed around.</p>
+<h2>From the Community</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/MachineLearning/" target="_blank" rel="noopener">r/MachineLearning — &#x27;Agentic systems and payment authorization: who handles scope conflicts?&#x27;</a></li>
+<li><a href="https://www.reddit.com/r/fintech/" target="_blank" rel="noopener">r/fintech — &#x27;Mastercard Agent Pay vs Visa Intelligent Commerce: what&#x27;s actually different?&#x27;</a></li>
+</ul>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><a href="https://modelcontextprotocol.io/introduction" target="_blank" rel="noopener">Model Context Protocol specification — Anthropic</a> — The MCP spec defines how agents communicate tool availability and context to models. Relevant to how a runtime authorization channel might be structured as a tool call rather than a separate protocol layer.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://www.mastercard.com/news/press/2025/april/mastercard-launches-agent-pay-pioneering-the-future-of-agentic-commerce/</li>
+<li>https://investor.visa.com/news/news-details/2025/Visa-Introduces-Intelligent-Commerce-to-Modernize-Payments-for-the-Age-of-AI/default.aspx</li>
+<li>https://blog.cloudflare.com/the-cloudflare-ai-gateway-is-now-a-payment-gateway/</li>
+<li>https://modelcontextprotocol.io/introduction</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 06, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The liability question is where this gap actually bites hardest in practice: under current scheme rules, if an agent expands its own scope and a transaction is later disputed, there is no clean liability assignment — the issuer approved a credential, the merchant processed a transaction that exceeded that credential&#x27;s defined scope, and the acquiring bank is holding the exposure. I&#x27;d want to see the article name that, because that&#x27;s the real reason the schemes haven&#x27;t shipped runtime scope negotiation: it&#x27;s not a technical problem, it&#x27;s an indemnification problem nobody has agreed to sign.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

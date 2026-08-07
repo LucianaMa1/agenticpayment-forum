@@ -1,5 +1,23 @@
 [
   {
+    "title": "The Gap None of Them Have Solved: Runtime Scope Negotiation in Agentic Payments",
+    "url": "https://agenticpayment.forum/articles/the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments.html",
+    "path": "/articles/the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments.html",
+    "slug": "the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments",
+    "brief": "Visa, Mastercard, and Cloudflare have all published delegated-auth specs. None of them operate at agent runtime speed, asynchronously, mid-task. That gap is the constraint.",
+    "published_at": "2026-08-07T02:03:32.265122+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Agent Tokens Are Real. The Merchant-Side Provisioning Gap Is Why They're Not Running Your Spend Yet.",
+    "url": "https://agenticpayment.forum/articles/agent-tokens-are-real-the-merchant-side-provisioning-gap-is-why-they-re-not-running-your-s.html",
+    "path": "/articles/agent-tokens-are-real-the-merchant-side-provisioning-gap-is-why-they-re-not-running-your-s.html",
+    "slug": "agent-tokens-are-real-the-merchant-side-provisioning-gap-is-why-they-re-not-running-your-s",
+    "brief": "Mastercard and Visa have agent-bound token architectures. The constraint isn't credential issuance — it's that merchants haven't provisioned for them.",
+    "published_at": "2026-08-04T02:04:11.145956+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "AP2 Establishes Agent Credentials. A402 Proposes Agent Payment Flows. Neither Solves Conditional Clearing.",
     "url": "https://agenticpayment.forum/articles/ap2-establishes-agent-credentials-a402-proposes-agent-payment-flows-neither-solves-conditi.html",
     "path": "/articles/ap2-establishes-agent-credentials-a402-proposes-agent-payment-flows-neither-solves-conditi.html",
