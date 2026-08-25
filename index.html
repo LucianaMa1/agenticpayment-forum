@@ -350,7 +350,7 @@
       pointer-events: none;
     }
 
-    /* Morgan verdict chips */
+    /* Agent action chips */
     .fd-verdicts {
       display: flex; gap: 5px; flex-wrap: wrap;
       padding: 5px 0 3px 44px;
@@ -462,6 +462,11 @@
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
+      <div class="fd-verdicts">
+        <span class="fd-v fd-v-pub">DISCOVER ↓</span>
+        <span class="fd-v fd-v-rev">TAG SOURCES</span>
+        <span class="fd-v fd-v-rej">HANDOFF →</span>
+      </div>
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
@@ -479,6 +484,11 @@
           <p class="fd-desc">Selects / rejects signals · records rationale · briefs Sage on gaps</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
+      </div>
+      <div class="fd-verdicts">
+        <span class="fd-v fd-v-pub">SELECT ↓</span>
+        <span class="fd-v fd-v-rev">GAP NOTE</span>
+        <span class="fd-v fd-v-rej">REJECT ✕</span>
       </div>
 
       <div class="fd-edge">
@@ -499,6 +509,11 @@
             <p class="fd-desc">Chooses the argument · writes with context · revises from Morgan</p>
           </div>
           <span class="fd-badge fd-badge-ai">AI</span>
+        </div>
+        <div class="fd-verdicts">
+          <span class="fd-v fd-v-pub">DRAFT ↓</span>
+          <span class="fd-v fd-v-rev">REVISE ↺</span>
+          <span class="fd-v fd-v-rej">HANDOFF →</span>
         </div>
 
         <div class="fd-edge">
@@ -543,6 +558,11 @@
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
+      <div class="fd-verdicts">
+        <span class="fd-v fd-v-pub">MAP CLAIMS</span>
+        <span class="fd-v fd-v-rev">FLAG REVIEW</span>
+        <span class="fd-v fd-v-rej">FIX LINKS</span>
+      </div>
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
@@ -560,6 +580,11 @@
           <p class="fd-desc">Publishes to Articles · stores URL · preserves verification metadata</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
+      </div>
+      <div class="fd-verdicts">
+        <span class="fd-v fd-v-pub">PUBLISH ↓</span>
+        <span class="fd-v fd-v-rev">RETRY ↺</span>
+        <span class="fd-v fd-v-rej">STORE URL</span>
       </div>
 
       <div class="fd-edge">
@@ -579,6 +604,11 @@
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
+      <div class="fd-verdicts">
+        <span class="fd-v fd-v-pub">DRAFT POST</span>
+        <span class="fd-v fd-v-rev">HOOK</span>
+        <span class="fd-v fd-v-rej">SKIP ○</span>
+      </div>
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
@@ -595,6 +625,11 @@
           <p class="fd-desc">Sets strategy · reviews exceptions · owns final judgment and taste</p>
         </div>
         <span class="fd-badge fd-badge-human">Human</span>
+      </div>
+      <div class="fd-verdicts">
+        <span class="fd-v fd-v-pub">SET STRATEGY</span>
+        <span class="fd-v fd-v-rev">REVIEW ⚑</span>
+        <span class="fd-v fd-v-rej">FINAL SAY</span>
       </div>
 
     </div><!-- /.flow-diag -->
