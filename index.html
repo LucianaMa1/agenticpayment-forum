@@ -458,14 +458,14 @@
             <span class="fd-name">Rex</span>
             <span class="fd-role">Research</span>
           </div>
-          <p class="fd-desc">Reddit · arXiv · Stripe · Visa · MC · TechCrunch</p>
+          <p class="fd-desc">Runs source discovery · tags provenance · hands raw context to Kai</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
-        <span class="fd-lbl">40 raw signals</span>
+        <span class="fd-lbl">decision packet + sources</span>
       </div>
 
       <!-- Kai: Filter -->
@@ -476,14 +476,14 @@
             <span class="fd-name">Kai</span>
             <span class="fd-role">Filter</span>
           </div>
-          <p class="fd-desc">Scores novelty · relevance · source quality ≥ 6.5</p>
+          <p class="fd-desc">Selects / rejects signals · records rationale · briefs Sage on gaps</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
-        <span class="fd-lbl">5–8 scored items</span>
+        <span class="fd-lbl">selected topic + gaps</span>
       </div>
 
       <!-- Sage + Morgan feedback loop (amber bracket on right = REVISE arc) -->
@@ -496,14 +496,14 @@
               <span class="fd-name">Sage</span>
               <span class="fd-role">Synthesis</span>
             </div>
-            <p class="fd-desc">Argument-first · structured · payments-native voice</p>
+            <p class="fd-desc">Chooses the argument · writes with context · revises from Morgan</p>
           </div>
           <span class="fd-badge fd-badge-ai">AI</span>
         </div>
 
         <div class="fd-edge">
           <div class="fd-spine"></div>
-          <span class="fd-lbl">draft article</span>
+          <span class="fd-lbl">draft + handoff notes</span>
         </div>
 
         <div class="fd-node fd-node-violet" data-step="3">
@@ -513,7 +513,7 @@
               <span class="fd-name">Morgan</span>
               <span class="fd-role">Review</span>
             </div>
-            <p class="fd-desc">Accuracy · regulatory precision · depth score /10</p>
+            <p class="fd-desc">Decides publish / revise / reject · records score, rationale, note</p>
           </div>
           <span class="fd-badge fd-badge-violet">AI</span>
         </div>
@@ -528,18 +528,36 @@
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
-        <span class="fd-lbl">approved + expert note</span>
+        <span class="fd-lbl">verdict + expert note</span>
+      </div>
+
+      <!-- Vera: Verify -->
+      <div class="fd-node fd-node-ai" data-step="4">
+        <div class="fd-dot fd-dot-ai"></div>
+        <div class="fd-body">
+          <div class="fd-header">
+            <span class="fd-name">Vera</span>
+            <span class="fd-role">Verify</span>
+          </div>
+          <p class="fd-desc">Maps claims to sources · flags unsupported claims · removes dead links</p>
+        </div>
+        <span class="fd-badge fd-badge-ai">AI</span>
+      </div>
+
+      <div class="fd-edge">
+        <div class="fd-spine"></div>
+        <span class="fd-lbl">claim map + clean links</span>
       </div>
 
       <!-- Justin: Editor -->
-      <div class="fd-node fd-node-ai" data-step="4">
+      <div class="fd-node fd-node-ai" data-step="5">
         <div class="fd-dot fd-dot-ai"></div>
         <div class="fd-body">
           <div class="fd-header">
             <span class="fd-name">Justin</span>
             <span class="fd-role">Editor</span>
           </div>
-          <p class="fd-desc">Publishes to Articles · appends Morgan's expert note</p>
+          <p class="fd-desc">Publishes to Articles · stores URL · preserves verification metadata</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
@@ -550,31 +568,31 @@
       </div>
 
       <!-- Mia: Marketing -->
-      <div class="fd-node fd-node-ai" data-step="5">
+      <div class="fd-node fd-node-ai" data-step="6">
         <div class="fd-dot fd-dot-ai"></div>
         <div class="fd-body">
           <div class="fd-header">
             <span class="fd-name">Mia</span>
             <span class="fd-role">Marketing</span>
           </div>
-          <p class="fd-desc">Tweet thread · hook · hashtags · optimal timing</p>
+          <p class="fd-desc">Turns approved article into X / social hook · distribution context</p>
         </div>
         <span class="fd-badge fd-badge-ai">AI</span>
       </div>
 
       <div class="fd-edge">
         <div class="fd-spine"></div>
-        <span class="fd-lbl">tweet drafted</span>
+        <span class="fd-lbl">distribution draft</span>
       </div>
 
       <!-- Luciana: Human in the loop -->
-      <div class="fd-node fd-node-human" data-step="6">
+      <div class="fd-node fd-node-human" data-step="7">
         <div class="fd-dot fd-dot-human"></div>
         <div class="fd-body">
           <div class="fd-header">
             <span class="fd-name fd-name-human">Luciana</span>
           </div>
-          <p class="fd-desc">Human in the loop · final approval · sets strategy</p>
+          <p class="fd-desc">Sets strategy · reviews exceptions · owns final judgment and taste</p>
         </div>
         <span class="fd-badge fd-badge-human">Human</span>
       </div>
