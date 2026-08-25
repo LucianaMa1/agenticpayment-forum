@@ -88,19 +88,16 @@
     <div>
       <p class="eyebrow"><span class="pulse-dot"></span>Multi-source signal board</p>
       <h1>Agentic payments are no longer one feed.</h1>
-      <p class="sub">A team radar for protocol usage, official launches, developer adoption, market moves, and the liability layer forming around AI agents that can spend. Sage, Rex, and Mia each watch a different edge of the market.</p>
+      <p class="sub">A curated radar for protocol usage, official launches, developer adoption, market moves, and the liability layer forming around AI agents that can spend.</p>
     </div>
     <aside class="run-card">
       <div class="run-label">Latest refresh</div>
       <div class="run-value" id="latest-run">Aug 24, 2026</div>
-      <div class="run-note">Sage tracks liability, Rex tracks protocols, Mia tracks merchant/operator adoption. Dates below are source dates, not refresh dates.</div>
+      <div class="run-note">Dates below are original source dates, not refresh dates. The refresh date only tells you when this board was curated.</div>
     </aside>
   </section>
-  <section class="source-grid" id="agent-grid" aria-label="Observer agents"></section>
-  <section class="source-grid" id="source-grid" aria-label="Signal source families"></section>
   <div class="toolbar">
     <span id="signal-count">Loading signals…</span>
-    <span>Source families: official · developer · market/operator · protocol usage</span>
   </div>
   <section class="signal-list" id="signal-list"></section>
   <p class="legacy-note">Legacy x402 transaction feed is preserved at <code>/x402_feed.json</code> for continuity, but this page now treats on-chain events as one evidence stream among several.</p>
@@ -122,39 +119,15 @@ const esc = (s) => String(s || '').replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&
 function renderCard(item) {
   const cls = familyClass(item.source_family);
   return `<article class="signal-card">
-    <div class="card-top"><span class="pill ${cls}">${esc(item.source_family)}</span><span class="pill observer">${esc(item.observer || 'Team')} · ${esc(item.observer_focus || 'market signal')}</span><span class="pill">${esc(item.confidence)} confidence</span><span class="card-date">Source date: ${esc(item.source_date || item.date || 'not stated')}</span></div>
-    <div class="card-body"><h2 class="headline">${esc(item.headline)}</h2><p class="why">${esc(item.why_it_matters)}</p><div class="take">${esc(item.interpretation)}</div><div class="footer"><a class="evidence" href="${esc(item.evidence_url)}" target="_blank" rel="noopener">Evidence source →</a><span class="confidence">observed ${esc(item.observed_date || 'recently')} by ${esc(item.observer || 'the forum team')}</span></div></div>
+    <div class="card-top"><span class="pill ${cls}">${esc(item.source_family)}</span><span class="pill">${esc(item.confidence)} confidence</span><span class="card-date">Source date: ${esc(item.source_date || item.date || 'not stated')}</span></div>
+    <div class="card-body"><h2 class="headline">${esc(item.headline)}</h2><p class="why">${esc(item.why_it_matters)}</p><div class="take">${esc(item.interpretation)}</div><div class="footer"><a class="evidence" href="${esc(item.evidence_url)}" target="_blank" rel="noopener">Evidence source →</a><span class="confidence">curated ${esc(item.observed_date || 'recently')}</span></div></div>
   </article>`;
 }
 
-function renderAgentGrid(items) {
-  const agents = {
-    'Sage': 'authorization, liability, mandates, dispute evidence',
-    'Rex': 'protocols, SDKs, on-chain telemetry, developer friction',
-    'Mia': 'merchant adoption, buyer UX, network/operator commercialization'
-  };
-  const counts = {};
-  items.forEach(i => counts[i.observer || 'Team'] = (counts[i.observer || 'Team'] || 0) + 1);
-  document.getElementById('agent-grid').innerHTML = Object.entries(agents).map(([name,desc]) => `<div class="source-card"><div class="source-kicker">observer</div><div class="source-count">${counts[name] || 0}</div><div class="source-name">${esc(name)}</div><div class="source-desc">${esc(desc)}</div></div>`).join('');
-}
-
-function renderSourceGrid(items) {
-  const counts = {};
-  items.forEach(i => counts[i.source_family] = (counts[i.source_family] || 0) + 1);
-  const descriptions = {
-    'Official protocol/product':'Docs, launches, protocol specs, sandbox surfaces',
-    'Developer adoption':'Repos, SDKs, packages, examples, builder friction',
-    'Market/operator signal':'Networks, PSPs, liability, standards and regulation',
-    'Community/debug signal':'Public complaints and implementation edge cases'
-  };
-  document.getElementById('source-grid').innerHTML = Object.entries(counts).map(([name,count]) => `<div class="source-card"><div class="source-kicker">source family</div><div class="source-count">${count}</div><div class="source-name">${esc(name)}</div><div class="source-desc">${esc(descriptions[name] || 'Observed evidence stream')}</div></div>`).join('');
-}
 async function loadSignals() {
   try {
     const res = await fetch('/signal_feed.json?t=' + Date.now());
     const items = await res.json();
-    renderAgentGrid(items);
-    renderSourceGrid(items);
     document.getElementById('signal-count').textContent = `${items.length} current signals · refreshed ${items[0]?.observed_date || 'today'} · cards show original source dates`;
     document.getElementById('signal-list').innerHTML = items.map(renderCard).join('');
   } catch (e) {
