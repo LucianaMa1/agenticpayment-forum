@@ -1,102 +1,142 @@
 [
   {
     "id": "forum-x402-observer-stale",
-    "date": "2026-08-24",
+    "date": "2026-04-28",
     "source_family": "On-chain/protocol usage",
     "headline": "The old x402 observer is itself a signal: one on-chain feed is not enough",
     "why_it_matters": "The legacy /x402_feed.json feed still contains 200 Base x402-style transactions, but the latest local event is Apr 28, 2026. Today’s refresh treats that as evidence that the Signal page needs multiple sources, not a single brittle observer.",
     "evidence_url": "https://agenticpayment.forum/x402_feed.json",
     "confidence": "High",
-    "interpretation": "Shipped: historic Base micropayment observations remain useful. Who pays: agents/clients paying API or inference endpoints. What breaks: a dashboard tied to one contract observer can look alive while the market moved elsewhere. Moat/liability: durable signal infrastructure needs redundancy across chain activity, official launches, SDK adoption and dispute/liability evidence."
+    "interpretation": "Shipped: historic Base micropayment observations remain useful. Who pays: agents/clients paying API or inference endpoints. What breaks: a dashboard tied to one contract observer can look alive while the market moved elsewhere. Moat/liability: durable signal infrastructure needs redundancy across chain activity, official launches, SDK adoption and dispute/liability evidence.",
+    "source_date": "2026-04-28",
+    "observed_date": "2026-08-24",
+    "observer": "Rex",
+    "observer_focus": "protocol telemetry / brittle feed detection"
   },
   {
     "id": "x402-foundation-sdk-surface",
-    "date": "2026-08-24",
+    "date": "2026-08-18",
     "source_family": "Developer adoption",
     "headline": "x402 has become a multi-chain SDK surface, not just a Coinbase demo",
     "why_it_matters": "The x402 Foundation repo and registry footprint show active SDK packaging across core protocol, EVM/SVM and web frameworks, with npm/PyPI releases in August.",
     "evidence_url": "https://github.com/x402-foundation/x402",
     "confidence": "High",
-    "interpretation": "Shipped: protocol repo, SDKs and docs. Who pays: agent/client pays API or resource server per request. What breaks: API-key subscriptions and invoices for low-friction machine access. Moat/liability: facilitators and default SDKs can capture routing, while dispute semantics remain thinner than card rails."
+    "interpretation": "Shipped: protocol repo, SDKs and docs. Who pays: agent/client pays API or resource server per request. What breaks: API-key subscriptions and invoices for low-friction machine access. Moat/liability: facilitators and default SDKs can capture routing, while dispute semantics remain thinner than card rails.",
+    "source_date": "2026-08-18",
+    "observed_date": "2026-08-24",
+    "observer": "Rex",
+    "observer_focus": "developer tooling / SDK surface"
   },
   {
     "id": "coinbase-x402-docs",
-    "date": "2026-08-24",
+    "date": "2025-09-23",
     "source_family": "Official protocol/product",
     "headline": "Coinbase/x402 keeps pushing HTTP 402 as the agent payment primitive",
     "why_it_matters": "x402 turns Payment Required into a machine-readable flow: server returns payment requirements, agent pays, facilitator verifies, server unlocks access.",
     "evidence_url": "https://docs.cdp.coinbase.com/x402/welcome",
     "confidence": "High",
-    "interpretation": "Shipped: official docs and foundation tooling. Who pays: agents accessing APIs, data or content. What breaks: account creation before monetization. Moat/liability: Coinbase can become the default facilitator, but merchants still need policy controls for refunds, abuse and non-consumer contexts."
+    "interpretation": "Shipped: official docs and foundation tooling. Who pays: agents accessing APIs, data or content. What breaks: account creation before monetization. Moat/liability: Coinbase can become the default facilitator, but merchants still need policy controls for refunds, abuse and non-consumer contexts.",
+    "source_date": "2025-09-23",
+    "observed_date": "2026-08-24",
+    "observer": "Rex",
+    "observer_focus": "protocol primitive / facilitator model"
   },
   {
     "id": "tempo-mpp-machine-payments",
-    "date": "2026-08-24",
+    "date": "2026",
     "source_family": "Official protocol/product",
     "headline": "Tempo MPP frames machine payments as an HTTP-native stablecoin workflow",
     "why_it_matters": "Stripe/Paradigm-backed Tempo has public developer docs for Machine Payments Protocol, positioning per-request and streamed payments for apps and agents.",
     "evidence_url": "https://tempo.xyz/developers/docs/guide/machine-payments",
     "confidence": "High",
-    "interpretation": "Shipped: public docs and testnet-oriented developer surface. Who pays: agent or app pays endpoint/provider in stablecoins. What breaks: monthly SaaS metering for some API usage. Moat/liability: Stripe distribution plus a purpose-built chain is strong, but rail dependency and dispute handling need scrutiny."
+    "interpretation": "Shipped: public docs and testnet-oriented developer surface. Who pays: agent or app pays endpoint/provider in stablecoins. What breaks: monthly SaaS metering for some API usage. Moat/liability: Stripe distribution plus a purpose-built chain is strong, but rail dependency and dispute handling need scrutiny.",
+    "source_date": "2026",
+    "observed_date": "2026-08-24",
+    "observer": "Rex",
+    "observer_focus": "machine-payment protocol / rail dependency"
   },
   {
     "id": "google-ap2-mandates",
-    "date": "2026-08-24",
+    "date": "2026-04-28",
     "source_family": "Official protocol/product",
     "headline": "Google AP2 attacks the evidence problem with signed mandates and receipts",
     "why_it_matters": "AP2 is less about rails and more about proving what the human authorized the agent to buy, pay and receive when the human is not present.",
     "evidence_url": "https://github.com/google-agentic-commerce/AP2",
     "confidence": "High",
-    "interpretation": "Shipped: open spec, samples and active design issues. Who pays: user-authorized agent through credential providers and merchant processors. What breaks: vague session logs as proof of intent. Moat/liability: standardized mandates could become the liability layer networks, issuers and merchants rely on."
+    "interpretation": "Shipped: open spec, samples and active design issues. Who pays: user-authorized agent through credential providers and merchant processors. What breaks: vague session logs as proof of intent. Moat/liability: standardized mandates could become the liability layer networks, issuers and merchants rely on.",
+    "source_date": "2026-04-28",
+    "observed_date": "2026-08-24",
+    "observer": "Sage",
+    "observer_focus": "authorization evidence / mandates"
   },
   {
     "id": "visa-intelligent-commerce",
-    "date": "2026-08-24",
+    "date": "2025-04-30",
     "source_family": "Official protocol/product",
     "headline": "Visa is productizing agent-specific payment tokens and commerce controls",
     "why_it_matters": "Visa Intelligent Commerce exposes agent-oriented payment token lifecycle, controls and sandbox/product capabilities for AI shopping flows.",
     "evidence_url": "https://developer.visa.com/capabilities/visa-intelligent-commerce",
     "confidence": "High",
-    "interpretation": "Shipped: developer capability and sandbox path. Who pays: cardholder via a delegated, agent-specific Visa credential. What breaks: raw card-on-file as the default bot credential. Moat/liability: Visa keeps agent commerce inside existing acceptance and dispute rails by adding tokenized agent identity."
+    "interpretation": "Shipped: developer capability and sandbox path. Who pays: cardholder via a delegated, agent-specific Visa credential. What breaks: raw card-on-file as the default bot credential. Moat/liability: Visa keeps agent commerce inside existing acceptance and dispute rails by adding tokenized agent identity.",
+    "source_date": "2025-04-30",
+    "observed_date": "2026-08-24",
+    "observer": "Mia",
+    "observer_focus": "network productization / buyer controls"
   },
   {
     "id": "mastercard-agent-pay-machines",
-    "date": "2026-08-24",
+    "date": "2026-06",
     "source_family": "Market/operator signal",
     "headline": "Mastercard expands Agent Pay from shopping agents toward machine payments",
     "why_it_matters": "Mastercard’s Agent Pay and Agent Pay for Machines positioning shows card networks are racing to own not only checkout, but autonomous B2B and machine-speed payment flows.",
     "evidence_url": "https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html",
     "confidence": "High",
-    "interpretation": "Shipped: network-level product narrative and acceptance/governance push. Who pays: consumers, businesses or machines through Mastercard credentials. What breaks: anonymous bots touching generic card rails. Moat/liability: network tokenization plus issuer/acquirer governance is the incumbent answer to open protocols."
+    "interpretation": "Shipped: network-level product narrative and acceptance/governance push. Who pays: consumers, businesses or machines through Mastercard credentials. What breaks: anonymous bots touching generic card rails. Moat/liability: network tokenization plus issuer/acquirer governance is the incumbent answer to open protocols.",
+    "source_date": "2026-06",
+    "observed_date": "2026-08-24",
+    "observer": "Mia",
+    "observer_focus": "network commerce / machine payment positioning"
   },
   {
     "id": "stripe-openai-acp",
-    "date": "2026-08-24",
+    "date": "2025-09-29",
     "source_family": "Official protocol/product",
     "headline": "OpenAI + Stripe ACP separates agent UX from merchant/payment-provider roles",
     "why_it_matters": "Agentic Commerce Protocol defines the interaction model for buyers, agents, businesses and payment providers; its GitHub issue surface shows active hardening.",
     "evidence_url": "https://github.com/agentic-commerce-protocol/agentic-commerce-protocol",
     "confidence": "High",
-    "interpretation": "Shipped: open repo and Instant Checkout ecosystem path. Who pays: ChatGPT/agent users buying from merchants via payment providers. What breaks: merchant storefronts assuming humans click every step. Moat/liability: the winner owns delegated checkout evidence, idempotency and merchant integration defaults."
+    "interpretation": "Shipped: open repo and Instant Checkout ecosystem path. Who pays: ChatGPT/agent users buying from merchants via payment providers. What breaks: merchant storefronts assuming humans click every step. Moat/liability: the winner owns delegated checkout evidence, idempotency and merchant integration defaults.",
+    "source_date": "2025-09-29",
+    "observed_date": "2026-08-24",
+    "observer": "Sage",
+    "observer_focus": "merchant protocol / delegated checkout"
   },
   {
     "id": "worldpay-liability-written",
-    "date": "2026-08-24",
+    "date": "2026-07-30",
     "source_family": "Market/operator signal",
     "headline": "Liability is now the bottleneck: who proves authorization when an agent buys wrong?",
     "why_it_matters": "Worldpay’s framing and protocol issue threads converge on the same gap: execution is arriving faster than dispute, freshness, replay and entitlement rules.",
     "evidence_url": "https://www.worldpay.com/en/insights/articles/agentic-commerce-liability-is-still-being-written",
     "confidence": "High",
-    "interpretation": "Shipped: operator-level debate, not a final rulebook. Who pays: unclear at the edges among user, merchant, issuer, agent platform and wallet. What breaks: fraud-only dispute models. Moat/liability: audit trails, signed mandates, idempotent checkout and agent identity become defensible infrastructure."
+    "interpretation": "Shipped: operator-level debate, not a final rulebook. Who pays: unclear at the edges among user, merchant, issuer, agent platform and wallet. What breaks: fraud-only dispute models. Moat/liability: audit trails, signed mandates, idempotent checkout and agent identity become defensible infrastructure.",
+    "source_date": "2026-07-30",
+    "observed_date": "2026-08-24",
+    "observer": "Sage",
+    "observer_focus": "liability / dispute allocation"
   },
   {
     "id": "merchant-platform-agentic-commerce-packages",
-    "date": "2026-08-24",
+    "date": "2026-07-21",
     "source_family": "Developer adoption",
     "headline": "Agentic-commerce packages are appearing for merchant stacks like Medusa and Saleor",
     "why_it_matters": "Package registry activity shows builders are moving from protocol debate into merchant enablement: making existing storefronts readable, callable and payable by agents.",
     "evidence_url": "https://www.npmjs.com/package/@financedistrict/medusa-plugin-agentic-commerce",
     "confidence": "Medium",
-    "interpretation": "Shipped: early package ecosystem, quality still uneven. Who pays: agent-mediated buyers on existing commerce platforms. What breaks: storefronts optimized only for browser UX. Moat/liability: middleware that maps product intent to authorization evidence may become more valuable than checkout buttons."
+    "interpretation": "Shipped: early package ecosystem, quality still uneven. Who pays: agent-mediated buyers on existing commerce platforms. What breaks: storefronts optimized only for browser UX. Moat/liability: middleware that maps product intent to authorization evidence may become more valuable than checkout buttons.",
+    "source_date": "2026-07-21",
+    "observed_date": "2026-08-24",
+    "observer": "Mia",
+    "observer_focus": "merchant enablement / storefront readiness"
   }
 ]
