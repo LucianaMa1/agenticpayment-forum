@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPP, Agent Pay, and AP2 Each Solve Delegation. None Solve the Authorization Logic That Comes After. — Agentic Payment</title>
+  <meta name="description" content="Three protocols are racing to authenticate AI agents in payments. The gap isn&#x27;t authentication — it&#x27;s that no spec defines what an agent is allowed to decide, and when.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/mpp-agent-pay-and-ap2-each-solve-delegation-none-solve-the-authorization-logic-that-comes-.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>MPP, Agent Pay, and AP2 Each Solve Delegation. None Solve the Authorization Logic That Comes After.</h1>
+    <p class="dek">Three protocols are racing to authenticate AI agents in payments. The gap isn&#x27;t authentication — it&#x27;s that no spec defines what an agent is allowed to decide, and when.</p>
+    <div class="meta">Published 2026-08-25 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Three serious protocol efforts are now defining how AI agents interact with payment infrastructure. Mastercard&#x27;s Agent Pay (AP) establishes delegated credentials with spending controls and merchant category restrictions scoped at the credential level — it is explicitly designed to let a cardholder grant an AI agent bounded authority to transact on their behalf. The Agentic Payment Protocol (AP2), developed in the open-source community, defines an API surface for agent-initiated payment requests, including structured fields for merchant context and amount. The Mastercard Payment Passkey (MPP) introduces a biometric-backed passkey handshake that can be embedded in automated flows, with a session handshake structure that carries some scope metadata about the originating context. Each of these efforts is doing real work. They are solving for the part of agentic payments that the existing stack genuinely cannot handle: authenticating a non-human initiator, binding a credential to a delegated scope, and creating an auditable record that a human authorized the agent to act.</p>
+<p>The existing rails deserve credit here too. Card network tokenization, 3DS authentication, and scheme authorization rules have made it structurally very hard to execute unauthorized transactions. A token is scoped to a device and merchant. A 3DS challenge confirms cardholder presence. Scheme rules define what constitutes a valid authorized transaction and what dispute rights follow from that authorization. These are not naive guardrails — they represent decades of liability negotiation between issuers, acquirers, and networks, and they work reliably for the transaction class they were designed for: a human deciding to pay, at a moment in time, with full knowledge of what they are approving.</p>
+<h2>The Gap</h2>
+<p>The assumption that breaks under agentic conditions is not authentication — it is the relationship between a single authorization event and the sequence of decisions that follows from it. Mastercard&#x27;s Agent Pay spec does include spending controls and merchant category restrictions at the credential level. That is meaningful scope enforcement. But those controls are defined at credential issuance time, by category and amount, and they do not change as the agent&#x27;s reasoning evolves across a multi-step task. The credential answers: <em>is this agent allowed to spend in this category, up to this limit?</em> It does not answer: <em>given what this agent has already done in this session, does this next transaction reflect the intent the consumer expressed at the start?</em> AP2&#x27;s API surface exposes merchant context and amount fields, but has no authorization intent field — there is no structured way for the agent to assert, or for the issuer to verify, that a given transaction is within the logical scope of the task the consumer initiated. MPP&#x27;s handshake structure carries session origin metadata, which gestures toward scope, but that metadata describes where the session started, not what the agent was asked to accomplish or how far it has deviated from that goal.</p>
+<p>The gap is therefore narrower than &#x27;none of these protocols do anything,&#x27; but it is structurally significant: all three define the authorization boundary at credential or session creation, and none provide a mechanism for encoding, transmitting, or enforcing the <em>reasoning scope</em> — the logical chain from consumer intent to each downstream transaction — that agentic tasks require. The missing layer is not a better credential. It is a runtime authorization envelope that travels with the agent&#x27;s decision chain.</p>
+<h2>The Practical Example</h2>
+<p>A consumer instructs a travel agent AI to book the cheapest round trip to Chicago next month. The agent, operating under a delegated credential issued via Agent Pay, has a $2,000 limit and is scoped to travel merchant categories — airlines, hotels, car rental. The credential is correctly configured. The agent books a flight ($340) and a hotel ($280). Then, reasoning that airport transit is part of travel logistics, it books a car service from the hotel to a conference center the consumer never mentioned ($180). The merchant category is car rental — still within scope. The amount is within limit. The token is valid. The transaction clears.</p>
+<p>The consumer disputes the car service charge. Here is where practitioners need to be clear-eyed: <strong>this dispute will almost certainly fail under current scheme rules.</strong> The transaction was authorized. The token was valid. The merchant category was within the credential scope. The limit was not breached. The merchant performed correctly. Under existing &#x27;authorized transaction&#x27; rules, the cardholder has no valid chargeback right. This is not a gap in how the dispute system works — it is the dispute system working exactly as designed for a transaction class where &#x27;authorized&#x27; and &#x27;intended&#x27; are assumed to be the same thing.</p>
+<p>That equivalence is precisely what agentic payment breaks. The consumer&#x27;s <em>dispute right is structurally unavailable</em> — not because the dispute system is broken, but because the existing system has no mechanism to distinguish &#x27;the agent had valid credentials&#x27; from &#x27;the agent acted within the scope of what the consumer asked it to do.&#x27; The credential confirms the former. No protocol currently in production confirms the latter. The consumer cannot win the dispute not because their grievance is wrong, but because the authorization infrastructure recorded a valid transaction where the reasoning that produced it was never encoded anywhere the scheme rules can read.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The protocol war framing is tempting but slightly off. MPP, AP2, and Agent Pay are not competing to solve the same problem three different ways — they are each solving authentication and delegation, which is the right first problem, and they are leaving reasoning-scope enforcement to a second layer that does not yet exist in any of their specs. The business that wins here is not the one that builds the best agent credential. It is the one that builds the runtime authorization envelope: a structured, cryptographically bound record of consumer intent that travels with the agent&#x27;s decision chain, updates as the task evolves, and gives issuers, networks, and dispute systems something to evaluate beyond &#x27;was the token valid?&#x27;</p>
+<p>This is not a wallet feature or a network feature alone — it is probably an infrastructure layer that sits between the consumer&#x27;s intent expression and the agent&#x27;s execution environment. The companies positioned to build it are the ones with visibility into both the agent&#x27;s reasoning trace and the payment authorization event: agent orchestration platforms that have already integrated with payment APIs, or payment providers that are building or acquiring agent runtime capabilities. The assumption that needs updating is that scope enforcement belongs in the credential. Under agentic conditions, scope enforcement must be dynamic, session-aware, and legible to the dispute system — and no current spec delivers all three.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Mastercard Agent Pay publishes delegated credential spec with spending controls</strong> — Agent Pay defines merchant category restrictions and spending limits at the credential level, giving issuers a structured way to bound agent authority at issuance time. What it solves: authentication of non-human initiators, categorical spend scope. What it leaves unsolved: reasoning-scope enforcement across multi-step agent tasks where each individual transaction is categorically valid but the sequence diverges from consumer intent. (Source)</li>
+<li><strong>AP2 defines API surface for agent-initiated payment requests</strong> — The open protocol establishes structured fields for merchant context and amount in agent payment requests, creating a common interface for agent-to-payment-system communication. What it solves: interoperability between agent platforms and payment APIs. What it leaves unsolved: no authorization intent field exists in the spec; there is no way for an agent to assert or an issuer to verify that a transaction reflects the logical scope of the consumer&#x27;s original task. (<a href="https://agenticpayment.forum/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Mastercard Payment Passkey embeds biometric-backed session handshake</strong> — MPP&#x27;s session handshake carries origin metadata, meaning the receiving system knows where an automated session started. What it solves: binding a payment session to a verified human-initiated origin. What it leaves unsolved: session origin is not reasoning scope — knowing where an agent session started does not tell the dispute system whether a specific downstream transaction was within what the consumer asked the agent to accomplish. (Source)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that the agentic payments problem is fundamentally an authentication problem — if you can verify that a credentialed agent is acting within its delegated authority, the payment system can handle the rest. That view is correct for a large class of agentic transactions, particularly simple, single-step ones where credential scope and consumer intent are genuinely aligned. The missing assumption is that consumer intent in a multi-step agentic task is not a static property that can be fully encoded at credential issuance. It is a dynamic, session-specific constraint that evolves as the agent acts. The existing system solves &#x27;is this agent authorized to transact in this category?&#x27; but not &#x27;is this specific transaction within the reasoning scope the consumer established at task initiation?&#x27; — and the dispute system, operating on scheme rules built for the first question, has no adjudication path for the second.</p>
+<h2>From the Community</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/fintech/" target="_blank" rel="noopener">r/fintech: Agent Pay spec review thread — practitioners debating credential scope vs. intent enforcement</a></li>
+<li><a href="https://www.reddit.com/r/MachineLearning/" target="_blank" rel="noopener">r/MachineLearning: How should agent reasoning traces interact with financial authorization systems?</a></li>
+</ul>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><a href="https://arxiv.org/" target="_blank" rel="noopener">Delegated Authorization for AI Agents in Financial Systems — early framing of scope-binding challenges</a></li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://www.mastercard.com/news/press/2025/may/mastercard-launches-agent-pay-to-power-agentic-commerce/</li>
+<li>https://www.mastercard.com/news/press/2024/february/mastercard-payment-passkey-service/</li>
+<li>https://agenticpayment.forum/</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 24, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The chargeback dead-end the article describes is real, but I&#x27;d add one thing practitioners need to internalize: issuers are going to start seeing these disputes at volume before any of these protocols have a runtime intent layer, and their current dispute adjudication workflows have no field to capture &#x27;agent exceeded task scope.&#x27; The first wave of agentic payment disputes is going to land in manual review queues as ambiguous friendly fraud, and issuers will eat the losses or deny valid claims — neither of which is a sustainable answer. The protocol gap is real, but the operational gap at the issuer dispute desk is going to become visible faster.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

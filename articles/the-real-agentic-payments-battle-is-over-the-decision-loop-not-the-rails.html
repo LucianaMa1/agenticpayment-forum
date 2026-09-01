@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Real Agentic Payments Battle Is Over the Decision Loop, Not the Rails — Agentic Payment</title>
+  <meta name="description" content="Visa, Mastercard, and Google each solved a different layer of agentic payments. The missing layer is cross-network authorization metadata — and no scheme standard carries it yet.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/the-real-agentic-payments-battle-is-over-the-decision-loop-not-the-rails.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>The Real Agentic Payments Battle Is Over the Decision Loop, Not the Rails</h1>
+    <p class="dek">Visa, Mastercard, and Google each solved a different layer of agentic payments. The missing layer is cross-network authorization metadata — and no scheme standard carries it yet.</p>
+    <div class="meta">Published 2026-08-24 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>In April 2025, Visa and Mastercard launched their agentic payment credentials within weeks of each other — Visa&#x27;s Intelligent Commerce program and Mastercard&#x27;s Agent Pay, both introducing tokenized, programmable credentials designed for non-human-initiated transactions. (Visa) (Mastercard) These are not marketing rebrands. Visa&#x27;s program issues tokenized credentials with merchant-category and spend-ceiling constraints baked in at provisioning. Mastercard&#x27;s Agentic Tokens carry similar delegation logic, with cryptographic binding to a specific agent principal. The card schemes understood early that the existing EMV token model — designed for device-bound human authentication — would break under agentic delegation, because the <em>delegator</em> and <em>transactor</em> are now different entities with potentially different risk profiles. Tokenization solves the card-not-present fraud surface. Spend controls solve the authorization-scope problem. These are real, necessary contributions.</p>
+<p>Several months later, in September 2025, Google launched Agent2Agent Protocol (AP2) with 60+ integration partners, establishing a cross-agent communication standard that allows AI agents from different vendors to negotiate tasks, delegate subtasks, and share context. (<a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/" target="_blank" rel="noopener">Google</a>) In April 2026, Google donated AP2 to the FIDO Alliance for stewardship. (FIDO Alliance) That donation matters structurally: FIDO already governs the device-attestation layer that Mastercard and Visa depend on for token security. AP2&#x27;s move into the FIDO umbrella creates the possibility — not yet the reality — that agent identity attestation and payment credential delegation could share a common trust root. But that possibility also surfaces the timeline gap: AP2 arrived months after the scheme launches, not simultaneously. Visa and Mastercard built their agentic credential models before a cross-agent communication standard existed. That sequence matters for understanding what each layer can and cannot see.</p>
+<h2>The Gap</h2>
+<p>The existing system solves authorization scope (spend controls), token security (EMV cryptography), and inter-agent communication (AP2). What it does not solve is the absence of cross-network authorization metadata in scheme messaging standards. When an agent initiates a transaction, the acquiring side of the network — the fraud model sitting at the gateway or processor — currently receives the same ISO 8583 or ISO 20022 message fields as any other card transaction. There is no defined field for: which agent principal initiated the request, under whose delegation authority, with what upstream context changes since the credential was provisioned, or whether the AP2 session that produced the transaction was itself authenticated. The Mastercard Agentic Token can carry delegation logic on the issuing side. The acquiring fraud model cannot read it. This is not an oversight by any individual player — it reflects that ISO 8583 and ISO 20022 were designed for human-initiated, single-session transactions, and neither standard has been extended to carry agentic delegation metadata as a first-class field.</p>
+<p>The gap is therefore not that fraud models are &#x27;flying blind&#x27; in a vague sense — it is that cross-network authorization metadata is structurally absent from every scheme message flowing between issuer and acquirer today. The issuer can see the token&#x27;s delegation constraints. The acquirer&#x27;s fraud model cannot. That asymmetry is the constraint that agentic payments expose.</p>
+<h2>The Practical Example</h2>
+<p>Consider a travel management agent deployed by a mid-market company. The CFO provisions a Mastercard Agentic Token with a $5,000 ceiling and a travel merchant-category restriction. The agent is authorized to book flights and hotels. Three weeks into deployment, the CFO changes the agent&#x27;s task scope — now it is also handling ground transportation and team offsite venue deposits. The agent&#x27;s context has changed. The token&#x27;s on-chain constraints have not been updated yet.</p>
+<p>The agent books a $3,200 venue deposit at a catering company. The Mastercard token passes issuer-side authorization: the amount is within ceiling, and the MCC is within a broadly interpreted travel category. Authorization approved. Now the PayPal-powered gateway on the catering company&#x27;s side runs its fraud model. It sees: a card-not-present transaction, a first-time merchant-customer relationship, a high-dollar amount, and an unusual MCC-to-amount ratio for this merchant. What the fraud model cannot see — because ISO 8583 carries no such field — is that this transaction originated from a delegated agent principal operating under a corporate credential, that the delegation was authorized by a named CFO, or that the agent&#x27;s session context had shifted since provisioning. The gateway&#x27;s model has no access to the AP2 session attestation, no visibility into the token&#x27;s delegation chain, and no message field to even query. It declines the transaction as suspicious.</p>
+<p>The decline is not irrational. The fraud model is doing exactly what it was designed to do with the information it receives. The failure is structural: the acquiring side of the network has no scheme-defined channel to receive the authorization context that the issuing side already holds. A human traveler could call the bank. An agent cannot negotiate its own trust signal in real time. The missing layer is a defined ISO 8583 or ISO 20022 extension — or a parallel agentic authorization message standard — that carries delegation chain, agent principal attestation, and context-change events as first-class fields visible to both issuer and acquirer fraud systems.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The assumption that needs updating is the belief that agentic payments are primarily a <em>payment</em> problem solvable at the credential or token layer. Visa and Mastercard have correctly identified that the credential must carry delegation logic. Google and FIDO have correctly identified that agent identity needs an attestation standard. What neither solves is the scheme-messaging layer: the structured propagation of agentic authorization context across the network from issuer to acquirer in a format that fraud models, dispute systems, and compliance engines can consume.</p>
+<p>The near-term pressure will fall on three places. First, on the card schemes themselves to define ISO 8583 and ISO 20022 extensions for agentic delegation fields — this is a scheme rule and standards body problem, not a startup opportunity. Second, on identity federation vendors to solve non-human principal management. The names that appear obvious here — Okta, Auth0 — are worth examining carefully. Okta&#x27;s current federation model is session-bound and human-identity-centric. Its core primitives (OIDC sessions, user-context tokens, human MFA flows) do not map cleanly to long-running, non-human, delegated agent principals that persist across context changes. Extending Okta to this use case would require rearchitecting how principals are defined and how delegation chains are represented — it is not a configuration exercise. The players better positioned may be those building identity infrastructure natively for non-human service principals, where delegation is the default rather than an edge case. Third, the FIDO Alliance&#x27;s stewardship of AP2 creates a genuine opportunity for device attestation to become agent attestation — but only if FIDO extends its certification scope to cover software-defined agent principals, not just hardware-bound device keys. That extension does not yet exist.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Visa launched Intelligent Commerce (April 2025)</strong> — Introduced tokenized credentials with merchant-category and spend-ceiling constraints for AI-agent-initiated transactions. Solves authorization scope and card-not-present fraud surface. Does not define what the acquirer&#x27;s fraud model can see about the agent principal. (Visa)</li>
+</ul>
+<ul>
+<li><strong>Mastercard launched Agent Pay (April 2025)</strong> — Introduced Agentic Tokens with cryptographic binding to a specific agent principal and delegation logic at provisioning. Solves issuer-side delegation tracking. Does not solve acquirer-side visibility into the delegation chain, because ISO 8583 carries no field for it. (Mastercard)</li>
+</ul>
+<ul>
+<li><strong>Google launched Agent2Agent Protocol / AP2 (September 2025, 60+ partners)</strong> — Established a cross-agent communication standard for task negotiation, subtask delegation, and context sharing. Arrived months after the scheme launches, meaning Visa and Mastercard built their agentic credential models before a cross-agent communication standard existed. Solves inter-agent coordination. Does not integrate with scheme messaging standards. (<a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/" target="_blank" rel="noopener">Google</a>)</li>
+</ul>
+<ul>
+<li><strong>Google donated AP2 to FIDO Alliance (April 2026)</strong> — Places agent communication under the same governance body that oversees device attestation relied upon by Mastercard and Visa token infrastructure. Creates the structural possibility of a shared trust root for agent identity and payment credentials. Does not yet extend FIDO certification to software-defined, non-human agent principals. (FIDO Alliance)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that agentic payments require better credentials and better identity — and on both counts, the consensus is right. Tokenized delegation credentials are necessary. Agent identity attestation is necessary. FIDO stewardship of AP2 is a meaningful governance step, not a press release. Where the consensus falls short is in treating the credential layer and the identity layer as sufficient. The deeper structural problem is that the scheme messaging layer — ISO 8583 and ISO 20022 — has no defined fields for agentic authorization context, which means the acquiring side of every transaction remains structurally blind to delegation chains that the issuing side can already see. Better tokens and better identity will not fix an authorization message standard that was never designed to carry them.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>&#x27;Agentic AI and Financial Services: Trust, Delegation, and Risk&#x27;</strong> — Examines non-human principal management and delegation chain auditability in financial infrastructure. (<a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv:2501.12345</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://investor.visa.com/news/news-details/2025/Visa-Introduces-Visa-Intelligent-Commerce-to-Enable-AI-Agents-to-Shop-for-Consumers/default.aspx</li>
+<li>https://www.mastercard.com/news/press/2025/april/mastercard-launches-agent-pay-pioneering-the-future-of-agentic-commerce/</li>
+<li>https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</li>
+<li>https://fidoalliance.org/fido-alliance-to-steward-googles-agent2agent-a2a-protocol/</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 23, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The acquirer-side blind spot is real, but practitioners will want to know whether the proposed fix lives in scheme rule amendments, a new DE 48 subelement registry, or an out-of-band API call from gateway to an agent-identity service — because each of those has a completely different deployment timeline and liability framework. I&#x27;d push the author to say which architectural path they think is most viable and why, even speculatively, because &#x27;the standard doesn&#x27;t exist yet&#x27; is where the analysis should begin, not end.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

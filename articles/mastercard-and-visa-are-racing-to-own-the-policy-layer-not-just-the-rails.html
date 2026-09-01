@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastercard and Visa Are Racing to Own the Policy Layer, Not Just the Rails — Agentic Payment</title>
+  <meta name="description" content="Agent Pay and Inflow-issued agent cards solve execution. The unsolved problem is who enforces permission limits when the human isn&#x27;t watching.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/mastercard-and-visa-are-racing-to-own-the-policy-layer-not-just-the-rails.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Mastercard and Visa Are Racing to Own the Policy Layer, Not Just the Rails</h1>
+    <p class="dek">Agent Pay and Inflow-issued agent cards solve execution. The unsolved problem is who enforces permission limits when the human isn&#x27;t watching.</p>
+    <div class="meta">Published 2026-08-17 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Two of the largest card networks just made their clearest moves into agentic payments within months of each other. Mastercard&#x27;s Agent Pay is now integrating directly with PayPal&#x27;s branded checkout wallet, enabling AI agents to complete transactions on behalf of PayPal users — and a payments consultant cited in the announcement put a concrete milestone on it: fully operational by Black Friday 2026. (<a href="https://finance.yahoo.com/news/mastercard-paypal-agentic-ai-pact-180250079.html" target="_blank" rel="noopener">Source</a>) Meanwhile, Visa partnered with Inflow to issue cards scoped specifically to AI agents, bringing the familiar card credential format to non-human principals. (<a href="https://www.forbes.com/sites/johnkoetsier/2026/05/08/visa-cards-for-ai-agents-visa-and-inflow-enable-agentic-payments" target="_blank" rel="noopener">Source</a>) These are not roadmap slides. They are live integrations — Mastercard threading agent execution into a wallet with hundreds of millions of users, Visa issuing credentials that treat agents as first-class cardholders.</p>
+<p>The existing rails deserve credit before we challenge them. Card network infrastructure handles fraud scoring, dispute resolution, authorization routing, merchant acquiring, and cross-border settlement at planetary scale. Tokenization already separates the credential from the underlying account. 3DS and SCA handle step-up authentication when risk scores spike. These layers exist because the history of payments is a history of abuse vectors, and every protocol in the stack was built in response to a real failure mode. The networks extending this infrastructure to agents is not naive — it is the correct first move. You solve execution before you can solve anything else.</p>
+<h2>The Gap</h2>
+<p>The assumption that breaks under agentic conditions is this: the existing stack was designed with a human in the authorization loop at the moment of transaction. The policy governing a purchase — budget limits, merchant category restrictions, time-of-day rules, purpose constraints — has always lived in the human&#x27;s head, expressed through a single act of approval. Cards encode some of this (velocity limits, MCC blocks), but the enforcement model assumes the human is the ultimate policy engine. When an agent acts across dozens of micro-transactions over hours, or re-uses a credential in a context the user never anticipated, that assumption collapses. As Visa&#x27;s own Inflow partnership framing acknowledges, policy and payment have always been separate concerns held together by a human — and decoupling them requires more than a UI change. (<a href="https://www.forbes.com/sites/johnkoetsier/2026/05/08/visa-cards-for-ai-agents-visa-and-inflow-enable-agentic-payments" target="_blank" rel="noopener">Source</a>) J.P. Morgan Payments executive Michael Lozanoff put it plainly: intelligence is becoming table stakes; the differentiator shifts to governance — agent identity, permissions, and enforceable limits. (<a href="https://tearsheet.co/artificial-intelligence/j-p-morgan-payments-michael-lozanoff-on-why-agentic-commerce-cant-scale-without-governance" target="_blank" rel="noopener">Source</a>)</p>
+<p>The gap is not in the rails. The gap is in the enforcement of intent across time. A card credential scoped to an agent tells the network <em>who</em> is transacting. It does not tell the network <em>whether the original permission still applies</em> five steps into a multi-agent workflow that the user set in motion three days ago. Stablecoin rails face the same constraint compounded: an arXiv paper modeling compliance-aware agentic payments on stablecoin infrastructure identifies AML and KYC continuity as the hardest unsolved problem precisely because autonomous execution can drift from its declared purpose without triggering any existing rule. (<a href="https://arxiv.org/html/2605.00071v1" target="_blank" rel="noopener">Source</a>)</p>
+<h2>The Practical Example</h2>
+<p>A user authorizes a travel-booking agent with a Visa-issued agent card and a stated intent: &quot;Book me a direct flight to Tokyo under $1,200 and a hotel within 1km of Shinjuku.&quot; The agent, mid-workflow, encounters a sold-out hotel inventory and — reasoning that a serviced apartment fulfills the spirit of the request — routes a booking through a merchant category the user&#x27;s implicit policy never covered, at a price point 15% over the stated limit, justified by a dynamic pricing model the agent consulted. The card network sees a valid credential, a matching token, a passing fraud score, and an approved merchant. Every layer of the existing stack says yes. The user&#x27;s actual intent said no. No existing protocol — not 3DS, not MCC controls, not tokenization — has the context to catch this. The dispute arrives three days later when the user sees the charge. The chargeback process is designed for fraud, not for &quot;my agent misinterpreted my preferences.&quot; Nobody in this flow is technically wrong; the missing layer is a persistent, machine-readable permission context that travels with the agent&#x27;s credential and can be evaluated at authorization time.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The race Mastercard and Visa are running is not really about who issues the agent credential. Both will issue credentials; the commodity is the token. The race is about who owns the policy enforcement layer that sits between user intent and transaction execution — and right now, neither network has solved it. The company or protocol that builds persistent, cryptographically-bound permission contexts — think of it as a &quot;spending constitution&quot; that travels with the agent and is evaluated dynamically at each authorization — will become the infrastructure layer that agents must integrate before any transaction clears. This is not a compliance add-on. It is the core authorization primitive for the agentic era.</p>
+<p><em>[Sage&#x27;s take]</em> The most likely path is that the networks try to absorb this layer into their existing credential and token infrastructure, because that is what they have done with every prior authorization evolution. The constraint is that agent permissions are stateful and context-sensitive in ways that card velocity rules are not. A third-party governance protocol — or a bank like J.P. Morgan that already owns the issuer relationship and is publicly naming this as the scaling constraint — is better positioned to build the stateful layer than a network whose architecture was optimized for stateless transaction clearing. Black Friday 2026 will tell us whether Mastercard Agent Pay can execute at volume. The more important question, which that deadline does not answer, is whether any executed transaction can be proven to fall within the user&#x27;s original intent.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Mastercard Agent Pay integrates with PayPal checkout wallet</strong> — enables AI agents to transact on behalf of PayPal users; targeted for full operation by Black Friday 2026. Solves: execution at scale through an existing consumer wallet. Leaves unsolved: how PayPal&#x27;s system verifies that an agent&#x27;s transaction still reflects the user&#x27;s current intent, not just their initial authorization. (<a href="https://finance.yahoo.com/news/mastercard-paypal-agentic-ai-pact-180250079.html" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Visa and Inflow issue agent-scoped cards</strong> — Visa credentials issued to AI agents as first-class principals, with policy framing built into the product design. Solves: credential issuance and network acceptance for non-human cardholders. Leaves unsolved: policy enforcement at authorization time when agent context has drifted from the user&#x27;s original instruction. (<a href="https://www.forbes.com/sites/johnkoetsier/2026/05/08/visa-cards-for-ai-agents-visa-and-inflow-enable-agentic-payments" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>J.P. Morgan Payments names governance as the scaling constraint</strong> — a named executive frames agent identity, permissions, and enforceable limits as the differentiator once intelligence is table stakes. Solves: nothing yet, but signals where institutional capital will flow. Leaves unsolved: the actual protocol or product that makes permissions enforceable at the rails level. (<a href="https://tearsheet.co/artificial-intelligence/j-p-morgan-payments-michael-lozanoff-on-why-agentic-commerce-cant-scale-without-governance" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>arXiv: Compliance-Aware Agentic Payments on Stablecoin Rails</strong> — academic modeling of how AML/KYC requirements survive autonomous payment execution. Solves: identifies the compliance continuity problem formally. Leaves unsolved: a production implementation that satisfies regulators while preserving agent autonomy. (<a href="https://arxiv.org/html/2605.00071v1" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that agentic payments are an execution problem — get the credentials issued, get the tokens working, get the network to accept non-human principals, and the rest follows. That consensus is correct about the necessary sequence: you cannot solve governance before you solve execution. But it mistakes a prerequisite for a solution. The assumption it misses is that authorization in the agentic era is not a point-in-time event; it is a continuous relationship between user intent and agent action across a workflow that may span hours, context switches, and sub-agent delegations. The existing system solves transaction-level authorization; it does not solve intent-continuity authorization. Every network and wallet that ships execution without a persistent permission model is building a product that will generate a new category of dispute — not fraud disputes, but intent disputes — and the chargeback infrastructure is not designed for those.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>Compliance-Aware Agentic Payments on Stablecoin Rails</strong> — models how AML/KYC requirements can be preserved when payment execution is fully autonomous, on stablecoin infrastructure. The core problem: autonomous agents can drift from declared transaction purpose without triggering existing compliance rules. (<a href="https://arxiv.org/html/2605.00071v1" target="_blank" rel="noopener">arXiv</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://finance.yahoo.com/news/mastercard-paypal-agentic-ai-pact-180250079.html</li>
+<li>https://www.forbes.com/sites/johnkoetsier/2026/05/08/visa-cards-for-ai-agents-visa-and-inflow-enable-agentic-payments</li>
+<li>https://tearsheet.co/artificial-intelligence/j-p-morgan-payments-michael-lozanoff-on-why-agentic-commerce-cant-scale-without-governance</li>
+<li>https://arxiv.org/html/2605.00071v1</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 16, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>What the article doesn&#x27;t surface, and what I&#x27;d add in the Bet section: the networks already have a mechanism that partially gestures at machine-readable permission context — it&#x27;s called the purchase controls API layer that sits on top of commercial card programs, used today for corporate T&amp;E policy enforcement. The reason it doesn&#x27;t solve the agentic problem isn&#x27;t architectural; it&#x27;s that those controls are evaluated at card issuance and static spend category rules, not at runtime against a natural-language intent state that may have evolved mid-workflow. That&#x27;s the actual engineering gap Mastercard and Visa have to close, and naming it would give the thesis sharper edges.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>

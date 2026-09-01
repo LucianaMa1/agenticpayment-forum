@@ -1,5 +1,104 @@
 [
   {
+    "title": "Mastercard Can Execute Agentic Payments Live. Nobody Can Audit Whether the Agent Followed Instructions.",
+    "url": "https://agenticpayment.forum/articles/mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i.html",
+    "path": "/articles/mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i.html",
+    "slug": "mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i",
+    "brief": "The rails work. The gap is workflow fidelity â proving an agent did what it was authorized to do, not just that a transaction cleared.",
+    "published_at": "2026-09-01T20:54:26.005440+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Corpay's Agent Card Solves the Credential Problem. It Doesn't Solve the Authorization Problem.",
+    "url": "https://agenticpayment.forum/articles/corpay-s-agent-card-solves-the-credential-problem-it-doesn-t-solve-the-authorization-probl.html",
+    "path": "/articles/corpay-s-agent-card-solves-the-credential-problem-it-doesn-t-solve-the-authorization-probl.html",
+    "slug": "corpay-s-agent-card-solves-the-credential-problem-it-doesn-t-solve-the-authorization-probl",
+    "brief": "Virtual cards give AI agents a payment instrument. They don't answer who is legally liable when an agent pays without explicit human consent.",
+    "published_at": "2026-08-29T02:02:25.361875+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "The Agentic Payments Alliance Is Writing De Facto Law. That's the Problem.",
+    "url": "https://agenticpayment.forum/articles/the-agentic-payments-alliance-is-writing-de-facto-law-that-s-the-problem.html",
+    "path": "/articles/the-agentic-payments-alliance-is-writing-de-facto-law-that-s-the-problem.html",
+    "slug": "the-agentic-payments-alliance-is-writing-de-facto-law-that-s-the-problem",
+    "brief": "When Visa, Mastercard, and Circle write agent commerce standards together, certification scope and competitive advantage are the same decision.",
+    "published_at": "2026-08-27T02:04:44.672306+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "MPP, Agent Pay, and AP2 Each Solve Delegation. None Solve the Authorization Logic That Comes After.",
+    "url": "https://agenticpayment.forum/articles/mpp-agent-pay-and-ap2-each-solve-delegation-none-solve-the-authorization-logic-that-comes-.html",
+    "path": "/articles/mpp-agent-pay-and-ap2-each-solve-delegation-none-solve-the-authorization-logic-that-comes-.html",
+    "slug": "mpp-agent-pay-and-ap2-each-solve-delegation-none-solve-the-authorization-logic-that-comes-",
+    "brief": "Three protocols are racing to authenticate AI agents in payments. The gap isn't authentication — it's that no spec defines what an agent is allowed to decide, and when.",
+    "published_at": "2026-08-25T02:03:21.952858+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "The Real Agentic Payments Battle Is Over the Decision Loop, Not the Rails",
+    "url": "https://agenticpayment.forum/articles/the-real-agentic-payments-battle-is-over-the-decision-loop-not-the-rails.html",
+    "path": "/articles/the-real-agentic-payments-battle-is-over-the-decision-loop-not-the-rails.html",
+    "slug": "the-real-agentic-payments-battle-is-over-the-decision-loop-not-the-rails",
+    "brief": "Visa, Mastercard, and Google each solved a different layer of agentic payments. The missing layer is cross-network authorization metadata — and no scheme standard carries it yet.",
+    "published_at": "2026-08-24T02:03:40.698559+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Agentic Payments Break the Liability Stack Before Regulators Finish Reading the Docket",
+    "url": "https://agenticpayment.forum/articles/agentic-payments-break-the-liability-stack-before-regulators-finish-reading-the-docket.html",
+    "path": "/articles/agentic-payments-break-the-liability-stack-before-regulators-finish-reading-the-docket.html",
+    "slug": "agentic-payments-break-the-liability-stack-before-regulators-finish-reading-the-docket",
+    "brief": "SCA and tokenization solve single-session fraud. Multi-agent procurement chains create liability gaps no chargeback right, AML flag, or SCA exemption was designed to close.",
+    "published_at": "2026-08-23T02:04:20.243774+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Mastercard Built the Rails for Agent Payments. Nobody Built the Law.",
+    "url": "https://agenticpayment.forum/articles/mastercard-built-the-rails-for-agent-payments-nobody-built-the-law.html",
+    "path": "/articles/mastercard-built-the-rails-for-agent-payments-nobody-built-the-law.html",
+    "slug": "mastercard-built-the-rails-for-agent-payments-nobody-built-the-law",
+    "brief": "Mastercard Agent Pay tokenizes AI-initiated transactions. But authorization law still requires a human to have consented — and agents aren't humans.",
+    "published_at": "2026-08-22T02:02:27.689917+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Agentic Payments Have a Fraud Stack Problem That Credentials Alone Cannot Fix",
+    "url": "https://agenticpayment.forum/articles/agentic-payments-have-a-fraud-stack-problem-that-credentials-alone-cannot-fix.html",
+    "path": "/articles/agentic-payments-have-a-fraud-stack-problem-that-credentials-alone-cannot-fix.html",
+    "slug": "agentic-payments-have-a-fraud-stack-problem-that-credentials-alone-cannot-fix",
+    "brief": "Visa CLI and x402 solve agent credential issuance. Neither solves the fraud detection gap where a compromised agent is behaviorally indistinguishable from a legitimate one.",
+    "published_at": "2026-08-18T02:03:51.354364+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Mastercard and Visa Are Racing to Own the Policy Layer, Not Just the Rails",
+    "url": "https://agenticpayment.forum/articles/mastercard-and-visa-are-racing-to-own-the-policy-layer-not-just-the-rails.html",
+    "path": "/articles/mastercard-and-visa-are-racing-to-own-the-policy-layer-not-just-the-rails.html",
+    "slug": "mastercard-and-visa-are-racing-to-own-the-policy-layer-not-just-the-rails",
+    "brief": "Agent Pay and Inflow-issued agent cards solve execution. The unsolved problem is who enforces permission limits when the human isn't watching.",
+    "published_at": "2026-08-17T02:02:05.153578+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "AP2, x402, and Visa MCP Are All Solving Authorization. None of Them Solve Dispute Resolution.",
+    "url": "https://agenticpayment.forum/articles/ap2-x402-and-visa-mcp-are-all-solving-authorization-none-of-them-solve-dispute-resolution.html",
+    "path": "/articles/ap2-x402-and-visa-mcp-are-all-solving-authorization-none-of-them-solve-dispute-resolution.html",
+    "slug": "ap2-x402-and-visa-mcp-are-all-solving-authorization-none-of-them-solve-dispute-resolution",
+    "brief": "Three protocols launched, 60+ partners aligned, and one problem still unowned: what happens when an AI agent buys the wrong thing and nobody can prove intent.",
+    "published_at": "2026-08-15T02:02:51.820639+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "AP2 Solves Agent Authorization. It Does Not Solve Agent Drift.",
+    "url": "https://agenticpayment.forum/articles/ap2-solves-agent-authorization-it-does-not-solve-agent-drift.html",
+    "path": "/articles/ap2-solves-agent-authorization-it-does-not-solve-agent-drift.html",
+    "slug": "ap2-solves-agent-authorization-it-does-not-solve-agent-drift",
+    "brief": "An arXiv paper catalogues five breaks in x402, not AP2. But the deeper problem — agents acting on stale delegations — isn't a protocol flaw in either. It's a missing runtime layer that neither proposal specifies.",
+    "published_at": "2026-08-08T02:03:44.650666+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "The Gap None of Them Have Solved: Runtime Scope Negotiation in Agentic Payments",
     "url": "https://agenticpayment.forum/articles/the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments.html",
     "path": "/articles/the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments.html",

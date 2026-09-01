@@ -11,6 +11,61 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agenticpayment.forum/articles/mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/corpay-s-agent-card-solves-the-credential-problem-it-doesn-t-solve-the-authorization-probl.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/the-agentic-payments-alliance-is-writing-de-facto-law-that-s-the-problem.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/mpp-agent-pay-and-ap2-each-solve-delegation-none-solve-the-authorization-logic-that-comes-.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/the-real-agentic-payments-battle-is-over-the-decision-loop-not-the-rails.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/agentic-payments-break-the-liability-stack-before-regulators-finish-reading-the-docket.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/mastercard-built-the-rails-for-agent-payments-nobody-built-the-law.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/agentic-payments-have-a-fraud-stack-problem-that-credentials-alone-cannot-fix.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/mastercard-and-visa-are-racing-to-own-the-policy-layer-not-just-the-rails.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/ap2-x402-and-visa-mcp-are-all-solving-authorization-none-of-them-solve-dispute-resolution.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/ap2-solves-agent-authorization-it-does-not-solve-agent-drift.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agenticpayment.forum/articles/the-gap-none-of-them-have-solved-runtime-scope-negotiation-in-agentic-payments.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

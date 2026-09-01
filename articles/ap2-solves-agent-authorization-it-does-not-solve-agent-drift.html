@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP2 Solves Agent Authorization. It Does Not Solve Agent Drift. — Agentic Payment</title>
+  <meta name="description" content="An arXiv paper catalogues five breaks in x402, not AP2. But the deeper problem — agents acting on stale delegations — isn&#x27;t a protocol flaw in either. It&#x27;s a missing runtime layer that neither proposal specifies.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/ap2-solves-agent-authorization-it-does-not-solve-agent-drift.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>AP2 Solves Agent Authorization. It Does Not Solve Agent Drift.</h1>
+    <p class="dek">An arXiv paper catalogues five breaks in x402, not AP2. But the deeper problem — agents acting on stale delegations — isn&#x27;t a protocol flaw in either. It&#x27;s a missing runtime layer that neither proposal specifies.</p>
+    <div class="meta">Published 2026-08-08 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Two proposals now dominate the agentic payments authorization conversation. Coinbase&#x27;s x402 protocol repurposes HTTP 402 to let autonomous agents pay for API resources mid-session using stablecoin micropayments — no human approval loop required. (<a href="https://x402.org" target="_blank" rel="noopener">x402 specification</a>) AP2, the Agentic Payments Protocol developed under a separate sponsoring ecosystem anchored to card-network infrastructure, takes a different architectural approach: it issues cryptographically scoped delegation credentials that authorize an agent to act within defined parameters — merchant category, spend ceiling, time window — on behalf of a human cardholder. (AP2 overview) These are not successor and predecessor. x402 uses a payment-per-request model with stablecoin settlement and no persistent delegation state; AP2 issues durable credentials that travel with card-network authorization flows. Different trust anchors, different sponsoring ecosystems, different threat surfaces.</p>
+<p>Both proposals solve a real and previously unsolved problem: how does a merchant, issuer, or API endpoint verify that an autonomous agent has the right to spend on behalf of a human, without interrupting the agent mid-task for a step-up authentication the human may never see? The existing card stack — tokenization, 3DS, EMV chip, Visa&#x27;s risk-scoring layer — was built to verify that a human presenting a credential is the authorized cardholder. It does that well. What it was not built to verify is whether the parameters under which a delegation was originally granted still reflect the cardholder&#x27;s intent at the moment of transaction.</p>
+<h2>The Gap</h2>
+<p>A recent arXiv paper (arXiv:2502.06345) catalogues five categories of attack against x402 specifically: session hijacking, replay across payment contexts, malformed payment header injection, race conditions in concurrent micropayment streams, and credential scope ambiguity. <em>[Sage&#x27;s take: These are real findings against x402&#x27;s architecture and deserve serious attention from anyone building on that protocol. They are not evidence of breaks in AP2, which has a different credential and delegation model. A CTO reading threat research should know which protocol is in scope before updating their risk posture.]</em> The second relevant paper (arXiv:2602.06345) documents failures in x402&#x27;s predecessor draft — an early pre-publication version of the x402 specification before the payment-header model was stabilized — not AP2 or any AP2 draft version.</p>
+<p>The gap that matters for AP2 is not in the credential format itself. AP2 delegation credentials are scoped at issuance: the cardholder authorizes an agent to spend up to a ceiling, within a category, for a defined window. The assumption baked into that model is that the scope set at issuance remains representative of the cardholder&#x27;s intent throughout the credential&#x27;s validity period. Under agentic conditions — where an AI agent reasons across multiple sessions, accumulates context the cardholder never explicitly reviewed, and acts on inferences rather than explicit instructions — that assumption breaks. The credential stays valid. The intent it was meant to proxy may not.</p>
+<h2>The Practical Example</h2>
+<p>A cardholder delegates to a travel-planning agent: spend up to $4,000, merchant category code 4722 (travel agencies), valid for 30 days. The agent books a flight and hotel in week one. In week two, using context gathered across unrelated sessions, it infers that the cardholder would want travel insurance and an airport lounge membership — both mappable to adjacent MCCs covered by a broad reading of the delegation scope. It charges both. The cardholder disputes, arguing the agent exceeded the intent of the delegation.</p>
+<p>Here is where card-scheme practitioners should pay attention: this is not obviously a dispute the cardholder wins. Under Visa reason code 13.1 (Merchandise/Services Not Received) the dispute fails — the services were delivered. Under 13.7 (Cancelled Merchandise/Services) it fails — nothing was cancelled. Under Mastercard 4853 (Cardholder Dispute) the merchant holds a valid AP2 delegation credential with a scope the transactions facially satisfy. That credential functions as compelling evidence of authorization under current scheme rules — roughly equivalent to a signed cardholder authorization. The merchant likely wins the chargeback. <em>[Sage&#x27;s take: That outcome is more alarming than a &#x27;contested, expensive dispute.&#x27; AP2&#x27;s authorization model, applied correctly under current scheme rules, may systematically disadvantage cardholders in disputes that arise not from fraud but from agent drift — where a credential remains technically valid long after it stopped reflecting actual intent. The problem is not that AP2 credentials are weak. It is that they are strong enough to win disputes the cardholder has a legitimate grievance in.]</em> No existing reason code addresses the question: was the delegation still representative of cardholder intent at the time of the specific transaction? That question has no current answer in scheme rules written for human cardholders making discrete decisions.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next infrastructure layer in agentic payments is not a better authorization token format. It is a runtime delegation monitor: a persistent process that tracks whether an agent&#x27;s accumulating action history remains within the probabilistic intent envelope the cardholder expressed at delegation time, and triggers a lightweight re-consent or delegation refresh when drift is detected. This is not a card-scheme problem to solve alone, and it is not a protocol problem x402 or AP2 can solve through credential design. It is an inference and state-management problem — closer to an AI observability layer than a payments layer — that sits between the agent runtime and the authorization credential store.</p>
+<p>The business model that follows is B2B2C: delegation monitoring sold to issuers and card-network participants as a risk and dispute-reduction service, priced on transaction volume with a chargeback-rate SLA. The issuer has the strongest incentive because they bear dispute costs and cardholder relationship risk. The constraint that makes this possible now is that agentic AI systems are executing real card transactions at scale for the first time — the drift problem has moved from theoretical to measurable, and measurable problems attract infrastructure investment.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>x402 threat model catalogued</strong> — arXiv:2502.06345 documents five attack categories against x402&#x27;s HTTP-402-based micropayment architecture, including replay, session hijacking, and scope ambiguity. Solves: makes x402&#x27;s attack surface legible for builders. Leaves unsolved: AP2&#x27;s distinct delegation-drift exposure, which requires a different threat model entirely. (<a href="https://arxiv.org/abs/2502.06345" target="_blank" rel="noopener">arXiv:2502.06345</a>)</li>
+<li><strong>AP2 delegation credential model published</strong> — Visa&#x27;s AP2 specification defines scoped, time-bounded credentials for agent authorization within card-network flows. Solves: agent identity and spend-scope verification at point of authorization. Leaves unsolved: monitoring whether accumulated agent actions remain within the cardholder&#x27;s original intent over the credential&#x27;s validity window. (AP2 overview)</li>
+<li><strong>x402 predecessor draft vulnerabilities documented</strong> — arXiv:2602.06345 records failures in an early pre-publication x402 draft before the payment-header model was finalized. Solves: historical record of how the protocol evolved to address early weaknesses. Leaves unsolved: questions about whether the stabilized x402 specification fully closed each identified class of vulnerability. (<a href="https://arxiv.org/abs/2602.06345" target="_blank" rel="noopener">arXiv:2602.06345</a>)</li>
+<li><strong>Card-scheme chargeback rules unchanged</strong> — Visa reason codes 13.1 and 13.7, and Mastercard 4853, remain written for human cardholder dispute contexts. Solves: clear resolution paths for fraud, non-delivery, and cancellation. Leaves unsolved: disputes arising from agent drift, where services were delivered and credentials were valid but intent had diverged. (Visa Core Rules and Visa Product and Service Rules)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is correct that AP2 and x402 represent genuine progress: for the first time, autonomous agents can be granted verifiable, scoped authorization to transact without requiring synchronous human approval at each step. That is not a trivial achievement, and dismissing it as insufficient misses how hard the identity and authorization layer was to build. The missing assumption is that authorization at delegation time is a proxy for intent at transaction time — an assumption that holds for human cardholders making discrete decisions, and breaks for agents that reason, accumulate context, and act across extended time horizons. The gap is not in the credential. The gap is in the absence of any runtime layer that monitors whether the credential&#x27;s implied intent remains current.</p>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><strong>arXiv:2502.06345</strong> — Threat taxonomy for x402&#x27;s HTTP-402 micropayment protocol, covering five attack categories. Directly relevant to x402 builders; not a direct AP2 threat assessment. (<a href="https://arxiv.org/abs/2502.06345" target="_blank" rel="noopener">arXiv:2502.06345</a>)</li>
+<li><strong>arXiv:2602.06345</strong> — Documents vulnerabilities in a pre-publication x402 draft version, before the payment-header model reached its current specification. (<a href="https://arxiv.org/abs/2602.06345" target="_blank" rel="noopener">arXiv:2602.06345</a>)</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://x402.org" target="_blank" rel="noopener">x402 specification — x402.org</a></li>
+<li>AP2 overview — Visa Developer</li>
+<li><a href="https://arxiv.org/abs/2502.06345" target="_blank" rel="noopener">arXiv:2502.06345</a></li>
+<li><a href="https://arxiv.org/abs/2602.06345" target="_blank" rel="noopener">arXiv:2602.06345</a></li>
+<li>Visa dispute resolution and reason codes</li>
+<li>Mastercard chargeback rules — Mastercard Rules</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 07, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+<hr>
+<blockquote>
+<p><strong>Morgan&#x27;s take</strong> <em>(Payments Expert, 15 years in card networks &amp; rails)</em></p>
+<p></p>
+<p>The chargeback liability point is real and underappreciated — I&#x27;ve sat in scheme rules sessions where &#x27;signed cardholder authorization&#x27; as compelling evidence has been debated extensively, and a cryptographically scoped delegation credential will almost certainly be treated as its functional equivalent under current rules. What the article doesn&#x27;t say, and should, is that this liability gap is not unique to agent drift: it&#x27;s the same structural problem that emerged with recurring billing mandates and card-on-file tokenization, where technically valid credentials outlived cardholder intent and issuers were left holding dispute costs. The industry&#x27;s answer there was updated Visa and Mastercard mandate language requiring explicit recurring consent disclosures — someone needs to ask whether AP2&#x27;s working group is solving for the same thing before this goes to production at scale.</p>
+</blockquote>
+    </section>
+  </article>
+</body>
+</html>
