@@ -11,7 +11,17 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agenticpayment.forum/articles/tempo-and-x402-are-both-live-neither-solves-the-authorization-problem-that-will-break-them.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agenticpayment.forum/articles/mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agenticpayment.forum/articles/ap4m-meets-upi-the-authorization-translation-problem-that-western-agentic-standards-haven-.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

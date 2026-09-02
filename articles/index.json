@@ -1,11 +1,29 @@
 [
   {
+    "title": "Tempo and x402 Are Both Live. Neither Solves the Authorization Problem That Will Break Them Both.",
+    "url": "https://agenticpayment.forum/articles/tempo-and-x402-are-both-live-neither-solves-the-authorization-problem-that-will-break-them.html",
+    "path": "/articles/tempo-and-x402-are-both-live-neither-solves-the-authorization-problem-that-will-break-them.html",
+    "slug": "tempo-and-x402-are-both-live-neither-solves-the-authorization-problem-that-will-break-them",
+    "brief": "Two agent payment standards are in production. The real gap isn't which rail wins — it's that neither can prove an agent's decision matched the human's intent.",
+    "published_at": "2026-09-02T17:05:06.861649+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "Mastercard Can Execute Agentic Payments Live. Nobody Can Audit Whether the Agent Followed Instructions.",
     "url": "https://agenticpayment.forum/articles/mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i.html",
     "path": "/articles/mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i.html",
     "slug": "mastercard-can-execute-agentic-payments-live-nobody-can-audit-whether-the-agent-followed-i",
-    "brief": "The rails work. The gap is workflow fidelity â proving an agent did what it was authorized to do, not just that a transaction cleared.",
+    "brief": "The rails work. The gap is workflow fidelity — proving an agent did what it was authorized to do, not just that a transaction cleared.",
     "published_at": "2026-09-01T20:54:26.005440+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "AP4M Meets UPI: The Authorization Translation Problem That Western Agentic Standards Haven't Solved",
+    "url": "https://agenticpayment.forum/articles/ap4m-meets-upi-the-authorization-translation-problem-that-western-agentic-standards-haven-.html",
+    "path": "/articles/ap4m-meets-upi-the-authorization-translation-problem-that-western-agentic-standards-haven-.html",
+    "slug": "ap4m-meets-upi-the-authorization-translation-problem-that-western-agentic-standards-haven-",
+    "brief": "When an AP4M-credentialed agent hits a UPI-native merchant, two production-grade agentic payment systems can't recognize each other's authorization artifacts. That's the real gap.",
+    "published_at": "2026-09-02T02:05:46.706052+00:00",
     "channel": "agenticpayment.forum articles"
   },
   {
