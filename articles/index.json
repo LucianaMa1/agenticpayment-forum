@@ -1,5 +1,32 @@
 [
   {
+    "title": "x402 Solves the Payment Layer. GLEIF Just Revealed the Layer Nobody Solved First.",
+    "url": "https://agenticpayment.forum/articles/x402-solves-the-payment-layer-gleif-just-revealed-the-layer-nobody-solved-first.html",
+    "path": "/articles/x402-solves-the-payment-layer-gleif-just-revealed-the-layer-nobody-solved-first.html",
+    "slug": "x402-solves-the-payment-layer-gleif-just-revealed-the-layer-nobody-solved-first",
+    "brief": "Every major rail now moves money between agents. None of them answer: which agent, authorized by whom, under what mandate?",
+    "published_at": "2026-09-09T17:03:19.636259+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "UPI Goes Agentic: Why a Quasi-Sovereign Rail Complicates the Protocol Consensus",
+    "url": "https://agenticpayment.forum/articles/upi-goes-agentic-why-a-quasi-sovereign-rail-complicates-the-protocol-consensus.html",
+    "path": "/articles/upi-goes-agentic-why-a-quasi-sovereign-rail-complicates-the-protocol-consensus.html",
+    "slug": "upi-goes-agentic-why-a-quasi-sovereign-rail-complicates-the-protocol-consensus",
+    "brief": "India's UPI agentic payments rollout doesn't add a sovereign veto to the protocol war — it adds a harder problem: jurisdictional fragmentation that existing compliance rails don't cover.",
+    "published_at": "2026-09-09T17:03:19.153889+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "Visa CLI Is the Right Idea Applied to the Wrong Trust Model",
+    "url": "https://agenticpayment.forum/articles/visa-cli-is-the-right-idea-applied-to-the-wrong-trust-model.html",
+    "path": "/articles/visa-cli-is-the-right-idea-applied-to-the-wrong-trust-model.html",
+    "slug": "visa-cli-is-the-right-idea-applied-to-the-wrong-trust-model",
+    "brief": "Agents running Visa CLI don't need API keys — but they still need something harder to issue: bounded, auditable authorization that travels with the payment.",
+    "published_at": "2026-09-09T17:03:18.649444+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "UPI's Agentic Extension Exposes the Credential Sovereignty Gap That Private Protocols Were Never Designed to Cross",
     "url": "https://agenticpayment.forum/articles/upi-s-agentic-extension-exposes-the-credential-sovereignty-gap-that-private-protocols-were.html",
     "path": "/articles/upi-s-agentic-extension-exposes-the-credential-sovereignty-gap-that-private-protocols-were.html",
