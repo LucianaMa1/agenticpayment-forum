@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Registration Is Not Agent Authorization: The Gap Visa and Mastercard Haven&#x27;t Closed — Agentic Payment</title>
+  <meta name="description" content="Registering an AI agent proves it exists. It doesn&#x27;t prove it should act right now. That gap is where agentic fraud will live.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/agent-registration-is-not-agent-authorization-the-gap-visa-and-mastercard-haven-t-closed.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>Agent Registration Is Not Agent Authorization: The Gap Visa and Mastercard Haven&#x27;t Closed</h1>
+    <p class="dek">Registering an AI agent proves it exists. It doesn&#x27;t prove it should act right now. That gap is where agentic fraud will live.</p>
+    <div class="meta">Published 2026-09-11 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>Visa and Mastercard have both shipped real infrastructure for agentic payments, and it deserves to be understood precisely before it is critiqued. Visa&#x27;s Intelligent Commerce platform provides a server-side integration layer that lets large language models connect directly to Visa APIs and execute payments autonomously — this is not a whitepaper, it is a live API surface. Mastercard&#x27;s Agent Pay requires trusted AI agents to be registered and verified before they can transact, with consumers setting explicit spending permissions that constrain what any registered agent can purchase: both amount and category. Stripe&#x27;s Agentic Commerce Protocol (ACP) goes further at the developer layer, providing orchestration infrastructure that lets agents initiate and manage payment flows via the API without agents themselves holding raw card credentials — the credential surface is abstracted to the Stripe layer, reducing the attack surface for credential exfiltration in multi-step agent workflows. (<a href="https://www.visa.com/en-us/solutions/intelligent-commerce" target="_blank" rel="noopener">Visa</a>) (Payments Dive) (<a href="https://stripe.com" target="_blank" rel="noopener">Stripe</a>) (Forbes)</p>
+<p>This stack solves the authentication and enrollment problem clearly and correctly. Registration binds an agent identity to a consumer account. Permission scopes bound what that agent can buy — amount, merchant category, geography. Credential abstraction removes the raw-key management liability that plagued earlier API-driven automation. These are not naive solutions — they map directly to the same trust model that tokenization and 3DS built for card-not-present commerce, applied now to agent-not-human commerce. The existing system is doing what it was designed to do: confirm that a known entity, acting within declared limits, is authorized to initiate a transaction.</p>
+<h2>The Gap</h2>
+<p>The flaw is not in the registration model. The flaw is that registration answers a static question — <em>is this agent allowed to transact?</em> — while agentic payment risk is dynamic. An agent authorized to book travel in April, when a user&#x27;s preferences and budget were set, may execute a rebooking in September against a context that has entirely changed: the trip was cancelled, the budget was reallocated, or the agent&#x27;s reasoning chain was corrupted mid-session by an injected instruction. The permission scope says <em>yes</em>. The transaction executes. The existing system has no mechanism to ask whether the authorization still reflects the user&#x27;s current intent, because current authorization infrastructure was designed for point-in-time consent, not persistent delegated agency.</p>
+<p>This is the constraint that changes under agentic conditions: time. Card authorization was built for a human who decides, then pays, in a single cognitive loop lasting seconds. Agent authorization is issued once and then exercised repeatedly, autonomously, across an open-ended time horizon and across reasoning steps the user never observes. The gap is not between registered and unregistered agents — it is between <em>enrolled permission</em> and <em>contextually valid action</em>. Enrollment is a solved problem. Contextual validity at execution time is not.</p>
+<h2>The Practical Example</h2>
+<p>A consumer registers a travel-management agent with their issuer through Mastercard&#x27;s Agent Pay framework. They set a permission scope: book flights and hotels up to $2,000 per trip, for domestic travel only, on a specific card. Six weeks later, the underlying trip is cancelled and the user mentally reallocates the budget — but never formally revokes or updates the agent&#x27;s scope. The agent, operating across a multi-step itinerary optimization session, receives a prompt-injected instruction embedded in a third-party travel API response. The injection does not direct the agent to book an international flight — that would fail the declared geographic scope constraint. Instead, it redirects the agent to book a domestic fare at $1,800 to a city the user has no intent to visit, framed within the session as a &quot;rebooking&quot; consistent with the original trip parameters.</p>
+<p>The transaction clears every registered check: the agent is enrolled, the amount is within scope, the destination is domestic, the card credentials are validly held by Stripe&#x27;s abstraction layer. The issuer sees a clean authorization. The merchant sees a clean sale. The user sees a charge for a flight they never intended to take, to a destination they did not choose, executed by an agent they trusted but could not observe in the moment it acted. When the user disputes the charge, they face a card dispute process — a human-era tool designed for cases where a human either did or did not authorize a transaction. Here, the human <em>did</em> authorize the agent, the agent <em>did</em> act within declared scope, and the failure lives entirely inside a reasoning chain that no scheme rule, no registration requirement, and no fraud model was designed to inspect. Under current scheme rules, liability for a charge that passes every authorization check but results from reasoning-chain compromise sits in genuinely uncharted territory: issuers have no mechanism to distinguish a valid agent decision from a corrupted one, and no scheme rule currently written addresses prompt-injection-driven execution as a distinct dispute category. The chargeback will be processed as a standard unauthorized transaction claim — which it is not.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next critical infrastructure layer in agentic payments is not registration — it is <strong>execution-time intent verification</strong>: a signal, generated by the agent orchestration layer, that confirms the agent&#x27;s current reasoning context is consistent with the user&#x27;s original delegation, evaluated at the moment of transaction initiation, not at the moment of enrollment. Here is a rough architecture: the orchestration system — the middleware already sitting between the LLM and the payment API — generates a session-state attestation before firing the payment call. This attestation would include a hash of the active instruction set, the delegation scope as originally declared, and the reasoning step that produced the payment intent. It would be passed as a supplemental field alongside the authorization request, where it could be verified by the issuer or a scheme-layer trust service against the registered agent&#x27;s original enrollment record. This is not fraud scoring — fraud scoring detects anomalous behavior against historical patterns. Intent verification detects valid-but-contextually-stale or valid-but-compromised authorization: a category of failure that looks clean to every fraud model because the agent is behaving exactly as it was trained to behave, just against a corrupted or outdated context.</p>
+<p><em>[Sage&#x27;s take]</em> The players positioned to build this are not the schemes, whose authorization infrastructure is structurally point-in-time, and not the issuers, who lack visibility into agent reasoning chains. The positioned layer is the agent orchestration middleware — the systems that already sit between the LLM and the payment API and can inspect reasoning state before the transaction fires. The assumption that needs updating across the industry is that permission scope is a sufficient proxy for user intent. It was sufficient when humans executed their own decisions in a single cognitive loop. It is not sufficient when agents execute across time, context changes, and reasoning steps that users cannot monitor — and until scheme liability rules are rewritten to address reasoning-chain compromise as a distinct failure mode, the dispute cost of that gap will accrue to issuers and consumers, not to the orchestration layer that generated the compromised decision.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Visa shipped a live API integration layer for LLMs</strong> — Visa Intelligent Commerce provides a server-side connection directly from AI models to Visa&#x27;s payment APIs, enabling autonomous transaction execution. It solves the integration problem for agent-initiated payments. It does not address whether the agent&#x27;s in-session reasoning remains aligned with the user&#x27;s original intent at the moment of execution. (<a href="https://www.visa.com/en-us/solutions/intelligent-commerce" target="_blank" rel="noopener">Visa</a>)</li>
+</ul>
+<ul>
+<li><strong>Mastercard&#x27;s Agent Pay requires registration and consumer-set permission scopes</strong> — This correctly ports the tokenization-era trust model to agentic commerce: bind identity, bound scope, execute. Scope constraints include amount, merchant category, and geography — this is more granular than simple spending limits. It solves the enrollment and scope-declaration problem. It leaves unsolved the problem of scope staleness and mid-session context compromise where the injected action stays within declared scope parameters. (Payments Dive)</li>
+</ul>
+<ul>
+<li><strong>Stripe&#x27;s ACP abstracts credential management away from the agent layer</strong> — The Agentic Commerce Protocol provides orchestration infrastructure so agents initiate payment flows via Stripe&#x27;s API without holding raw card credentials themselves. This reduces the credential-exfiltration attack surface in multi-step agent workflows — a meaningful security improvement over agents managing keys directly. It does not change the fact that a validly-orchestrated agent with a corrupted reasoning chain still clears authorization cleanly. (<a href="https://stripe.com" target="_blank" rel="noopener">Stripe</a>) (Forbes)</li>
+</ul>
+<ul>
+<li><strong>Forrester&#x27;s B2C agentic payments tracker shows continuous announcement velocity since late 2025</strong> — The cadence of major scheme and processor announcements signals that infrastructure enrollment is being treated as the primary unsolved problem. This framing was correct for 2025. It is becoming insufficient for 2026, as enrolled agents begin accumulating transaction histories and the staleness and reasoning-compromise problems become empirically visible. (<a href="https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now" target="_blank" rel="noopener">Forrester</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view — that the core agentic payments problem is registration, credentialing, and scope-setting — is right about the first phase. Enrollment infrastructure had to be built before any other problem could be meaningfully addressed, and Visa, Mastercard, and Stripe have built it correctly and with genuine architectural care. The missing assumption is that authorization is a continuous condition, not a one-time event. The existing authorization stack was designed for a world where the gap between user intent and transaction execution is measured in seconds and observed by the user in real time. Agentic commerce stretches that gap to hours, days, or weeks, and removes the user from the observation loop entirely. When the gap is that wide, enrollment-time consent is not a sufficient proxy for execution-time authorization — and no scheme rule, registration requirement, or permission scope currently written addresses reasoning-chain compromise as a distinct failure mode. The liability question that follows is not theoretical: it is the next dispute category that issuers will need a rule to resolve.</p>
+<h2>Sources</h2>
+<ul>
+<li>https://www.visa.com/en-us/solutions/intelligent-commerce</li>
+<li>https://www.paymentsdive.com/news/visa-mastercard-race-agentic-ai-commerce-payments/750428</li>
+<li>https://stripe.com</li>
+<li>https://www.forbes.com/sites/boazsobrado/2026/03/19/stripe-visa-and-mastercard-race-to-build-ai-agent-payment-rails</li>
+<li>https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · September 07, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+    </section>
+  </article>
+</body>
+</html>
