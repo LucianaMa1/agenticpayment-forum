@@ -1,5 +1,32 @@
 [
   {
+    "title": "Stripe Projects Reveals the Real Agentic Payments Problem: Who Authorizes the Agent to Buy What It Needs to Build?",
+    "url": "https://agenticpayment.forum/articles/stripe-projects-reveals-the-real-agentic-payments-problem-who-authorizes-the-agent-to-buy-.html",
+    "path": "/articles/stripe-projects-reveals-the-real-agentic-payments-problem-who-authorizes-the-agent-to-buy-.html",
+    "slug": "stripe-projects-reveals-the-real-agentic-payments-problem-who-authorizes-the-agent-to-buy-",
+    "brief": "Stripe Projects lets agents autonomously purchase dev infrastructure. The gap isn't payment rails — it's the missing authorization layer between capability and consent.",
+    "published_at": "2026-09-13T17:55:47.352384+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "The Missing Layer in Agentic Payments Isn't the Rail — It's the Receipt",
+    "url": "https://agenticpayment.forum/articles/the-missing-layer-in-agentic-payments-isn-t-the-rail-it-s-the-receipt.html",
+    "path": "/articles/the-missing-layer-in-agentic-payments-isn-t-the-rail-it-s-the-receipt.html",
+    "slug": "the-missing-layer-in-agentic-payments-isn-t-the-rail-it-s-the-receipt",
+    "brief": "Agents can now initiate payments. But 'payment completed' and 'payment authorized' are not the same claim, and no protocol treats them differently yet.",
+    "published_at": "2026-09-13T17:55:46.565422+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
+    "title": "B2B Agentic Payments Went Live Today. The Trust Infrastructure It Assumes Doesn't Exist Yet.",
+    "url": "https://agenticpayment.forum/articles/b2b-agentic-payments-went-live-today-the-trust-infrastructure-it-assumes-doesn-t-exist-yet.html",
+    "path": "/articles/b2b-agentic-payments-went-live-today-the-trust-infrastructure-it-assumes-doesn-t-exist-yet.html",
+    "slug": "b2b-agentic-payments-went-live-today-the-trust-infrastructure-it-assumes-doesn-t-exist-yet",
+    "brief": "Visa/Lianlian and Mastercard/Sunrate both announced live B2B agentic transactions today. The rails worked. The authorization problem didn't get solved.",
+    "published_at": "2026-09-13T17:55:45.464272+00:00",
+    "channel": "agenticpayment.forum articles"
+  },
+  {
     "title": "Agent Registration Is Not Agent Authorization: The Gap Visa and Mastercard Haven't Closed",
     "url": "https://agenticpayment.forum/articles/agent-registration-is-not-agent-authorization-the-gap-visa-and-mastercard-haven-t-closed.html",
     "path": "/articles/agent-registration-is-not-agent-authorization-the-gap-visa-and-mastercard-haven-t-closed.html",

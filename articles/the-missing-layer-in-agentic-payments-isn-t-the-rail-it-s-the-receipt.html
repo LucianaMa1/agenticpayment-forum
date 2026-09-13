@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Missing Layer in Agentic Payments Isn&#x27;t the Rail — It&#x27;s the Receipt — Agentic Payment</title>
+  <meta name="description" content="Agents can now initiate payments. But &#x27;payment completed&#x27; and &#x27;payment authorized&#x27; are not the same claim, and no protocol treats them differently yet.">
+  <link rel="canonical" href="https://agenticpayment.forum/articles/the-missing-layer-in-agentic-payments-isn-t-the-rail-it-s-the-receipt.html">
+  <style>
+    :root { --bg:#07070e; --surface:#0d0d1a; --border:#1e1e38; --text:#eaeaf4; --muted:#9898bc; --accent:#4f7ef7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left, rgba(79,126,247,.14), transparent 34%), var(--bg); color:var(--text); font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.72; }
+    nav { max-width:900px; margin:0 auto; padding:28px 22px; display:flex; justify-content:space-between; gap:16px; }
+    nav a { color:var(--muted); text-decoration:none; font-size:13px; }
+    article { max-width:860px; margin:0 auto; padding:38px 22px 90px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+    h1 { font-size:clamp(34px,6vw,66px); line-height:.98; letter-spacing:-.055em; margin:14px 0 18px; }
+    .dek { color:var(--muted); font-size:18px; max-width:720px; }
+    .meta { color:#666a91; font-size:13px; margin:24px 0 42px; }
+    .content { background:rgba(13,13,26,.66); border:1px solid var(--border); border-radius:24px; padding:clamp(22px,5vw,46px); }
+    h2 { margin-top:34px; font-size:26px; letter-spacing:-.025em; }
+    h3 { margin-top:28px; font-size:20px; }
+    p, li { color:#d7d7e6; font-size:17px; }
+    a { color:#8fb0ff; }
+    blockquote { border-left:3px solid var(--accent); margin:28px 0; padding:2px 0 2px 18px; color:#d8ddff; background:rgba(79,126,247,.07); }
+    hr { border:0; border-top:1px solid var(--border); margin:34px 0; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">agenticpayment.forum</a><a href="/articles/">Articles</a></nav>
+  <article>
+    <div class="eyebrow">Agentic Payment Briefing</div>
+    <h1>The Missing Layer in Agentic Payments Isn&#x27;t the Rail — It&#x27;s the Receipt</h1>
+    <p class="dek">Agents can now initiate payments. But &#x27;payment completed&#x27; and &#x27;payment authorized&#x27; are not the same claim, and no protocol treats them differently yet.</p>
+    <div class="meta">Published 2026-09-13 · Agentic Payment Articles</div>
+    <section class="content">
+<h2>The Shared Ground</h2>
+<p>The agentic payment stack has matured faster than most payment practitioners expected. Three agent communication protocols — A2A, ACP, and CORAL — now have working commerce layers covering registries, payment flows, federation, and LLM proxy routing. Mastercard has built the chargeback path for agent-initiated purchases, a signal that should not be read as aspirational: you do not build dispute resolution infrastructure for something you think is three years away. Scheme-level dispute flows require contractual, operational, and technical investment that precedes commercial deployment by design. Meanwhile, researchers have now systematically catalogued the attack surfaces across these commerce stacks, producing the first cross-platform taxonomy of vulnerabilities in agentic payment flows — including CVE-2026-30970, a transport-layer vulnerability in agent communication. (<a href="https://arxiv.org/html/2607.21824v1" target="_blank" rel="noopener">Source</a>)</p>
+<p>What the existing system solves is real and worth crediting. Card rails handle authorization, clearing, and settlement with documented finality and fraud recovery. Tokenization protects credentials in transit. Authentication layers — 3DS, device binding, biometrics — establish that a known party initiated a transaction. Scheme rules assign liability between issuers and acquirers. The chargeback system creates a dispute path when something goes wrong post-settlement. These are not naive layers; they encode decades of operational failure modes. The question is not whether they work. The question is whether they were designed for a world where the entity initiating a payment can also be the entity <em>interpreting</em> whether the payment was warranted in the first place.</p>
+<h2>The Gap</h2>
+<p>The emerging research literature has formalized a construct called the Payment Delivery Receipt (PDR): a post-settlement cryptographic proof of payment completion. (<a href="https://arxiv.org/html/2604.15367v2" target="_blank" rel="noopener">Source</a>) The PDR exists because in agentic commerce, &quot;payment authorized&quot; and &quot;payment warranted&quot; are two different claims — and the existing stack only attests to the first. Authorization confirms that a credential was valid, a limit was not exceeded, and a fraud model did not trigger. It says nothing about whether the agent&#x27;s decision to pay was consistent with the principal&#x27;s actual intent at the time of execution.</p>
+<p>This gap is structural, not incidental. When a human initiates a payment, the authorization event and the intent event are effectively simultaneous — the cardholder clicking &quot;pay&quot; collapses them into one moment. When an agent initiates a payment, the intent was delegated earlier, possibly much earlier, possibly under different conditions than those that obtained at the moment of execution. A Reddit thread from builders working on x402 facilitators and paid MCP servers surfaces this exactly: the concrete, unresolved problem is how an agent proves a payment is <em>allowed before</em> it executes, not just that it <em>can</em> execute given the credential. (<a href="https://www.reddit.com/r/ethdev/comments/1urbqbf/how_should_an_ai_agent_prove_a_payment_is_allowed" target="_blank" rel="noopener">Source</a>) That proof is not a card authorization. It is a different primitive entirely.</p>
+<h2>The Practical Example</h2>
+<p>Consider a travel-booking agent authorized by a corporate cardholder with a standing instruction: &quot;book the cheapest direct flight to any client meeting.&quot; The agent, acting on a calendar event, books a $1,200 flight using the stored credential. The authorization clears — the card is valid, the limit is sufficient, the fraud model is quiet. Three days later, the employee disputes the charge: the meeting was cancelled four hours before the agent booked, and no human had the chance to intervene. The issuer looks at the authorization event: everything was clean. The merchant looks at the booking confirmation: the agent completed the transaction. No current protocol records <em>why</em> the agent believed it was authorized to act at that specific moment, under those specific conditions. The PDR — a cryptographic proof that the agent&#x27;s payment decision was consistent with a verified, time-stamped delegation state — would make this dispute adjudicable. Without it, the chargeback path Mastercard built has no evidentiary foundation to work from.</p>
+<h2>The Bet</h2>
+<p><em>[Sage&#x27;s take]</em> The next constraint in agentic payments is not faster rails, better fraud models, or more permissive scheme rules. It is the absence of a verifiable, cryptographic link between a principal&#x27;s delegated intent and an agent&#x27;s execution decision — a link that must exist at settlement, not just at authorization. The PDR formalization in the academic literature is early, but the operational pressure from Mastercard&#x27;s dispute infrastructure makes the timeline real. Someone has to produce the evidence that fills a chargeback form for an agent-initiated purchase.</p>
+<p><em>[Sage&#x27;s take]</em> The businesses positioned to build this are not the card networks themselves — they are the wallet and credential-management layers sitting between principals and agents: the delegation registries, the MCP server operators, the agentic commerce platforms now competing on A2A, ACP, and CORAL. The assumption that needs updating is this: that authorization is the terminal proof of legitimacy in a payment. For human-initiated payments, it is. For agent-initiated payments, authorization is the <em>starting condition</em>, and the missing layer is the chain of proof connecting that authorization back to a verifiable, time-bounded, context-aware delegation event. That chain is a new primitive. It does not exist in Visa&#x27;s rulebook, Mastercard&#x27;s dispute flow, or x402 today. Building it is the next real work.</p>
+<h2>What Happened (and Why It Matters)</h2>
+<ul>
+<li><strong>Cross-platform attack taxonomy published for A2A, ACP, and CORAL commerce stacks</strong> — researchers produced the first systematic security analysis covering registries, payment flows, federation, and LLM proxy layers across all three major agent protocols. It solves: a shared vocabulary for vulnerabilities. It leaves unsolved: no protocol yet requires a delegation-state proof at payment execution. (<a href="https://arxiv.org/html/2607.21824v1" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>PDR (Payment Delivery Receipt) formalized as a cryptographic post-settlement primitive</strong> — the SoK paper disambiguates ACP as a settlement and escrow coordination layer and defines the PDR as a post-settlement proof of payment completion. It solves: naming the proof type. It leaves unsolved: no live protocol issues or verifies PDRs; the primitive exists in literature, not in production. (<a href="https://arxiv.org/html/2604.15367v2" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Mastercard builds the chargeback path for agent purchases</strong> — scheme-level dispute resolution infrastructure for agent-initiated payments is operational or near-operational. It solves: the recovery path when something goes wrong post-settlement. It leaves unsolved: disputes require evidence; no current protocol produces the delegation-state evidence a chargeback adjudicator needs. (<a href="https://www.retailgentic.com/p/agentic-commerces-exceptional-eight" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Builder community surfaces pre-authorization proof as an open problem</strong> — x402 facilitator implementers, Solana agent payment flow builders, and paid MCP server operators are explicitly asking how an agent proves payment is allowed <em>before</em> execution. It solves: nothing yet — this is the friction. It leaves unsolved: the entire question. (<a href="https://www.reddit.com/r/ethdev/comments/1urbqbf/how_should_an_ai_agent_prove_a_payment_is_allowed" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Agent-as-payor framed as a distinct financial actor category</strong> — the theoretical literature argues the gap is not AI in finance or blockchain rails, but a financial-market theory for autonomous software actors as payers. It solves: framing. It leaves unsolved: no settlement finality or counterparty risk model yet accounts for agents whose decision logic can change between delegation and execution. (<a href="https://arxiv.org/html/2607.00245v1" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Counter-Consensus</h2>
+<p>The consensus view is that agentic payment security is primarily a credential and authentication problem — secure the key, bind it to a device or wallet, apply fraud models, and the existing rails handle the rest. That view is correct about the attack surface that fraud models can see: stolen credentials, anomalous spend patterns, velocity flags. What it misses is that the new attack surface is not credential theft but <em>delegation drift</em> — the gap between the conditions under which a principal authorized an agent and the conditions under which the agent actually executes. A perfectly valid credential, used by a legitimately authorized agent, executing a payment that no longer reflects the principal&#x27;s intent, clears every existing fraud check cleanly. The missing assumption is that authorization-time and intent-time are the same moment. For agents, they are structurally not.</p>
+<h2>From the Community</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/ethdev/comments/1urbqbf/how_should_an_ai_agent_prove_a_payment_is_allowed" target="_blank" rel="noopener">How should an AI agent prove a payment is allowed before executing it?</a> — r/ethdev thread from x402 facilitator builders and paid MCP server operators, surfacing the pre-authorization proof problem as live, unresolved builder friction.</li>
+</ul>
+<h2>Research &amp; Papers</h2>
+<ul>
+<li><a href="https://arxiv.org/html/2607.21824v1" target="_blank" rel="noopener">Protocol-Level Attacks on Agentic Commerce Platforms: A Cross-Platform Taxonomy, AIP-Bench, and Unified Defense</a> — First systematic security analysis of A2A, ACP, and CORAL commerce stacks.</li>
+<li><a href="https://arxiv.org/html/2604.15367v2" target="_blank" rel="noopener">SoK: Security of Autonomous LLM Agents in Agentic Commerce</a> — Formalizes PDR as a cryptographic post-settlement proof primitive.</li>
+<li><a href="https://arxiv.org/html/2607.00245v1" target="_blank" rel="noopener">Agent-to-Agent Finance: Blockchain Payments and Trust</a> — Frames agent-as-payor as a distinct financial actor category requiring new settlement theory.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://arxiv.org/html/2607.21824v1</li>
+<li>https://arxiv.org/html/2604.15367v2</li>
+<li>https://arxiv.org/html/2607.00245v1</li>
+<li>https://www.reddit.com/r/ethdev/comments/1urbqbf/how_should_an_ai_agent_prove_a_payment_is_allowed</li>
+<li>https://www.retailgentic.com/p/agentic-commerces-exceptional-eight</li>
+</ul>
+<hr>
+<p><em>Agentic Payment · August 12, 2026 · <a href="https://agenticpayment.forum/articles/" target="_blank" rel="noopener">agenticpayment.forum</a></em></p>
+<p><em>Sources linked inline. Facts are sourced; opinions are labeled. Not financial advice.</em></p>
+    </section>
+  </article>
+</body>
+</html>
